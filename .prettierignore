@@ -1,0 +1,8 @@
+node_modules
+public
+reports
+.vscode
+.atom
+.idea
+.cache
+package-lock.json
