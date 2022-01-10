@@ -1,0 +1,13 @@
+import type { {{pascalCase name }}sRaw, {{pascalCase name }}s } from './types';
+
+export const format{{pascalCase name }}s = (payload: {{pascalCase name }}sRaw): {{pascalCase name }}s => {
+  const formatted = payload.map(
+    ({ ...props }) => {
+      return {
+        ...props,
+      };
+    },
+  );
+
+  return formatted;
+};

@@ -1,0 +1,22 @@
+import React from 'react';
+import { useState, useEffect } from 'react';
+{{#if isStore}}
+import { useSelector, useDispatch } from 'react-redux';
+{{/if}}
+
+import { styles } from './styles';
+
+import type { Props } from './types';
+
+export const Pure{{pascalCase name}} = ({}: Props) => {
+  return <div>{{pascalCase name}}</div>;
+};
+
+{{#if isStore}}
+export const {{pascalCase name}} = () => {
+  const dispatch = useDispatch();
+  const {} = useSelector();
+
+  return <Pure{{pascalCase name}}></Pure{{pascalCase name}}>;
+};
+{{/if}}
