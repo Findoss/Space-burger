@@ -6,3 +6,5 @@ reports
 .idea
 .cache
 package-lock.json
+
+*.hbs
