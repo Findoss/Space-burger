@@ -1,15 +1,19 @@
 import React from 'react';
+import cn from 'classnames';
+
 import { useState, useEffect } from 'react';
 {{#if isStore}}
 import { useSelector, useDispatch } from 'react-redux';
 {{/if}}
 
-import { styles } from './styles';
+import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const Pure{{pascalCase name}} = ({}: Props) => {
-  return <div>{{pascalCase name}}</div>;
+export const Pure{{pascalCase name}} = ({ className = undefined }: Props) => {
+  const style = cn(styles.{{name}}, className);
+
+  return <div className={style}>{{pascalCase name}}</div>;
 };
 
 {{#if isStore}}
