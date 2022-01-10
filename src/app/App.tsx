@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { resolveBurgers } from '../api/burgers/index';
+import { resolveIngredients } from '../api/Ingredients/index';
 
-resolveBurgers();
+resolveIngredients().then((data) => console.log(data));
 
 import './App.css';
 
 export function App() {
-  return <div className="App"></div>;
+  return <div className="App">asd</div>;
 }
