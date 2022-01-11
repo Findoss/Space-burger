@@ -2,7 +2,7 @@
 
 ...
 
-## Зависимости
+## Deps
 
 ```
 Dev-sandbox
@@ -53,11 +53,16 @@ Linter and formatter
     eslint
 ```
 
-## Дизайн
+## Design
 
 [figma.com/](https://www.figma.com/file/vejDm3dVTUor3wBdNO137u/React-%2F-%D0%9F%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%BD%D1%8B%D0%B5-%D0%B7%D0%B0%D0%B4%D0%B0%D1%87%D0%B8?node-id=0%3A1)
 
-## Скрипты
+## UI Lib
+
+[Repo](https://github.com/yandex-praktikum/react-developer-burger-ui-components#readme)
+[Docs](https://yandex-praktikum.github.io/react-developer-burger-ui-components/docs/)
+
+## Scripts
 
 ### `npm start`
 
