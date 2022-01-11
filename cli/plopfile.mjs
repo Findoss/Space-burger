@@ -12,49 +12,51 @@ export default function (plop) {
         name: 'isStore',
         message: 'add store? ',
       },
+      {
+        type: 'confirm',
+        name: 'isPage',
+        message: 'is page? ',
+      },
     ],
     actions: function (data) {
+      let path = '../src/components';
+
+      if (data.isPage) {
+        path = '../src/pages';
+      }
+
       const actions = [
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.tsx',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.tsx`,
           templateFile: 'templates/component/component.hbs',
         },
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/index.ts',
+          path: `${path}/{{pascalCase name}}/index.ts`,
           templateFile: 'templates/component/index.hbs',
         },
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/types.ts',
+          path: `${path}/{{pascalCase name}}/types.ts`,
           templateFile: 'templates/component/types.hbs',
         },
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/__tests__/{{pascalCase name}}.test.ts',
+          path: `${path}/{{pascalCase name}}/__tests__/{{pascalCase name}}.test.ts`,
           templateFile: 'templates/component/test.hbs',
         },
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/styles.module.css',
+          path: `${path}/{{pascalCase name}}/styles.module.css`,
           templateFile: 'templates/component/styles.hbs',
         },
         {
           type: 'add',
-          path: '../src/components/{{pascalCase name}}/{{pascalCase name}}.stories.tsx',
+          path: `${path}/{{pascalCase name}}/{{pascalCase name}}.stories.tsx`,
           templateFile: 'templates/component/stories.hbs',
         },
       ];
-
-      // if(data.isStore) {
-      //     actions.push({
-      //         type: 'add',
-      //         path: 'folder/{{dashCase name}}.txt',
-      //         templateFile: 'templates/tacos.txt'
-      //     });
-      // }
-
       return actions;
     },
   });
@@ -67,7 +69,6 @@ export default function (plop) {
         name: 'name',
         message: 'entity name: ',
       },
-      ,
     ],
     actions: [
       {
@@ -92,7 +93,7 @@ export default function (plop) {
       },
       {
         type: 'add',
-        path: '../src/api/{{pascalCase name}}/__mocks__/{{pascalCase name}}.ts',
+        path: '../src/api/{{pascalCase name}}/__mocks__/{{pascalCase name}}.json',
         templateFile: 'templates/api/mock.hbs',
       },
     ],

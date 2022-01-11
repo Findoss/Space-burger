@@ -6,21 +6,32 @@ import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 {{/if}}
 
+{{#if isPage}}
+import { Main } from 'layouts/Main';
+{{/if}}
+
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
 export const Pure{{pascalCase name}} = ({ className = undefined }: Props) => {
-  const style = cn(styles.{{name}}, className);
+  const style = cn(styles.{{ name }}, className);
 
   return <div className={style}>{{pascalCase name}}</div>;
 };
 
-{{#if isStore}}
 export const {{pascalCase name}} = () => {
+  {{#if isStore}}
   const dispatch = useDispatch();
   const {} = useSelector();
-
+  {{/if}}
+  {{#if isPage}}
+  return (
+    <Main>
+      <Pure{{pascalCase name}}></Pure{{pascalCase name}}>
+    </Main>
+  )
+  {{else}}
   return <Pure{{pascalCase name}}></Pure{{pascalCase name}}>;
+  {{/if}}
 };
-{{/if}}

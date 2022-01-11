@@ -1,4 +1,4 @@
 import { schema } from 'normalizr';
 
-const {{ name }}Schema = new schema.Entity('ingredients');
-export const {{ name }}sSchema = new schema.Array(ingredientSchema);
+const {{pascalCase name }}Schema = new schema.Entity('{{lowerCase name }}s');
+export const {{pascalCase name }}sSchema = new schema.Array({{pascalCase name }}Schema);
