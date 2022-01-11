@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 
 export const Pure{{pascalCase name}} = ({ className = undefined }: Props) => {
-  const style = cn(styles.{{ name }}, className);
+  const style = cn(styles.{{lowerCase name }}, className);
 
   return <div className={style}>{{pascalCase name}}</div>;
 };
