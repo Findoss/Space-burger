@@ -1,11 +1,18 @@
 import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
 
 import { resolveIngredients } from '../api/Ingredients/index';
 
-resolveIngredients().then((data) => console.log(data));
+import { Router } from 'router';
 
 import './App.css';
 
+resolveIngredients().then((data) => console.log(data));
+
 export function App() {
-  return <div className="App">asd</div>;
+  return (
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
+  );
 }

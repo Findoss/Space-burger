@@ -1,5 +1,5 @@
-import type { ReactChild } from 'react';
+import type { ReactNode } from 'react';
 
 export type Props = {
-  children?: ReactChild;
+  children?: ReactNode;
 };
