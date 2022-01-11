@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Routes } from './types';
 
-const Qwer = () => <h1>werrewrewrewrew</h1>;
+import { Main } from 'pages/Main';
 
 export const routes: Routes = [
   {
-    path: 'qwer',
-    component: <Qwer />,
+    path: '/',
+    component: <Main />,
     isPrivate: false,
     redirect: '',
     exact: false,
