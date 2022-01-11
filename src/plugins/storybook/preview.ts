@@ -1,3 +1,5 @@
+import { I18nProviderWrapper } from './decorator-i18n';
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
@@ -7,3 +9,5 @@ export const parameters = {
     },
   },
 };
+
+export const decorators = [I18nProviderWrapper];

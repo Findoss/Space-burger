@@ -10,13 +10,13 @@ import type { Props } from './types';
 export const PureMain = ({ className = undefined }: Props) => {
   const style = cn(styles.main, className);
 
-  return <div className={style}>Main</div>;
+  return <div className={style}>фывфывфв</div>;
 };
 
 export const Main = () => {
   return (
     <MainLayout>
-      <PureMain></PureMain>
+      <PureMain />
     </MainLayout>
   );
 };
