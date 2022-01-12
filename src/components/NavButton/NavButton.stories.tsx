@@ -38,5 +38,6 @@ const Template: ComponentStory<typeof PureNavButton> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
+  to: '',
   title: 'title',
 };

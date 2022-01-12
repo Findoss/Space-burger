@@ -8,15 +8,16 @@ i18n
   .use(langDetector)
   .use(initReactI18next)
   .init({
+    debug: true,
     load: 'languageOnly',
+    lng: 'ru',
     preload: ['ru'],
     fallbackLng: 'ru',
-    debug: false,
     interpolation: {
       escapeValue: false,
     },
     react: {
-      useSuspense: true,
+      useSuspense: false,
     },
   });
 

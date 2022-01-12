@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
 
 import { PureNavButton } from 'components/NavButton';
 import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
@@ -21,20 +22,25 @@ export const PureHeader = ({ className = undefined }: Props) => {
       <div className={cn(styles.block, 'pr-5 pl-5')}>
         <div className={styles.menu}>
           <PureNavButton
+            to="qwer"
             icon={<BurgerIcon type="secondary" />}
             title={t('menu.constructorBurgers')}
           />
           <PureNavButton
+            to="qwer2"
             icon={<ListIcon type="secondary" />}
             title={t('menu.listOrders')}
           />
         </div>
       </div>
       <div className={styles.block}>
-        <Logo />
+        <Link to="/">
+          <Logo />
+        </Link>
       </div>
       <div className={styles.block}>
         <PureNavButton
+          to="qwer3"
           icon={<ProfileIcon type="secondary" />}
           title={t('menu.account')}
         />

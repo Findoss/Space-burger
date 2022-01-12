@@ -1,8 +1,9 @@
 import type { ReactNode, SyntheticEvent } from 'react';
 
 export type Props = {
-  className?: string;
-  icon?: ReactNode;
+  to: string;
   title: string;
+  icon?: ReactNode;
+  className?: string;
   onClick?: (() => void) | ((e: SyntheticEvent) => void);
 };

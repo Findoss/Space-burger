@@ -1,0 +1,8 @@
+{
+  "test": "0000",
+  "menu": {
+    "account":"Личный Кабинет",
+    "constructorBurgers":"Сonstructor",
+    "listOrders":"Лента заказов"
+  }
+}

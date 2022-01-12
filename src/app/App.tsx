@@ -13,10 +13,8 @@ resolveIngredients().then((data) => console.log(data));
 
 export function App() {
   return (
-    <Suspense fallback="...">
-      <BrowserRouter>
-        <Router />
-      </BrowserRouter>
-    </Suspense>
+    <BrowserRouter>
+      <Router />
+    </BrowserRouter>
   );
 }
