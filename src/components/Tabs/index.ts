@@ -1,0 +1,1 @@
+export { PureTabs } from './Tabs';

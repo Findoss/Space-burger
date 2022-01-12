@@ -1,0 +1,1 @@
+export { PureImage } from './Image';

@@ -1,0 +1,33 @@
+.ingredient {
+  /* background-color: burlywood; */
+  max-width: 300px;
+  position: relative;
+
+  font-family: 'Jet Brains Mono';
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: normal;
+}
+
+.ingredient_img {
+  /* background-color: aqua; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredient_price {
+  /* background-color: crimson; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Iceland';
+  font-size: 28px;
+}
+
+.ingredient_title {
+  /* background-color: violet; */
+  text-align: center;
+  height: 48px;
+}

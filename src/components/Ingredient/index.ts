@@ -1,0 +1,1 @@
+export { PureIngredient } from './Ingredient';
