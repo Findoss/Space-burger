@@ -4,5 +4,11 @@
     "account":"Личный Кабинет",
     "constructorBurgers":"Конструктор",
     "listOrders":"Лента заказов"
+  },
+  "constructor":{
+    "constructor":"Соберите бургер",
+    "bells":"булки",
+    "sauces":"соусы",
+    "filling":"начинки"
   }
 }
