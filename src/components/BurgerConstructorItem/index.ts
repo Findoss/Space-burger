@@ -1,0 +1,1 @@
+export { PureBurgerConstructorItem } from './BurgerConstructorItem';

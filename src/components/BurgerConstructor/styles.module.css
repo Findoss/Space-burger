@@ -1,0 +1,15 @@
+.burger_constructor {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--offset-base-size) * 4);
+
+  max-width: 600px;
+}
+
+.constructor_main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--offset-base-size) * 4);
+  height: 330px;
+  overflow: auto;
+}

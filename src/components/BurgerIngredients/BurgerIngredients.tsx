@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 
 export const PureBurgerIngredients = ({ className = undefined }: Props) => {
-  const style = cn(styles.burgeringredients, className);
+  const style = cn(styles.burger_ingredients, className);
   const { t } = useTranslation();
 
   const tabs = [

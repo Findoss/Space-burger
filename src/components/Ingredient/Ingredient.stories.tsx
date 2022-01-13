@@ -17,6 +17,6 @@ Default.args = {
   className: 'class',
   id: 'string',
   price: 123,
-  name: 'string',
-  image: 'string',
+  name: 'Соус фирменный Space Sauce',
+  image: 'https://code.s3.yandex.net/react/code/sauce-04.png',
 };
