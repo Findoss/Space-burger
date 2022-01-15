@@ -1,8 +1,14 @@
 {
   "test": "0000",
   "menu": {
-    "account":"Личный Кабинет",
-    "constructorBurgers":"Сonstructor",
-    "listOrders":"Лента заказов"
+    "account":"account",
+    "constructorBurgers":"constructorBurgers",
+    "listOrders":"listOrders"
+  },
+  "constructor":{
+    "constructor":"constructor",
+    "bells":"bells",
+    "sauces":"sauces",
+    "filling":"filling"
   }
 }
