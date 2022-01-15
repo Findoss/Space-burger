@@ -1,13 +1,13 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { PureBurgerConstructorItem } from 'components/BurgerConstructorItem';
+import { BurgerConstructorItem } from 'components/BurgerConstructorItem';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const PureBurgerConstructor = ({
+export const BurgerConstructor = ({
   ingredientTop,
   ingredientBottom,
   ingredients,
@@ -20,13 +20,13 @@ export const PureBurgerConstructor = ({
   );
   return (
     <div className={style}>
-      <PureBurgerConstructorItem {...ingredientTop} />
+      <BurgerConstructorItem {...ingredientTop} />
       <div className={cn('custom-scroll', styles.constructor_main)}>
         {ingredients.map((ingredient) => {
-          return <PureBurgerConstructorItem {...ingredient} />;
+          return <BurgerConstructorItem {...ingredient} />;
         })}
       </div>
-      <PureBurgerConstructorItem {...ingredientBottom} />
+      <BurgerConstructorItem {...ingredientBottom} />
     </div>
   );
 };

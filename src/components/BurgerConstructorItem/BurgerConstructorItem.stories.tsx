@@ -1,50 +1,31 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureBurgerConstructorItem } from './BurgerConstructorItem';
+import { BurgerConstructorItem } from './BurgerConstructorItem';
+import { mockBurgerConstructorItem } from './__mocks__/BurgerConstructorItem';
 
 export default {
-  title: '  Components/PureBurgerConstructorItem',
-  component: PureBurgerConstructorItem,
+  title: '  Components/BurgerConstructorItem',
+  component: BurgerConstructorItem,
   argTypes: {
     type: {
       type: 'string',
     },
   },
-} as ComponentMeta<typeof PureBurgerConstructorItem>;
+} as ComponentMeta<typeof BurgerConstructorItem>;
 
-const Template: ComponentStory<typeof PureBurgerConstructorItem> = (args) => (
-  <PureBurgerConstructorItem {...args} />
+const Template: ComponentStory<typeof BurgerConstructorItem> = (args) => (
+  <BurgerConstructorItem {...args} />
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  thumbnail: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
-  price: 123,
-  text: 'Краторная булка N-200i',
-  type: undefined,
-};
+Default.args = mockBurgerConstructorItem![0];
 
 export const Locked = Template.bind({});
-Locked.args = {
-  thumbnail: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
-  price: 123,
-  text: 'Краторная булка N-200i',
-  isLocked: true,
-};
+Locked.args = mockBurgerConstructorItem[1];
 
 export const Top = Template.bind({});
-Top.args = {
-  type: 'top',
-  thumbnail: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
-  price: 123,
-  text: 'Краторная булка N-200i',
-};
+Top.args = mockBurgerConstructorItem[2];
 
 export const Bottom = Template.bind({});
-Bottom.args = {
-  thumbnail: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
-  price: 123,
-  text: 'Краторная булка N-200i',
-  type: 'bottom',
-};
+Bottom.args = mockBurgerConstructorItem[3];

@@ -1,1 +1,1 @@
-export { PureIngredientList } from './IngredientList';
+export { IngredientList } from './IngredientList';

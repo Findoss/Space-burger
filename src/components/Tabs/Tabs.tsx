@@ -8,7 +8,7 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const PureTabs = ({ tabs, className = undefined }: Props) => {
+export const Tabs = ({ tabs, className = undefined }: Props) => {
   const [current, setCurrent] = useState(tabs[0].key);
   const style = cn(styles.tabs, className);
 
@@ -29,7 +29,3 @@ export const PureTabs = ({ tabs, className = undefined }: Props) => {
     </div>
   );
 };
-
-// export const Tabs = () => {
-//   return <PureTabs></PureTabs>;
-// };

@@ -1,1 +1,1 @@
-export { PureImage } from './Image';
+export { Image } from './Image';

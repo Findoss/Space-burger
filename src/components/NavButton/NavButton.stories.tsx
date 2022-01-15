@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureNavButton } from './NavButton';
+import { NavButton } from './NavButton';
 
 import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components';
@@ -14,8 +14,8 @@ const icons = {
 };
 
 export default {
-  title: 'Components/PureNavButton',
-  component: PureNavButton,
+  title: 'Components/NavButton',
+  component: NavButton,
   argTypes: {
     icon: {
       options: Object.keys(icons),
@@ -30,10 +30,10 @@ export default {
       },
     },
   },
-} as ComponentMeta<typeof PureNavButton>;
+} as ComponentMeta<typeof NavButton>;
 
-const Template: ComponentStory<typeof PureNavButton> = (args) => (
-  <PureNavButton {...args} />
+const Template: ComponentStory<typeof NavButton> = (args) => (
+  <NavButton {...args} />
 );
 
 export const Default = Template.bind({});

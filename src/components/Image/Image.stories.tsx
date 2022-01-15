@@ -1,16 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureImage } from './Image';
+import { Image } from './Image';
 
 export default {
-  title: '  Components/PureImage',
-  component: PureImage,
-} as ComponentMeta<typeof PureImage>;
+  title: 'Components/Image',
+  component: Image,
+} as ComponentMeta<typeof Image>;
 
-const Template: ComponentStory<typeof PureImage> = (args) => (
-  <PureImage {...args} />
-);
+const Template: ComponentStory<typeof Image> = (args) => <Image {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

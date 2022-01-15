@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureIngredient } from './Ingredient';
+import { Ingredient } from './Ingredient';
 
 export default {
-  title: '  Components/PureIngredient',
-  component: PureIngredient,
-} as ComponentMeta<typeof PureIngredient>;
+  title: 'Components/Ingredient',
+  component: Ingredient,
+} as ComponentMeta<typeof Ingredient>;
 
-const Template: ComponentStory<typeof PureIngredient> = (args) => (
-  <PureIngredient {...args} />
+const Template: ComponentStory<typeof Ingredient> = (args) => (
+  <Ingredient {...args} />
 );
 
 export const Default = Template.bind({});

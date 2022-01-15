@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const PureNavButton = ({
+export const NavButton = ({
   className = undefined,
   to,
   icon,

@@ -1,22 +1,17 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureTabs } from './Tabs';
+import { Tabs } from './Tabs';
+import { mockTabs } from './__mocks__/Tabs';
 
 export default {
-  title: '  Components/PureTabs',
-  component: PureTabs,
-} as ComponentMeta<typeof PureTabs>;
+  title: 'Components/Tabs',
+  component: Tabs,
+} as ComponentMeta<typeof Tabs>;
 
-const Template: ComponentStory<typeof PureTabs> = (args) => (
-  <PureTabs {...args} />
-);
+const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  tabs: [
-    { key: 'one', title: 'title 1' },
-    { key: 'two', title: 'title 2' },
-    { key: 'tree', title: 'title 3' },
-  ],
+  tabs: mockTabs,
 };

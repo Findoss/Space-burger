@@ -1,15 +1,15 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { PureIngredient } from 'components/Ingredient';
+import { Ingredient } from 'components/Ingredient';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const PureIngredientList = ({
-  title,
-  ingredients,
+export const IngredientList = ({
+  title = '',
+  ingredients = [],
   className = undefined,
 }: Props) => {
   const style = cn(styles.ingredient, className);
@@ -25,7 +25,7 @@ export const PureIngredientList = ({
       >
         {ingredients.map(({ id, name, price, image, count }) => {
           return (
-            <PureIngredient
+            <Ingredient
               className={styles.ingredient_item}
               count={count}
               id={id}

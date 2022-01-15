@@ -8,7 +8,7 @@ import style from './styles.module.css';
 
 import type { Props } from './types';
 
-export const PureBurgerConstructorItem = ({
+export const BurgerConstructorItem = ({
   thumbnail,
   price,
   text,

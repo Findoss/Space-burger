@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureHeader } from './Header';
+import { AppHeader } from './Header';
 
 export default {
-  title: '  Components/PureHeader',
-  component: PureHeader,
-} as ComponentMeta<typeof PureHeader>;
+  title: 'Components/AppHeader',
+  component: AppHeader,
+} as ComponentMeta<typeof AppHeader>;
 
-const Template: ComponentStory<typeof PureHeader> = (args) => (
-  <PureHeader {...args} />
+const Template: ComponentStory<typeof AppHeader> = (args) => (
+  <AppHeader {...args} />
 );
 
 export const Default = Template.bind({});

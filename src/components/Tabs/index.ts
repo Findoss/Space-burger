@@ -1,1 +1,1 @@
-export { PureTabs } from './Tabs';
+export { Tabs } from './Tabs';

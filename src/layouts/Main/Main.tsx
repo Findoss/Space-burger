@@ -1,12 +1,12 @@
 import React from 'react';
 import type { Props } from './types';
 
-import { Header } from 'components/Header';
+import { AppHeader } from 'components/Header';
 
 export const Main = ({ children }: Props) => {
   return (
     <div>
-      <Header />
+      <AppHeader />
       {children}
     </div>
   );

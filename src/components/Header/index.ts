@@ -1,1 +1,1 @@
-export { PureHeader, Header } from './Header';
+export { AppHeader } from './Header';
