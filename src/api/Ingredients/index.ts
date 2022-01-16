@@ -8,17 +8,17 @@ import { ingredientsSchema } from './entity';
 import type { Resolver } from '../types';
 import type { IngredientsEntity, IngredientsRaw } from './types';
 
-// import mockIngredients from './__mocks__/Ingredients.json';
+import mockIngredients from './__mocks__/Ingredients.json';
 
 export const resolveIngredients: Resolver<
   void,
   IngredientsEntity
 > = async () => {
   try {
-    // const raw = mockIngredients;
-    const raw = await httpClient.get<void, IngredientsRaw>(
-      `${API_URL}/ingredients`,
-    );
+    const raw = mockIngredients;
+    // const raw = await httpClient.get<void, IngredientsRaw>(
+    //   `${API_URL}/ingredients`,
+    // );
     const formatted = formatIngredients(raw);
     const result = normalize(formatted, ingredientsSchema);
 
