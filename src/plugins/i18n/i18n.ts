@@ -8,7 +8,7 @@ i18n
   .use(langDetector)
   .use(initReactI18next)
   .init({
-    debug: true,
+    debug: false,
     load: 'languageOnly',
     lng: 'ru',
     preload: ['ru'],

@@ -1,3 +1,8 @@
 .burger_ingredients {
   max-width: 620px;
 }
+
+.burger_lists {
+  max-height: 800px;
+  overflow: auto;
+}

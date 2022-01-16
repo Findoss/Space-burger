@@ -1,18 +1,16 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { PureMain } from './Main';
+import { PageMain } from './Main';
 
 export default {
-  title: '  Pages/PureMain',
-  component: PureMain,
-} as ComponentMeta<typeof PureMain>;
+  title: 'Pages/PageMain',
+  component: PageMain,
+} as ComponentMeta<typeof PageMain>;
 
-const Template: ComponentStory<typeof PureMain> = (args) => (
-  <PureMain {...args} />
-);
+const Template: ComponentStory<typeof PageMain> = () => <PageMain />;
 
 export const Default = Template.bind({});
-Default.args = {
-  className: 'class',
-};
+// Default.args = {
+//   className: 'class',
+// };

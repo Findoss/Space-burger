@@ -14,7 +14,7 @@ export type IngredientRaw = {
   image_large: string;
   __v: number;
 };
-export type IngredientsRaw = IngredientRaw[];
+export type IngredientsRaw = { data: { data: IngredientRaw[] } };
 
 export type Ingredient = {
   id: IngredientId;

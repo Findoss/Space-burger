@@ -16,7 +16,9 @@ export const IngredientList = ({
 
   return (
     <div className={style}>
-      <h2 className={styles.ingredient_title}>{title}</h2>
+      <h2 className={cn(styles.ingredient_title, 'text text_type_main-medium')}>
+        {title}
+      </h2>
       <div
         className={cn(
           styles.ingredient_list,

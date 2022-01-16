@@ -1,1 +1,1 @@
-export { PureMain, Main } from './Main';
+export { PageMain, Main } from './Main';

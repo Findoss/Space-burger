@@ -10,7 +10,7 @@ import type { Props } from './types';
 export const BurgerConstructor = ({
   ingredientTop,
   ingredientBottom,
-  ingredients,
+  ingredients = [],
   className = undefined,
 }: Props) => {
   const style = cn(

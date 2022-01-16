@@ -24,11 +24,20 @@ export const Ingredient = ({
       <div className={cn(styles.ingredient_img, 'ml-4 mr-4 mb-1')}>
         <Image src={image} alt="ingredient" />
       </div>
-      <div className={cn(styles.ingredient_price, 'mb-1')}>
+      <div
+        className={cn(
+          styles.ingredient_price,
+          'mb-1  text text_type_digits-default',
+        )}
+      >
         <div className={'mr-1'}>{price}</div>
         <CurrencyIcon type="primary" />
       </div>
-      <div className={styles.ingredient_title}>{name}</div>
+      <div
+        className={cn(styles.ingredient_title, 'text text_type_main-default')}
+      >
+        {name}
+      </div>
     </div>
   );
 };

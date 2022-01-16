@@ -10,6 +10,8 @@
   display: flex;
   flex-direction: column;
   gap: calc(var(--offset-base-size) * 4);
-  height: 330px;
   overflow: auto;
+  padding-right: 8px;
+
+  max-height: 500px;
 }

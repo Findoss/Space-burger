@@ -3,6 +3,6 @@ import { Props as BurgerConstructorItemProps } from 'components/BurgerConstructo
 export type Props = {
   ingredientTop: BurgerConstructorItemProps;
   ingredientBottom: BurgerConstructorItemProps;
-  ingredients: BurgerConstructorItemProps[];
+  ingredients?: BurgerConstructorItemProps[];
   className?: string;
 };

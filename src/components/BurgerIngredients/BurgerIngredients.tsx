@@ -26,7 +26,7 @@ export const BurgerIngredients = ({
       <div className="mb-10">
         <Tabs tabs={tabs} />
       </div>
-      {children}
+      <div className={cn(styles.burger_lists, 'custom-scroll')}>{children}</div>
     </div>
   );
 };
