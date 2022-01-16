@@ -7,8 +7,9 @@
   },
   "constructor":{
     "constructor":"constructor",
-    "bells":"bells",
-    "sauces":"sauces",
-    "filling":"filling"
+    "bun":"bells",
+    "sauce":"sauces",
+    "main":"filling",
+    "buy":"оформить заказ"
   }
 }

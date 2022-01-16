@@ -1,8 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import { Counter } from '@ya.praktikum/react-developer-burger-ui-components';
+import {
+  CurrencyIcon,
+  Counter,
+} from '@ya.praktikum/react-developer-burger-ui-components';
 import { Image } from 'components/Image';
 
 import styles from './styles.module.css';
