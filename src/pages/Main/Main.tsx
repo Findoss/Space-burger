@@ -8,7 +8,6 @@ import { Loader } from 'components/Loader';
 import { BurgerIngredients } from 'components/BurgerIngredients';
 import { BurgerConstructor } from 'components/BurgerConstructor';
 import { IngredientList } from 'components/IngredientList';
-import { IngredientLists } from 'components/IngredientLists';
 import { Main as MainLayout } from 'layouts/Main';
 
 import { IngredientsType } from 'enums/Ingredients';

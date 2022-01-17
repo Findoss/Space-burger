@@ -1,0 +1,25 @@
+.modal {
+  display: block;
+  background-color: var(--background);
+  position: relative;
+  border-radius: 40px;
+}
+
+.close_button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  color: white;
+}
+
+.close_button:hover {
+  cursor: pointer;
+  background-color: aqua;
+}
