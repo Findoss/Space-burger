@@ -2,7 +2,20 @@
   display: block;
   background-color: var(--background);
   position: relative;
+  border: 1px solid rgba(76, 76, 255, 0.2);
   border-radius: 40px;
+  box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.04),
+    0px 16px 24px rgba(0, 0, 0, 0.04), 0px 4px 8px rgba(0, 0, 0, 0.04),
+    0px 0px 1px rgba(0, 0, 0, 0.04);
+}
+
+.modal_wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .close_button {
@@ -21,5 +34,4 @@
 
 .close_button:hover {
   cursor: pointer;
-  background-color: aqua;
 }

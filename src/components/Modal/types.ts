@@ -1,9 +1,9 @@
 import { ReactChild } from 'react';
 
 export type Props = {
+  selector?: string;
   open?: boolean;
-  className?: string;
   children?: ReactChild;
   onClose?: () => void;
-  onOpen?: () => void;
+  className?: string;
 };
