@@ -1,1 +1,1 @@
-export { IngredientInfo, ContainerIngredientInfo }from './IngredientInfo';
+export { IngredientInfo } from './IngredientInfo';

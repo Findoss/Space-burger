@@ -8,6 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build",
     "new": "plop --plopfile ./cli/plopfile.mjs",
     "storybook": "start-storybook -p 6006 -c config/storybook",
     "build-storybook": "build-storybook -c config/storybook"

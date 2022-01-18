@@ -81,15 +81,13 @@ export const Main = ({ className = undefined }: Props) => {
       {!ingredientListLoading ? (
         <>
           <BurgerIngredients className={styles.burger_ingredients} tabs={lists}>
-            {lists.map(({ key, title }) => {
-              return (
-                <IngredientList
-                  key={key}
-                  title={title}
-                  ingredients={selectIngredientsList(ingredientList, key)}
-                />
-              );
-            })}
+            {lists.map(({ key, title }) => (
+              <IngredientList
+                key={key}
+                title={title}
+                ingredients={selectIngredientsList(ingredientList, key)}
+              />
+            ))}
           </BurgerIngredients>
           <BurgerConstructor
             className="class"
