@@ -22,8 +22,6 @@ export const Modal = ({
   if ($el.current === null) return null;
   if (!open) return null;
 
-  console.log($el.current);
-
   return createPortal(
     <div className={styles.modal_wrapper}>
       <div className={style}>

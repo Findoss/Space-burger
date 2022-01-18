@@ -1,4 +1,5 @@
 .modal {
+  width: 720px;
   display: block;
   background-color: var(--background);
   position: relative;
