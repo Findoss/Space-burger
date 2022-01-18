@@ -19,14 +19,15 @@ export const BurgerConstructor = ({
   className = undefined,
 }: Props) => {
   const { t } = useTranslation();
-  const style = cn(
-    styles.burger_constructor,
-    ' pt-25 pl-4 pr-4 pb-10',
-    className,
-  );
 
   return (
-    <div className={style}>
+    <div
+      className={cn(
+        styles.burger_constructor,
+        ' pt-25 pl-4 pr-4 pb-10',
+        className,
+      )}
+    >
       <BurgerConstructorItem type="top" isLocked={true} {...ingredientTop} />
       <div className={cn('custom-scroll', styles.constructor_main)}>
         {ingredients.length &&

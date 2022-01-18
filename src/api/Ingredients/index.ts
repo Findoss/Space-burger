@@ -15,15 +15,16 @@ export const resolveIngredients: Resolver<
   IngredientsEntity
 > = async () => {
   try {
-    const raw = mockIngredients;
-    // const raw = await httpClient.get<void, IngredientsRaw>(
-    //   `${API_URL}/ingredients`,
-    // );
+    // const raw = mockIngredients;
+    const raw = await httpClient.get<void, IngredientsRaw>(
+      `${API_URL}/ingredients`,
+    );
     const formatted = formatIngredients(raw);
     const result = normalize(formatted, ingredientsSchema);
 
     return result;
   } catch (error) {
+    // надо доработать
     console.log(error);
   }
 };

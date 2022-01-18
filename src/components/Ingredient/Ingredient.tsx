@@ -18,10 +18,8 @@ export const Ingredient = ({
   count = 0,
   className = undefined,
 }: Props) => {
-  const ingredientStyle = cn(styles.ingredient, className);
-
   return (
-    <div className={ingredientStyle}>
+    <div className={cn(styles.ingredient, className)}>
       {count > 0 ? <Counter count={count} /> : null}
       <div className={cn(styles.ingredient_img, 'ml-4 mr-4 mb-1')}>
         <Image src={image} alt="ingredient" />

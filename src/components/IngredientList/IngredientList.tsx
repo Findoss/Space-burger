@@ -12,10 +12,8 @@ export const IngredientList = ({
   ingredients = [],
   className = undefined,
 }: Props) => {
-  const style = cn(styles.ingredient, className);
-
   return (
-    <div className={style}>
+    <div className={cn(styles.ingredient, className)}>
       <h2 className={cn(styles.ingredient_title, 'text text_type_main-medium')}>
         {title}
       </h2>

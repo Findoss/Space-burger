@@ -6,7 +6,6 @@ import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 import styles from './styles.module.css';
 
-import type { ReactPortal } from 'react';
 import type { Props } from './types';
 
 export const Modal = ({
@@ -16,7 +15,6 @@ export const Modal = ({
   onClose = () => {},
   className = undefined,
 }: Props) => {
-  const style = cn(styles.modal, 'p-10', className);
   const $el = useRef(document.querySelector(selector));
 
   if ($el.current === null) return null;
@@ -24,7 +22,7 @@ export const Modal = ({
 
   return createPortal(
     <div className={styles.modal_wrapper}>
-      <div className={style}>
+      <div className={cn(styles.modal, 'p-10', className)}>
         <button
           className={cn(styles.close_button, 'mt-15 mr-10')}
           onClick={onClose}

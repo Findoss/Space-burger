@@ -17,11 +17,18 @@ export const NavButton = ({
   return (
     <Link
       to={to}
-      className={cn(styles.item, 'pl-5 pr-5', className)}
+      className={cn('pl-5 pr-5', styles.item, className)}
       onClick={onClick}
     >
       {icon}
-      <div className={cn(styles.title, 'ml-2')}>{title}</div>
+      <div
+        className={cn(
+          'text text_type_main-default text_color_inactive ml-2',
+          styles.title,
+        )}
+      >
+        {title}
+      </div>
     </Link>
   );
 };

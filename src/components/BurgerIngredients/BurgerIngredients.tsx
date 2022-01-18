@@ -15,11 +15,10 @@ export const BurgerIngredients = ({
   children,
   className = undefined,
 }: Props) => {
-  const style = cn(styles.burger_ingredients, className);
   const { t } = useTranslation();
 
   return (
-    <div className={style}>
+    <div className={cn(styles.burger_ingredients, className)}>
       <div className="mb-5 text text_type_main-large">
         {t('constructor.constructor')}
       </div>

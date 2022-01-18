@@ -10,10 +10,8 @@ import type { Props } from './types';
 
 export const Tabs = ({ tabs, className = undefined }: Props) => {
   const [current, setCurrent] = useState(tabs[0].key);
-  const style = cn(styles.tabs, className);
-
   return (
-    <div className={style}>
+    <div className={cn(styles.tabs, className)}>
       {tabs.map(({ key, title }) => {
         return (
           <Tab

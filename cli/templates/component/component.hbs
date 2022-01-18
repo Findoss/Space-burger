@@ -14,9 +14,7 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 
 export const {{pascalCase name}} = ({ className = undefined }: Props) => {
-  const style = cn(styles.{{lowerCase name }}, className);
-
-  return <div className={style}>{{snakeCase name}}</div>;
+  return <div className={cn(styles.{{snakeCase name }}, className)}>{{snakeCase name}}</div>;
 };
 
 export const Container{{pascalCase name}} = () => {
