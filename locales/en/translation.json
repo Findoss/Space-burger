@@ -1,0 +1,15 @@
+{
+  "test": "0000",
+  "menu": {
+    "account":"account",
+    "constructorBurgers":"constructorBurgers",
+    "listOrders":"listOrders"
+  },
+  "constructor":{
+    "constructor":"constructor",
+    "bun":"bells",
+    "sauce":"sauces",
+    "main":"filling",
+    "buy":"оформить заказ"
+  }
+}
