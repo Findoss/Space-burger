@@ -1,0 +1,1 @@
+export { IngredientInfo, ContainerIngredientInfo }from './IngredientInfo';
