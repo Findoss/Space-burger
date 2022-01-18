@@ -5,6 +5,8 @@ import { useTranslation } from 'react-i18next';
 import { resolveIngredients } from 'api/Ingredients';
 
 import { Loader } from 'components/Loader';
+import { Modal } from 'components/Modal';
+import { IngredientInfo } from 'components/IngredientInfo';
 import { BurgerIngredients } from 'components/BurgerIngredients';
 import { BurgerConstructor } from 'components/BurgerConstructor';
 import { IngredientList } from 'components/IngredientList';
@@ -29,13 +31,14 @@ const baseLock = new Array(2).fill(null).map(() => ({
 }));
 
 export const Main = ({ className = undefined }: Props) => {
-  const style = cn(styles.main, 'pt-10', className);
   const [ingredientList, setIngredientList] = useState(undefined);
   const [ingredientsConstructor, setIngredientsConstructor] = useState({});
   const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
     useState(baseLock);
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
+
+  const [modalIngredient, setModalIngredient] = useState(false);
 
   const { t } = useTranslation();
 
@@ -60,6 +63,11 @@ export const Main = ({ className = undefined }: Props) => {
       });
   }, []);
 
+  const handlerIndigentClick = (id: string) => {
+    console.log(id);
+    setModalIngredient((old) => !old);
+  };
+
   const lists = [
     {
       key: IngredientsType.bells,
@@ -76,7 +84,7 @@ export const Main = ({ className = undefined }: Props) => {
   ];
 
   return (
-    <div className={style}>
+    <div className={cn(styles.main, 'pt-10', className)}>
       {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
       {!ingredientListLoading ? (
         <>
@@ -86,6 +94,7 @@ export const Main = ({ className = undefined }: Props) => {
                 key={key}
                 title={title}
                 ingredients={selectIngredientsList(ingredientList, key)}
+                onClick={handlerIndigentClick}
               />
             ))}
           </BurgerIngredients>
@@ -103,6 +112,10 @@ export const Main = ({ className = undefined }: Props) => {
       ) : (
         <Loader />
       )}
+
+      {console.log(modalIngredient)}
+
+      <Modal onClick={() => {}}>{54156}</Modal>
     </div>
   );
 };

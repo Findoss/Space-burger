@@ -9,7 +9,7 @@ const customLangDetector = {
   name: 'customDetector',
 
   lookup(options: DetectorOptions): string | string[] | undefined {
-    return 'en';
+    return 'ru';
   },
 
   cacheUserLanguage(lng: string, options: DetectorOptions): void {

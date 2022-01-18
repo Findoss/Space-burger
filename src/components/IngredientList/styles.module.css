@@ -9,7 +9,7 @@
   overflow: auto;
 
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   gap: calc(var(--offset-base-size) * 6);
   flex-wrap: wrap;

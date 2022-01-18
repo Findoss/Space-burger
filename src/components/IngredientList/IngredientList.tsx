@@ -11,6 +11,7 @@ export const IngredientList = ({
   title = '',
   ingredients = [],
   className = undefined,
+  onClick = () => {},
 }: Props) => {
   return (
     <div className={cn(styles.ingredient, className)}>
@@ -33,6 +34,7 @@ export const IngredientList = ({
               name={name}
               price={price}
               image={image}
+              onClick={() => onClick(id)}
             />
           );
         })}

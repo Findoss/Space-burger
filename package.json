@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "author": "Nikita Stroganov",
-  "homepage": "https://findoss.github.io/Space-burger",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

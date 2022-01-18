@@ -17,9 +17,10 @@ export const Ingredient = ({
   image,
   count = 0,
   className = undefined,
+  onClick = () => {},
 }: Props) => {
   return (
-    <div className={cn(styles.ingredient, className)}>
+    <div className={cn(styles.ingredient, className)} onClick={onClick}>
       {count > 0 ? <Counter count={count} /> : null}
       <div className={cn(styles.ingredient_img, 'ml-4 mr-4 mb-1')}>
         <Image src={image} alt="ingredient" />

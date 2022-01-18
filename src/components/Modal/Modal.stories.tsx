@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ModalsWrapper } from '../../../config/storybook/decorator-modals';
 
 import { Modal } from './Modal';
 
@@ -9,20 +10,10 @@ export default {
   parameters: {
     layout: 'fullscreen',
   },
-  decorators: [
-    (Story: any, context: any) => (
-      <div>
-        <div id="root999"></div>
-        {Story(context)}
-      </div>
-    ),
-  ],
+  decorators: [ModalsWrapper],
 } as ComponentMeta<typeof Modal>;
 
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {
-  selector: '#root999',
-  open: true,
-};
+Default.args = {};

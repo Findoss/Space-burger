@@ -1,3 +1,5 @@
+import type { SyntheticEvent } from 'react';
+
 export type Props = {
   id: string;
   price: number;
@@ -5,4 +7,5 @@ export type Props = {
   image: string;
   count?: number;
   className?: string;
+  onClick?: (e: SyntheticEvent) => void;
 };
