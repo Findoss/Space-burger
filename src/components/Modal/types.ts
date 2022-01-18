@@ -3,6 +3,7 @@ import { ReactChild } from 'react';
 export type Props = {
   children?: ReactChild;
   closeBackground?: boolean;
-  onClick?: () => void;
+  closeEscape?: boolean;
+  onClose?: () => void;
   className?: string;
 };

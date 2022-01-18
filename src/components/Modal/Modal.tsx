@@ -7,36 +7,23 @@ import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 import styles from './styles.module.css';
 
-import type { SyntheticEvent } from 'react';
 import type { Props } from './types';
 
 export const Modal = ({
   children = '',
-  onClick = () => {},
+  onClose = () => {},
   closeBackground = true,
+  closeEscape = true,
   className = undefined,
 }: Props) => {
-  // const handlerClose = (e: SyntheticEvent) => {
-  //   e.preventDefault();
-  //   e.stopPropagation();
-
-  //   onClose();
-  // };
-
-  // const handlerBackground = (e: SyntheticEvent) => {
-  //   if (closeBackground) {
-  //     handlerClose(e);
-  //   }
-  // };
+  const handlerCloseBackground = () => {
+    if (closeBackground) {
+      onClose();
+    }
+  };
 
   return (
-    <ModalOverlay
-      onClick={() => {
-        if (closeBackground) {
-          onClick();
-        }
-      }}
-    >
+    <ModalOverlay onClick={handlerCloseBackground} closeEscape={closeEscape}>
       <div
         className={styles.modal_wrapper}
         onClick={(e) => e.stopPropagation()}
@@ -44,7 +31,7 @@ export const Modal = ({
         <div className={cn(styles.modal, 'p-10', className)}>
           <button
             className={cn(styles.close_button, 'mt-15 mr-10')}
-            onClick={onClick}
+            onClick={onClose}
           >
             <CloseIcon type="primary" />
           </button>

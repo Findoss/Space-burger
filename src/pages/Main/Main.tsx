@@ -6,6 +6,7 @@ import { resolveIngredients } from 'api/Ingredients';
 
 import { Loader } from 'components/Loader';
 import { Modal } from 'components/Modal';
+import { Order } from 'components/Order';
 import { IngredientInfo } from 'components/IngredientInfo';
 import { BurgerIngredients } from 'components/BurgerIngredients';
 import { BurgerConstructor } from 'components/BurgerConstructor';
@@ -38,7 +39,7 @@ export const Main = ({ className = undefined }: Props) => {
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
 
-  const [modalIngredient, setModalIngredient] = useState(false);
+  // const [modalIngredient, setModalIngredient] = useState(false);
 
   const { t } = useTranslation();
 
@@ -65,7 +66,7 @@ export const Main = ({ className = undefined }: Props) => {
 
   const handlerIndigentClick = (id: string) => {
     console.log(id);
-    setModalIngredient((old) => !old);
+    // setModalIngredient((old) => !old);
   };
 
   const lists = [
@@ -112,18 +113,34 @@ export const Main = ({ className = undefined }: Props) => {
       ) : (
         <Loader />
       )}
-
-      {console.log(modalIngredient)}
-
-      <Modal onClick={() => {}}>{54156}</Modal>
     </div>
   );
 };
 
 export const PageMain = () => {
+  const [modalOrderVisible, setModalOrderVisible] = useState(true);
+  const closeModalOrder = () => {
+    setModalOrderVisible(false);
+  };
+
+  const [modalIngredientVisible, setModalIngredientVisible] = useState(true);
+  const closeModalIngredient = () => {
+    setModalIngredientVisible(false);
+  };
+
   return (
     <MainLayout>
       <Main />
+      {modalOrderVisible && (
+        <Modal onClose={closeModalOrder}>
+          <Order />
+        </Modal>
+      )}
+      {modalIngredientVisible && (
+        <Modal onClose={closeModalIngredient}>
+          <IngredientInfo />
+        </Modal>
+      )}
     </MainLayout>
   );
 };
