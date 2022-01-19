@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
@@ -8,6 +8,8 @@ import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import styles from './styles.module.css';
 
 import type { Props } from './types';
+
+const modalRoot = document.querySelector('#modals');
 
 export const Modal = ({
   children = '',
@@ -22,8 +24,22 @@ export const Modal = ({
     }
   };
 
-  return (
-    <ModalOverlay onClick={handlerCloseBackground} closeEscape={closeEscape}>
+  useEffect(() => {
+    if (closeEscape) {
+      const close = (e: KeyboardEvent) => {
+        if (e.key === 'Escape') {
+          onClose();
+        }
+      };
+      window.addEventListener('keydown', close);
+      return () => window.removeEventListener('keydown', close);
+    }
+  }, [closeEscape]);
+
+  if (!modalRoot) return null;
+  return createPortal(
+    <>
+      <ModalOverlay onClick={handlerCloseBackground} />
       <div
         className={styles.modal_wrapper}
         onClick={(e) => e.stopPropagation()}
@@ -38,6 +54,7 @@ export const Modal = ({
           {children}
         </div>
       </div>
-    </ModalOverlay>
+    </>,
+    modalRoot,
   );
 };
