@@ -5,7 +5,7 @@ import { PREFIX } from 'constants/index';
 import { routes } from './routes';
 
 const routeComponents = routes.map(({ path, component }, key) => (
-  <Route path={`PREFIX${path}`} element={component} key={key} />
+  <Route path={`${PREFIX}${path}`} element={component} key={key} />
 ));
 
 export const Router = () => {
