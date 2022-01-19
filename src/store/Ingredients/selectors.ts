@@ -49,3 +49,26 @@ export const selectIngredientsConstructLocked = (
   }
   return [];
 };
+
+export const selectIngredientById = (
+  entities: IngredientsEntity,
+  idIngredient: string,
+) => {
+  const ingredients = entities?.entities.ingredients;
+  if (ingredients) {
+    const raw = Object.values(ingredients).find(
+      ({ id }) => id === idIngredient,
+    );
+    return {
+      image: raw?.imageLarge,
+      name: raw?.name,
+      params: {
+        calories: raw?.calories,
+        proteins: raw?.proteins,
+        fat: raw?.fat,
+        carbohydrates: raw?.carbohydrates,
+      },
+    };
+  }
+  return undefined;
+};

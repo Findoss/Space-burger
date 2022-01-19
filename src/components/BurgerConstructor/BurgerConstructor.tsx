@@ -17,6 +17,7 @@ export const BurgerConstructor = ({
   ingredientTop,
   ingredientBottom,
   ingredients = [],
+  clickOrder = () => {},
   className = undefined,
 }: Props) => {
   const { t } = useTranslation();
@@ -41,8 +42,8 @@ export const BurgerConstructor = ({
     });
   }, [ingredients, ingredientTop, ingredientBottom]);
 
-  const textBunTop = t(`ingredients.bun.${BunTypePosition.TOP}`);
-  const textBunBottom = t(`ingredients.bun.${BunTypePosition.BOTTOM}`);
+  const textBunTop = t(`ingredients.bunPosition.${BunTypePosition.TOP}`);
+  const textBunBottom = t(`ingredients.bunPosition.${BunTypePosition.BOTTOM}`);
 
   return (
     <div
@@ -85,7 +86,7 @@ export const BurgerConstructor = ({
           {'  '}
           <CurrencyIcon type="primary" />
         </div>
-        <Button onClick={() => {}}>
+        <Button onClick={clickOrder}>
           <div className={cn(styles.constructor_order_button)}>
             {t('constructor.buy')}
           </div>

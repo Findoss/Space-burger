@@ -13,14 +13,23 @@
     "buy":"оформить заказ"
   },
   "ingredients":{
-    "bun": {
+    "bunPosition": {
       "top":"верх",
       "bottom":"низ"
+    },
+    "params":{
+      "proteins":"Белки, г",
+      "fat":"Жиры, г",
+      "carbohydrates":"Углеводы, г",
+      "calories":"Калории, ккал"
     }
   },
   "orderDetails":{
     "id":"идентификатор заказа",
     "process":"Ваш заказ начали готовить",
     "pleaseWait":"Дождитесь готовности на орбитальной станции"
+  },
+  "ingredientDetails":{
+    "title":"Детали ингредиента"
   }
 }

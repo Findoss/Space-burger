@@ -17,17 +17,19 @@ import { IngredientDetails } from 'components/IngredientDetails';
 import { IngredientsType } from 'enums/Ingredients';
 
 import {
+  selectIngredientById,
   selectIngredientsList,
   selectIngredientsConstruct,
   selectIngredientsConstructLocked,
 } from 'store/Ingredients/selectors';
 
 import type { Props } from './types';
+import type { IngredientsEntity } from 'api/Ingredients/types';
 import type {
   IngredientLock,
   IngredientsMain,
 } from 'components/BurgerConstructor/types';
-import type { IngredientsEntity } from 'api/Ingredients/types';
+import type { Props as IngredientDetailsProps } from 'components/IngredientDetails/types';
 
 import styles from './styles.module.css';
 
@@ -51,8 +53,11 @@ export const Main = ({ className = undefined }: Props) => {
   const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
     useState<IngredientLock[]>(baseLock);
 
-  const [modalOrderVisible, setModalOrderVisible] = useState(true);
-  const [modalIngredientVisible, setModalIngredientVisible] = useState(true);
+  const [modalIngredient, setModalIngredient] =
+    useState<IngredientDetailsProps>({});
+
+  const [modalOrderVisible, setModalOrderVisible] = useState(false);
+  const [modalIngredientVisible, setModalIngredientVisible] = useState(false);
 
   const { t } = useTranslation();
 
@@ -73,6 +78,10 @@ export const Main = ({ className = undefined }: Props) => {
       });
   }, []);
 
+  const handlerClickOrder = () => {
+    setModalOrderVisible(true);
+  };
+
   const handlerCloseModalOrder = () => {
     setModalOrderVisible(false);
   };
@@ -83,7 +92,7 @@ export const Main = ({ className = undefined }: Props) => {
 
   const handlerIndigentClick = (id: string) => {
     setModalIngredientVisible(true);
-    console.log(id);
+    setModalIngredient(selectIngredientById(ingredientList, id) as any);
   };
 
   const lists = [
@@ -121,7 +130,7 @@ export const Main = ({ className = undefined }: Props) => {
               ))}
             </BurgerIngredients>
             <BurgerConstructor
-              className="class"
+              clickOrder={handlerClickOrder}
               ingredientTop={{
                 ...ingredientsConstructorLocked[0],
               }}
@@ -142,7 +151,7 @@ export const Main = ({ className = undefined }: Props) => {
       )}
       {modalIngredientVisible && (
         <Modal onClose={handlerCloseModalIngredient}>
-          <IngredientDetails />
+          <IngredientDetails {...modalIngredient} />
         </Modal>
       )}
     </>
