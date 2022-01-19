@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm run build",
+    "predeploy": "npm version patch && npm run build",
     "deploy": "gh-pages -d ./build --branch preprod",
     "new": "plop --plopfile ./cli/plopfile.mjs",
     "storybook": "start-storybook -p 6006 -c config/storybook",
