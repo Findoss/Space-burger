@@ -4,11 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 import { NavButton } from 'components/NavButton';
-import { Logo } from '@ya.praktikum/react-developer-burger-ui-components';
-
-import { ProfileIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import { BurgerIcon } from '@ya.praktikum/react-developer-burger-ui-components';
-import { ListIcon } from '@ya.praktikum/react-developer-burger-ui-components';
+import {
+  Logo,
+  ProfileIcon,
+  BurgerIcon,
+  ListIcon,
+} from '@ya.praktikum/react-developer-burger-ui-components';
 
 import styles from './styles.module.css';
 

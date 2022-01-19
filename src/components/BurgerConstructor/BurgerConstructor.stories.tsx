@@ -20,7 +20,7 @@ const Template: ComponentStory<typeof BurgerConstructor> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   ingredientTop: mockIngredientTop,
-  ingredientBottom: mockIngredientBottom,
+  ingredientBottom: mockIngredientTop,
   ingredients: mockIngredients,
   className: 'class',
 };

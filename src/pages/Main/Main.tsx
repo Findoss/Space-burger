@@ -22,6 +22,11 @@ import {
 } from 'store/Ingredients/selectors';
 
 import type { Props } from './types';
+import type {
+  IngredientLock,
+  IngredientsMain,
+} from 'components/BurgerConstructor/types';
+import type { IngredientsEntity } from 'api/Ingredients/types';
 
 import styles from './styles.module.css';
 
@@ -32,12 +37,18 @@ const baseLock = new Array(2).fill(null).map(() => ({
 }));
 
 export const Main = ({ className = undefined }: Props) => {
-  const [ingredientList, setIngredientList] = useState(undefined);
-  const [ingredientsConstructor, setIngredientsConstructor] = useState({});
-  const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
-    useState(baseLock);
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
+
+  const [ingredientList, setIngredientList] =
+    useState<IngredientsEntity>(undefined);
+
+  const [ingredientsConstructor, setIngredientsConstructor] = useState<
+    IngredientsMain | undefined
+  >([]);
+
+  const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
+    useState<IngredientLock[]>(baseLock);
 
   // const [modalIngredient, setModalIngredient] = useState(false);
 
@@ -48,13 +59,9 @@ export const Main = ({ className = undefined }: Props) => {
 
     resolveIngredients()
       .then((data) => {
-        if (data !== undefined) {
-          setIngredientList(data as any);
-          setIngredientsConstructor(selectIngredientsConstruct(data) as any);
-          setIngredientsConstructorLocked(
-            selectIngredientsConstructLocked(data) as any,
-          );
-        }
+        setIngredientList(data);
+        setIngredientsConstructor(selectIngredientsConstruct(data));
+        setIngredientsConstructorLocked(selectIngredientsConstructLocked(data));
       })
       .catch((error) => {
         setIngredientListError(error.messages);
@@ -66,7 +73,6 @@ export const Main = ({ className = undefined }: Props) => {
 
   const handlerIndigentClick = (id: string) => {
     console.log(id);
-    // setModalIngredient((old) => !old);
   };
 
   const lists = [
@@ -105,9 +111,10 @@ export const Main = ({ className = undefined }: Props) => {
               ...ingredientsConstructorLocked[0],
             }}
             ingredientBottom={{
-              ...ingredientsConstructorLocked[1],
+              ...ingredientsConstructorLocked[0],
             }}
-            ingredients={ingredientsConstructor as any}
+            ingredients={ingredientsConstructor ?? []}
+            // ingredients={[]}
           />
         </>
       ) : (

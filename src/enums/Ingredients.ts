@@ -3,3 +3,8 @@ export enum IngredientsType {
   filling = 'main',
   sauces = 'sauce',
 }
+
+export enum BunTypePosition {
+  TOP = 'top',
+  BOTTOM = 'bottom',
+}
