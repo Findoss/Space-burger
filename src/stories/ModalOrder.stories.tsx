@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../config/storybook/decorator-modals';
 
 import { Modal } from 'components/Modal';
-import { Order } from 'components/Order';
+import { OrderDetails } from 'components/OrderDetails';
 
 export default {
   title: 'Components/ModalOrderExample',
@@ -18,5 +18,5 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: <Order />,
+  children: <OrderDetails id="123456" />,
 };

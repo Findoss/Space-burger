@@ -24,7 +24,7 @@ export const resolveIngredients: Resolver<
 
     return result;
   } catch (error) {
-    // надо доработать
     console.log(error);
+    throw error;
   }
 };
