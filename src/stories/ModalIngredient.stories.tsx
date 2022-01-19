@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../config/storybook/decorator-modals';
 
 import { Modal } from 'components/Modal';
-import { IngredientInfo } from 'components/IngredientInfo';
+import { IngredientDetails } from 'components/IngredientDetails';
 
 export default {
   title: 'Components/ModalIngredientExample',
@@ -18,5 +18,5 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: <IngredientInfo />,
+  children: <IngredientDetails />,
 };

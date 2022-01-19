@@ -7,7 +7,7 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const IngredientInfo = ({ className = undefined }: Props) => {
+export const IngredientDetails = ({ className = undefined }: Props) => {
   return (
     <div className={cn(styles.ingredient_info, className)}>
       <div className={cn('text text_type_main-large', styles.title)}>

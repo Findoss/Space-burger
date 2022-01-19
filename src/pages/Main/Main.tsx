@@ -7,7 +7,7 @@ import { resolveIngredients } from 'api/Ingredients';
 import { Loader } from 'components/Loader';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
-import { IngredientInfo } from 'components/IngredientInfo';
+import { IngredientDetails } from 'components/IngredientDetails';
 import { BurgerIngredients } from 'components/BurgerIngredients';
 import { BurgerConstructor } from 'components/BurgerConstructor';
 import { IngredientList } from 'components/IngredientList';
@@ -145,7 +145,7 @@ export const PageMain = () => {
       )}
       {modalIngredientVisible && (
         <Modal onClose={closeModalIngredient}>
-          <IngredientInfo />
+          <IngredientDetails />
         </Modal>
       )}
     </MainLayout>
