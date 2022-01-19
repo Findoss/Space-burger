@@ -2,6 +2,12 @@
   max-width: 270px;
   overflow: hidden;
   position: relative;
+  border-radius: 10px;
+}
+
+.ingredient:hover {
+  cursor: grab;
+  background-color: var(--background-element);
 }
 
 .ingredient_img {

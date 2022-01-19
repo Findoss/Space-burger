@@ -40,7 +40,7 @@ export const ContainerBurgerIngredients = () => {
 
   return (
     <BurgerIngredients tabs={tabs}>
-      <div style={{ width: '100%', height: '300px' }}>
+      <div className={cn(styles.loader)}>
         <Loader />
       </div>
     </BurgerIngredients>

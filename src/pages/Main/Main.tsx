@@ -4,14 +4,15 @@ import { useTranslation } from 'react-i18next';
 
 import { resolveIngredients } from 'api/Ingredients';
 
+import { Main as MainLayout } from 'layouts/Main';
+
 import { Loader } from 'components/Loader';
+import { IngredientList } from 'components/IngredientList';
+import { BurgerIngredients } from 'components/BurgerIngredients';
+import { BurgerConstructor } from 'components/BurgerConstructor';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
 import { IngredientDetails } from 'components/IngredientDetails';
-import { BurgerIngredients } from 'components/BurgerIngredients';
-import { BurgerConstructor } from 'components/BurgerConstructor';
-import { IngredientList } from 'components/IngredientList';
-import { Main as MainLayout } from 'layouts/Main';
 
 import { IngredientsType } from 'enums/Ingredients';
 
@@ -50,7 +51,8 @@ export const Main = ({ className = undefined }: Props) => {
   const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
     useState<IngredientLock[]>(baseLock);
 
-  // const [modalIngredient, setModalIngredient] = useState(false);
+  const [modalOrderVisible, setModalOrderVisible] = useState(true);
+  const [modalIngredientVisible, setModalIngredientVisible] = useState(true);
 
   const { t } = useTranslation();
 
@@ -71,7 +73,16 @@ export const Main = ({ className = undefined }: Props) => {
       });
   }, []);
 
+  const handlerCloseModalOrder = () => {
+    setModalOrderVisible(false);
+  };
+
+  const handlerCloseModalIngredient = () => {
+    setModalIngredientVisible(false);
+  };
+
   const handlerIndigentClick = (id: string) => {
+    setModalIngredientVisible(true);
     console.log(id);
   };
 
@@ -91,63 +102,57 @@ export const Main = ({ className = undefined }: Props) => {
   ];
 
   return (
-    <div className={cn(styles.main, 'pt-10', className)}>
-      {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
-      {!ingredientListLoading ? (
-        <>
-          <BurgerIngredients className={styles.burger_ingredients} tabs={lists}>
-            {lists.map(({ key, title }) => (
-              <IngredientList
-                key={key}
-                title={title}
-                ingredients={selectIngredientsList(ingredientList, key)}
-                onClick={handlerIndigentClick}
-              />
-            ))}
-          </BurgerIngredients>
-          <BurgerConstructor
-            className="class"
-            ingredientTop={{
-              ...ingredientsConstructorLocked[0],
-            }}
-            ingredientBottom={{
-              ...ingredientsConstructorLocked[0],
-            }}
-            ingredients={ingredientsConstructor ?? []}
-            // ingredients={[]}
-          />
-        </>
-      ) : (
-        <Loader />
-      )}
-    </div>
-  );
-};
-
-export const PageMain = () => {
-  const [modalOrderVisible, setModalOrderVisible] = useState(true);
-  const closeModalOrder = () => {
-    setModalOrderVisible(false);
-  };
-
-  const [modalIngredientVisible, setModalIngredientVisible] = useState(true);
-  const closeModalIngredient = () => {
-    setModalIngredientVisible(false);
-  };
-
-  return (
-    <MainLayout>
-      <Main />
+    <>
+      <div className={cn(styles.main, 'pt-10', className)}>
+        {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
+        {!ingredientListLoading ? (
+          <>
+            <BurgerIngredients
+              className={styles.burger_ingredients}
+              tabs={lists}
+            >
+              {lists.map(({ key, title }) => (
+                <IngredientList
+                  key={key}
+                  title={title}
+                  ingredients={selectIngredientsList(ingredientList, key)}
+                  onClick={handlerIndigentClick}
+                />
+              ))}
+            </BurgerIngredients>
+            <BurgerConstructor
+              className="class"
+              ingredientTop={{
+                ...ingredientsConstructorLocked[0],
+              }}
+              ingredientBottom={{
+                ...ingredientsConstructorLocked[0],
+              }}
+              ingredients={ingredientsConstructor ?? []}
+            />
+          </>
+        ) : (
+          <Loader />
+        )}
+      </div>
       {modalOrderVisible && (
-        <Modal onClose={closeModalOrder}>
+        <Modal onClose={handlerCloseModalOrder}>
           <OrderDetails id="1234566" />
         </Modal>
       )}
       {modalIngredientVisible && (
-        <Modal onClose={closeModalIngredient}>
+        <Modal onClose={handlerCloseModalIngredient}>
           <IngredientDetails />
         </Modal>
       )}
+    </>
+  );
+};
+
+export const PageMain = () => {
+  return (
+    <MainLayout>
+      <Main />
     </MainLayout>
   );
 };
