@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
+import { PREFIX } from 'constants/index';
 
 import { NavButton } from 'components/NavButton';
 import {
@@ -35,7 +36,7 @@ export const AppHeader = ({ className = undefined }: Props) => {
         </div>
       </div>
       <div className={styles.block}>
-        <Link to="/">
+        <Link to={`${PREFIX}/`}>
           <Logo />
         </Link>
       </div>
