@@ -1,6 +1,6 @@
 {
   "name": "space-burger",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "private": true,
   "author": "Nikita Stroganov",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "predeploy": "npm version patch && npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d ./build --branch preprod",
     "new": "plop --plopfile ./cli/plopfile.mjs",
     "storybook": "start-storybook -p 6006 -c config/storybook",
