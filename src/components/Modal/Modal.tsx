@@ -9,15 +9,16 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-const modalRoot = document.querySelector('#modals');
-
 export const Modal = ({
   children = '',
+  title = '',
   onClose = () => {},
   closeBackground = true,
   closeEscape = true,
   className = undefined,
 }: Props) => {
+  const modalRoot = document.querySelector('#modals');
+
   const handlerCloseBackground = () => {
     if (closeBackground) {
       onClose();
@@ -34,7 +35,7 @@ export const Modal = ({
       window.addEventListener('keydown', close);
       return () => window.removeEventListener('keydown', close);
     }
-  }, [closeEscape]);
+  }, [closeEscape, onClose]);
 
   if (!modalRoot) return null;
   return createPortal(
@@ -45,6 +46,9 @@ export const Modal = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className={cn(styles.modal, 'p-10', className)}>
+          <div className={cn('text text_type_main-large', styles.title)}>
+            {title}
+          </div>
           <button
             className={cn(styles.close_button, 'mt-15 mr-10')}
             onClick={onClose}

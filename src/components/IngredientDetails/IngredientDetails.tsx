@@ -19,9 +19,6 @@ export const IngredientDetails = ({
 
   return (
     <div className={cn(styles.ingredient_info, className)}>
-      <div className={cn('text text_type_main-large', styles.title)}>
-        {t('ingredientDetails.title')}
-      </div>
       <div className={cn(styles.body)}>
         <div className={cn('mb-4', styles.image)}>
           <Image src={image} alt="" />
@@ -50,7 +47,6 @@ export const IngredientDetails = ({
                         IngredientParams[param as IngredientParams]
                       }`,
                     )}
-                    {/* {param} */}
                   </div>
                   <div
                     className={cn(

@@ -25,6 +25,14 @@
   pointer-events: none;
 }
 
+.title {
+  display: flex;
+  align-items: center;
+  height: 64px;
+  text-align: left;
+  width: 100%;
+}
+
 .close_button {
   position: absolute;
   top: 0;
