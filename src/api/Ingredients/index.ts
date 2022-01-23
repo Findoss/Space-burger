@@ -1,6 +1,7 @@
 import { normalize } from 'normalizr';
-import { httpClient } from '../../plugins/axios';
-import { API_URL } from '../../constants/index';
+import { API_URL } from 'constants/index';
+
+import { instanceAxios } from 'plugins/axios';
 
 import { formatIngredients } from './format';
 import { ingredientsSchema } from './entity';
@@ -16,7 +17,7 @@ export const resolveIngredients: Resolver<
 > = async () => {
   try {
     // const raw = mockIngredients;
-    const raw = await httpClient.get<void, IngredientsRaw>(
+    const raw = await instanceAxios.get<void, IngredientsRaw>(
       `${API_URL}/ingredients`,
     );
     const formatted = formatIngredients(raw);
