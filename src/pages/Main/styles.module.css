@@ -1,0 +1,12 @@
+.main {
+  max-width: calc(640px + 640px);
+  max-height: calc(100vh - 40px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: calc(var(--offset-base-size) * 10);
+}
+
+.burger_ingredients {
+}

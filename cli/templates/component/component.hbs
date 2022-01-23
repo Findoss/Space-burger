@@ -1,0 +1,34 @@
+import React from 'react';
+import cn from 'classnames';
+
+{{#if isStore}}
+import { useSelector, useDispatch } from 'react-redux';
+{{/if}}
+
+{{#if isPage}}
+import { Main } from 'layouts/Main';
+{{/if}}
+
+import styles from './styles.module.css';
+
+import type { Props } from './types';
+
+export const {{pascalCase name}} = ({ className = undefined }: Props) => {
+  return <div className={cn(styles.{{snakeCase name }}, className)}>{{snakeCase name}}</div>;
+};
+
+export const Container{{pascalCase name}} = () => {
+  {{#if isStore}}
+  const dispatch = useDispatch();
+  const {} = useSelector();
+  {{/if}}
+  {{#if isPage}}
+  return (
+    <Main>
+      <{{pascalCase name}}></{{pascalCase name}}>
+    </Main>
+  )
+  {{else}}
+  return <{{pascalCase name}}></{{pascalCase name}}>;
+  {{/if}}
+};

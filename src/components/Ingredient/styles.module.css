@@ -1,0 +1,28 @@
+.ingredient {
+  max-width: 270px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+}
+
+.ingredient:hover {
+  cursor: grab;
+  background-color: var(--background-element);
+}
+
+.ingredient_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredient_price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ingredient_title {
+  text-align: center;
+  word-wrap: break-word;
+}

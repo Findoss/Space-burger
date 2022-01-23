@@ -1,0 +1,8 @@
+.tabs {
+  display: flex;
+  text-transform: capitalize;
+}
+
+.tabs div {
+  width: 100%;
+}

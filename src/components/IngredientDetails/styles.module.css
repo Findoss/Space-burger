@@ -1,0 +1,30 @@
+.ingredient_info {
+}
+
+.body {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 520px;
+}
+
+.name {
+  text-align: center;
+  width: 100%;
+}
+
+.param_list {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: calc(var(--offset-base-size) * 5);
+}
+
+.param_item_key {
+}
+
+.param_item_value {
+  text-align: center;
+}

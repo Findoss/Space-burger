@@ -1,0 +1,27 @@
+.burger_constructor {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--offset-base-size) * 4);
+
+  max-width: 570px;
+}
+
+.constructor_main {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--offset-base-size) * 4);
+  overflow: auto;
+  padding-right: 8px;
+
+  max-height: 500px;
+}
+
+.constructor_price {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+}
+
+.constructor_order_button::first-letter {
+  text-transform: uppercase;
+}

@@ -1,0 +1,35 @@
+{
+  "test": "0000",
+  "menu": {
+    "account":"Личный Кабинет",
+    "constructorBurgers":"Конструктор",
+    "listOrders":"Лента заказов"
+  },
+  "constructor":{
+    "constructor":"Соберите бургер",
+    "bun":"булки",
+    "sauce":"соусы",
+    "main":"начинки",
+    "buy":"оформить заказ"
+  },
+  "ingredients":{
+    "bunPosition": {
+      "top":"верх",
+      "bottom":"низ"
+    },
+    "params":{
+      "proteins":"Белки, г",
+      "fat":"Жиры, г",
+      "carbohydrates":"Углеводы, г",
+      "calories":"Калории, ккал"
+    }
+  },
+  "orderDetails":{
+    "id":"идентификатор заказа",
+    "process":"Ваш заказ начали готовить",
+    "pleaseWait":"Дождитесь готовности на орбитальной станции"
+  },
+  "ingredientDetails":{
+    "title":"Детали ингредиента"
+  }
+}
