@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Space-burger/static/css/main.db8e48de.css",
-    "main.js": "/Space-burger/static/js/main.eb546181.js",
+    "main.js": "/Space-burger/static/js/main.fb422699.js",
     "static/media/JetBrainsMono-Bold.woff": "/Space-burger/static/media/JetBrainsMono-Bold.3914674f1cb2335acf26.woff",
     "static/media/JetBrainsMono-Regular.woff": "/Space-burger/static/media/JetBrainsMono-Regular.f52bee61d00ce995b89f.woff",
     "static/media/JetBrainsMono-Bold.woff2": "/Space-burger/static/media/JetBrainsMono-Bold.c232d532ea5a5189a278.woff2",
@@ -12,10 +12,10 @@
     "index.html": "/Space-burger/index.html",
     "static/media/getFetch.cjs": "/Space-burger/static/media/getFetch.c780682470504fffbd04.cjs",
     "main.db8e48de.css.map": "/Space-burger/static/css/main.db8e48de.css.map",
-    "main.eb546181.js.map": "/Space-burger/static/js/main.eb546181.js.map"
+    "main.fb422699.js.map": "/Space-burger/static/js/main.fb422699.js.map"
   },
   "entrypoints": [
     "static/css/main.db8e48de.css",
-    "static/js/main.eb546181.js"
+    "static/js/main.fb422699.js"
   ]
 }
