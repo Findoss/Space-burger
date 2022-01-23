@@ -15,5 +15,5 @@ const Template: ComponentStory<typeof OrderDetails> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   id: '12345600',
-  className: 'class',
+  extraClass: 'class',
 };

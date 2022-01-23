@@ -10,11 +10,11 @@ import type { Props } from './types';
 export const IngredientList = ({
   title = '',
   ingredients = [],
-  className = undefined,
+  extraClass = undefined,
   onClick = () => {},
 }: Props) => {
   return (
-    <div className={cn(styles.ingredient, className)}>
+    <div className={cn(styles.ingredient, extraClass)}>
       <h2 className={cn(styles.ingredient_title, 'text text_type_main-medium')}>
         {title}
       </h2>
@@ -27,7 +27,7 @@ export const IngredientList = ({
         {ingredients.map(({ id, name, price, image, count }) => {
           return (
             <Ingredient
-              className={styles.ingredient_item}
+              extraClass={styles.ingredient_item}
               count={count}
               id={id}
               key={id}

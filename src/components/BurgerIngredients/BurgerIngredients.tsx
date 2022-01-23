@@ -13,12 +13,12 @@ import type { Props } from './types';
 export const BurgerIngredients = ({
   tabs,
   children,
-  className = undefined,
+  extraClass = undefined,
 }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.burger_ingredients, className)}>
+    <div className={cn(styles.burger_ingredients, extraClass)}>
       <div className="mb-5 text text_type_main-large">
         {t('constructor.constructor')}
       </div>

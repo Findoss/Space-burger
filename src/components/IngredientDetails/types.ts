@@ -7,5 +7,5 @@ export type Props = {
     carbohydrates: number;
     calories: number;
   };
-  className?: string;
+  extraClass?: string;
 };

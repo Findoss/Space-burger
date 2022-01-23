@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof AppHeader> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'class',
+  extraClass: 'class',
 };

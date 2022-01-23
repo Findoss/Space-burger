@@ -16,11 +16,11 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const AppHeader = ({ className = undefined }: Props) => {
+export const AppHeader = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.header, 'p-4', className)}>
+    <div className={cn(styles.header, 'p-4', extraClass)}>
       <div className={cn(styles.block, 'pr-5 pl-5')}>
         <div className={styles.menu}>
           <NavButton

@@ -7,5 +7,5 @@ export type TabProps = {
 
 export type Props = {
   tabs: TabProps[];
-  className?: string;
+  extraClass?: string;
 };

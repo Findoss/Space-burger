@@ -117,7 +117,7 @@ export const Main = ({ className = undefined }: Props) => {
         {!ingredientListLoading ? (
           <>
             <BurgerIngredients
-              className={styles.burger_ingredients}
+              extraClass={styles.burger_ingredients}
               tabs={lists}
             >
               {lists.map(({ key, title }) => (

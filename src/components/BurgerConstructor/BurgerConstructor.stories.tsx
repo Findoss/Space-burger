@@ -22,5 +22,5 @@ Default.args = {
   ingredientTop: mockIngredientTop,
   ingredientBottom: mockIngredientTop,
   ingredients: mockIngredients,
-  className: 'class',
+  extraClass: 'class',
 };

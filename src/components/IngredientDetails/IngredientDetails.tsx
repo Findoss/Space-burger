@@ -13,12 +13,12 @@ export const IngredientDetails = ({
   image = '',
   name = '',
   params = undefined,
-  className = undefined,
+  extraClass = undefined,
 }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.ingredient_info, className)}>
+    <div className={cn(styles.ingredient_info, extraClass)}>
       <div className={cn(styles.body)}>
         <div className={cn('mb-4', styles.image)}>
           <Image src={image} alt="" />

@@ -13,8 +13,8 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const {{pascalCase name}} = ({ className = undefined }: Props) => {
-  return <div className={cn(styles.{{snakeCase name }}, className)}>{{snakeCase name}}</div>;
+export const {{pascalCase name}} = ({ extraClass = undefined }: Props) => {
+  return <div className={cn(styles.{{snakeCase name }}, extraClass)}>{{snakeCase name}}</div>;
 };
 
 export const Container{{pascalCase name}} = () => {

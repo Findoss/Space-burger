@@ -7,11 +7,11 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const OrderDetails = ({ id, className = undefined }: Props) => {
+export const OrderDetails = ({ id, extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.order, className)}>
+    <div className={cn(styles.order, extraClass)}>
       <div className={cn('text text_type_digits-large mb-8', styles.id)}>
         {id}
       </div>

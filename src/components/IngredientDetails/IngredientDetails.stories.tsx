@@ -15,6 +15,6 @@ const Template: ComponentStory<typeof IngredientDetails> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'class',
+  extraClass: 'class',
   ...mockIngredientDetails,
 };
