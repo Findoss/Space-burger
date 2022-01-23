@@ -5,6 +5,8 @@ import { ModalsWrapper } from '../../config/storybook/decorator-modals';
 import { Modal } from 'components/Modal';
 import { IngredientDetails } from 'components/IngredientDetails';
 
+import { mockIngredientDetails } from 'components/IngredientDetails/__mocks__/IngredientDetails';
+
 export default {
   title: 'Components/ModalIngredientExample',
   component: Modal,
@@ -18,5 +20,6 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: <IngredientDetails />,
+  title: 'Подробности',
+  children: <IngredientDetails {...mockIngredientDetails} />,
 };

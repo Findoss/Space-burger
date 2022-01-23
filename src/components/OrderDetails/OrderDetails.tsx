@@ -12,7 +12,7 @@ export const OrderDetails = ({ id, className = undefined }: Props) => {
 
   return (
     <div className={cn(styles.order, className)}>
-      <div className={cn('text text_type_digits-large mt-20 mb-8', styles.id)}>
+      <div className={cn('text text_type_digits-large mb-8', styles.id)}>
         {id}
       </div>
       <div className={cn('text text_type_main-medium mb-15')}>

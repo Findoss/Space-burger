@@ -150,7 +150,10 @@ export const Main = ({ className = undefined }: Props) => {
         </Modal>
       )}
       {modalIngredientVisible && (
-        <Modal onClose={handlerCloseModalIngredient}>
+        <Modal
+          title={t('ingredientDetails.title')}
+          onClose={handlerCloseModalIngredient}
+        >
           <IngredientDetails {...modalIngredient} />
         </Modal>
       )}

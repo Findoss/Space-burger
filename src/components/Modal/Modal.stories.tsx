@@ -16,4 +16,6 @@ export default {
 const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  title: 'title',
+};
