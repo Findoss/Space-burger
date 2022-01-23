@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Space-burger/static/css/main.db8e48de.css",
-    "main.js": "/Space-burger/static/js/main.fb422699.js",
+    "main.css": "/Space-burger/static/css/main.5aa87df4.css",
+    "main.js": "/Space-burger/static/js/main.5dd2d5b6.js",
     "static/media/JetBrainsMono-Bold.woff": "/Space-burger/static/media/JetBrainsMono-Bold.3914674f1cb2335acf26.woff",
     "static/media/JetBrainsMono-Regular.woff": "/Space-burger/static/media/JetBrainsMono-Regular.f52bee61d00ce995b89f.woff",
     "static/media/JetBrainsMono-Bold.woff2": "/Space-burger/static/media/JetBrainsMono-Bold.c232d532ea5a5189a278.woff2",
@@ -11,11 +11,11 @@
     "static/media/done.svg": "/Space-burger/static/media/done.6d4020a51e6d258e72a1298282fd63a7.svg",
     "index.html": "/Space-burger/index.html",
     "static/media/getFetch.cjs": "/Space-burger/static/media/getFetch.c780682470504fffbd04.cjs",
-    "main.db8e48de.css.map": "/Space-burger/static/css/main.db8e48de.css.map",
-    "main.fb422699.js.map": "/Space-burger/static/js/main.fb422699.js.map"
+    "main.5aa87df4.css.map": "/Space-burger/static/css/main.5aa87df4.css.map",
+    "main.5dd2d5b6.js.map": "/Space-burger/static/js/main.5dd2d5b6.js.map"
   },
   "entrypoints": [
-    "static/css/main.db8e48de.css",
-    "static/js/main.fb422699.js"
+    "static/css/main.5aa87df4.css",
+    "static/js/main.5dd2d5b6.js"
   ]
 }
