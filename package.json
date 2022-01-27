@@ -12,7 +12,8 @@
     "deploy": "gh-pages -d ./build --branch preprod",
     "new": "plop --plopfile ./cli/plopfile.mjs",
     "storybook": "start-storybook -p 6006 -c config/storybook",
-    "build-storybook": "build-storybook -c config/storybook"
+    "build-storybook": "build-storybook -c config/storybook",
+    "tree": "sh cli/docs/tree.sh"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.7.1",
