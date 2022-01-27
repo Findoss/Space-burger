@@ -2,22 +2,17 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Image } from 'components/Image';
-import { IngredientParam } from 'components/IngredientParam';
-import { IngredientParams } from 'enums/Ingredients';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
-import { useTranslation } from 'react-i18next';
 
 export const IngredientDetails = ({
   image = '',
   name = '',
-  params = undefined,
+  children = null,
   extraClass = undefined,
 }: Props) => {
-  const { t } = useTranslation();
-
   return (
     <div className={cn(styles.ingredient_info, extraClass)}>
       <div className={cn(styles.body)}>
@@ -33,22 +28,7 @@ export const IngredientDetails = ({
             styles.param_list,
           )}
         >
-          {params &&
-            Object.entries(params).map(([param, value]) => {
-              const title = t(
-                `ingredients.params.${
-                  IngredientParams[param as IngredientParams]
-                }`,
-              );
-
-              return (
-                <IngredientParam
-                  key={param}
-                  title={title}
-                  value={String(value)}
-                />
-              );
-            })}
+          {children}
         </div>
       </div>
     </div>

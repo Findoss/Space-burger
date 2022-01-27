@@ -1,5 +1,5 @@
 export type Props = {
-  value?: string;
+  value?: string | number;
   title?: string;
   extraClass?: string;
 };

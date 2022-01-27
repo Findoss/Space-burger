@@ -12,7 +12,7 @@ import { BurgerIngredients } from 'components/BurgerIngredients';
 import { BurgerConstructor } from 'features/BurgerConstructor';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
-import { IngredientDetails } from 'features/IngredientDetails';
+import { IngredientDetails } from 'components/IngredientDetails';
 
 import { IngredientsType } from 'enums/Ingredients';
 
@@ -29,7 +29,7 @@ import type {
   IngredientLock,
   IngredientsMain,
 } from 'features/BurgerConstructor/types';
-import type { Props as IngredientDetailsProps } from 'features/IngredientDetails/types';
+import type { Props as IngredientDetailsProps } from 'features/ContainerIngredientDetails/types';
 
 import styles from './styles.module.css';
 
@@ -39,7 +39,7 @@ const baseLock = new Array(2).fill(null).map(() => ({
   thumbnail: '',
 }));
 
-export const Main = ({ className = undefined }: Props) => {
+export const Main = ({ extraClass = undefined }: Props) => {
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
 
@@ -113,7 +113,7 @@ export const Main = ({ className = undefined }: Props) => {
 
   return (
     <>
-      <div className={cn(styles.main, 'pt-10', className)}>
+      <div className={cn(styles.main, 'pt-10', extraClass)}>
         {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
         {!ingredientListLoading ? (
           <>

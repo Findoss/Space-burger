@@ -3,9 +3,13 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../config/storybook/decorator-modals';
 
 import { Modal } from 'components/Modal';
-import { IngredientDetails } from 'features/IngredientDetails';
+import { IngredientDetails } from 'components/IngredientDetails';
+import { IngredientParam } from 'components/IngredientParam';
 
-import { mockIngredientDetails } from 'features/IngredientDetails/__mocks__/IngredientDetails';
+import {
+  mockIngredientDetails,
+  mockIngredientParams,
+} from 'components/IngredientDetails/__mocks__/IngredientDetails';
 
 export default {
   title: 'Combo/ModalIngredientExample',
@@ -21,5 +25,11 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   title: 'Подробности',
-  children: <IngredientDetails {...mockIngredientDetails} />,
+  children: (
+    <IngredientDetails {...mockIngredientDetails}>
+      {Object.entries(mockIngredientParams).map(([k, v]) => (
+        <IngredientParam key={k} title={k} value={v} />
+      ))}
+    </IngredientDetails>
+  ),
 };
