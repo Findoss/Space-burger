@@ -41,7 +41,13 @@ export const IngredientDetails = ({
                 }`,
               );
 
-              return <IngredientParam title={title} value={String(value)} />;
+              return (
+                <IngredientParam
+                  key={param}
+                  title={title}
+                  value={String(value)}
+                />
+              );
             })}
         </div>
       </div>

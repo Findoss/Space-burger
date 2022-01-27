@@ -2,12 +2,14 @@ import { Reducer } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
 
 import { RESET_STATE_ACTION_TYPE } from './global/actions/resetState';
-import { INGREDIENT_API_REDUCER_KEY, ingredientApi } from 'api/Ingredients/api';
+
+import { serviceReducers } from './services';
 
 import type { RootState } from './store';
 
 const reducers = {
-  [INGREDIENT_API_REDUCER_KEY]: ingredientApi.reducer,
+  // [INGREDIENT_API_REDUCER_KEY]: ingredientApi.reducer,
+  ...serviceReducers,
 };
 
 export const combinedReducer = combineReducers<typeof reducers>(reducers);
