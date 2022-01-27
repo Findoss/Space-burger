@@ -6,7 +6,7 @@ import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
 
 export default {
-  title: 'Components/ModalOrderExample',
+  title: 'Combo/ModalOrderExample',
   component: Modal,
   parameters: {
     layout: 'fullscreen',
@@ -18,5 +18,14 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  children: <OrderDetails id="123456" />,
+  children: (
+    <OrderDetails
+      id="123456"
+      content={{
+        id: 'string',
+        process: 'string',
+        pleaseWait: 'string',
+      }}
+    />
+  ),
 };

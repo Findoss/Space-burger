@@ -1,4 +1,9 @@
 export type Props = {
-  id: string;
+  id?: string;
+  content?: {
+    id?: string;
+    process?: string;
+    pleaseWait?: string;
+  };
   extraClass?: string;
 };

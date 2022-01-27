@@ -3,12 +3,12 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../config/storybook/decorator-modals';
 
 import { Modal } from 'components/Modal';
-import { IngredientDetails } from 'components/IngredientDetails';
+import { IngredientDetails } from 'features/IngredientDetails';
 
-import { mockIngredientDetails } from 'components/IngredientDetails/__mocks__/IngredientDetails';
+import { mockIngredientDetails } from 'features/IngredientDetails/__mocks__/IngredientDetails';
 
 export default {
-  title: 'Components/ModalIngredientExample',
+  title: 'Combo/ModalIngredientExample',
   component: Modal,
   parameters: {
     layout: 'fullscreen',

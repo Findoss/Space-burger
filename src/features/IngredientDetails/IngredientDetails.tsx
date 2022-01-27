@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Image } from 'components/Image';
+import { IngredientParam } from 'components/IngredientParam';
 import { IngredientParams } from 'enums/Ingredients';
 
 import styles from './styles.module.css';
@@ -34,30 +35,13 @@ export const IngredientDetails = ({
         >
           {params &&
             Object.entries(params).map(([param, value]) => {
-              return (
-                <div key={param} className={cn(styles.param_item)}>
-                  <div
-                    className={cn(
-                      'text_type_main-default mb-2',
-                      styles.param_item_key,
-                    )}
-                  >
-                    {t(
-                      `ingredients.params.${
-                        IngredientParams[param as IngredientParams]
-                      }`,
-                    )}
-                  </div>
-                  <div
-                    className={cn(
-                      'text_type_digits-default',
-                      styles.param_item_value,
-                    )}
-                  >
-                    {String(value)}
-                  </div>
-                </div>
+              const title = t(
+                `ingredients.params.${
+                  IngredientParams[param as IngredientParams]
+                }`,
               );
+
+              return <IngredientParam title={title} value={String(value)} />;
             })}
         </div>
       </div>

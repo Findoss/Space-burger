@@ -5,7 +5,7 @@ import { IngredientDetails } from './IngredientDetails';
 import { mockIngredientDetails } from './__mocks__/IngredientDetails';
 
 export default {
-  title: 'Components/IngredientDetails',
+  title: 'Features/IngredientDetails',
   component: IngredientDetails,
 } as ComponentMeta<typeof IngredientDetails>;
 

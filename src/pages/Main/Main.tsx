@@ -9,10 +9,10 @@ import { Main as MainLayout } from 'layouts/Main';
 import { Loader } from 'components/Loader';
 import { IngredientList } from 'components/IngredientList';
 import { BurgerIngredients } from 'components/BurgerIngredients';
-import { BurgerConstructor } from 'components/BurgerConstructor';
+import { BurgerConstructor } from 'features/BurgerConstructor';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
-import { IngredientDetails } from 'components/IngredientDetails';
+import { IngredientDetails } from 'features/IngredientDetails';
 
 import { IngredientsType } from 'enums/Ingredients';
 
@@ -28,8 +28,8 @@ import type { IngredientsEntity } from 'api/Ingredients/types';
 import type {
   IngredientLock,
   IngredientsMain,
-} from 'components/BurgerConstructor/types';
-import type { Props as IngredientDetailsProps } from 'components/IngredientDetails/types';
+} from 'features/BurgerConstructor/types';
+import type { Props as IngredientDetailsProps } from 'features/IngredientDetails/types';
 
 import styles from './styles.module.css';
 
@@ -117,8 +117,9 @@ export const Main = ({ className = undefined }: Props) => {
         {!ingredientListLoading ? (
           <>
             <BurgerIngredients
-              extraClass={styles.burger_ingredients}
+              title="1321321321"
               tabs={lists}
+              extraClass={styles.burger_ingredients}
             >
               {lists.map(({ key, title }) => (
                 <IngredientList

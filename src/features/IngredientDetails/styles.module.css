@@ -21,10 +21,3 @@
   width: 100%;
   gap: calc(var(--offset-base-size) * 5);
 }
-
-.param_item_key {
-}
-
-.param_item_value {
-  text-align: center;
-}
