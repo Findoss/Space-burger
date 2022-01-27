@@ -21,7 +21,7 @@ export const resolveIngredients: Resolver<
       `${API_URL}/ingredients`,
     );
     const formatted = formatIngredients(raw);
-    const result = normalize(formatted, ingredientsSchema);
+    const result = normalize(formatted, ingredientsSchema) as IngredientsEntity;
 
     return result;
   } catch (error) {

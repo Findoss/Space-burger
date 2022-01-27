@@ -43,8 +43,9 @@ export const Main = ({ className = undefined }: Props) => {
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
 
-  const [ingredientList, setIngredientList] =
-    useState<IngredientsEntity>(undefined);
+  const [ingredientList, setIngredientList] = useState<IngredientsEntity>(
+    undefined as any,
+  );
 
   const [ingredientsConstructor, setIngredientsConstructor] = useState<
     IngredientsMain | undefined
