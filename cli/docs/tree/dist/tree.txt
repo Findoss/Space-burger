@@ -1,0 +1,283 @@
+.
+├── cli
+│   ├── docs
+│   │   └── tree
+│   │       ├── dist
+│   │       │   ├── tree.json
+│   │       │   └── tree.txt
+│   │       ├── descr.js
+│   │       ├── index.js
+│   │       └── tree.sh
+│   └── generator
+│       ├── templates
+│       │   ├── api
+│       │   │   ├── entity.hbs
+│       │   │   ├── format.hbs
+│       │   │   ├── index.hbs
+│       │   │   ├── mock.hbs
+│       │   │   └── types.hbs
+│       │   ├── component
+│       │   │   ├── component.hbs
+│       │   │   ├── index.hbs
+│       │   │   ├── stories.hbs
+│       │   │   ├── styles.hbs
+│       │   │   ├── test.hbs
+│       │   │   └── types.hbs
+│       │   └── store
+│       │       └── slice.hbs
+│       ├── plopfile.mjs
+│       └── README.md
+├── config
+│   └── storybook
+│       ├── decorator-i18n.tsx
+│       ├── decorator-modals.tsx
+│       ├── decorator-router.tsx
+│       ├── main.ts
+│       └── preview.ts
+├── docs
+│   ├── sprint-1-2.md
+│   ├── sprint-2-2.md
+│   └── tree.html
+├── .github
+│   └── workflows
+│       └── main.yml
+├── public
+│   ├── locales
+│   │   ├── en
+│   │   │   └── translation.json
+│   │   └── ru
+│   │       └── translation.json
+│   ├── static
+│   │   ├── favicon.ico
+│   │   ├── logo192.png
+│   │   └── logo512.png
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── reports
+├── src
+│   ├── api
+│   │   ├── Ingredients
+│   │   │   ├── __mocks__
+│   │   │   │   └── Ingredients.json
+│   │   │   ├── api.ts
+│   │   │   ├── entity.ts
+│   │   │   ├── format.ts
+│   │   │   ├── index.ts
+│   │   │   └── types.ts
+│   │   └── types.ts
+│   ├── assets
+│   │   ├── fonts
+│   │   └── images
+│   │       └── icons
+│   │           └── done.svg
+│   ├── components
+│   │   ├── App
+│   │   │   ├── App.tsx
+│   │   │   └── index.ts
+│   │   ├── AppHeader
+│   │   │   ├── __tests__
+│   │   │   │   └── AppHeader.test.ts
+│   │   │   ├── AppHeader.stories.tsx
+│   │   │   ├── AppHeader.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── BurgerConstructor
+│   │   │   ├── __mocks__
+│   │   │   │   └── BurgerConstructor.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── BurgerConstructor.test.ts
+│   │   │   ├── BurgerConstructor.stories.tsx
+│   │   │   ├── BurgerConstructor.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── BurgerConstructorItem
+│   │   │   ├── __mocks__
+│   │   │   │   └── BurgerConstructorItem.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── BurgerConstructorItem.test.ts
+│   │   │   ├── BurgerConstructorItem.stories.tsx
+│   │   │   ├── BurgerConstructorItem.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── BurgerIngredients
+│   │   │   ├── __tests__
+│   │   │   │   └── BurgerIngredients.test.ts
+│   │   │   ├── BurgerIngredients.stories.tsx
+│   │   │   ├── BurgerIngredients.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── Image
+│   │   │   ├── __tests__
+│   │   │   │   └── Image.test.ts
+│   │   │   ├── Image.stories.tsx
+│   │   │   ├── Image.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── Ingredient
+│   │   │   ├── __tests__
+│   │   │   │   └── Ingredient.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── Ingredient.stories.tsx
+│   │   │   ├── Ingredient.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── IngredientDetails
+│   │   │   ├── __mocks__
+│   │   │   │   └── IngredientDetails.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── IngredientInfo.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── IngredientDetails.stories.tsx
+│   │   │   ├── IngredientDetails.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── IngredientList
+│   │   │   ├── __mocks__
+│   │   │   │   └── IngredientList.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── IngredientList.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── IngredientList.stories.tsx
+│   │   │   ├── IngredientList.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── Loader
+│   │   │   ├── __tests__
+│   │   │   │   └── Loader.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── Loader.stories.tsx
+│   │   │   ├── Loader.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── Modal
+│   │   │   ├── __tests__
+│   │   │   │   └── Modal.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── Modal.stories.tsx
+│   │   │   ├── Modal.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── ModalOverlay
+│   │   │   ├── __tests__
+│   │   │   │   └── ModalOverlay.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── ModalOverlay.stories.tsx
+│   │   │   ├── ModalOverlay.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── NavButton
+│   │   │   ├── __tests__
+│   │   │   │   └── NavButton.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── NavButton.stories.tsx
+│   │   │   ├── NavButton.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── NewComponent
+│   │   │   └── __tests__
+│   │   ├── OrderDetails
+│   │   │   ├── __tests__
+│   │   │   │   └── Order.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── OrderDetails.stories.tsx
+│   │   │   ├── OrderDetails.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   └── Tabs
+│   │       ├── __mocks__
+│   │       │   └── Tabs.ts
+│   │       ├── __tests__
+│   │       │   └── Tabs.test.ts
+│   │       ├── index.ts
+│   │       ├── styles.module.css
+│   │       ├── Tabs.stories.tsx
+│   │       ├── Tabs.tsx
+│   │       └── types.ts
+│   ├── constants
+│   │   └── index.ts
+│   ├── content
+│   ├── enums
+│   │   └── Ingredients.ts
+│   ├── forms
+│   ├── hooks
+│   │   └── redux.ts
+│   ├── layouts
+│   │   └── Main
+│   │       ├── index.ts
+│   │       ├── Main.tsx
+│   │       └── types.ts
+│   ├── pages
+│   │   └── Main
+│   │       ├── __tests__
+│   │       │   └── Main.test.ts
+│   │       ├── index.ts
+│   │       ├── Main.stories.tsx
+│   │       ├── Main.tsx
+│   │       ├── styles.module.css
+│   │       └── types.ts
+│   ├── plugins
+│   │   ├── axios
+│   │   │   └── index.ts
+│   │   ├── i18n
+│   │   │   ├── i18n.ts
+│   │   │   └── langDetector.ts
+│   │   └── webVitals
+│   │       └── reportWebVitals.ts
+│   ├── router
+│   │   ├── index.tsx
+│   │   ├── routes.tsx
+│   │   └── types.ts
+│   ├── store
+│   │   ├── global
+│   │   │   ├── actions
+│   │   │   │   └── resetState.ts
+│   │   │   └── middleware
+│   │   │       └── unauthenticatedMiddleware.ts
+│   │   ├── Ingredients
+│   │   │   ├── query.ts
+│   │   │   ├── selectors.ts
+│   │   │   ├── slice.ts
+│   │   │   ├── state.ts
+│   │   │   └── types.ts
+│   │   ├── middleware.ts
+│   │   ├── reducer.ts
+│   │   └── store.ts
+│   ├── stories
+│   │   ├── Button.stories.tsx
+│   │   ├── Counter.stories.tsx
+│   │   ├── ModalIngredient.stories.tsx
+│   │   ├── ModalOrder.stories.tsx
+│   │   └── Tab.stories.tsx
+│   ├── styles
+│   │   ├── fonts.css
+│   │   ├── index.css
+│   │   ├── typography.css
+│   │   └── vars.css
+│   ├── types
+│   ├── utils
+│   ├── index.tsx
+│   ├── react-app-env.d.ts
+│   └── setupTests.ts
+├── .browserslistrc
+├── .editorconfig
+├── .env
+├── .env.production
+├── .eslintrc
+├── .gitattributes
+├── .gitignore
+├── .npmrc
+├── .nvmrc
+├── package.json
+├── package-lock.json
+├── .prettierignore
+├── .prettierrc
+├── README.md
+└── tsconfig.json
+
+89 directories, 191 files
