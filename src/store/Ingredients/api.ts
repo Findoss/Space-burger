@@ -2,7 +2,7 @@ import { createApi } from '@reduxjs/toolkit/query/react';
 import { httpClient } from 'plugins/axios';
 import { API_URL } from 'constants/index';
 
-import type { IngredientsRaw } from './types';
+import type { IngredientsRaw } from '../../api/Ingredients/types';
 
 export const INGREDIENT_API_REDUCER_KEY = 'ingredientApi';
 export const ingredientApi = createApi({

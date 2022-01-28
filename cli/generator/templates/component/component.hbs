@@ -16,19 +16,3 @@ import type { Props } from './types';
 export const {{pascalCase name}} = ({ extraClass = undefined }: Props) => {
   return <div className={cn(styles.{{snakeCase name }}, extraClass)}>{{snakeCase name}}</div>;
 };
-
-export const Container{{pascalCase name}} = () => {
-  {{#if isStore}}
-  const dispatch = useDispatch();
-  const {} = useSelector();
-  {{/if}}
-  {{#if isPage}}
-  return (
-    <Main>
-      <{{pascalCase name}}></{{pascalCase name}}>
-    </Main>
-  )
-  {{else}}
-  return <{{pascalCase name}}></{{pascalCase name}}>;
-  {{/if}}
-};

@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AppHeader } from './AppHeader';
 
 export default {
-  title: 'Components/AppHeader',
+  title: 'Features/AppHeader',
   component: AppHeader,
 } as ComponentMeta<typeof AppHeader>;
 

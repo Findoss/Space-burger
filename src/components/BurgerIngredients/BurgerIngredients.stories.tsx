@@ -19,6 +19,7 @@ const Template: ComponentStory<typeof BurgerIngredients> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   extraClass: 'class',
+  title: 'title',
   tabs: [
     { key: '1', title: 'bells' },
     { key: '2', title: 'sauces' },
@@ -34,6 +35,7 @@ Default.args = {
 export const List = Template.bind({});
 List.args = {
   extraClass: 'class',
+  title: 'title',
   tabs: [
     { key: '1', title: 'bells' },
     { key: '2', title: 'sauces' },

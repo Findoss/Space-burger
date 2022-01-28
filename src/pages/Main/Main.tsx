@@ -9,7 +9,7 @@ import { Main as MainLayout } from 'layouts/Main';
 import { Loader } from 'components/Loader';
 import { IngredientList } from 'components/IngredientList';
 import { BurgerIngredients } from 'components/BurgerIngredients';
-import { BurgerConstructor } from 'components/BurgerConstructor';
+import { BurgerConstructor } from 'features/BurgerConstructor';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
 import { IngredientDetails } from 'components/IngredientDetails';
@@ -28,8 +28,8 @@ import type { IngredientsEntity } from 'api/Ingredients/types';
 import type {
   IngredientLock,
   IngredientsMain,
-} from 'components/BurgerConstructor/types';
-import type { Props as IngredientDetailsProps } from 'components/IngredientDetails/types';
+} from 'features/BurgerConstructor/types';
+import type { Props as IngredientDetailsProps } from 'features/ContainerIngredientDetails/types';
 
 import styles from './styles.module.css';
 
@@ -39,12 +39,13 @@ const baseLock = new Array(2).fill(null).map(() => ({
   thumbnail: '',
 }));
 
-export const Main = ({ className = undefined }: Props) => {
+export const Main = ({ extraClass = undefined }: Props) => {
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
 
-  const [ingredientList, setIngredientList] =
-    useState<IngredientsEntity>(undefined);
+  const [ingredientList, setIngredientList] = useState<IngredientsEntity>(
+    undefined as any,
+  );
 
   const [ingredientsConstructor, setIngredientsConstructor] = useState<
     IngredientsMain | undefined
@@ -112,13 +113,14 @@ export const Main = ({ className = undefined }: Props) => {
 
   return (
     <>
-      <div className={cn(styles.main, 'pt-10', className)}>
+      <div className={cn(styles.main, 'pt-10', extraClass)}>
         {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
         {!ingredientListLoading ? (
           <>
             <BurgerIngredients
-              extraClass={styles.burger_ingredients}
+              title="1321321321"
               tabs={lists}
+              extraClass={styles.burger_ingredients}
             >
               {lists.map(({ key, title }) => (
                 <IngredientList
