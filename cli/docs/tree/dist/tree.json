@@ -1,4 +1,31 @@
 [{"type":"directory","name": ".","contents":[
+    {"type":"directory","name":"build","contents":[
+      {"type":"directory","name":"static","contents":[
+        {"type":"directory","name":"css","contents":[
+          {"type":"file","name":"main.31d6cfe0.css"}
+        ]},
+        {"type":"directory","name":"js","contents":[
+          {"type":"file","name":"main.39dd1194.js"},
+          {"type":"file","name":"main.39dd1194.js.LICENSE.txt"},
+          {"type":"file","name":"main.39dd1194.js.map"}
+        ]},
+        {"type":"file","name":"favicon.ico"},
+        {"type":"file","name":"logo192.png"},
+        {"type":"file","name":"logo512.png"}
+      ]},
+      {"type":"file","name":"asset-manifest.json"},
+      {"type":"file","name":"index.html"},
+      {"type":"file","name":"manifest.json"},
+      {"type":"file","name":"robots.txt"}
+    ]},
+    {"type":"directory","name":"builder","contents":[
+      {"type":"directory","name":"constants","contents":[
+      ]},
+      {"type":"directory","name":"loaders","contents":[
+      ]},
+      {"type":"directory","name":"plugins","contents":[
+      ]}
+    ]},
     {"type":"directory","name":"cli","contents":[
       {"type":"directory","name":"docs","contents":[
         {"type":"directory","name":"tree","contents":[
@@ -81,10 +108,10 @@
           {"type":"directory","name":"__mocks__","contents":[
             {"type":"file","name":"Ingredients.json"}
           ]},
-          {"type":"file","name":"api.ts"},
           {"type":"file","name":"entity.ts"},
           {"type":"file","name":"format.ts"},
           {"type":"file","name":"index.ts"},
+          {"type":"file","name":"resolver.ts"},
           {"type":"file","name":"types.ts"}
         ]},
         {"type":"file","name":"types.ts"}
@@ -102,29 +129,6 @@
         {"type":"directory","name":"App","contents":[
           {"type":"file","name":"App.tsx"},
           {"type":"file","name":"index.ts"}
-        ]},
-        {"type":"directory","name":"AppHeader","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"AppHeader.test.ts"}
-          ]},
-          {"type":"file","name":"AppHeader.stories.tsx"},
-          {"type":"file","name":"AppHeader.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"BurgerConstructor","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"BurgerConstructor.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerConstructor.test.ts"}
-          ]},
-          {"type":"file","name":"BurgerConstructor.stories.tsx"},
-          {"type":"file","name":"BurgerConstructor.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
         ]},
         {"type":"directory","name":"BurgerConstructorItem","contents":[
           {"type":"directory","name":"__mocks__","contents":[
@@ -195,6 +199,16 @@
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
         ]},
+        {"type":"directory","name":"IngredientParam","contents":[
+          {"type":"directory","name":"__tests__","contents":[
+            {"type":"file","name":"IngredientParam.test.ts"}
+          ]},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"IngredientParam.stories.tsx"},
+          {"type":"file","name":"IngredientParam.tsx"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
         {"type":"directory","name":"Loader","contents":[
           {"type":"directory","name":"__tests__","contents":[
             {"type":"file","name":"Loader.test.ts"}
@@ -235,10 +249,6 @@
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
         ]},
-        {"type":"directory","name":"NewComponent","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-          ]}
-        ]},
         {"type":"directory","name":"OrderDetails","contents":[
           {"type":"directory","name":"__tests__","contents":[
             {"type":"file","name":"Order.test.ts"}
@@ -271,6 +281,51 @@
       {"type":"directory","name":"enums","contents":[
         {"type":"file","name":"Ingredients.ts"}
       ]},
+      {"type":"directory","name":"features","contents":[
+        {"type":"directory","name":"AppHeader","contents":[
+          {"type":"directory","name":"__tests__","contents":[
+            {"type":"file","name":"AppHeader.test.ts"}
+          ]},
+          {"type":"file","name":"AppHeader.stories.tsx"},
+          {"type":"file","name":"AppHeader.tsx"},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
+        {"type":"directory","name":"BurgerConstructor","contents":[
+          {"type":"directory","name":"__mocks__","contents":[
+            {"type":"file","name":"BurgerConstructor.ts"}
+          ]},
+          {"type":"directory","name":"__tests__","contents":[
+            {"type":"file","name":"BurgerConstructor.test.ts"}
+          ]},
+          {"type":"file","name":"BurgerConstructor.stories.tsx"},
+          {"type":"file","name":"BurgerConstructor.tsx"},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
+        {"type":"directory","name":"ContainerIngredientDetails","contents":[
+          {"type":"file","name":"ContainerIngredientDetails.tsx"},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
+        {"type":"directory","name":"ContainerIngredientList","contents":[
+          {"type":"directory","name":"service","contents":[
+            {"type":"file","name":"hooks.ts"},
+            {"type":"file","name":"selectors.ts"},
+            {"type":"file","name":"slice.ts"},
+            {"type":"file","name":"state.ts"},
+            {"type":"file","name":"thunk.ts"},
+            {"type":"file","name":"types.ts"}
+          ]},
+          {"type":"file","name":"ContainerIngredientList.tsx"},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]}
+      ]},
       {"type":"directory","name":"forms","contents":[
       ]},
       {"type":"directory","name":"hooks","contents":[
@@ -285,13 +340,17 @@
       ]},
       {"type":"directory","name":"pages","contents":[
         {"type":"directory","name":"Main","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Main.test.ts"}
-          ]},
           {"type":"file","name":"index.ts"},
           {"type":"file","name":"Main.stories.tsx"},
           {"type":"file","name":"Main.tsx"},
           {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
+        {"type":"directory","name":"Test","contents":[
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"Test.stories.tsx"},
+          {"type":"file","name":"Test.tsx"},
           {"type":"file","name":"types.ts"}
         ]}
       ]},
@@ -308,9 +367,14 @@
         ]}
       ]},
       {"type":"directory","name":"router","contents":[
-        {"type":"file","name":"index.tsx"},
+        {"type":"file","name":"index.ts"},
+        {"type":"file","name":"Router.tsx"},
         {"type":"file","name":"routes.tsx"},
         {"type":"file","name":"types.ts"}
+      ]},
+      {"type":"directory","name":"services","contents":[
+        {"type":"directory","name":"LocalStorage","contents":[
+        ]}
       ]},
       {"type":"directory","name":"store","contents":[
         {"type":"directory","name":"global","contents":[
@@ -322,18 +386,21 @@
           ]}
         ]},
         {"type":"directory","name":"Ingredients","contents":[
+          {"type":"file","name":"api.ts"},
           {"type":"file","name":"query.ts"},
           {"type":"file","name":"selectors.ts"},
           {"type":"file","name":"slice.ts"},
           {"type":"file","name":"state.ts"},
           {"type":"file","name":"types.ts"}
         ]},
-        {"type":"file","name":"middleware.ts"},
+        {"type":"file","name":"middlewares.ts"},
         {"type":"file","name":"reducer.ts"},
+        {"type":"file","name":"services.ts"},
         {"type":"file","name":"store.ts"}
       ]},
       {"type":"directory","name":"stories","contents":[
         {"type":"file","name":"Button.stories.tsx"},
+        {"type":"file","name":"ContainerIngredientDetails.stories.tsx"},
         {"type":"file","name":"Counter.stories.tsx"},
         {"type":"file","name":"ModalIngredient.stories.tsx"},
         {"type":"file","name":"ModalOrder.stories.tsx"},
@@ -369,5 +436,5 @@
     {"type":"file","name":"README.md"},
     {"type":"file","name":"tsconfig.json"}
   ]},
-  {"type":"report","directories":89,"files":191}
+  {"type":"report","directories":103,"files":230}
 ]
