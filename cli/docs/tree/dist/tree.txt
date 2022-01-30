@@ -1,4 +1,23 @@
 .
+├── build
+│   ├── static
+│   │   ├── css
+│   │   │   └── main.31d6cfe0.css
+│   │   ├── js
+│   │   │   ├── main.39dd1194.js
+│   │   │   ├── main.39dd1194.js.LICENSE.txt
+│   │   │   └── main.39dd1194.js.map
+│   │   ├── favicon.ico
+│   │   ├── logo192.png
+│   │   └── logo512.png
+│   ├── asset-manifest.json
+│   ├── index.html
+│   ├── manifest.json
+│   └── robots.txt
+├── builder
+│   ├── constants
+│   ├── loaders
+│   └── plugins
 ├── cli
 │   ├── docs
 │   │   └── tree
@@ -60,10 +79,10 @@
 │   │   ├── Ingredients
 │   │   │   ├── __mocks__
 │   │   │   │   └── Ingredients.json
-│   │   │   ├── api.ts
 │   │   │   ├── entity.ts
 │   │   │   ├── format.ts
 │   │   │   ├── index.ts
+│   │   │   ├── resolver.ts
 │   │   │   └── types.ts
 │   │   └── types.ts
 │   ├── assets
@@ -75,24 +94,6 @@
 │   │   ├── App
 │   │   │   ├── App.tsx
 │   │   │   └── index.ts
-│   │   ├── AppHeader
-│   │   │   ├── __tests__
-│   │   │   │   └── AppHeader.test.ts
-│   │   │   ├── AppHeader.stories.tsx
-│   │   │   ├── AppHeader.tsx
-│   │   │   ├── index.ts
-│   │   │   ├── styles.module.css
-│   │   │   └── types.ts
-│   │   ├── BurgerConstructor
-│   │   │   ├── __mocks__
-│   │   │   │   └── BurgerConstructor.ts
-│   │   │   ├── __tests__
-│   │   │   │   └── BurgerConstructor.test.ts
-│   │   │   ├── BurgerConstructor.stories.tsx
-│   │   │   ├── BurgerConstructor.tsx
-│   │   │   ├── index.ts
-│   │   │   ├── styles.module.css
-│   │   │   └── types.ts
 │   │   ├── BurgerConstructorItem
 │   │   │   ├── __mocks__
 │   │   │   │   └── BurgerConstructorItem.ts
@@ -147,6 +148,14 @@
 │   │   │   ├── IngredientList.tsx
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
+│   │   ├── IngredientParam
+│   │   │   ├── __tests__
+│   │   │   │   └── IngredientParam.test.ts
+│   │   │   ├── index.ts
+│   │   │   ├── IngredientParam.stories.tsx
+│   │   │   ├── IngredientParam.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
 │   │   ├── Loader
 │   │   │   ├── __tests__
 │   │   │   │   └── Loader.test.ts
@@ -179,8 +188,6 @@
 │   │   │   ├── NavButton.tsx
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
-│   │   ├── NewComponent
-│   │   │   └── __tests__
 │   │   ├── OrderDetails
 │   │   │   ├── __tests__
 │   │   │   │   └── Order.test.ts
@@ -204,6 +211,42 @@
 │   ├── content
 │   ├── enums
 │   │   └── Ingredients.ts
+│   ├── features
+│   │   ├── AppHeader
+│   │   │   ├── __tests__
+│   │   │   │   └── AppHeader.test.ts
+│   │   │   ├── AppHeader.stories.tsx
+│   │   │   ├── AppHeader.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── BurgerConstructor
+│   │   │   ├── __mocks__
+│   │   │   │   └── BurgerConstructor.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── BurgerConstructor.test.ts
+│   │   │   ├── BurgerConstructor.stories.tsx
+│   │   │   ├── BurgerConstructor.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   ├── ContainerIngredientDetails
+│   │   │   ├── ContainerIngredientDetails.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   └── ContainerIngredientList
+│   │       ├── service
+│   │       │   ├── hooks.ts
+│   │       │   ├── selectors.ts
+│   │       │   ├── slice.ts
+│   │       │   ├── state.ts
+│   │       │   ├── thunk.ts
+│   │       │   └── types.ts
+│   │       ├── ContainerIngredientList.tsx
+│   │       ├── index.ts
+│   │       ├── styles.module.css
+│   │       └── types.ts
 │   ├── forms
 │   ├── hooks
 │   │   └── redux.ts
@@ -213,13 +256,17 @@
 │   │       ├── Main.tsx
 │   │       └── types.ts
 │   ├── pages
-│   │   └── Main
-│   │       ├── __tests__
-│   │       │   └── Main.test.ts
+│   │   ├── Main
+│   │   │   ├── index.ts
+│   │   │   ├── Main.stories.tsx
+│   │   │   ├── Main.tsx
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
+│   │   └── Test
 │   │       ├── index.ts
-│   │       ├── Main.stories.tsx
-│   │       ├── Main.tsx
 │   │       ├── styles.module.css
+│   │       ├── Test.stories.tsx
+│   │       ├── Test.tsx
 │   │       └── types.ts
 │   ├── plugins
 │   │   ├── axios
@@ -230,9 +277,12 @@
 │   │   └── webVitals
 │   │       └── reportWebVitals.ts
 │   ├── router
-│   │   ├── index.tsx
+│   │   ├── index.ts
+│   │   ├── Router.tsx
 │   │   ├── routes.tsx
 │   │   └── types.ts
+│   ├── services
+│   │   └── LocalStorage
 │   ├── store
 │   │   ├── global
 │   │   │   ├── actions
@@ -240,16 +290,19 @@
 │   │   │   └── middleware
 │   │   │       └── unauthenticatedMiddleware.ts
 │   │   ├── Ingredients
+│   │   │   ├── api.ts
 │   │   │   ├── query.ts
 │   │   │   ├── selectors.ts
 │   │   │   ├── slice.ts
 │   │   │   ├── state.ts
 │   │   │   └── types.ts
-│   │   ├── middleware.ts
+│   │   ├── middlewares.ts
 │   │   ├── reducer.ts
+│   │   ├── services.ts
 │   │   └── store.ts
 │   ├── stories
 │   │   ├── Button.stories.tsx
+│   │   ├── ContainerIngredientDetails.stories.tsx
 │   │   ├── Counter.stories.tsx
 │   │   ├── ModalIngredient.stories.tsx
 │   │   ├── ModalOrder.stories.tsx
@@ -280,4 +333,4 @@
 ├── README.md
 └── tsconfig.json
 
-89 directories, 191 files
+103 directories, 230 files
