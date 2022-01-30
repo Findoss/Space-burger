@@ -16,5 +16,6 @@ const Template: ComponentStory<typeof IngredientList> = (args) => (
 export const Default = Template.bind({});
 Default.args = {
   title: 'class',
-  ingredients: mockIngredientList,
 };
+
+// TODO Children

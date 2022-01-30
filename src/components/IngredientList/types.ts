@@ -1,8 +1,8 @@
-import { Props as IngredientProps } from 'components/Ingredient/types';
+import type { ReactNode } from 'react';
 
 export type Props = {
   title?: string;
-  ingredients?: IngredientProps[];
+  children?: ReactNode;
   extraClass?: string;
   onClick?: (id: string) => void;
 };
