@@ -1,74 +1,36 @@
-import type { IngredientsEntity } from 'api/Ingredients/types';
+import { RootState } from 'store/store';
 import { IngredientsType } from 'enums/Ingredients';
 
-export const selectIngredientsList = (
-  entities: IngredientsEntity,
-  typeIngredient = IngredientsType.filling,
-) => {
-  const ingredients = entities?.entities.ingredients;
-  if (ingredients) {
-    return Object.values(ingredients)
-      .filter(({ type }) => type === typeIngredient)
-      .map(({ id, image, name, price }) => ({
-        id,
-        image,
-        name,
-        price,
-      }));
-  }
-};
+export const getIngredientCollection = (state: RootState) =>
+  state.collections.ingredients;
 
-export const selectIngredientsConstruct = (entities: IngredientsEntity) => {
-  const ingredients = entities?.entities.ingredients;
-  if (ingredients) {
-    return Object.values(ingredients)
-      .filter(({ type }) => type !== IngredientsType.bells)
-      .map(({ id, imageMobile, name, price }) => ({
-        id,
-        price,
-        text: name,
-        thumbnail: imageMobile,
-      }));
-  }
-};
+export const selectIngredients = (state: RootState) =>
+  getIngredientCollection(state).entities.ingredients;
 
-export const selectIngredientsConstructLocked = (
-  entities: IngredientsEntity,
-) => {
-  const ingredients = entities?.entities.ingredients;
-  if (ingredients) {
-    return Object.values(ingredients)
-      .filter(({ type }) => type === IngredientsType.bells)
-      .map(({ id, imageMobile, name, price }) => ({
-        id,
-        price,
-        text: name,
-        thumbnail: imageMobile,
-      }))
-      .slice(0, 2);
-  }
-  return [];
-};
+export const selectAllIngredients = (state: RootState) =>
+  Object.values(selectIngredients(state)).map(({ id, image, name, price }) => ({
+    id,
+    image,
+    name,
+    price,
+  }));
 
-export const selectIngredientById = (
-  entities: IngredientsEntity,
-  idIngredient: string,
-) => {
-  const ingredients = entities?.entities.ingredients;
-  if (ingredients) {
-    const raw = Object.values(ingredients).find(
-      ({ id }) => id === idIngredient,
-    );
-    return {
-      image: raw?.imageLarge,
-      name: raw?.name,
-      params: {
-        calories: raw?.calories,
-        proteins: raw?.proteins,
-        fat: raw?.fat,
-        carbohydrates: raw?.carbohydrates,
-      },
-    };
-  }
-  return undefined;
+export const selectIngredientsByType = (
+  state: RootState,
+  ingredientType: IngredientsType,
+) =>
+  Object.values(selectIngredients(state))
+    .filter(({ type }) => type === ingredientType)
+    .map(({ id, image, name, price }) => ({
+      id,
+      image,
+      name,
+      price,
+    }));
+
+export const selectIngredientStatus = (state: RootState) =>
+  getIngredientCollection(state).status;
+
+export const selectIngredientById = (state: RootState, id: string) => {
+  return selectIngredients(state)[id];
 };

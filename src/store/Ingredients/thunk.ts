@@ -10,6 +10,7 @@ export const fetchIngredientAll = createAsyncThunk(
       return data;
     } catch (error) {
       console.error(error);
+      throw error;
     }
   },
 );

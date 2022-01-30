@@ -1,16 +1,14 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { ContainerIngredientList } from 'features/ContainerIngredientList';
+import { BurgerIngredients } from 'features/BurgerIngredients';
 
 import { Main } from 'layouts/Main';
-
-import styles from './styles.module.css';
 
 import type { Props } from './types';
 
 export const Test = ({}: Props) => {
-  return <ContainerIngredientList />;
+  return <BurgerIngredients />;
 };
 
 export const PageTest = () => {

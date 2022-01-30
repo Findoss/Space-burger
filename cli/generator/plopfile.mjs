@@ -19,10 +19,10 @@ export default function (plop) {
       },
     ],
     actions: function (data) {
-      let path = '../src/components';
+      let path = '../../src/components';
 
       if (data.isPage) {
-        path = '../src/pages';
+        path = '../../src/pages';
       }
 
       const actions = [

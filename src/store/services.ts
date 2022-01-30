@@ -1,13 +1,33 @@
+// import {
+//   INGREDIENT_API_REDUCER_KEY,
+//   ingredientApi,
+// } from 'store/Ingredients/api';
+
+// import { ingredientsSlice } from 'features/BurgerIngredients/service/slice';
+
+import { combineReducers } from '@reduxjs/toolkit';
 import {
-  INGREDIENT_API_REDUCER_KEY,
-  ingredientApi,
-} from 'store/Ingredients/api';
+  ingredientsCollection,
+  INGREDIENT_COLLECTION_KEY,
+} from './Ingredients/slice';
 
-import { ingredientsSlice } from 'features/ContainerIngredientList/service/slice';
+import {
+  ingredientListSlice,
+  INGREDIENT_LIST_WIDGET_KEY,
+} from 'features/BurgerIngredients/service/slice';
 
-export const serviceReducers = {
-  [INGREDIENT_API_REDUCER_KEY]: ingredientApi.reducer,
-  ingredients: ingredientsSlice.reducer,
-};
+export const collectionReducers = combineReducers({
+  [INGREDIENT_COLLECTION_KEY]: ingredientsCollection.reducer,
+});
 
-export const serviceMiddleware = [ingredientApi.middleware];
+export const widgetReducers = combineReducers({
+  [INGREDIENT_LIST_WIDGET_KEY]: ingredientListSlice.reducer,
+});
+
+export const serviceReducers = combineReducers({
+  // [INGREDIENT_API_REDUCER_KEY]: ingredientApi.reducer,
+});
+
+export const serviceMiddleware = [
+  // ingredientApi.middleware
+];

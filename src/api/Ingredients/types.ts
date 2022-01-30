@@ -1,4 +1,4 @@
-type IngredientId = string;
+export type IngredientId = string;
 
 export type IngredientRaw = {
   _id: IngredientId;

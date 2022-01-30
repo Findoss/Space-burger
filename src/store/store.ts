@@ -19,3 +19,4 @@ export const store = createStore();
 
 export type AppDispatch = typeof store.dispatch;
 export type RootState = ReturnType<typeof combinedReducer>;
+export { COLLECTIONS, WIDGETS } from './reducer';
