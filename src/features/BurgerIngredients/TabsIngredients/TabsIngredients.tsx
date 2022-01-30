@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
+import { useDispatch, useSelector } from 'hooks/redux';
 
 import { Tabs } from 'components/Tabs';
+import { selectActualType } from '../service/selectors';
+import { setActualType } from '../service/slice';
 
 import styles from './styles.module.css';
 
@@ -12,7 +15,8 @@ export const TabsIngredients = ({
   title = '',
   extraClass = undefined,
 }: Props) => {
-  const [current, setCurrent] = useState(tabs[0].key); // TODO store
+  const actualType = useSelector(selectActualType);
+  const dispatch = useDispatch();
 
   return (
     <div className={cn(styles.burger_ingredients, extraClass)}>
@@ -20,8 +24,8 @@ export const TabsIngredients = ({
       <div className="mb-10">
         <Tabs
           tabs={tabs}
-          currentTab={current}
-          onClick={(key) => setCurrent(key)}
+          currentTab={actualType}
+          onClick={(key) => dispatch(setActualType(key))}
         />
       </div>
     </div>

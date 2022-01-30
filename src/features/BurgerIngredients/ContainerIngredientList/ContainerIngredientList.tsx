@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import cn from 'classnames';
 import { useSelector } from 'hooks/redux';
 import { useTranslation } from 'react-i18next';
@@ -11,12 +11,23 @@ import { Error } from 'components/Error';
 
 import { selectIngredientsByType } from 'store/Ingredients/selectors';
 
+import { selectActualType } from '../service/selectors';
+
 import type { Props } from './types';
 
 export const ContainerIngredientList = ({ type }: Props) => {
+  const { t } = useTranslation();
+  const $el = useRef<HTMLDivElement>(null);
+
   const { data, isError, isLoading } = useGetIngredientQuery();
   const dataIdIngredients = useSelector(selectIngredientsByType(type));
-  const { t } = useTranslation();
+  const actualType = useSelector(selectActualType);
+
+  useEffect(() => {
+    if (actualType === type) {
+      $el.current?.scrollIntoView({ behavior: 'smooth' });
+    }
+  }, [actualType]);
 
   if (isError) {
     return <Error error={t('global.error')} />;
@@ -28,9 +39,9 @@ export const ContainerIngredientList = ({ type }: Props) => {
 
   if (data) {
     return (
-      <IngredientList title={t(`constructor.${type}`)}>
+      <IngredientList ref={$el} title={t(`constructor.${type}`)}>
         {dataIdIngredients.map((id) => (
-          <ContainerIngredient id={id} />
+          <ContainerIngredient key={id} id={id} />
         ))}
       </IngredientList>
     );

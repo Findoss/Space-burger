@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import { IngredientsType } from 'enums/Ingredients';
 
 import styles from './styles.module.css';
 
@@ -13,6 +14,10 @@ export const Tabs = ({
   onClick,
   extraClass = undefined,
 }: Props) => {
+  const handlerClick = useCallback((key: IngredientsType) => {
+    onClick(key);
+  }, []);
+
   return (
     <div className={cn(styles.tabs, extraClass)}>
       {tabs.map(({ key, title }) => {
@@ -21,7 +26,7 @@ export const Tabs = ({
             key={key}
             value={key}
             active={key === currentTab}
-            onClick={() => onClick(key)}
+            onClick={() => handlerClick(key as IngredientsType)}
           >
             {title}
           </Tab>

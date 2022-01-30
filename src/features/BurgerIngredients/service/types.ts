@@ -4,6 +4,7 @@ import type { IngredientsType } from 'enums/Ingredients';
 export type initType = {
   list: {
     types: IngredientsType[];
-    actual: string;
+    actual: IngredientsType;
   };
+  ingredient: { actual: IngredientId | null };
 };

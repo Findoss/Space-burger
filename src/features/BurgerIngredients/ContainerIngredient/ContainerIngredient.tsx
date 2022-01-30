@@ -1,15 +1,17 @@
 import React from 'react';
 import cn from 'classnames';
-import { useSelector } from 'hooks/redux';
+import { useDispatch, useSelector } from 'hooks/redux';
 
 import { Ingredient } from 'components/Ingredient';
 
 import { selectIngredientById } from 'store/Ingredients/selectors';
+import { setActualIngredient } from '../service/slice';
 
 import type { Props } from './types';
 
 export const ContainerIngredient = ({ id = '' }: Props) => {
   const data = useSelector(selectIngredientById(id));
+  const dispatch = useDispatch();
 
   return (
     <Ingredient
@@ -18,7 +20,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
       image={data.image}
       price={data.price}
       count={0}
-      onClick={() => console.log('Ingredient')}
+      onClick={() => dispatch(setActualIngredient(id))}
     />
   );
 };

@@ -5,6 +5,7 @@ import { useSelector } from 'hooks/redux';
 
 import { TabsIngredients } from './TabsIngredients';
 import { ContainerIngredientList } from './ContainerIngredientList';
+import { ModalIngredientDetails } from './ModalIngredientDetails';
 
 import { selectTypesIngredient } from './service/selectors';
 
@@ -31,6 +32,7 @@ export const BurgerIngredients = ({}: Props) => {
           <ContainerIngredientList type={type.key} />
         ))}
       </div>
+      <ModalIngredientDetails />
     </>
   );
 };

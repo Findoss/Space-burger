@@ -7,8 +7,11 @@ export const getIngredientCollection = (state: RootState) =>
 export const getIdIngredients = (state: RootState) =>
   getIngredientCollection(state).result;
 
+export const getEntityIngredients = (state: RootState) =>
+  getIngredientCollection(state).entities.ingredients;
+
 export const selectIngredientById = (id: string) => (state: RootState) => {
-  return selectIngredients(state)[id];
+  return getEntityIngredients(state)[id] || {};
 };
 
 export const selectIngredientsByType =
@@ -16,32 +19,6 @@ export const selectIngredientsByType =
     getIdIngredients(state).filter(
       (id) => selectIngredientById(id)(state).type === ingredientType,
     );
-
-// /// // / / / // / / // /
-
-export const selectIngredients = (state: RootState) =>
-  getIngredientCollection(state).entities.ingredients;
-
-export const selectAllIngredients = (state: RootState) =>
-  Object.values(selectIngredients(state)).map(({ id, image, name, price }) => ({
-    id,
-    image,
-    name,
-    price,
-  }));
-
-// export const selectIngredientsByType = (
-//   state: RootState,
-//   ingredientType: IngredientsType,
-// ) =>
-//   Object.values(selectIngredients(state))
-//     .filter(({ type }) => type === ingredientType)
-//     .map(({ id, image, name, price }) => ({
-//       id,
-//       image,
-//       name,
-//       price,
-//     }));
 
 export const selectIngredientStatus = (state: RootState) =>
   getIngredientCollection(state).status;

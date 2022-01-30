@@ -2,18 +2,13 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { fetchIngredientAll } from './thunk';
-import { selectIngredientStatus, selectIngredients } from './selectors';
-
-import type { RootState } from 'store/store';
+import { selectIngredientStatus, getEntityIngredients } from './selectors';
 
 export function useGetIngredientQuery() {
   const dispatch = useDispatch();
 
-  const status = useSelector((state: RootState) =>
-    selectIngredientStatus(state),
-  );
-
-  const data = useSelector((state: RootState) => selectIngredients(state));
+  const status = useSelector(selectIngredientStatus);
+  const data = useSelector(getEntityIngredients);
 
   useEffect(() => {
     dispatch(fetchIngredientAll());

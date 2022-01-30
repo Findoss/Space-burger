@@ -4,6 +4,9 @@ import type { initType } from './types';
 export const initState: initType = {
   list: {
     types: Object.values(IngredientsType),
-    actual: '',
+    actual: IngredientsType.bells,
+  },
+  ingredient: {
+    actual: null,
   },
 };
