@@ -1,6 +1,6 @@
 import React from 'react';
 import { t } from 'i18next';
-import { useSelector } from 'hooks/redux';
+import { useSelector } from 'hooks/useRedux';
 
 import { IngredientParams } from 'enums/Ingredients';
 

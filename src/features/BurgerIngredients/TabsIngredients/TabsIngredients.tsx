@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { useSelector } from 'hooks/redux';
+import { useSelector } from 'hooks/useRedux';
 
 import { Tabs } from 'components/Tabs';
 import { selectActualType } from '../service/selectors';

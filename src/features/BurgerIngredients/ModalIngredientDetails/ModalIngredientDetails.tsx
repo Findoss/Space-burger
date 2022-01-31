@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'hooks/redux';
+import { useSelector, useDispatch } from 'hooks/useRedux';
 
 import { Modal } from 'components/Modal';
 import { ContainerIngredientDetails } from '../ContainerIngredientDetails';

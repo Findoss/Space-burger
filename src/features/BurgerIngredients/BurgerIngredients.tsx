@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useCallback, SyntheticEvent } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'hooks/redux';
+import { useSelector, useDispatch } from 'hooks/useRedux';
 
 import { TabsIngredients } from './TabsIngredients';
 import { ContainerIngredientList } from './ContainerIngredientList';

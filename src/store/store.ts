@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import { rootMiddleware } from './middlewares';
+import { rootMiddleware } from './middleware';
 import { rootReducer, combinedReducer } from './reducer';
 
 import type { ConfigureStoreOptions } from '@reduxjs/toolkit';

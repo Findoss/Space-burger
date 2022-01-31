@@ -1,440 +1,824 @@
-[{"type":"directory","name": ".","contents":[
-    {"type":"directory","name":"build","contents":[
-      {"type":"directory","name":"static","contents":[
-        {"type":"directory","name":"css","contents":[
-          {"type":"file","name":"main.31d6cfe0.css"}
-        ]},
-        {"type":"directory","name":"js","contents":[
-          {"type":"file","name":"main.39dd1194.js"},
-          {"type":"file","name":"main.39dd1194.js.LICENSE.txt"},
-          {"type":"file","name":"main.39dd1194.js.map"}
-        ]},
-        {"type":"file","name":"favicon.ico"},
-        {"type":"file","name":"logo192.png"},
-        {"type":"file","name":"logo512.png"}
-      ]},
-      {"type":"file","name":"asset-manifest.json"},
-      {"type":"file","name":"index.html"},
-      {"type":"file","name":"manifest.json"},
-      {"type":"file","name":"robots.txt"}
-    ]},
-    {"type":"directory","name":"builder","contents":[
-      {"type":"directory","name":"constants","contents":[
-      ]},
-      {"type":"directory","name":"loaders","contents":[
-      ]},
-      {"type":"directory","name":"plugins","contents":[
-      ]}
-    ]},
-    {"type":"directory","name":"cli","contents":[
-      {"type":"directory","name":"docs","contents":[
-        {"type":"directory","name":"tree","contents":[
-          {"type":"directory","name":"dist","contents":[
-            {"type":"file","name":"tree.json"},
-            {"type":"file","name":"tree.txt"}
-          ]},
-          {"type":"file","name":"descr.js"},
-          {"type":"file","name":"index.js"},
-          {"type":"file","name":"tree.sh"}
-        ]}
-      ]},
-      {"type":"directory","name":"generator","contents":[
-        {"type":"directory","name":"templates","contents":[
-          {"type":"directory","name":"api","contents":[
-            {"type":"file","name":"entity.hbs"},
-            {"type":"file","name":"format.hbs"},
-            {"type":"file","name":"index.hbs"},
-            {"type":"file","name":"mock.hbs"},
-            {"type":"file","name":"types.hbs"}
-          ]},
-          {"type":"directory","name":"component","contents":[
-            {"type":"file","name":"component.hbs"},
-            {"type":"file","name":"index.hbs"},
-            {"type":"file","name":"stories.hbs"},
-            {"type":"file","name":"styles.hbs"},
-            {"type":"file","name":"test.hbs"},
-            {"type":"file","name":"types.hbs"}
-          ]},
-          {"type":"directory","name":"store","contents":[
-            {"type":"file","name":"slice.hbs"}
-          ]}
-        ]},
-        {"type":"file","name":"plopfile.mjs"},
-        {"type":"file","name":"README.md"}
-      ]}
-    ]},
-    {"type":"directory","name":"config","contents":[
-      {"type":"directory","name":"storybook","contents":[
-        {"type":"file","name":"decorator-i18n.tsx"},
-        {"type":"file","name":"decorator-modals.tsx"},
-        {"type":"file","name":"decorator-router.tsx"},
-        {"type":"file","name":"main.ts"},
-        {"type":"file","name":"preview.ts"}
-      ]}
-    ]},
-    {"type":"directory","name":"docs","contents":[
-      {"type":"file","name":"sprint-1-2.md"},
-      {"type":"file","name":"sprint-2-2.md"},
-      {"type":"file","name":"tree.html"}
-    ]},
-    {"type":"directory","name":".github","contents":[
-      {"type":"directory","name":"workflows","contents":[
-        {"type":"file","name":"main.yml"}
-      ]}
-    ]},
-    {"type":"directory","name":"public","contents":[
-      {"type":"directory","name":"locales","contents":[
-        {"type":"directory","name":"en","contents":[
-          {"type":"file","name":"translation.json"}
-        ]},
-        {"type":"directory","name":"ru","contents":[
-          {"type":"file","name":"translation.json"}
-        ]}
-      ]},
-      {"type":"directory","name":"static","contents":[
-        {"type":"file","name":"favicon.ico"},
-        {"type":"file","name":"logo192.png"},
-        {"type":"file","name":"logo512.png"}
-      ]},
-      {"type":"file","name":"index.html"},
-      {"type":"file","name":"manifest.json"},
-      {"type":"file","name":"robots.txt"}
-    ]},
-    {"type":"directory","name":"reports","contents":[
-    ]},
-    {"type":"directory","name":"src","contents":[
-      {"type":"directory","name":"api","contents":[
-        {"type":"directory","name":"Ingredients","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"Ingredients.json"}
-          ]},
-          {"type":"file","name":"entity.ts"},
-          {"type":"file","name":"format.ts"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"resolver.ts"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"file","name":"types.ts"}
-      ]},
-      {"type":"directory","name":"assets","contents":[
-        {"type":"directory","name":"fonts","contents":[
-        ]},
-        {"type":"directory","name":"images","contents":[
-          {"type":"directory","name":"icons","contents":[
-            {"type":"file","name":"done.svg"}
-          ]}
-        ]}
-      ]},
-      {"type":"directory","name":"components","contents":[
-        {"type":"directory","name":"App","contents":[
-          {"type":"file","name":"App.tsx"},
-          {"type":"file","name":"index.ts"}
-        ]},
-        {"type":"directory","name":"BurgerConstructorItem","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"BurgerConstructorItem.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerConstructorItem.test.ts"}
-          ]},
-          {"type":"file","name":"BurgerConstructorItem.stories.tsx"},
-          {"type":"file","name":"BurgerConstructorItem.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"BurgerIngredients","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerIngredients.test.ts"}
-          ]},
-          {"type":"file","name":"BurgerIngredients.stories.tsx"},
-          {"type":"file","name":"BurgerIngredients.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Image","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Image.test.ts"}
-          ]},
-          {"type":"file","name":"Image.stories.tsx"},
-          {"type":"file","name":"Image.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Ingredient","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Ingredient.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"Ingredient.stories.tsx"},
-          {"type":"file","name":"Ingredient.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"IngredientDetails","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"IngredientDetails.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"IngredientInfo.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"IngredientDetails.stories.tsx"},
-          {"type":"file","name":"IngredientDetails.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"IngredientList","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"IngredientList.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"IngredientList.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"IngredientList.stories.tsx"},
-          {"type":"file","name":"IngredientList.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"IngredientParam","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"IngredientParam.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"IngredientParam.stories.tsx"},
-          {"type":"file","name":"IngredientParam.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Loader","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Loader.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"Loader.stories.tsx"},
-          {"type":"file","name":"Loader.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Modal","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Modal.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"Modal.stories.tsx"},
-          {"type":"file","name":"Modal.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"ModalOverlay","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"ModalOverlay.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"ModalOverlay.stories.tsx"},
-          {"type":"file","name":"ModalOverlay.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"NavButton","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"NavButton.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"NavButton.stories.tsx"},
-          {"type":"file","name":"NavButton.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"OrderDetails","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Order.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"OrderDetails.stories.tsx"},
-          {"type":"file","name":"OrderDetails.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Tabs","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"Tabs.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"Tabs.test.ts"}
-          ]},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"Tabs.stories.tsx"},
-          {"type":"file","name":"Tabs.tsx"},
-          {"type":"file","name":"types.ts"}
-        ]}
-      ]},
-      {"type":"directory","name":"constants","contents":[
-        {"type":"file","name":"index.ts"}
-      ]},
-      {"type":"directory","name":"content","contents":[
-      ]},
-      {"type":"directory","name":"enums","contents":[
-        {"type":"file","name":"Ingredients.ts"}
-      ]},
-      {"type":"directory","name":"features","contents":[
-        {"type":"directory","name":"AppHeader","contents":[
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"AppHeader.test.ts"}
-          ]},
-          {"type":"file","name":"AppHeader.stories.tsx"},
-          {"type":"file","name":"AppHeader.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"BurgerConstructor","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"BurgerConstructor.ts"}
-          ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerConstructor.test.ts"}
-          ]},
-          {"type":"file","name":"BurgerConstructor.stories.tsx"},
-          {"type":"file","name":"BurgerConstructor.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"ContainerIngredientDetails","contents":[
-          {"type":"file","name":"ContainerIngredientDetails.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"ContainerIngredientList","contents":[
-          {"type":"directory","name":"service","contents":[
-            {"type":"file","name":"hooks.ts"},
-            {"type":"file","name":"selectors.ts"},
-            {"type":"file","name":"slice.ts"},
-            {"type":"file","name":"state.ts"},
-            {"type":"file","name":"thunk.ts"},
-            {"type":"file","name":"types.ts"}
-          ]},
-          {"type":"file","name":"ContainerIngredientList.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]}
-      ]},
-      {"type":"directory","name":"forms","contents":[
-      ]},
-      {"type":"directory","name":"hooks","contents":[
-        {"type":"file","name":"redux.ts"}
-      ]},
-      {"type":"directory","name":"layouts","contents":[
-        {"type":"directory","name":"Main","contents":[
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"Main.tsx"},
-          {"type":"file","name":"types.ts"}
-        ]}
-      ]},
-      {"type":"directory","name":"pages","contents":[
-        {"type":"directory","name":"Main","contents":[
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"Main.stories.tsx"},
-          {"type":"file","name":"Main.tsx"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"Test","contents":[
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"Test.stories.tsx"},
-          {"type":"file","name":"Test.tsx"},
-          {"type":"file","name":"types.ts"}
-        ]}
-      ]},
-      {"type":"directory","name":"plugins","contents":[
-        {"type":"directory","name":"axios","contents":[
-          {"type":"file","name":"index.ts"}
-        ]},
-        {"type":"directory","name":"i18n","contents":[
-          {"type":"file","name":"i18n.ts"},
-          {"type":"file","name":"langDetector.ts"}
-        ]},
-        {"type":"directory","name":"webVitals","contents":[
-          {"type":"file","name":"reportWebVitals.ts"}
-        ]}
-      ]},
-      {"type":"directory","name":"router","contents":[
-        {"type":"file","name":"index.ts"},
-        {"type":"file","name":"Router.tsx"},
-        {"type":"file","name":"routes.tsx"},
-        {"type":"file","name":"types.ts"}
-      ]},
-      {"type":"directory","name":"services","contents":[
-        {"type":"directory","name":"LocalStorage","contents":[
-        ]}
-      ]},
-      {"type":"directory","name":"store","contents":[
-        {"type":"directory","name":"global","contents":[
-          {"type":"directory","name":"actions","contents":[
-            {"type":"file","name":"resetState.ts"}
-          ]},
-          {"type":"directory","name":"middleware","contents":[
-            {"type":"file","name":"unauthenticatedMiddleware.ts"}
-          ]}
-        ]},
-        {"type":"directory","name":"Ingredients","contents":[
-          {"type":"file","name":"api.ts"},
-          {"type":"file","name":"query.ts"},
-          {"type":"file","name":"selectors.ts"},
-          {"type":"file","name":"slice.ts"},
-          {"type":"file","name":"state.ts"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"file","name":"middlewares.ts"},
-        {"type":"file","name":"reducer.ts"},
-        {"type":"file","name":"services.ts"},
-        {"type":"file","name":"store.ts"}
-      ]},
-      {"type":"directory","name":"stories","contents":[
-        {"type":"file","name":"Button.stories.tsx"},
-        {"type":"file","name":"ContainerIngredientDetails.stories.tsx"},
-        {"type":"file","name":"Counter.stories.tsx"},
-        {"type":"file","name":"ModalIngredient.stories.tsx"},
-        {"type":"file","name":"ModalOrder.stories.tsx"},
-        {"type":"file","name":"Tab.stories.tsx"}
-      ]},
-      {"type":"directory","name":"styles","contents":[
-        {"type":"file","name":"fonts.css"},
-        {"type":"file","name":"index.css"},
-        {"type":"file","name":"typography.css"},
-        {"type":"file","name":"vars.css"}
-      ]},
-      {"type":"directory","name":"types","contents":[
-      ]},
-      {"type":"directory","name":"utils","contents":[
-      ]},
-      {"type":"file","name":"index.tsx"},
-      {"type":"file","name":"react-app-env.d.ts"},
-      {"type":"file","name":"setupTests.ts"}
-    ]},
-    {"type":"file","name":".browserslistrc"},
-    {"type":"file","name":".editorconfig"},
-    {"type":"file","name":".env"},
-    {"type":"file","name":".env.production"},
-    {"type":"file","name":".eslintrc"},
-    {"type":"file","name":".gitattributes"},
-    {"type":"file","name":".gitignore"},
-    {"type":"file","name":".npmrc"},
-    {"type":"file","name":".nvmrc"},
-    {"type":"file","name":"package.json"},
-    {"type":"file","name":"package-lock.json"},
-    {"type":"file","name":".prettierignore"},
-    {"type":"file","name":".prettierrc"},
-    {"type":"file","name":"README.md"},
-    {"type":"file","name":"tsconfig.json"}
-  ]},
-  {"type":"report","directories":103,"files":230}
+[
+  {
+    "type": "directory",
+    "name": ".",
+    "contents": [
+      {
+        "type": "directory",
+        "name": "build",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "static",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "css",
+                "contents": [{ "type": "file", "name": "main.31d6cfe0.css" }]
+              },
+              {
+                "type": "directory",
+                "name": "js",
+                "contents": [
+                  { "type": "file", "name": "main.39dd1194.js" },
+                  { "type": "file", "name": "main.39dd1194.js.LICENSE.txt" },
+                  { "type": "file", "name": "main.39dd1194.js.map" }
+                ]
+              },
+              { "type": "file", "name": "favicon.ico" },
+              { "type": "file", "name": "logo192.png" },
+              { "type": "file", "name": "logo512.png" }
+            ]
+          },
+          { "type": "file", "name": "asset-manifest.json" },
+          { "type": "file", "name": "index.html" },
+          { "type": "file", "name": "manifest.json" },
+          { "type": "file", "name": "robots.txt" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "builder",
+        "contents": [
+          { "type": "directory", "name": "constants", "contents": [] },
+          { "type": "directory", "name": "loaders", "contents": [] },
+          { "type": "directory", "name": "plugins", "contents": [] }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "cli",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "docs",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "tree",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "dist",
+                    "contents": [
+                      { "type": "file", "name": "tree.json" },
+                      { "type": "file", "name": "tree.txt" }
+                    ]
+                  },
+                  { "type": "file", "name": "descr.js" },
+                  { "type": "file", "name": "index.js" },
+                  { "type": "file", "name": "tree.sh" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "generator",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "templates",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "api",
+                    "contents": [
+                      { "type": "file", "name": "entity.hbs" },
+                      { "type": "file", "name": "format.hbs" },
+                      { "type": "file", "name": "index.hbs" },
+                      { "type": "file", "name": "mock.hbs" },
+                      { "type": "file", "name": "types.hbs" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "component",
+                    "contents": [
+                      { "type": "file", "name": "component.hbs" },
+                      { "type": "file", "name": "index.hbs" },
+                      { "type": "file", "name": "stories.hbs" },
+                      { "type": "file", "name": "styles.hbs" },
+                      { "type": "file", "name": "test.hbs" },
+                      { "type": "file", "name": "types.hbs" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "store",
+                    "contents": [{ "type": "file", "name": "slice.hbs" }]
+                  }
+                ]
+              },
+              { "type": "file", "name": "plopfile.mjs" },
+              { "type": "file", "name": "README.md" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "config",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "storybook",
+            "contents": [
+              { "type": "file", "name": "decorator-i18n.tsx" },
+              { "type": "file", "name": "decoratorModals.tsx" },
+              { "type": "file", "name": "decorator-router.tsx" },
+              { "type": "file", "name": "main.ts" },
+              { "type": "file", "name": "preview.ts" }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "docs",
+        "contents": [
+          { "type": "file", "name": "sprint-1-2.md" },
+          { "type": "file", "name": "sprint-2-2.md" },
+          { "type": "file", "name": "tree.html" }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": ".github",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "workflows",
+            "contents": [{ "type": "file", "name": "main.yml" }]
+          }
+        ]
+      },
+      {
+        "type": "directory",
+        "name": "public",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "locales",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "en",
+                "contents": [{ "type": "file", "name": "translation.json" }]
+              },
+              {
+                "type": "directory",
+                "name": "ru",
+                "contents": [{ "type": "file", "name": "translation.json" }]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "static",
+            "contents": [
+              { "type": "file", "name": "favicon.ico" },
+              { "type": "file", "name": "logo192.png" },
+              { "type": "file", "name": "logo512.png" }
+            ]
+          },
+          { "type": "file", "name": "index.html" },
+          { "type": "file", "name": "manifest.json" },
+          { "type": "file", "name": "robots.txt" }
+        ]
+      },
+      { "type": "directory", "name": "reports", "contents": [] },
+      {
+        "type": "directory",
+        "name": "src",
+        "contents": [
+          {
+            "type": "directory",
+            "name": "api",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "Ingredients",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [{ "type": "file", "name": "Ingredients.json" }]
+                  },
+                  { "type": "file", "name": "entity.ts" },
+                  { "type": "file", "name": "format.ts" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "resolver.ts" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              { "type": "file", "name": "types.ts" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "assets",
+            "contents": [
+              { "type": "directory", "name": "fonts", "contents": [] },
+              {
+                "type": "directory",
+                "name": "images",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "icons",
+                    "contents": [{ "type": "file", "name": "done.svg" }]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "components",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "App",
+                "contents": [
+                  { "type": "file", "name": "App.tsx" },
+                  { "type": "file", "name": "index.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "BurgerConstructor",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [
+                      { "type": "file", "name": "BurgerConstructor.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "BurgerConstructor.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "BurgerConstructor.stories.tsx" },
+                  { "type": "file", "name": "BurgerConstructor.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "BurgerConstructorItem",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [
+                      { "type": "file", "name": "BurgerConstructorItem.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      {
+                        "type": "file",
+                        "name": "BurgerConstructorItem.test.ts"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "file",
+                    "name": "BurgerConstructorItem.stories.tsx"
+                  },
+                  { "type": "file", "name": "BurgerConstructorItem.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Error",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Error.test.ts" }]
+                  },
+                  { "type": "file", "name": "Error.stories.tsx" },
+                  { "type": "file", "name": "Error.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Image",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Image.test.ts" }]
+                  },
+                  { "type": "file", "name": "Image.stories.tsx" },
+                  { "type": "file", "name": "Image.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Ingredient",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "Ingredient.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "Ingredient.stories.tsx" },
+                  { "type": "file", "name": "Ingredient.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "IngredientDetails",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [
+                      { "type": "file", "name": "IngredientDetails.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "IngredientInfo.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "IngredientDetails.stories.tsx" },
+                  { "type": "file", "name": "IngredientDetails.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "IngredientList",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [
+                      { "type": "file", "name": "IngredientList.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "IngredientList.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "IngredientList.stories.tsx" },
+                  { "type": "file", "name": "IngredientList.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "IngredientParam",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "IngredientParam.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "IngredientParam.stories.tsx" },
+                  { "type": "file", "name": "IngredientParam.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Loader",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Loader.test.ts" }]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "Loader.stories.tsx" },
+                  { "type": "file", "name": "Loader.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Modal",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Modal.test.ts" }]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "Modal.stories.tsx" },
+                  { "type": "file", "name": "Modal.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "ModalOverlay",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "ModalOverlay.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "ModalOverlay.stories.tsx" },
+                  { "type": "file", "name": "ModalOverlay.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "NavButton",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "NavButton.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "NavButton.stories.tsx" },
+                  { "type": "file", "name": "NavButton.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "OrderDetails",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Order.test.ts" }]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "OrderDetails.stories.tsx" },
+                  { "type": "file", "name": "OrderDetails.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Tabs",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__mocks__",
+                    "contents": [{ "type": "file", "name": "Tabs.ts" }]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [{ "type": "file", "name": "Tabs.test.ts" }]
+                  },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "Tabs.stories.tsx" },
+                  { "type": "file", "name": "Tabs.tsx" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "constants",
+            "contents": [{ "type": "file", "name": "index.ts" }]
+          },
+          { "type": "directory", "name": "content", "contents": [] },
+          {
+            "type": "directory",
+            "name": "enums",
+            "contents": [{ "type": "file", "name": "Ingredients.ts" }]
+          },
+          {
+            "type": "directory",
+            "name": "features",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "AppHeader",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "__tests__",
+                    "contents": [
+                      { "type": "file", "name": "AppHeader.test.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "AppHeader.stories.tsx" },
+                  { "type": "file", "name": "AppHeader.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "BurgerIngredients",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "ContainerIngredient",
+                    "contents": [
+                      { "type": "file", "name": "ContainerIngredient.tsx" },
+                      { "type": "file", "name": "index.ts" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "ContainerIngredientDetails",
+                    "contents": [
+                      {
+                        "type": "file",
+                        "name": "ContainerIngredientDetails.tsx"
+                      },
+                      { "type": "file", "name": "index.ts" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "ContainerIngredientList",
+                    "contents": [
+                      { "type": "file", "name": "ContainerIngredientList.tsx" },
+                      { "type": "file", "name": "index.ts" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "ModalIngredientDetails",
+                    "contents": [
+                      { "type": "file", "name": "index.ts" },
+                      { "type": "file", "name": "ModalIngredientDetails.tsx" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "service",
+                    "contents": [
+                      { "type": "file", "name": "selectors.ts" },
+                      { "type": "file", "name": "slice.ts" },
+                      { "type": "file", "name": "state.ts" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "TabsIngredients",
+                    "contents": [
+                      { "type": "file", "name": "index.ts" },
+                      { "type": "file", "name": "styles.module.css" },
+                      { "type": "file", "name": "TabsIngredients.stories.tsx" },
+                      { "type": "file", "name": "TabsIngredients.tsx" },
+                      { "type": "file", "name": "types.ts" }
+                    ]
+                  },
+                  { "type": "file", "name": "BurgerIngredients.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "ContainerIngredientDetails",
+                "contents": [
+                  { "type": "file", "name": "ContainerIngredientDetails.tsx" },
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              }
+            ]
+          },
+          { "type": "directory", "name": "forms", "contents": [] },
+          {
+            "type": "directory",
+            "name": "hooks",
+            "contents": [{ "type": "file", "name": "redux.ts" }]
+          },
+          {
+            "type": "directory",
+            "name": "layouts",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "Main",
+                "contents": [
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "Main.tsx" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "pages",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "Main",
+                "contents": [
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "Main.stories.tsx" },
+                  { "type": "file", "name": "Main.tsx" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Test",
+                "contents": [
+                  { "type": "file", "name": "index.ts" },
+                  { "type": "file", "name": "styles.module.css" },
+                  { "type": "file", "name": "Test.stories.tsx" },
+                  { "type": "file", "name": "Test.tsx" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "plugins",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "axios",
+                "contents": [{ "type": "file", "name": "index.ts" }]
+              },
+              {
+                "type": "directory",
+                "name": "i18n",
+                "contents": [
+                  { "type": "file", "name": "i18n.ts" },
+                  { "type": "file", "name": "langDetector.ts" }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "webVitals",
+                "contents": [{ "type": "file", "name": "reportWebVitals.ts" }]
+              }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "router",
+            "contents": [
+              { "type": "file", "name": "index.ts" },
+              { "type": "file", "name": "Router.tsx" },
+              { "type": "file", "name": "routes.tsx" },
+              { "type": "file", "name": "types.ts" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "services",
+            "contents": [
+              { "type": "directory", "name": "LocalStorage", "contents": [] }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "store",
+            "contents": [
+              {
+                "type": "directory",
+                "name": "global",
+                "contents": [
+                  {
+                    "type": "directory",
+                    "name": "actions",
+                    "contents": [{ "type": "file", "name": "resetState.ts" }]
+                  },
+                  {
+                    "type": "directory",
+                    "name": "middleware",
+                    "contents": [
+                      { "type": "file", "name": "unauthenticatedMiddleware.ts" }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "directory",
+                "name": "Ingredients",
+                "contents": [
+                  { "type": "file", "name": "hooks.ts" },
+                  { "type": "file", "name": "selectors.ts" },
+                  { "type": "file", "name": "slice.ts" },
+                  { "type": "file", "name": "state.ts" },
+                  { "type": "file", "name": "thunk.ts" },
+                  { "type": "file", "name": "types.ts" }
+                ]
+              },
+              { "type": "file", "name": "middlewares.ts" },
+              { "type": "file", "name": "reducer.ts" },
+              { "type": "file", "name": "services.ts" },
+              { "type": "file", "name": "store.ts" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "stories",
+            "contents": [
+              { "type": "file", "name": "Button.stories.tsx" },
+              {
+                "type": "file",
+                "name": "ContainerIngredientDetails.stories.tsx"
+              },
+              { "type": "file", "name": "Counter.stories.tsx" },
+              { "type": "file", "name": "ModalIngredient.stories.tsx" },
+              { "type": "file", "name": "ModalOrder.stories.tsx" },
+              { "type": "file", "name": "Tab.stories.tsx" }
+            ]
+          },
+          {
+            "type": "directory",
+            "name": "styles",
+            "contents": [
+              { "type": "file", "name": "fonts.css" },
+              { "type": "file", "name": "index.css" },
+              { "type": "file", "name": "typography.css" },
+              { "type": "file", "name": "vars.css" }
+            ]
+          },
+          { "type": "directory", "name": "types", "contents": [] },
+          { "type": "directory", "name": "utils", "contents": [] },
+          { "type": "file", "name": "index.tsx" },
+          { "type": "file", "name": "react-app-env.d.ts" },
+          { "type": "file", "name": "setupTests.ts" }
+        ]
+      },
+      { "type": "file", "name": ".browserslistrc" },
+      { "type": "file", "name": ".editorconfig" },
+      { "type": "file", "name": ".env" },
+      { "type": "file", "name": ".env.production" },
+      { "type": "file", "name": ".eslintrc" },
+      { "type": "file", "name": ".gitattributes" },
+      { "type": "file", "name": ".gitignore" },
+      { "type": "file", "name": ".npmrc" },
+      { "type": "file", "name": ".nvmrc" },
+      { "type": "file", "name": "package.json" },
+      { "type": "file", "name": "package-lock.json" },
+      { "type": "file", "name": ".prettierignore" },
+      { "type": "file", "name": ".prettierrc" },
+      { "type": "file", "name": "README.md" },
+      { "type": "file", "name": "tsconfig.json" }
+    ]
+  },
+  { "type": "report", "directories": 108, "files": 245 }
 ]
