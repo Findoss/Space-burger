@@ -94,6 +94,16 @@
 │   │   ├── App
 │   │   │   ├── App.tsx
 │   │   │   └── index.ts
+│   │   ├── BurgerConstructor
+│   │   │   ├── __mocks__
+│   │   │   │   └── BurgerConstructor.ts
+│   │   │   ├── __tests__
+│   │   │   │   └── BurgerConstructor.test.ts
+│   │   │   ├── BurgerConstructor.stories.tsx
+│   │   │   ├── BurgerConstructor.tsx
+│   │   │   ├── index.ts
+│   │   │   ├── styles.module.css
+│   │   │   └── types.ts
 │   │   ├── BurgerConstructorItem
 │   │   │   ├── __mocks__
 │   │   │   │   └── BurgerConstructorItem.ts
@@ -104,11 +114,11 @@
 │   │   │   ├── index.ts
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
-│   │   ├── BurgerIngredients
+│   │   ├── Error
 │   │   │   ├── __tests__
-│   │   │   │   └── BurgerIngredients.test.ts
-│   │   │   ├── BurgerIngredients.stories.tsx
-│   │   │   ├── BurgerIngredients.tsx
+│   │   │   │   └── Error.test.ts
+│   │   │   ├── Error.stories.tsx
+│   │   │   ├── Error.tsx
 │   │   │   ├── index.ts
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
@@ -220,30 +230,40 @@
 │   │   │   ├── index.ts
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
-│   │   ├── BurgerConstructor
-│   │   │   ├── __mocks__
-│   │   │   │   └── BurgerConstructor.ts
-│   │   │   ├── __tests__
-│   │   │   │   └── BurgerConstructor.test.ts
-│   │   │   ├── BurgerConstructor.stories.tsx
-│   │   │   ├── BurgerConstructor.tsx
+│   │   ├── BurgerIngredients
+│   │   │   ├── ContainerIngredient
+│   │   │   │   ├── ContainerIngredient.tsx
+│   │   │   │   ├── index.ts
+│   │   │   │   └── types.ts
+│   │   │   ├── ContainerIngredientDetails
+│   │   │   │   ├── ContainerIngredientDetails.tsx
+│   │   │   │   ├── index.ts
+│   │   │   │   └── types.ts
+│   │   │   ├── ContainerIngredientList
+│   │   │   │   ├── ContainerIngredientList.tsx
+│   │   │   │   ├── index.ts
+│   │   │   │   └── types.ts
+│   │   │   ├── ModalIngredientDetails
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── ModalIngredientDetails.tsx
+│   │   │   │   └── types.ts
+│   │   │   ├── service
+│   │   │   │   ├── selectors.ts
+│   │   │   │   ├── slice.ts
+│   │   │   │   ├── state.ts
+│   │   │   │   └── types.ts
+│   │   │   ├── TabsIngredients
+│   │   │   │   ├── index.ts
+│   │   │   │   ├── styles.module.css
+│   │   │   │   ├── TabsIngredients.stories.tsx
+│   │   │   │   ├── TabsIngredients.tsx
+│   │   │   │   └── types.ts
+│   │   │   ├── BurgerIngredients.tsx
 │   │   │   ├── index.ts
 │   │   │   ├── styles.module.css
 │   │   │   └── types.ts
-│   │   ├── ContainerIngredientDetails
-│   │   │   ├── ContainerIngredientDetails.tsx
-│   │   │   ├── index.ts
-│   │   │   ├── styles.module.css
-│   │   │   └── types.ts
-│   │   └── ContainerIngredientList
-│   │       ├── service
-│   │       │   ├── hooks.ts
-│   │       │   ├── selectors.ts
-│   │       │   ├── slice.ts
-│   │       │   ├── state.ts
-│   │       │   ├── thunk.ts
-│   │       │   └── types.ts
-│   │       ├── ContainerIngredientList.tsx
+│   │   └── ContainerIngredientDetails
+│   │       ├── ContainerIngredientDetails.tsx
 │   │       ├── index.ts
 │   │       ├── styles.module.css
 │   │       └── types.ts
@@ -290,11 +310,11 @@
 │   │   │   └── middleware
 │   │   │       └── unauthenticatedMiddleware.ts
 │   │   ├── Ingredients
-│   │   │   ├── api.ts
-│   │   │   ├── query.ts
+│   │   │   ├── hooks.ts
 │   │   │   ├── selectors.ts
 │   │   │   ├── slice.ts
 │   │   │   ├── state.ts
+│   │   │   ├── thunk.ts
 │   │   │   └── types.ts
 │   │   ├── middlewares.ts
 │   │   ├── reducer.ts
@@ -333,4 +353,4 @@
 ├── README.md
 └── tsconfig.json
 
-103 directories, 230 files
+108 directories, 245 files

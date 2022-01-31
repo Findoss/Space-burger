@@ -130,6 +130,19 @@
           {"type":"file","name":"App.tsx"},
           {"type":"file","name":"index.ts"}
         ]},
+        {"type":"directory","name":"BurgerConstructor","contents":[
+          {"type":"directory","name":"__mocks__","contents":[
+            {"type":"file","name":"BurgerConstructor.ts"}
+          ]},
+          {"type":"directory","name":"__tests__","contents":[
+            {"type":"file","name":"BurgerConstructor.test.ts"}
+          ]},
+          {"type":"file","name":"BurgerConstructor.stories.tsx"},
+          {"type":"file","name":"BurgerConstructor.tsx"},
+          {"type":"file","name":"index.ts"},
+          {"type":"file","name":"styles.module.css"},
+          {"type":"file","name":"types.ts"}
+        ]},
         {"type":"directory","name":"BurgerConstructorItem","contents":[
           {"type":"directory","name":"__mocks__","contents":[
             {"type":"file","name":"BurgerConstructorItem.ts"}
@@ -143,12 +156,12 @@
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
         ]},
-        {"type":"directory","name":"BurgerIngredients","contents":[
+        {"type":"directory","name":"Error","contents":[
           {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerIngredients.test.ts"}
+            {"type":"file","name":"Error.test.ts"}
           ]},
-          {"type":"file","name":"BurgerIngredients.stories.tsx"},
-          {"type":"file","name":"BurgerIngredients.tsx"},
+          {"type":"file","name":"Error.stories.tsx"},
+          {"type":"file","name":"Error.tsx"},
           {"type":"file","name":"index.ts"},
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
@@ -292,35 +305,47 @@
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
         ]},
-        {"type":"directory","name":"BurgerConstructor","contents":[
-          {"type":"directory","name":"__mocks__","contents":[
-            {"type":"file","name":"BurgerConstructor.ts"}
+        {"type":"directory","name":"BurgerIngredients","contents":[
+          {"type":"directory","name":"ContainerIngredient","contents":[
+            {"type":"file","name":"ContainerIngredient.tsx"},
+            {"type":"file","name":"index.ts"},
+            {"type":"file","name":"types.ts"}
           ]},
-          {"type":"directory","name":"__tests__","contents":[
-            {"type":"file","name":"BurgerConstructor.test.ts"}
+          {"type":"directory","name":"ContainerIngredientDetails","contents":[
+            {"type":"file","name":"ContainerIngredientDetails.tsx"},
+            {"type":"file","name":"index.ts"},
+            {"type":"file","name":"types.ts"}
           ]},
-          {"type":"file","name":"BurgerConstructor.stories.tsx"},
-          {"type":"file","name":"BurgerConstructor.tsx"},
+          {"type":"directory","name":"ContainerIngredientList","contents":[
+            {"type":"file","name":"ContainerIngredientList.tsx"},
+            {"type":"file","name":"index.ts"},
+            {"type":"file","name":"types.ts"}
+          ]},
+          {"type":"directory","name":"ModalIngredientDetails","contents":[
+            {"type":"file","name":"index.ts"},
+            {"type":"file","name":"ModalIngredientDetails.tsx"},
+            {"type":"file","name":"types.ts"}
+          ]},
+          {"type":"directory","name":"service","contents":[
+            {"type":"file","name":"selectors.ts"},
+            {"type":"file","name":"slice.ts"},
+            {"type":"file","name":"state.ts"},
+            {"type":"file","name":"types.ts"}
+          ]},
+          {"type":"directory","name":"TabsIngredients","contents":[
+            {"type":"file","name":"index.ts"},
+            {"type":"file","name":"styles.module.css"},
+            {"type":"file","name":"TabsIngredients.stories.tsx"},
+            {"type":"file","name":"TabsIngredients.tsx"},
+            {"type":"file","name":"types.ts"}
+          ]},
+          {"type":"file","name":"BurgerIngredients.tsx"},
           {"type":"file","name":"index.ts"},
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
         ]},
         {"type":"directory","name":"ContainerIngredientDetails","contents":[
           {"type":"file","name":"ContainerIngredientDetails.tsx"},
-          {"type":"file","name":"index.ts"},
-          {"type":"file","name":"styles.module.css"},
-          {"type":"file","name":"types.ts"}
-        ]},
-        {"type":"directory","name":"ContainerIngredientList","contents":[
-          {"type":"directory","name":"service","contents":[
-            {"type":"file","name":"hooks.ts"},
-            {"type":"file","name":"selectors.ts"},
-            {"type":"file","name":"slice.ts"},
-            {"type":"file","name":"state.ts"},
-            {"type":"file","name":"thunk.ts"},
-            {"type":"file","name":"types.ts"}
-          ]},
-          {"type":"file","name":"ContainerIngredientList.tsx"},
           {"type":"file","name":"index.ts"},
           {"type":"file","name":"styles.module.css"},
           {"type":"file","name":"types.ts"}
@@ -386,11 +411,11 @@
           ]}
         ]},
         {"type":"directory","name":"Ingredients","contents":[
-          {"type":"file","name":"api.ts"},
-          {"type":"file","name":"query.ts"},
+          {"type":"file","name":"hooks.ts"},
           {"type":"file","name":"selectors.ts"},
           {"type":"file","name":"slice.ts"},
           {"type":"file","name":"state.ts"},
+          {"type":"file","name":"thunk.ts"},
           {"type":"file","name":"types.ts"}
         ]},
         {"type":"file","name":"middlewares.ts"},
@@ -436,5 +461,5 @@
     {"type":"file","name":"README.md"},
     {"type":"file","name":"tsconfig.json"}
   ]},
-  {"type":"report","directories":103,"files":230}
+  {"type":"report","directories":108,"files":245}
 ]
