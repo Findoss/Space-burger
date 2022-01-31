@@ -1,0 +1,1 @@
+export { IngredientParam } from './IngredientParam';

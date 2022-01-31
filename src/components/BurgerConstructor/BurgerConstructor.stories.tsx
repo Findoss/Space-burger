@@ -9,7 +9,7 @@ import {
 } from './__mocks__/BurgerConstructor';
 
 export default {
-  title: 'Components/BurgerConstructor',
+  title: 'Features/BurgerConstructor',
   component: BurgerConstructor,
 } as ComponentMeta<typeof BurgerConstructor>;
 
@@ -22,5 +22,5 @@ Default.args = {
   ingredientTop: mockIngredientTop,
   ingredientBottom: mockIngredientTop,
   ingredients: mockIngredients,
-  className: 'class',
+  extraClass: 'class',
 };

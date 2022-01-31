@@ -13,6 +13,6 @@ export type Props = {
   ingredientTop?: IngredientLock;
   ingredientBottom?: IngredientLock;
   ingredients: IngredientsMain;
-  className?: string;
+  extraClass?: string;
   clickOrder: () => void;
 };

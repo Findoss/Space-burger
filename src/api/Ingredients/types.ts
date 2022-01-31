@@ -1,4 +1,4 @@
-type IngredientId = string;
+export type IngredientId = string;
 
 export type IngredientRaw = {
   _id: IngredientId;
@@ -32,13 +32,9 @@ export type Ingredient = {
 };
 export type Ingredients = Ingredient[];
 
-export type IngredientsEntity =
-  | {
-      entities: {
-        ingredients?: {
-          [id: string]: Ingredient;
-        };
-      };
-      result: IngredientId[];
-    }
-  | undefined;
+export type IngredientsEntity = {
+  entities: {
+    ingredients: Record<string, Ingredient>;
+  };
+  result: IngredientId[];
+};

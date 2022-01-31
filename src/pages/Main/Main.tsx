@@ -8,7 +8,7 @@ import { Main as MainLayout } from 'layouts/Main';
 
 import { Loader } from 'components/Loader';
 import { IngredientList } from 'components/IngredientList';
-import { BurgerIngredients } from 'components/BurgerIngredients';
+// import { BurgerIngredients } from 'features/BurgerIngredients/TabsIngredients';
 import { BurgerConstructor } from 'components/BurgerConstructor';
 import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
@@ -16,12 +16,12 @@ import { IngredientDetails } from 'components/IngredientDetails';
 
 import { IngredientsType } from 'enums/Ingredients';
 
-import {
-  selectIngredientById,
-  selectIngredientsList,
-  selectIngredientsConstruct,
-  selectIngredientsConstructLocked,
-} from 'store/Ingredients/selectors';
+// import {
+//   selectIngredientById,
+//   selectIngredientsList,
+//   selectIngredientsConstruct,
+//   selectIngredientsConstructLocked,
+// } from 'store/Ingredients/selectors';
 
 import type { Props } from './types';
 import type { IngredientsEntity } from 'api/Ingredients/types';
@@ -29,7 +29,7 @@ import type {
   IngredientLock,
   IngredientsMain,
 } from 'components/BurgerConstructor/types';
-import type { Props as IngredientDetailsProps } from 'components/IngredientDetails/types';
+import type { Props as IngredientDetailsProps } from 'features/ContainerIngredientDetails/types';
 
 import styles from './styles.module.css';
 
@@ -39,12 +39,13 @@ const baseLock = new Array(2).fill(null).map(() => ({
   thumbnail: '',
 }));
 
-export const Main = ({ className = undefined }: Props) => {
+export const Main = ({ extraClass = undefined }: Props) => {
   const [ingredientListLoading, setIngredientListLoading] = useState(false);
   const [ingredientListError, setIngredientListError] = useState('');
 
-  const [ingredientList, setIngredientList] =
-    useState<IngredientsEntity>(undefined);
+  const [ingredientList, setIngredientList] = useState<IngredientsEntity>(
+    undefined as any,
+  );
 
   const [ingredientsConstructor, setIngredientsConstructor] = useState<
     IngredientsMain | undefined
@@ -61,22 +62,22 @@ export const Main = ({ className = undefined }: Props) => {
 
   const { t } = useTranslation();
 
-  useEffect(() => {
-    setIngredientListLoading(true);
+  // useEffect(() => {
+  //   setIngredientListLoading(true);
 
-    resolveIngredients()
-      .then((data) => {
-        setIngredientList(data);
-        setIngredientsConstructor(selectIngredientsConstruct(data));
-        setIngredientsConstructorLocked(selectIngredientsConstructLocked(data));
-      })
-      .catch((error) => {
-        setIngredientListError(error.messages);
-      })
-      .finally(() => {
-        setIngredientListLoading(false);
-      });
-  }, []);
+  //   resolveIngredients()
+  //     .then((data) => {
+  //       setIngredientList(data);
+  //       setIngredientsConstructor(selectIngredientsConstruct(data));
+  //       setIngredientsConstructorLocked(selectIngredientsConstructLocked(data));
+  //     })
+  //     .catch((error) => {
+  //       setIngredientListError(error.messages);
+  //     })
+  //     .finally(() => {
+  //       setIngredientListLoading(false);
+  //     });
+  // }, []);
 
   const handlerClickOrder = () => {
     setModalOrderVisible(true);
@@ -88,11 +89,6 @@ export const Main = ({ className = undefined }: Props) => {
 
   const handlerCloseModalIngredient = () => {
     setModalIngredientVisible(false);
-  };
-
-  const handlerIndigentClick = (id: string) => {
-    setModalIngredientVisible(true);
-    setModalIngredient(selectIngredientById(ingredientList, id) as any);
   };
 
   const lists = [
@@ -110,55 +106,56 @@ export const Main = ({ className = undefined }: Props) => {
     },
   ];
 
-  return (
-    <>
-      <div className={cn(styles.main, 'pt-10', className)}>
-        {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
-        {!ingredientListLoading ? (
-          <>
-            <BurgerIngredients
-              className={styles.burger_ingredients}
-              tabs={lists}
-            >
-              {lists.map(({ key, title }) => (
-                <IngredientList
-                  key={key}
-                  title={title}
-                  ingredients={selectIngredientsList(ingredientList, key)}
-                  onClick={handlerIndigentClick}
-                />
-              ))}
-            </BurgerIngredients>
-            <BurgerConstructor
-              clickOrder={handlerClickOrder}
-              ingredientTop={{
-                ...ingredientsConstructorLocked[0],
-              }}
-              ingredientBottom={{
-                ...ingredientsConstructorLocked[0],
-              }}
-              ingredients={ingredientsConstructor ?? []}
-            />
-          </>
-        ) : (
-          <Loader />
-        )}
-      </div>
-      {modalOrderVisible && (
-        <Modal onClose={handlerCloseModalOrder}>
-          <OrderDetails id="1234566" />
-        </Modal>
-      )}
-      {modalIngredientVisible && (
-        <Modal
-          title={t('ingredientDetails.title')}
-          onClose={handlerCloseModalIngredient}
-        >
-          <IngredientDetails {...modalIngredient} />
-        </Modal>
-      )}
-    </>
-  );
+  return null;
+  // return (
+  //   <>
+  //     <div className={cn(styles.main, 'pt-10', extraClass)}>
+  //       {ingredientListError !== '' && <h1>{ingredientListError}</h1>}
+  //       {!ingredientListLoading ? (
+  //         <>
+  //           <BurgerIngredients
+  //             title={t('constructor.constructor')}
+  //             tabs={lists}
+  //             extraClass={styles.burger_ingredients}
+  //           >
+  //             {lists.map(({ key, title }) => (
+  //               <IngredientList
+  //                 key={key}
+  //                 title={title}
+  //                 ingredients={selectIngredientsList(ingredientList, key)}
+  //               />
+  //             ))}
+  //           </BurgerIngredients>
+  //           <BurgerConstructor
+  //             clickOrder={handlerClickOrder}
+  //             ingredientTop={{
+  //               ...ingredientsConstructorLocked[0],
+  //             }}
+  //             ingredientBottom={{
+  //               ...ingredientsConstructorLocked[0],
+  //             }}
+  //             ingredients={ingredientsConstructor ?? []}
+  //           />
+  //         </>
+  //       ) : (
+  //         <Loader />
+  //       )}
+  //     </div>
+  //     {modalOrderVisible && (
+  //       <Modal onClose={handlerCloseModalOrder}>
+  //         <OrderDetails id="1234566" />
+  //       </Modal>
+  //     )}
+  //     {modalIngredientVisible && (
+  //       <Modal
+  //         title={t('ingredientDetails.title')}
+  //         onClose={handlerCloseModalIngredient}
+  //       >
+  //         <IngredientDetails {...modalIngredient} />
+  //       </Modal>
+  //     )}
+  //   </>
+  // );
 };
 
 export const PageMain = () => {

@@ -16,11 +16,11 @@ export const Ingredient = ({
   name,
   image,
   count = 0,
-  className = undefined,
+  extraClass = undefined,
   onClick = () => {},
 }: Props) => {
   return (
-    <div className={cn(styles.ingredient, className)} onClick={onClick}>
+    <div className={cn(styles.ingredient, extraClass)} onClick={onClick}>
       {count > 0 ? <Counter count={count} /> : null}
       <div className={cn(styles.ingredient_img, 'ml-4 mr-4 mb-1')}>
         <Image src={image} alt={name} />

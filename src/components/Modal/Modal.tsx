@@ -15,7 +15,7 @@ export const Modal = ({
   onClose = () => {},
   closeBackground = true,
   closeEscape = true,
-  className = undefined,
+  extraClass = undefined,
 }: Props) => {
   const modalRoot = document.querySelector('#modals');
 
@@ -45,7 +45,7 @@ export const Modal = ({
         className={styles.modal_wrapper}
         onClick={(e) => e.stopPropagation()}
       >
-        <div className={cn(styles.modal, 'p-10', className)}>
+        <div className={cn(styles.modal, 'p-10', extraClass)}>
           <div className={cn('text text_type_main-large', styles.title)}>
             {title}
           </div>

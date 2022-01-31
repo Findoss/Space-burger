@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ModalsWrapper } from '../../../config/storybook/decorator-modals';
+import { ModalsWrapper } from '../../../config/storybook/decoratorModals';
 
 import { PageMain } from './Main';
 
@@ -14,5 +14,5 @@ const Template: ComponentStory<typeof PageMain> = () => <PageMain />;
 
 export const Default = Template.bind({});
 // Default.args = {
-//   className: 'class',
+//   extraClass: 'class',
 // };

@@ -18,7 +18,7 @@ export const BurgerConstructor = ({
   ingredientBottom,
   ingredients = [],
   clickOrder = () => {},
-  className = undefined,
+  extraClass = undefined,
 }: Props) => {
   const { t } = useTranslation();
   const [sumOrder, setSumOrder] = useState(0);
@@ -50,7 +50,7 @@ export const BurgerConstructor = ({
       className={cn(
         ' pt-25 pl-4 pr-4 pb-10',
         styles.burger_constructor,
-        className,
+        extraClass,
       )}
     >
       {ingredientTop && (

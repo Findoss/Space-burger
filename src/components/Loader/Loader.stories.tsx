@@ -25,11 +25,11 @@ const TemplateText: ComponentStory<typeof Loader> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'class',
+  extraClass: 'class',
 };
 
 export const Text = TemplateText.bind({});
 Text.args = {
   type: 'text',
-  className: 'class',
+  extraClass: 'class',
 };
