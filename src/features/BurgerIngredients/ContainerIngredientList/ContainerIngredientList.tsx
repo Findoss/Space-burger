@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
 import { useSelector } from 'hooks/redux';
 import { useTranslation } from 'react-i18next';
@@ -11,41 +11,33 @@ import { Error } from 'components/Error';
 
 import { selectIngredientsByType } from 'store/Ingredients/selectors';
 
-import { selectActualType } from '../service/selectors';
-
 import type { Props } from './types';
 
-export const ContainerIngredientList = ({ type }: Props) => {
-  const { t } = useTranslation();
-  const $el = useRef<HTMLDivElement>(null);
+export const ContainerIngredientList = forwardRef<HTMLDivElement, Props>(
+  ({ type }, ref) => {
+    const { t } = useTranslation();
 
-  const { data, isError, isLoading } = useGetIngredientQuery();
-  const dataIdIngredients = useSelector(selectIngredientsByType(type));
-  const actualType = useSelector(selectActualType);
+    const { data, isError, isLoading } = useGetIngredientQuery();
+    const dataIdIngredients = useSelector(selectIngredientsByType(type));
 
-  useEffect(() => {
-    if (actualType === type) {
-      $el.current?.scrollIntoView({ behavior: 'smooth' });
+    if (isError) {
+      return <Error error={t('global.error')} />;
     }
-  }, [actualType]);
 
-  if (isError) {
-    return <Error error={t('global.error')} />;
-  }
+    if (isLoading) {
+      return <Loader />;
+    }
 
-  if (isLoading) {
-    return <Loader />;
-  }
+    if (data) {
+      return (
+        <IngredientList ref={ref} title={t(`constructor.${type}`)}>
+          {dataIdIngredients.map((id) => (
+            <ContainerIngredient key={id} id={id} />
+          ))}
+        </IngredientList>
+      );
+    }
 
-  if (data) {
-    return (
-      <IngredientList ref={$el} title={t(`constructor.${type}`)}>
-        {dataIdIngredients.map((id) => (
-          <ContainerIngredient key={id} id={id} />
-        ))}
-      </IngredientList>
-    );
-  }
-
-  return null;
-};
+    return null;
+  },
+);
