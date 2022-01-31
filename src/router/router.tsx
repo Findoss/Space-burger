@@ -9,10 +9,5 @@ const routeComponents = routes.map(({ path, component }, key) => (
 ));
 
 export const Router = () => {
-  return (
-    <Routes>
-      {routeComponents}
-      <Route path="*" element={<h1>404</h1>} />
-    </Routes>
-  );
+  return <Routes>{routeComponents}</Routes>;
 };

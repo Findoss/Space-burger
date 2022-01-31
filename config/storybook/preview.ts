@@ -1,5 +1,5 @@
-import { RouterProviderWrapper } from './decorator-router';
-import { i18n, supportLangs, defaultLang } from './decorator-i18n';
+import { RouterProviderWrapper } from './decoratorRouter';
+import { i18n, supportLangs, defaultLang } from './decoratorI18n';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
