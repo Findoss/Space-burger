@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ModalsWrapper } from '../../../config/storybook/decorator-modals';
+import { ModalsWrapper } from '../../../config/storybook/decoratorModals';
 
 import { ModalOverlay } from './ModalOverlay';
 

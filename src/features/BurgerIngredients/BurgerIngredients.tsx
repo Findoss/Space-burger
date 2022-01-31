@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'hooks/redux';
+import { useSelector } from 'hooks/useRedux';
 
 import { TabsIngredients } from './TabsIngredients';
 import { ContainerIngredientList } from './ContainerIngredientList';

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import cn from 'classnames';
-import { useSelector } from 'hooks/redux';
+import { useSelector } from 'hooks/useRedux';
 import { useTranslation } from 'react-i18next';
 import { useGetIngredientQuery } from 'store/Ingredients/hooks';
 

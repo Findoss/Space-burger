@@ -49,7 +49,7 @@
 ├── config
 │   └── storybook
 │       ├── decorator-i18n.tsx
-│       ├── decorator-modals.tsx
+│       ├── decoratorModals.tsx
 │       ├── decorator-router.tsx
 │       ├── main.ts
 │       └── preview.ts
