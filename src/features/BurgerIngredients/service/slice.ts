@@ -6,9 +6,9 @@ import type { IngredientsType } from 'enums/Ingredients';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { IngredientId } from 'api/Ingredients/types';
 
-export const INGREDIENT_LIST_WIDGET_KEY = 'ingredientList';
-export const ingredientListSlice = createSlice({
-  name: INGREDIENT_LIST_WIDGET_KEY,
+export const WIDGET_BURGER_INGREDIENTS = 'burgerIngredients';
+export const burgerIngredientsSlice = createSlice({
+  name: WIDGET_BURGER_INGREDIENTS,
   initialState: initState,
   reducers: {
     setActualType: (state, { payload }: PayloadAction<IngredientsType>) => {
@@ -27,4 +27,4 @@ export const ingredientListSlice = createSlice({
 });
 
 export const { setActualType, setActualIngredient, resetActualType } =
-  ingredientListSlice.actions;
+  burgerIngredientsSlice.actions;

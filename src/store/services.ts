@@ -8,20 +8,26 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import {
   ingredientsCollection,
-  INGREDIENT_COLLECTION_KEY,
+  COLLECTION_INGREDIENT,
 } from './Ingredients/slice';
 
 import {
-  ingredientListSlice,
-  INGREDIENT_LIST_WIDGET_KEY,
+  burgerIngredientsSlice,
+  WIDGET_BURGER_INGREDIENTS,
 } from 'features/BurgerIngredients/service/slice';
 
+import {
+  burgerConstructorSlice,
+  WIDGET_BURGER_CONSTRUCTOR,
+} from 'features/BurgerConstructor/service/slice';
+
 export const collectionReducers = combineReducers({
-  [INGREDIENT_COLLECTION_KEY]: ingredientsCollection.reducer,
+  [COLLECTION_INGREDIENT]: ingredientsCollection.reducer,
 });
 
 export const widgetReducers = combineReducers({
-  [INGREDIENT_LIST_WIDGET_KEY]: ingredientListSlice.reducer,
+  [WIDGET_BURGER_INGREDIENTS]: burgerIngredientsSlice.reducer,
+  [WIDGET_BURGER_CONSTRUCTOR]: burgerConstructorSlice.reducer,
 });
 
 export const serviceReducers = combineReducers({
