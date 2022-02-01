@@ -1,11 +1,12 @@
 import { IngredientId } from 'api/Ingredients/types';
 
 export type Props = {
-  id?: IngredientId;
+  id: IngredientId;
+  key?: string;
   thumbnail: string;
   price: number;
   text: string;
   isLocked?: boolean;
-  handleClose?: () => void;
+  onRemove?: () => void;
   type?: 'bottom' | 'top';
 };

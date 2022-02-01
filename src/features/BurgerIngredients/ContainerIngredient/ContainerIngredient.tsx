@@ -6,11 +6,13 @@ import { Ingredient } from 'components/Ingredient';
 
 import { selectIngredientById } from 'store/Ingredients/selectors';
 import { setActualIngredient } from '../service/slice';
+import { selectCountIngredientById } from '../../BurgerConstructor/service/selectors';
 
 import type { Props } from './types';
 
 export const ContainerIngredient = ({ id = '' }: Props) => {
   const data = useSelector(selectIngredientById(id));
+  const count = useSelector(selectCountIngredientById(id));
   const dispatch = useDispatch();
 
   return (
@@ -19,7 +21,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
       name={data.name}
       image={data.image}
       price={data.price}
-      count={0}
+      count={count}
       onClick={() => dispatch(setActualIngredient(id))}
     />
   );

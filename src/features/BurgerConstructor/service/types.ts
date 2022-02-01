@@ -3,6 +3,9 @@ import { IngredientId } from 'api/Ingredients/types';
 export type initType = {
   order: {
     modalIsOpen: boolean;
-    ingredients: IngredientId[];
+    ingredients: {
+      id: IngredientId;
+      key: string;
+    }[];
   };
 };

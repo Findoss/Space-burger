@@ -11,15 +11,14 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 import { useTranslation } from 'react-i18next';
 
-export const ContainerBurgerConstructorCalc = ({}: Props) => {
-  const sumOrder = useSelector(selectSumOrder);
+export const ContainerBurgerConstructorCalc = ({ extraClass }: Props) => {
+  const sumOrder = useSelector(selectSumOrder) || 0;
   const { t } = useTranslation();
-
-  console.log(isNaN(sumOrder));
 
   return (
     <BurgerConstructorCalc
-      sumOrder={sumOrder ?? 0}
+      extraClass={extraClass}
+      sumOrder={sumOrder}
       textButton={t('constructor.buy')}
     />
   );

@@ -19,4 +19,5 @@ export type Props = {
     bunTop?: string;
     bunBottom?: string;
   };
+  onRemove?: (id: string) => void;
 };

@@ -1,12 +1,5 @@
-import React, {
-  useRef,
-  useEffect,
-  useCallback,
-  SyntheticEvent,
-  useMemo,
-} from 'react';
+import React, { useRef, useEffect, useCallback } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'hooks/useRedux';
 
 import { TabsIngredients } from './TabsIngredients';
@@ -22,16 +15,10 @@ import type { Props } from './types';
 import type { IngredientsType } from 'enums/Ingredients';
 
 export const BurgerIngredients = ({ extraClass }: Props) => {
-  const { t } = useTranslation();
   const dispatch = useDispatch();
   const $rootScroll = useRef<HTMLDivElement>(null);
   const $listIngredients = useRef<{ key: string; el: HTMLDivElement }[]>([]);
-
-  const typesIngredient = useSelector(selectTypesIngredient).map((v) => ({
-    key: v,
-    title: t(`constructor.${v}`),
-  }));
-
+  const typesIngredient = useSelector(selectTypesIngredient);
   const actualType = useSelector(selectActualType);
 
   const addToRefs = (key: string) => (el: HTMLDivElement) => {
@@ -83,18 +70,14 @@ export const BurgerIngredients = ({ extraClass }: Props) => {
 
   return (
     <div className={extraClass}>
-      <TabsIngredients
-        title={t('constructor.constructor')}
-        tabs={typesIngredient}
-        onClick={handlerClickTab}
-      />
+      <TabsIngredients onClick={handlerClickTab} />
       <div
         ref={$rootScroll}
         onScroll={handlerScroll}
         className={cn(styles.wrapper_lists, 'custom-scroll')}
       >
-        {typesIngredient.map(({ key }) => (
-          <ContainerIngredientList type={key} ref={addToRefs(key)} />
+        {typesIngredient.map((key) => (
+          <ContainerIngredientList key={key} type={key} ref={addToRefs(key)} />
         ))}
       </div>
       <ModalIngredientDetails />

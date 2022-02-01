@@ -14,6 +14,7 @@ export const BurgerConstructorItem = ({
   text,
   isLocked,
   type,
+  onRemove = () => {},
 }: Props) => {
   const isDraggable = !isLocked && type === undefined;
   const isBottom = type === 'bottom';
@@ -36,6 +37,7 @@ export const BurgerConstructorItem = ({
         text={text}
         price={price}
         thumbnail={thumbnail}
+        handleClose={onRemove}
       />
     </div>
   );

@@ -14,15 +14,16 @@ export const BurgerConstructorCalc = ({
   sumOrder = 0,
   onClick = () => {},
   textButton = '',
+  extraClass = undefined,
 }: Props) => {
   return (
-    <div className={cn(styles.constructor_price)}>
+    <div className={cn(styles.constructor_price, extraClass)}>
       <div className="text text_type_digits-medium mr-10">
         {sumOrder}
         {'  '}
         <CurrencyIcon type="primary" />
       </div>
-      <Button onClick={onClick}>
+      <Button onClick={onClick} disabled={sumOrder === 0}>
         <div className={cn(styles.constructor_order_button)}>{textButton}</div>
       </Button>
     </div>
