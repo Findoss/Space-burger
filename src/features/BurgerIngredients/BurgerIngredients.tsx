@@ -18,9 +18,10 @@ import { setActualType, resetActualType } from './service/slice';
 
 import styles from './styles.module.css';
 
+import type { Props } from './types';
 import type { IngredientsType } from 'enums/Ingredients';
 
-export const BurgerIngredients = () => {
+export const BurgerIngredients = ({ extraClass }: Props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
   const $rootScroll = useRef<HTMLDivElement>(null);
@@ -81,7 +82,7 @@ export const BurgerIngredients = () => {
   }, []);
 
   return (
-    <>
+    <div className={extraClass}>
       <TabsIngredients
         title={t('constructor.constructor')}
         tabs={typesIngredient}
@@ -97,6 +98,6 @@ export const BurgerIngredients = () => {
         ))}
       </div>
       <ModalIngredientDetails />
-    </>
+    </div>
   );
 };

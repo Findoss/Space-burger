@@ -51,8 +51,8 @@ export const Main = ({ extraClass = undefined }: Props) => {
     IngredientsMain | undefined
   >([]);
 
-  const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
-    useState<IngredientLock[]>(baseLock);
+  // const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
+  // useState<IngredientLock[]>(baseLock);
 
   // const [modalIngredient, setModalIngredient] =
   //   useState<IngredientDetailsProps>({});

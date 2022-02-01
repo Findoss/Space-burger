@@ -22,7 +22,7 @@ export const BurgerConstructorTopEmpty = ({ text = '' }: Props) => {
   return (
     <div
       className={cn(
-        'text text_type_main-default text_color_inactive ml-8 mr-2',
+        'text text_type_main-default text_color_inactive ml-8',
         styles.constructor_top_empty,
       )}
     >
@@ -35,7 +35,7 @@ export const BurgerConstructorBottomEmpty = ({ text = '' }: Props) => {
   return (
     <div
       className={cn(
-        'text text_type_main-default text_color_inactive ml-8 mr-2',
+        'text text_type_main-default text_color_inactive ml-8',
         styles.constructor_bottom_empty,
       )}
     >

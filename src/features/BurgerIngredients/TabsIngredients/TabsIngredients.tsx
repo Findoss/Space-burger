@@ -18,7 +18,7 @@ export const TabsIngredients = ({
   const actualType = useSelector(selectActualType);
 
   return (
-    <div className={cn(styles.burger_ingredients, extraClass)}>
+    <div className={cn(extraClass)}>
       <div className="mb-5 text text_type_main-large">{title}</div>
       <div className="mb-10">
         <Tabs tabs={tabs} currentTab={actualType} onClick={onClick} />

@@ -16,7 +16,7 @@ export const BurgerConstructorCalc = ({
   textButton = '',
 }: Props) => {
   return (
-    <div className={cn(styles.constructor_price, 'mt-10')}>
+    <div className={cn(styles.constructor_price)}>
       <div className="text text_type_digits-medium mr-10">
         {sumOrder}
         {'  '}

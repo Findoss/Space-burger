@@ -4,6 +4,10 @@
   align-items: center;
 }
 
+.burger_ingredient div {
+  max-width: 100%;
+}
+
 .burger_ingredient_drag {
 }
 

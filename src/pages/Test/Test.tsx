@@ -1,19 +1,20 @@
 import React from 'react';
 import cn from 'classnames';
 
+import { Main } from 'layouts/Main';
 import { BurgerIngredients } from 'features/BurgerIngredients';
 import { BurgerConstructor } from 'features/BurgerConstructor';
 
-import { Main } from 'layouts/Main';
+import styles from './styles.module.css';
 
 import type { Props } from './types';
 
 export const Test = ({}: Props) => {
   return (
-    <>
-      <BurgerConstructor />
-      <BurgerIngredients />
-    </>
+    <div className={cn(styles.main, 'pt-10')}>
+      <BurgerIngredients extraClass={styles.burger_ingredients} />
+      <BurgerConstructor extraClass={styles.burger_constructor} />
+    </div>
   );
 };
 

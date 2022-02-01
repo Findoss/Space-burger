@@ -26,22 +26,10 @@ export const BurgerConstructor = ({
     bunTop: 'textBunTop',
     bunBottom: 'textBunBottom',
   },
-  clickOrder = () => {},
   extraClass = undefined,
 }: Props) => {
-  const { t } = useTranslation();
-
-  const textBunTop = t(`ingredients.bunPosition.${BunTypePosition.TOP}`);
-  const textBunBottom = t(`ingredients.bunPosition.${BunTypePosition.BOTTOM}`);
-
   return (
-    <div
-      className={cn(
-        ' pt-25 pl-4 pr-4 pb-10',
-        styles.burger_constructor,
-        extraClass,
-      )}
-    >
+    <div className={cn('pt-25 pb-10', styles.burger_constructor, extraClass)}>
       {ingredientTop ? (
         <BurgerConstructorItem
           type={BunTypePosition.TOP}
@@ -53,7 +41,7 @@ export const BurgerConstructor = ({
       ) : (
         <BurgerConstructorTopEmpty text={text.topEmpty} />
       )}
-      <div className={cn('custom-scroll', styles.constructor_main)}>
+      <div className={cn('custom-scroll pr-4 pl-6', styles.constructor_main)}>
         {ingredients.length ? (
           ingredients.map((ingredient) => {
             return (
