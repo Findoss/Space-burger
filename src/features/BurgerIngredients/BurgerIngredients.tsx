@@ -14,7 +14,7 @@ import { ContainerIngredientList } from './ContainerIngredientList';
 import { ModalIngredientDetails } from './ModalIngredientDetails';
 
 import { selectActualType, selectTypesIngredient } from './service/selectors';
-import { setActualType } from './service/slice';
+import { setActualType, resetActualType } from './service/slice';
 
 import styles from './styles.module.css';
 
@@ -58,7 +58,6 @@ export const BurgerIngredients = () => {
       });
 
       if (key && key !== actualType) {
-        console.log(key);
         dispatch(setActualType(key as IngredientsType));
       }
     }
@@ -70,16 +69,16 @@ export const BurgerIngredients = () => {
       const item = $listIngredients.current.find((item) => item.key === key);
 
       if (item) {
-        console.log(item.el);
         item.el.scrollIntoView({ behavior: 'smooth' });
       }
     },
     [$listIngredients],
   );
 
-  // useEffect(() => {
-  //   handlerClickTab(actualType);
-  // }, []);
+  useEffect(() => {
+    $listIngredients.current = [];
+    dispatch(resetActualType());
+  }, []);
 
   return (
     <>

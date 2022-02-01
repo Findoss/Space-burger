@@ -14,6 +14,9 @@ export const ingredientListSlice = createSlice({
     setActualType: (state, { payload }: PayloadAction<IngredientsType>) => {
       state.list.actual = payload;
     },
+    resetActualType: (state) => {
+      state.list.actual = initState.list.actual;
+    },
     setActualIngredient: (
       state,
       { payload }: PayloadAction<IngredientId | null>,
@@ -23,5 +26,5 @@ export const ingredientListSlice = createSlice({
   },
 });
 
-export const { setActualType, setActualIngredient } =
+export const { setActualType, setActualIngredient, resetActualType } =
   ingredientListSlice.actions;
