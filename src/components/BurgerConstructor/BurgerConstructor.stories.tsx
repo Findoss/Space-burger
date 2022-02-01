@@ -23,9 +23,18 @@ Default.args = {
   ingredientBottom: mockIngredientTop,
   ingredients: mockIngredients,
   extraClass: 'class',
+  text: {
+    bunTop: 'верхняя булка',
+    bunBottom: 'нижняя булка',
+  },
 };
 
 export const Empty = Template.bind({});
 Empty.args = {
   extraClass: 'class',
+  text: {
+    topEmpty: 'пусто',
+    bottomEmpty: 'пусто',
+    mainEmpty: 'пусто',
+  },
 };

@@ -2,11 +2,13 @@ import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import {
-  Button,
-  CurrencyIcon,
-} from '@ya.praktikum/react-developer-burger-ui-components';
 import { BurgerConstructorItem } from 'components/BurgerConstructorItem';
+import {
+  BurgerConstructorMainEmpty,
+  BurgerConstructorBottomEmpty,
+  BurgerConstructorTopEmpty,
+} from 'components/BurgerConstructorEmpty';
+
 import { BunTypePosition } from 'enums/Ingredients';
 
 import type { Props } from './types';
@@ -17,33 +19,17 @@ export const BurgerConstructor = ({
   ingredientTop = undefined,
   ingredientBottom = undefined,
   ingredients = [],
-  textTopEmpty = 'textTopEmpty;',
-  textMainEmpty = 'textMainEmpty;',
-  textBottomEmpty = 'textBottomEmpty;',
+  text = {
+    topEmpty: 'textTopEmpty;',
+    bottomEmpty: 'textBottomEmpty;',
+    mainEmpty: 'textMainEmpty;',
+    bunTop: 'textBunTop',
+    bunBottom: 'textBunBottom',
+  },
   clickOrder = () => {},
   extraClass = undefined,
 }: Props) => {
   const { t } = useTranslation();
-  const [sumOrder, setSumOrder] = useState(0);
-
-  useEffect(() => {
-    setSumOrder(() => {
-      let sumBun = 0;
-      if (ingredientTop) {
-        sumBun += ingredientTop.price;
-      }
-
-      if (ingredientBottom) {
-        sumBun += ingredientBottom.price;
-      }
-
-      const sumIngredients = ingredients.reduce(
-        (acc, ingredient) => (acc += ingredient.price),
-        0,
-      );
-      return sumBun + sumIngredients;
-    });
-  }, [ingredients, ingredientTop, ingredientBottom]);
 
   const textBunTop = t(`ingredients.bunPosition.${BunTypePosition.TOP}`);
   const textBunBottom = t(`ingredients.bunPosition.${BunTypePosition.BOTTOM}`);
@@ -60,19 +46,12 @@ export const BurgerConstructor = ({
         <BurgerConstructorItem
           type={BunTypePosition.TOP}
           isLocked={true}
-          text={`${ingredientTop.text} (${textBunTop})`}
+          text={`${ingredientTop.text} (${text.bunTop})`}
           thumbnail={ingredientTop.thumbnail}
           price={ingredientTop.price}
         />
       ) : (
-        <div
-          className={cn(
-            'text text_type_main-default text_color_inactive ml-8 mr-2',
-            styles.constructor_top_empty,
-          )}
-        >
-          {textTopEmpty}
-        </div>
+        <BurgerConstructorTopEmpty text={text.topEmpty} />
       )}
       <div className={cn('custom-scroll', styles.constructor_main)}>
         {ingredients.length ? (
@@ -82,46 +61,20 @@ export const BurgerConstructor = ({
             );
           })
         ) : (
-          <div
-            className={cn(
-              'text text_type_main-default text_color_inactive ml-8',
-              styles.constructor_main_empty,
-            )}
-          >
-            {textMainEmpty}
-          </div>
+          <BurgerConstructorMainEmpty text={text.mainEmpty} />
         )}
       </div>
       {ingredientBottom ? (
         <BurgerConstructorItem
           type={BunTypePosition.BOTTOM}
           isLocked={true}
-          text={`${ingredientBottom.text} (${textBunBottom})`}
+          text={`${ingredientBottom.text} (${text.bunBottom})`}
           thumbnail={ingredientBottom.thumbnail}
           price={ingredientBottom.price}
         />
       ) : (
-        <div
-          className={cn(
-            'text text_type_main-default text_color_inactive ml-8 mr-2',
-            styles.constructor_bottom_empty,
-          )}
-        >
-          {textBottomEmpty}
-        </div>
+        <BurgerConstructorBottomEmpty text={text.bottomEmpty} />
       )}
-      <div className={cn(styles.constructor_price, 'mt-10')}>
-        <div className="text text_type_digits-medium mr-10">
-          {sumOrder}
-          {'  '}
-          <CurrencyIcon type="primary" />
-        </div>
-        <Button onClick={clickOrder}>
-          <div className={cn(styles.constructor_order_button)}>
-            {t('constructor.buy')}
-          </div>
-        </Button>
-      </div>
     </div>
   );
 };
