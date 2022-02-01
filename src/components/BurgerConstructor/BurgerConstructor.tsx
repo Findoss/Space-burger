@@ -14,9 +14,12 @@ import type { Props } from './types';
 import styles from './styles.module.css';
 
 export const BurgerConstructor = ({
-  ingredientTop,
-  ingredientBottom,
+  ingredientTop = undefined,
+  ingredientBottom = undefined,
   ingredients = [],
+  textTopEmpty = 'textTopEmpty;',
+  textMainEmpty = 'textMainEmpty;',
+  textBottomEmpty = 'textBottomEmpty;',
   clickOrder = () => {},
   extraClass = undefined,
 }: Props) => {
@@ -53,7 +56,7 @@ export const BurgerConstructor = ({
         extraClass,
       )}
     >
-      {ingredientTop && (
+      {ingredientTop ? (
         <BurgerConstructorItem
           type={BunTypePosition.TOP}
           isLocked={true}
@@ -61,17 +64,35 @@ export const BurgerConstructor = ({
           thumbnail={ingredientTop.thumbnail}
           price={ingredientTop.price}
         />
+      ) : (
+        <div
+          className={cn(
+            'text text_type_main-default text_color_inactive ml-8 mr-2',
+            styles.constructor_top_empty,
+          )}
+        >
+          {textTopEmpty}
+        </div>
       )}
       <div className={cn('custom-scroll', styles.constructor_main)}>
-        {ingredients.length
-          ? ingredients.map((ingredient) => {
-              return (
-                <BurgerConstructorItem key={ingredient.id} {...ingredient} />
-              );
-            })
-          : 'empty'}
+        {ingredients.length ? (
+          ingredients.map((ingredient) => {
+            return (
+              <BurgerConstructorItem key={ingredient.id} {...ingredient} />
+            );
+          })
+        ) : (
+          <div
+            className={cn(
+              'text text_type_main-default text_color_inactive ml-8',
+              styles.constructor_main_empty,
+            )}
+          >
+            {textMainEmpty}
+          </div>
+        )}
       </div>
-      {ingredientBottom && (
+      {ingredientBottom ? (
         <BurgerConstructorItem
           type={BunTypePosition.BOTTOM}
           isLocked={true}
@@ -79,6 +100,15 @@ export const BurgerConstructor = ({
           thumbnail={ingredientBottom.thumbnail}
           price={ingredientBottom.price}
         />
+      ) : (
+        <div
+          className={cn(
+            'text text_type_main-default text_color_inactive ml-8 mr-2',
+            styles.constructor_bottom_empty,
+          )}
+        >
+          {textBottomEmpty}
+        </div>
       )}
       <div className={cn(styles.constructor_price, 'mt-10')}>
         <div className="text text_type_digits-medium mr-10">

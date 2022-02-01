@@ -24,3 +24,8 @@ Default.args = {
   ingredients: mockIngredients,
   extraClass: 'class',
 };
+
+export const Empty = Template.bind({});
+Empty.args = {
+  extraClass: 'class',
+};

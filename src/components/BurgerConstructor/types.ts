@@ -14,5 +14,8 @@ export type Props = {
   ingredientBottom?: IngredientLock;
   ingredients: IngredientsMain;
   extraClass?: string;
+  textMainEmpty: string;
+  textBottomEmpty: string;
+  textTopEmpty: string;
   clickOrder: () => void;
 };
