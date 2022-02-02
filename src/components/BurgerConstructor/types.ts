@@ -1,16 +1,15 @@
-import { Props as BurgerConstructorItemProps } from 'components/BurgerConstructorItem/types';
+import type { Props as BurgerConstructorItemProps } from 'components/BurgerConstructorItem/types';
+import type { ReactNode } from 'react';
 
 export type IngredientLock = Omit<
   BurgerConstructorItemProps,
   'type' | 'isLocked'
 >;
 
-export type IngredientsMain = BurgerConstructorItemProps[];
-
 export type Props = {
   ingredientTop?: IngredientLock;
   ingredientBottom?: IngredientLock;
-  ingredients?: IngredientsMain;
+  children?: ReactNode;
   extraClass?: string;
   text?: {
     topEmpty?: string;
@@ -19,5 +18,4 @@ export type Props = {
     bunTop?: string;
     bunBottom?: string;
   };
-  onRemove?: (id: string) => void;
 };

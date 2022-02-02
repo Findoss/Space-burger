@@ -40,6 +40,7 @@ export const selectOrderFilling = (state: RootState) => {
       return ingredient.type !== IngredientsType.bells;
     })
     .map((ingredient) => {
+      // ! TODO DELETE map
       return {
         key: uuid(),
         id: ingredient.id,

@@ -25,10 +25,10 @@ import { IngredientsType } from 'enums/Ingredients';
 
 import type { Props } from './types';
 import type { IngredientsEntity } from 'api/Ingredients/types';
-import type {
-  IngredientLock,
-  IngredientsMain,
-} from 'components/BurgerConstructor/types';
+// import type {
+//   IngredientLock,
+//   IngredientsMain,
+// } from 'components/BurgerConstructor/types';
 // import type { Props as IngredientDetailsProps } from 'features/ContainerIngredientDetails/types';
 
 import styles from './styles.module.css';
@@ -47,9 +47,9 @@ export const Main = ({ extraClass = undefined }: Props) => {
     undefined as any,
   );
 
-  const [ingredientsConstructor, setIngredientsConstructor] = useState<
-    IngredientsMain | undefined
-  >([]);
+  // const [ingredientsConstructor, setIngredientsConstructor] = useState<
+  //   IngredientsMain | undefined
+  // >([]);
 
   // const [ingredientsConstructorLocked, setIngredientsConstructorLocked] =
   // useState<IngredientLock[]>(baseLock);

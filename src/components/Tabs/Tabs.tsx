@@ -18,13 +18,9 @@ export const Tabs = ({
     onClick(key);
   }, []);
 
-  console.log(tabs);
-
   return (
     <div className={cn(styles.tabs, extraClass)}>
       {tabs.map(({ key, title = '' }) => {
-        console.log(title);
-
         return (
           <Tab
             key={key}

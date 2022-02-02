@@ -28,7 +28,6 @@ export const mockIngredients = [
 ];
 
 export const mockIngredientTop: BurgerConstructorItemProps = {
-  id: '5',
   thumbnail: 'https://code.s3.yandex.net/react/code/bun-01-mobile.png',
   price: 20,
   text: 'Краторная булка N-200i',
@@ -37,7 +36,6 @@ export const mockIngredientTop: BurgerConstructorItemProps = {
 };
 
 export const mockIngredientBottom: BurgerConstructorItemProps = {
-  id: '5',
   thumbnail: 'https://code.s3.yandex.net/react/code/bun-02-mobile.png',
   price: 20,
   text: 'Краторная булка N-200i',
