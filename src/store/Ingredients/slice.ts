@@ -3,9 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 import { initState } from './state';
 import { fetchIngredientAll } from './thunk';
 
-export const INGREDIENT_COLLECTION_KEY = 'ingredients';
+export const COLLECTION_INGREDIENT = 'ingredients';
 export const ingredientsCollection = createSlice({
-  name: INGREDIENT_COLLECTION_KEY,
+  name: COLLECTION_INGREDIENT,
   initialState: initState,
   reducers: {},
   extraReducers: (builder) => {

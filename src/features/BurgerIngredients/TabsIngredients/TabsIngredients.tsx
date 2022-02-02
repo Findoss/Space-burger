@@ -1,27 +1,37 @@
 import React from 'react';
 import cn from 'classnames';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'hooks/useRedux';
 
 import { Tabs } from 'components/Tabs';
-import { selectActualType } from '../service/selectors';
+import { selectActualType, selectTypesIngredient } from '../service/selectors';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
 export const TabsIngredients = ({
-  tabs,
-  title = '',
   onClick = () => {},
   extraClass = undefined,
 }: Props) => {
+  const { t } = useTranslation();
   const actualType = useSelector(selectActualType);
+  const typesIngredient = useSelector(selectTypesIngredient).map((v) => ({
+    key: v,
+    title: t(`constructor.${v}`),
+  }));
 
   return (
-    <div className={cn(styles.burger_ingredients, extraClass)}>
-      <div className="mb-5 text text_type_main-large">{title}</div>
+    <div className={cn(extraClass)}>
+      <div className="mb-5 text text_type_main-large">
+        {t('constructor.constructor')}
+      </div>
       <div className="mb-10">
-        <Tabs tabs={tabs} currentTab={actualType} onClick={onClick} />
+        <Tabs
+          tabs={typesIngredient}
+          currentTab={actualType}
+          onClick={onClick}
+        />
       </div>
     </div>
   );

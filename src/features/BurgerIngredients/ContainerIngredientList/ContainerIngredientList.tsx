@@ -38,6 +38,6 @@ export const ContainerIngredientList = forwardRef<HTMLDivElement, Props>(
       );
     }
 
-    return null;
+    return <Loader />;
   },
 );

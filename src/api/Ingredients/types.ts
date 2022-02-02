@@ -1,9 +1,11 @@
+import type { IngredientsType } from 'enums/Ingredients';
+
 export type IngredientId = string;
 
 export type IngredientRaw = {
   _id: IngredientId;
   name: string;
-  type: string;
+  type: IngredientsType;
   proteins: number;
   fat: number;
   carbohydrates: number;
@@ -19,7 +21,7 @@ export type IngredientsRaw = { data: { data: IngredientRaw[] } };
 export type Ingredient = {
   id: IngredientId;
   name: string;
-  type: string;
+  type: IngredientsType;
   proteins: number;
   fat: number;
   carbohydrates: number;

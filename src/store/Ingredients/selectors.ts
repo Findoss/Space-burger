@@ -1,5 +1,6 @@
 import { RootState } from 'store/store';
-import { IngredientsType } from 'enums/Ingredients';
+import type { IngredientsType } from 'enums/Ingredients';
+import type { IngredientId } from 'api/Ingredients/types';
 
 export const getIngredientCollection = (state: RootState) =>
   state.collections.ingredients;
@@ -10,9 +11,10 @@ export const getIdIngredients = (state: RootState) =>
 export const getEntityIngredients = (state: RootState) =>
   getIngredientCollection(state).entities.ingredients;
 
-export const selectIngredientById = (id: string) => (state: RootState) => {
-  return getEntityIngredients(state)[id] || {};
-};
+export const selectIngredientById =
+  (id: IngredientId) => (state: RootState) => {
+    return getEntityIngredients(state)[id] || {};
+  };
 
 export const selectIngredientsByType =
   (ingredientType: IngredientsType) => (state: RootState) =>

@@ -20,18 +20,16 @@ export const Tabs = ({
 
   return (
     <div className={cn(styles.tabs, extraClass)}>
-      {tabs.map(({ key, title }) => {
-        return (
-          <Tab
-            key={key}
-            value={key}
-            active={key === currentTab}
-            onClick={() => handlerClick(key as IngredientsType)}
-          >
-            {title}
-          </Tab>
-        );
-      })}
+      {tabs.map(({ key, title = '' }) => (
+        <Tab
+          key={key}
+          value={key}
+          active={key === currentTab}
+          onClick={() => handlerClick(key as IngredientsType)}
+        >
+          {title}
+        </Tab>
+      ))}
     </div>
   );
 };

@@ -1,18 +1,22 @@
-import { Props as BurgerConstructorItemProps } from 'components/BurgerConstructorItem/types';
-
-type idIngredient = { id: string };
+import type { Props as BurgerConstructorItemProps } from 'components/BurgerConstructorItem/types';
+import type { ReactNode } from 'react';
 
 export type IngredientLock = Omit<
   BurgerConstructorItemProps,
   'type' | 'isLocked'
 >;
 
-export type IngredientsMain = (BurgerConstructorItemProps & idIngredient)[];
-
 export type Props = {
+  role?: string;
   ingredientTop?: IngredientLock;
   ingredientBottom?: IngredientLock;
-  ingredients: IngredientsMain;
+  children?: ReactNode;
   extraClass?: string;
-  clickOrder: () => void;
+  text?: {
+    topEmpty?: string;
+    bottomEmpty?: string;
+    mainEmpty?: string;
+    bunTop?: string;
+    bunBottom?: string;
+  };
 };

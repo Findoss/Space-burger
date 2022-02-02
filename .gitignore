@@ -13,6 +13,7 @@
 # production
 build/*
 public/cache/*
+arhive
 
 # misc
 .DS_Store
