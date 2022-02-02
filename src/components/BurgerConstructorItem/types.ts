@@ -6,4 +6,5 @@ export type Props = {
   isLocked?: boolean;
   onRemove?: () => void;
   type?: 'bottom' | 'top';
+  extraClass?: string;
 };

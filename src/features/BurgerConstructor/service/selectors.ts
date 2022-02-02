@@ -12,26 +12,25 @@ export const selectIsModalOpen = (state: RootState) =>
   getBurgerConstructorWidget(state).order.modalIsOpen;
 
 export const selectOrderIngredients = (state: RootState) => {
-  return getBurgerConstructorWidget(state).order.ingredients.map(({ id }) => {
-    return selectIngredientById(id)(state);
-  });
+  return getBurgerConstructorWidget(state).order.ingredients.map(
+    ({ id, key }) => {
+      const raw = selectIngredientById(id)(state);
+      return { ...raw, key };
+    },
+  );
 };
 
 export const selectOrderBun = (state: RootState) => {
-  return (
-    selectOrderIngredients(state)
-      .filter((ingredient) => {
-        return ingredient.type === IngredientsType.bells;
-      })
-      .map((ingredient) => {
-        return {
-          id: ingredient.id,
-          thumbnail: ingredient.imageMobile,
-          price: ingredient.price,
-          text: ingredient.name,
-        };
-      })[0] ?? undefined
-  );
+  const id = getBurgerConstructorWidget(state).order.bun;
+  if (id !== null) {
+    const raw = selectIngredientById(id)(state);
+    return {
+      thumbnail: raw.imageMobile,
+      price: raw.price,
+      text: raw.name,
+    };
+  }
+  return undefined;
 };
 
 export const selectOrderFilling = (state: RootState) => {
@@ -40,9 +39,8 @@ export const selectOrderFilling = (state: RootState) => {
       return ingredient.type !== IngredientsType.bells;
     })
     .map((ingredient) => {
-      // ! TODO DELETE map
       return {
-        key: uuid(),
+        key: ingredient.key,
         id: ingredient.id,
         thumbnail: ingredient.imageMobile,
         price: ingredient.price,
@@ -57,9 +55,9 @@ export const selectSumOrder = (state: RootState) => {
     0,
   );
 
-  const sumBun = selectOrderBun(state)?.price * 2 || 0;
+  const sumBun = selectOrderBun(state)?.price ?? 0;
 
-  return sumBun + sumFilling;
+  return sumBun * 2 + sumFilling;
 };
 
 export const selectCountIngredients = (state: RootState) => {

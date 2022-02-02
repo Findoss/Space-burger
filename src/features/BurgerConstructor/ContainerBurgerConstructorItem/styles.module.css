@@ -1,0 +1,4 @@
+.dragging div:last-child {
+  border: 5px solid var(--colors-interface-accent);
+  border-radius: var(--common-border-radius-s);
+}

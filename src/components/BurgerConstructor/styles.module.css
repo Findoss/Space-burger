@@ -3,14 +3,6 @@
   flex-direction: column;
   gap: calc(var(--offset-base-size) * 4);
 
-  max-height: 700px;
-}
-
-.constructor_main {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: calc(var(--offset-base-size) * 4);
-
-  overflow: auto;
+  max-height: 710px;
+  border-radius: var(--common-border-radius-s);
 }

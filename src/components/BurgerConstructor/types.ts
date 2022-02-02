@@ -7,6 +7,7 @@ export type IngredientLock = Omit<
 >;
 
 export type Props = {
+  role?: string;
   ingredientTop?: IngredientLock;
   ingredientBottom?: IngredientLock;
   children?: ReactNode;

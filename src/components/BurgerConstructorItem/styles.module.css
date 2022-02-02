@@ -6,13 +6,14 @@
 
 .burger_ingredient div {
   max-width: 100%;
+  border: 5px solid transparent;
 }
 
 .burger_ingredient_drag {
 }
 
 .burger_ingredient_drag:hover {
-  cursor: pointer;
+  cursor: move;
 }
 
 .burger_ingredient_bottom img {
