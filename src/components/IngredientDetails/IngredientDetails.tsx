@@ -17,7 +17,7 @@ export const IngredientDetails = ({
     <div className={cn(styles.ingredient_info, extraClass)}>
       <div className={cn(styles.body)}>
         <div className={cn('mb-4', styles.image)}>
-          <Image src={image} alt="" />
+          <Image src={image} alt={name} />
         </div>
         <div className={cn('text text_type_main-medium mb-8', styles.name)}>
           {name}

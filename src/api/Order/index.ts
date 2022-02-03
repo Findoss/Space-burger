@@ -1,1 +1,1 @@
-export { resolveIngredients } from './resolver';
+export { resolveOrder } from './resolver';

@@ -2,28 +2,22 @@ import { normalize } from 'normalizr';
 import { API_URL } from 'constants/index';
 
 import { instanceAxios } from 'plugins/axios';
-
-import { formatIngredients } from './format';
-import { ingredientsSchema } from './entity';
+import { formatOrder } from './format';
 
 import type { Resolver } from '../types';
-import type { IngredientsEntity, IngredientsRaw } from './types';
+import type { Order, OrderRaw } from './types';
 
-import mockIngredients from './__mocks__/Order.json';
+import mockOrder from './__mocks__/Order.json';
 
-export const resolveIngredients: Resolver<
-  void,
-  IngredientsEntity
-> = async () => {
+export const resolveOrder: Resolver<void, Order> = async () => {
   try {
-    // const raw = mockIngredients;
-    const raw = await instanceAxios.get<void, IngredientsRaw>(
+    // const raw = mockOrder;
+    const raw = await instanceAxios.get<void, OrderRaw>(
       `${API_URL}/ingredients`,
     );
-    const formatted = formatIngredients(raw);
-    const result = normalize(formatted, ingredientsSchema) as IngredientsEntity;
+    const formatted = formatOrder(raw);
 
-    return result;
+    return formatted;
   } catch (error) {
     console.log(error);
     throw error;
