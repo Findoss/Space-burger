@@ -14,7 +14,7 @@ import { useTranslation } from 'react-i18next';
 
 export const ContainerBurgerConstructorCalc = ({ extraClass }: Props) => {
   const dispatch = useDispatch();
-  const sumOrder = useSelector(selectSumOrder) || 0;
+  const sumOrder = useSelector(selectSumOrder);
   const { t } = useTranslation();
 
   const handlerClick = () => {

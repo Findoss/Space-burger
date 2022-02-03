@@ -8,7 +8,7 @@ import { PageNotFound } from 'pages/NotFound';
 export const routes: Routes = [
   {
     path: '/',
-    component: <PageTest />,
+    component: <PageMain />,
     isPrivate: false,
     redirect: '',
     exact: false,
