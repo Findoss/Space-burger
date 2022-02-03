@@ -7,7 +7,7 @@ import { XYCoord } from 'dnd-core';
 import { DRAG } from 'enums/Drag';
 import { BurgerConstructorItem } from 'components/BurgerConstructorItem';
 
-import { selectIngredientById } from 'store/Ingredients/selectors';
+import { selectIngredientById } from 'store/Ingredient/selectors';
 import { removeIngredientOrder } from '../service/slice';
 
 import styles from './styles.module.css';

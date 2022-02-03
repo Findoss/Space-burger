@@ -1,15 +1,28 @@
-import { selectIngredientById } from 'store/Ingredients/selectors';
+import { selectIngredientById } from 'store/Ingredient/selectors';
 import { RootState, WIDGETS } from 'store/store';
 import { WIDGET_BURGER_CONSTRUCTOR } from './slice';
 import { IngredientsType } from 'enums/Ingredient';
+
 import type { IngredientId } from 'api/Ingredient/types';
-import { uuid } from 'utils/uuid';
 
 export const getBurgerConstructorWidget = (state: RootState) =>
   state[WIDGETS][WIDGET_BURGER_CONSTRUCTOR];
 
 export const selectIsModalOpen = (state: RootState) =>
   getBurgerConstructorWidget(state).order.modalIsOpen;
+
+export const selectOrder = (state: RootState) => {
+  const { bun } = getBurgerConstructorWidget(state).order;
+  const ingredients = getBurgerConstructorWidget(state).order.ingredients.map(
+    (v) => v.id,
+  );
+
+  if (bun !== null) {
+    ingredients.push(bun);
+  }
+
+  return ingredients;
+};
 
 export const selectOrderIngredients = (state: RootState) => {
   return getBurgerConstructorWidget(state).order.ingredients.map(

@@ -1,1 +1,1 @@
-export { resolveOrder } from './resolver';
+export { resolveNewOrder } from './resolver';

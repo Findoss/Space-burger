@@ -1,11 +1,24 @@
+import type { IngredientId } from 'api/Ingredient/types';
+
 export type OrderId = string;
 
 export type OrderRaw = {
   data: {
-    _id: OrderId;
+    name: string;
+    order: {
+      number: OrderId;
+    };
+    success: boolean;
+    message?: string;
   };
 };
 
 export type Order = {
-  id: OrderId;
+  name: string;
+  order: {
+    number: OrderId;
+  };
+  success: boolean;
 };
+
+export type NewOrderParam = IngredientId[];

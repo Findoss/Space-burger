@@ -1,25 +1,23 @@
-import { normalize } from 'normalizr';
 import { API_URL } from 'constants/index';
 
 import { instanceAxios } from 'plugins/axios';
 import { formatOrder } from './format';
 
 import type { Resolver } from '../types';
-import type { Order, OrderRaw } from './types';
+import type { Order, OrderRaw, NewOrderParam } from './types';
 
 import mockOrder from './__mocks__/Order.json';
 
-export const resolveOrder: Resolver<void, Order> = async () => {
-  try {
-    // const raw = mockOrder;
-    const raw = await instanceAxios.get<void, OrderRaw>(
-      `${API_URL}/ingredients`,
-    );
-    const formatted = formatOrder(raw);
-
-    return formatted;
-  } catch (error) {
-    console.log(error);
-    throw error;
-  }
+export const resolveNewOrder: Resolver<NewOrderParam, Order> = (payload) => {
+  return instanceAxios
+    .post<void, OrderRaw>(`${API_URL}/orders`, {
+      ingredients: payload,
+    })
+    .then((data) => {
+      if (data.data.success === false) {
+        throw new Error('');
+      }
+      return data;
+    })
+    .then((data) => formatOrder(data));
 };

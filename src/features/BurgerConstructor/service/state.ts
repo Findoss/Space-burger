@@ -1,4 +1,3 @@
-import { uuid } from 'utils/uuid';
 import type { initType } from './types';
 
 export const initState: initType = {
