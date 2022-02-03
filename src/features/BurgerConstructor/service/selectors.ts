@@ -1,8 +1,8 @@
 import { selectIngredientById } from 'store/Ingredients/selectors';
 import { RootState, WIDGETS } from 'store/store';
 import { WIDGET_BURGER_CONSTRUCTOR } from './slice';
-import { IngredientsType } from 'enums/Ingredients';
-import type { IngredientId } from 'api/Ingredients/types';
+import { IngredientsType } from 'enums/Ingredient';
+import type { IngredientId } from 'api/Ingredient/types';
 import { uuid } from 'utils/uuid';
 
 export const getBurgerConstructorWidget = (state: RootState) =>

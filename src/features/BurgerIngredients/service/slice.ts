@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { initState } from './state';
 
-import type { IngredientsType } from 'enums/Ingredients';
+import type { IngredientsType } from 'enums/Ingredient';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { IngredientId } from 'api/Ingredients/types';
+import type { IngredientId } from 'api/Ingredient/types';
 
 export const WIDGET_BURGER_INGREDIENTS = 'burgerIngredients';
 export const burgerIngredientsSlice = createSlice({

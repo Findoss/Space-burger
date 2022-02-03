@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
-import { resolveIngredients } from 'api/Ingredients';
+import { resolveIngredients } from 'api/Ingredient';
 
 import { Main as MainLayout } from 'layouts/Main';
 
@@ -14,7 +14,7 @@ import { Modal } from 'components/Modal';
 import { OrderDetails } from 'components/OrderDetails';
 import { IngredientDetails } from 'components/IngredientDetails';
 
-import { IngredientsType } from 'enums/Ingredients';
+import { IngredientsType } from 'enums/Ingredient';
 
 // import {
 //   selectIngredientById,
@@ -24,7 +24,7 @@ import { IngredientsType } from 'enums/Ingredients';
 // } from 'store/Ingredients/selectors';
 
 import type { Props } from './types';
-import type { IngredientsEntity } from 'api/Ingredients/types';
+import type { IngredientsEntity } from 'api/Ingredient/types';
 // import type {
 //   IngredientLock,
 //   IngredientsMain,

@@ -5,8 +5,8 @@ import { createSlice } from '@reduxjs/toolkit';
 import { initState } from './state';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { IngredientId } from 'api/Ingredients/types';
-import { IngredientsType } from 'enums/Ingredients';
+import type { IngredientId } from 'api/Ingredient/types';
+import { IngredientsType } from 'enums/Ingredient';
 
 export const WIDGET_BURGER_CONSTRUCTOR = 'burgerConstructor';
 export const burgerConstructorSlice = createSlice({

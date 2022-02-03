@@ -1,4 +1,4 @@
-import type { IngredientsEntity } from 'api/Ingredients/types';
+import type { IngredientsEntity } from 'api/Ingredient/types';
 
 type RequestState = {
   status: 'pending' | 'fulfilled' | 'rejected';

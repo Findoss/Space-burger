@@ -1,5 +1,5 @@
 import type { ReactNode } from 'react';
-import type { IngredientsType } from 'enums/Ingredients';
+import type { IngredientsType } from 'enums/Ingredient';
 
 export type TabProps = {
   key: string;
