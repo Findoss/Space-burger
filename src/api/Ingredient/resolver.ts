@@ -9,7 +9,7 @@ import { ingredientsSchema } from './entity';
 import type { Resolver } from '../types';
 import type { IngredientsEntity, IngredientsRaw } from './types';
 
-import mockIngredients from './__mocks__/Ingredients.json';
+import mockIngredients from './__mocks__/Ingredient.json';
 
 export const resolveIngredients: Resolver<
   void,

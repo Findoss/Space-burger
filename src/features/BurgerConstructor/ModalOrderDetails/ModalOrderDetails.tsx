@@ -10,7 +10,6 @@ import { toggleModalOrder } from '../service/slice';
 
 export const ModalOrderDetails = () => {
   const dispatch = useDispatch();
-
   const isOpen = useSelector(selectIsModalOpen);
 
   if (!isOpen) {

@@ -9,7 +9,7 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 
 export const Tabs = ({
-  tabs,
+  tabs = [],
   currentTab,
   onClick,
   extraClass = undefined,

@@ -7,7 +7,7 @@ export type TabProps = {
 };
 
 export type Props = {
-  tabs: TabProps[];
+  tabs?: TabProps[];
   currentTab: IngredientsType;
   onClick: (key: IngredientsType) => void;
   extraClass?: string;
