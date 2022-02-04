@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'hooks/useRedux';
 import { useTranslation } from 'react-i18next';
-import { useDrag, useDrop } from 'react-dnd';
+import { useDrop } from 'react-dnd';
 
 import { DRAG } from 'enums/Drag';
 import { BurgerConstructor } from 'components/BurgerConstructor';
@@ -10,6 +10,8 @@ import { ContainerBurgerConstructorItem } from '../ContainerBurgerConstructorIte
 
 import { selectOrderBun, selectOrderFilling } from '../service/selectors';
 import { swapIngredientOrder } from '../service/slice';
+
+import { mapParamDrop } from './utils';
 
 import styles from './styles.module.css';
 
@@ -30,13 +32,7 @@ export const ContainerBurgerConstructor = ({}: Props) => {
       canDrop: monitor.canDrop(),
     }),
   }));
-  // ! TODO переписать матчинг что за хрень
-  const zoneA = {
-    $el: z1[1],
-    canDrop: z1[0].canDrop,
-    isOver: z1[0].isOver,
-    isActive: z1[0].canDrop && z1[0].isOver,
-  };
+  const zoneA = mapParamDrop(z1);
 
   const z2 = useDrop(() => ({
     accept: DRAG.ITEM_B,
@@ -46,12 +42,7 @@ export const ContainerBurgerConstructor = ({}: Props) => {
       canDrop: monitor.canDrop(),
     }),
   }));
-  const zoneB = {
-    $el: z2[1],
-    canDrop: z2[0].canDrop,
-    isOver: z2[0].isOver,
-    isActive: z2[0].canDrop && z2[0].isOver,
-  };
+  const zoneB = mapParamDrop(z2);
 
   const handlerMove = (dragIndex: number, hoverIndex: number) => {
     dispatch(swapIngredientOrder({ dragIndex, hoverIndex }));
