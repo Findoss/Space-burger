@@ -9,7 +9,7 @@ export const getBurgerConstructorWidget = (state: RootState) =>
   state[WIDGETS][WIDGET_BURGER_CONSTRUCTOR];
 
 export const selectIsModalOpen = (state: RootState) =>
-  getBurgerConstructorWidget(state).order.modalIsOpen;
+  getBurgerConstructorWidget(state).modalIsOpen;
 
 export const selectOrder = (state: RootState) => {
   const { bun } = getBurgerConstructorWidget(state).order;
@@ -74,13 +74,10 @@ export const selectSumOrder = (state: RootState) => {
 };
 
 export const selectCountIngredients = (state: RootState) => {
-  return getBurgerConstructorWidget(state).order.ingredients.reduce(
-    (acc: Record<string, number>, { id }) => {
-      acc[id] = (acc[id] || 0) + 1;
-      return acc;
-    },
-    {},
-  );
+  return selectOrder(state).reduce((acc: Record<string, number>, id) => {
+    acc[id] = (acc[id] || 0) + 1;
+    return acc;
+  }, {});
 };
 
 export const selectCountIngredientById =

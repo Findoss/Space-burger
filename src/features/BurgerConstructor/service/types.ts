@@ -1,12 +1,14 @@
 import { IngredientId } from 'api/Ingredient/types';
 
-export type initType = {
-  order: {
-    modalIsOpen: boolean;
-    bun: IngredientId | null;
-    ingredients: {
-      id: IngredientId;
-      key: string;
-    }[];
-  };
+export type InitType = {
+  modalIsOpen: boolean;
+  order: InitOrder;
+};
+
+export type InitOrder = {
+  bun: IngredientId | null;
+  ingredients: {
+    id: IngredientId;
+    key: string;
+  }[];
 };

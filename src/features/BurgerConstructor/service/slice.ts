@@ -2,11 +2,12 @@ import { uuid } from 'utils/uuid';
 import { swap } from 'utils/swap';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { initState } from './state';
+import { IngredientsType } from 'enums/Ingredient';
+import { initOrder, initState } from './state';
+import { fetchNewOrder } from 'store/Order/thunk';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { IngredientId } from 'api/Ingredient/types';
-import { IngredientsType } from 'enums/Ingredient';
 
 export const WIDGET_BURGER_CONSTRUCTOR = 'burgerConstructor';
 export const burgerConstructorSlice = createSlice({
@@ -14,7 +15,7 @@ export const burgerConstructorSlice = createSlice({
   initialState: initState,
   reducers: {
     toggleModalOrder: (state) => {
-      state.order.modalIsOpen = !state.order.modalIsOpen;
+      state.modalIsOpen = !state.modalIsOpen;
     },
     addIngredientOrder: (
       state,
@@ -47,10 +48,19 @@ export const burgerConstructorSlice = createSlice({
         state.order.ingredients.splice(index, 1);
       }
     },
+    resetOrder: (state) => {
+      state.order = initOrder;
+    },
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchNewOrder.fulfilled, (state) => {
+      state.order = initOrder;
+    });
   },
 });
 
 export const {
+  resetOrder,
   toggleModalOrder,
   addIngredientOrder,
   removeIngredientOrder,
