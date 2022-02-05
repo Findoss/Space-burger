@@ -6,5 +6,5 @@ export type Props = {
   closeBackground?: boolean;
   closeEscape?: boolean;
   onClose?: () => void;
-  className?: string;
+  extraClass?: string;
 };

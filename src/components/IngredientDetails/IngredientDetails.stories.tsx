@@ -2,7 +2,10 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { IngredientDetails } from './IngredientDetails';
-import { mockIngredientDetails } from './__mocks__/IngredientDetails';
+import {
+  mockIngredientDetails,
+  mockIngredientParams,
+} from './__mocks__/IngredientDetails';
 
 export default {
   title: 'Components/IngredientDetails',
@@ -15,6 +18,7 @@ const Template: ComponentStory<typeof IngredientDetails> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'class',
+  extraClass: 'class',
+  children: 'children',
   ...mockIngredientDetails,
 };

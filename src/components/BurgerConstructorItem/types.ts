@@ -1,8 +1,10 @@
 export type Props = {
+  key?: string;
   thumbnail: string;
   price: number;
   text: string;
   isLocked?: boolean;
-  handleClose?: () => void;
+  onRemove?: () => void;
   type?: 'bottom' | 'top';
+  extraClass?: string;
 };

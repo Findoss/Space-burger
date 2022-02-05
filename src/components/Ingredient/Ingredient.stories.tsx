@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Ingredient> = (args) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'class',
+  extraClass: 'class',
   id: 'string',
   price: 123,
   name: 'Соус фирменный Space Sauce',

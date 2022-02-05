@@ -6,6 +6,7 @@ export type Props = {
   name: string;
   image: string;
   count?: number;
-  className?: string;
+  role?: string;
+  extraClass?: string;
   onClick?: (e: SyntheticEvent) => void;
 };

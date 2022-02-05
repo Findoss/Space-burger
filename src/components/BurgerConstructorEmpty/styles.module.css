@@ -1,0 +1,25 @@
+.constructor_main_empty {
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-element);
+  border-radius: 22px;
+}
+
+.constructor_top_empty,
+.constructor_bottom_empty {
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-element);
+}
+
+.constructor_top_empty {
+  border-radius: var(--top-constructor-item-border-radius);
+}
+
+.constructor_bottom_empty {
+  border-radius: var(--bottom-constructor-item-border-radius);
+}

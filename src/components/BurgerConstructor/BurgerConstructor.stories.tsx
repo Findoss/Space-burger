@@ -3,13 +3,12 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { BurgerConstructor } from './BurgerConstructor';
 import {
-  mockIngredients,
   mockIngredientTop,
   mockIngredientBottom,
 } from './__mocks__/BurgerConstructor';
 
 export default {
-  title: 'Components/BurgerConstructor',
+  title: 'Features/BurgerConstructor',
   component: BurgerConstructor,
 } as ComponentMeta<typeof BurgerConstructor>;
 
@@ -21,6 +20,20 @@ export const Default = Template.bind({});
 Default.args = {
   ingredientTop: mockIngredientTop,
   ingredientBottom: mockIngredientTop,
-  ingredients: mockIngredients,
-  className: 'class',
+
+  extraClass: 'class',
+  text: {
+    bunTop: 'верхняя булка',
+    bunBottom: 'нижняя булка',
+  },
+};
+
+export const Empty = Template.bind({});
+Empty.args = {
+  extraClass: 'class',
+  text: {
+    topEmpty: 'пусто',
+    bottomEmpty: 'пусто',
+    mainEmpty: 'пусто',
+  },
 };

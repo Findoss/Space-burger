@@ -1,29 +1,35 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import cn from 'classnames';
 
-import { useState } from 'react';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
+import { IngredientsType } from 'enums/Ingredient';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const Tabs = ({ tabs, className = undefined }: Props) => {
-  const [current, setCurrent] = useState(tabs[0].key);
+export const Tabs = ({
+  tabs = [],
+  currentTab,
+  onClick,
+  extraClass = undefined,
+}: Props) => {
+  const handlerClick = useCallback((key: IngredientsType) => {
+    onClick(key);
+  }, []);
+
   return (
-    <div className={cn(styles.tabs, className)}>
-      {tabs.map(({ key, title }) => {
-        return (
-          <Tab
-            key={key}
-            value={key}
-            active={current === key}
-            onClick={setCurrent}
-          >
-            {title}
-          </Tab>
-        );
-      })}
+    <div className={cn(styles.tabs, extraClass)}>
+      {tabs.map(({ key, title = '' }) => (
+        <Tab
+          key={key}
+          value={key}
+          active={key === currentTab}
+          onClick={() => handlerClick(key as IngredientsType)}
+        >
+          {title}
+        </Tab>
+      ))}
     </div>
   );
 };

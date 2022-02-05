@@ -1,97 +1,75 @@
-import React, { useEffect, useState } from 'react';
+import React, { forwardRef } from 'react';
 import cn from 'classnames';
-import { useTranslation } from 'react-i18next';
 
-import {
-  Button,
-  CurrencyIcon,
-} from '@ya.praktikum/react-developer-burger-ui-components';
 import { BurgerConstructorItem } from 'components/BurgerConstructorItem';
-import { BunTypePosition } from 'enums/Ingredients';
+import {
+  BurgerConstructorMainEmpty,
+  BurgerConstructorBottomEmpty,
+  BurgerConstructorTopEmpty,
+} from 'components/BurgerConstructorEmpty';
+
+import { BunTypePosition } from 'enums/Ingredient';
 
 import type { Props } from './types';
 
 import styles from './styles.module.css';
 
-export const BurgerConstructor = ({
-  ingredientTop,
-  ingredientBottom,
-  ingredients = [],
-  clickOrder = () => {},
-  className = undefined,
-}: Props) => {
-  const { t } = useTranslation();
-  const [sumOrder, setSumOrder] = useState(0);
+export const BurgerConstructor = forwardRef<HTMLDivElement, Props>(
+  (
+    {
+      children = undefined,
+      ingredientTop = undefined,
+      ingredientBottom = undefined,
+      text = {
+        topEmpty: 'textTopEmpty;',
+        bottomEmpty: 'textBottomEmpty;',
+        mainEmpty: 'textMainEmpty;',
+        bunTop: 'textBunTop',
+        bunBottom: 'textBunBottom',
+      },
+      extraClass = undefined,
+    },
+    ref,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={cn(
+          'mt-15 pt-10 pb-10 pr-8',
+          styles.burger_constructor,
+          extraClass,
+        )}
+      >
+        {ingredientTop ? (
+          <BurgerConstructorItem
+            type={BunTypePosition.TOP}
+            isLocked={true}
+            text={`${ingredientTop.text} (${text.bunTop})`}
+            thumbnail={ingredientTop.thumbnail}
+            price={ingredientTop.price}
+          />
+        ) : (
+          <BurgerConstructorTopEmpty text={text.topEmpty} />
+        )}
 
-  useEffect(() => {
-    setSumOrder(() => {
-      let sumBun = 0;
-      if (ingredientTop) {
-        sumBun += ingredientTop.price;
-      }
+        {children !== null ? (
+          children
+        ) : (
+          <BurgerConstructorMainEmpty text={text.mainEmpty} />
+        )}
 
-      if (ingredientBottom) {
-        sumBun += ingredientBottom.price;
-      }
-
-      const sumIngredients = ingredients.reduce(
-        (acc, ingredient) => (acc += ingredient.price),
-        0,
-      );
-      return sumBun + sumIngredients;
-    });
-  }, [ingredients, ingredientTop, ingredientBottom]);
-
-  const textBunTop = t(`ingredients.bunPosition.${BunTypePosition.TOP}`);
-  const textBunBottom = t(`ingredients.bunPosition.${BunTypePosition.BOTTOM}`);
-
-  return (
-    <div
-      className={cn(
-        ' pt-25 pl-4 pr-4 pb-10',
-        styles.burger_constructor,
-        className,
-      )}
-    >
-      {ingredientTop && (
-        <BurgerConstructorItem
-          type={BunTypePosition.TOP}
-          isLocked={true}
-          text={`${ingredientTop.text} (${textBunTop})`}
-          thumbnail={ingredientTop.thumbnail}
-          price={ingredientTop.price}
-        />
-      )}
-      <div className={cn('custom-scroll', styles.constructor_main)}>
-        {ingredients.length
-          ? ingredients.map((ingredient) => {
-              return (
-                <BurgerConstructorItem key={ingredient.id} {...ingredient} />
-              );
-            })
-          : 'empty'}
+        {ingredientBottom ? (
+          <BurgerConstructorItem
+            type={BunTypePosition.BOTTOM}
+            isLocked={true}
+            text={`${ingredientBottom.text} (${text.bunBottom})`}
+            thumbnail={ingredientBottom.thumbnail}
+            price={ingredientBottom.price}
+          />
+        ) : (
+          <BurgerConstructorBottomEmpty text={text.bottomEmpty} />
+        )}
       </div>
-      {ingredientBottom && (
-        <BurgerConstructorItem
-          type={BunTypePosition.BOTTOM}
-          isLocked={true}
-          text={`${ingredientBottom.text} (${textBunBottom})`}
-          thumbnail={ingredientBottom.thumbnail}
-          price={ingredientBottom.price}
-        />
-      )}
-      <div className={cn(styles.constructor_price, 'mt-10')}>
-        <div className="text text_type_digits-medium mr-10">
-          {sumOrder}
-          {'  '}
-          <CurrencyIcon type="primary" />
-        </div>
-        <Button onClick={clickOrder}>
-          <div className={cn(styles.constructor_order_button)}>
-            {t('constructor.buy')}
-          </div>
-        </Button>
-      </div>
-    </div>
-  );
-};
+    );
+  },
+);

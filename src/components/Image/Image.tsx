@@ -5,8 +5,11 @@ import styles from './styles.module.css';
 
 import type { Props } from './types';
 
-export const Image = ({ src, alt, className = undefined }: Props) => {
-  const style = cn(styles.image, className);
-
-  return <img className={style} src={src} alt={alt} />;
+export const Image = ({ src, alt, extraClass = undefined }: Props) => {
+  return (
+    <picture>
+      {/* <source srcset={} media="(min-width: 600px)" /> */}
+      <img className={cn(styles.image, extraClass)} src={src} alt={alt} />
+    </picture>
+  );
 };

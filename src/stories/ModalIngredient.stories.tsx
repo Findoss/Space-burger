@@ -1,14 +1,18 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ModalsWrapper } from '../../config/storybook/decorator-modals';
+import { ModalsWrapper } from '../../config/storybook/decoratorModals';
 
 import { Modal } from 'components/Modal';
 import { IngredientDetails } from 'components/IngredientDetails';
+import { IngredientParam } from 'components/IngredientParam';
 
-import { mockIngredientDetails } from 'components/IngredientDetails/__mocks__/IngredientDetails';
+import {
+  mockIngredientDetails,
+  mockIngredientParams,
+} from 'components/IngredientDetails/__mocks__/IngredientDetails';
 
 export default {
-  title: 'Components/ModalIngredientExample',
+  title: 'Combo/ModalIngredientExample',
   component: Modal,
   parameters: {
     layout: 'fullscreen',
@@ -21,5 +25,11 @@ const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   title: 'Подробности',
-  children: <IngredientDetails {...mockIngredientDetails} />,
+  children: (
+    <IngredientDetails {...mockIngredientDetails}>
+      {Object.entries(mockIngredientParams).map(([k, v]) => (
+        <IngredientParam key={k} title={k} value={v} />
+      ))}
+    </IngredientDetails>
+  ),
 };

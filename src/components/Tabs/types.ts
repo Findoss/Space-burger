@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import type { IngredientsType } from 'enums/Ingredient';
 
 export type TabProps = {
   key: string;
@@ -6,6 +7,8 @@ export type TabProps = {
 };
 
 export type Props = {
-  tabs: TabProps[];
-  className?: string;
+  tabs?: TabProps[];
+  currentTab: IngredientsType;
+  onClick: (key: IngredientsType) => void;
+  extraClass?: string;
 };

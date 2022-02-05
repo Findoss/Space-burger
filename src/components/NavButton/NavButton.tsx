@@ -8,16 +8,16 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 
 export const NavButton = ({
-  className = undefined,
   to,
   icon,
   title,
   onClick,
+  extraClass = undefined,
 }: Props) => {
   return (
     <Link
       to={to}
-      className={cn('pl-5 pr-5', styles.item, className)}
+      className={cn('pl-5 pr-5', styles.item, extraClass)}
       onClick={onClick}
     >
       {icon}

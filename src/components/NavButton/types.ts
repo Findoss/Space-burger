@@ -4,6 +4,6 @@ export type Props = {
   to: string;
   title: string;
   icon?: ReactNode;
-  className?: string;
+  extraClass?: string;
   onClick?: (() => void) | ((e: SyntheticEvent) => void);
 };
