@@ -1,9 +1,7 @@
 import React from 'react';
 import type { Routes } from './types';
 
-import { PageMain } from 'pages/Main';
-import { PageTest } from 'pages/Test';
-import { PageNotFound } from 'pages/NotFound';
+import { PageMain, PageTest, PageNotFound } from 'pages';
 
 export const routes: Routes = [
   {
