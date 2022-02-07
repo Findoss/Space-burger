@@ -7,12 +7,12 @@ import { XYCoord } from 'dnd-core';
 import { DRAG } from 'enums/Drag';
 import { BurgerConstructorItem } from 'components/BurgerConstructorItem';
 
-import { selectIngredientById } from 'store/Ingredients/selectors';
+import { selectIngredientById } from 'store/Ingredient/selectors';
 import { removeIngredientOrder } from '../service/slice';
 
 import styles from './styles.module.css';
 
-import type { IngredientId } from 'api/Ingredients/types';
+import type { IngredientId } from 'api/Ingredient/types';
 import type { Props, DragObject } from './types';
 
 export const ContainerBurgerConstructorItem = ({

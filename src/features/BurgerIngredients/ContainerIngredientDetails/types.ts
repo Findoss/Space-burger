@@ -1,3 +1,3 @@
-import { IngredientId } from 'api/Ingredients/types';
+import { IngredientId } from 'api/Ingredient/types';
 
 export type Props = { id: IngredientId };

@@ -2,14 +2,14 @@ import React from 'react';
 import { t } from 'i18next';
 import { useSelector } from 'hooks/useRedux';
 
-import { IngredientParams } from 'enums/Ingredients';
+import { IngredientParams } from 'enums/Ingredient';
 
 import { IngredientParam } from 'components/IngredientParam';
 import { IngredientDetails } from 'components/IngredientDetails';
-import { selectIngredientById } from 'store/Ingredients/selectors';
+import { selectIngredientById } from 'store/Ingredient/selectors';
 
 import type { Props } from './types';
-import type { Ingredient } from 'api/Ingredients/types';
+import type { Ingredient } from 'api/Ingredient/types';
 
 export const ContainerIngredientDetails = ({ id }: Props) => {
   const data = useSelector(selectIngredientById(id));

@@ -24,7 +24,7 @@ export const TabsIngredients = ({
   return (
     <div className={cn(extraClass)}>
       <div className="mb-5 text text_type_main-large">
-        {t('constructor.constructor')}
+        {String(t('constructor.constructor'))}
       </div>
       <div className="mb-10">
         <Tabs

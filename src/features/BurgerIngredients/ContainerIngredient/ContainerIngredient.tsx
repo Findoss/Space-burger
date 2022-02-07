@@ -6,7 +6,7 @@ import { useDrag, useDrop } from 'react-dnd';
 import { DRAG } from 'enums/Drag';
 import { Ingredient } from 'components/Ingredient';
 
-import { selectIngredientById } from 'store/Ingredients/selectors';
+import { selectIngredientById } from 'store/Ingredient/selectors';
 import { setActualIngredient } from '../service/slice';
 
 import { selectCountIngredientById } from 'features/BurgerConstructor/service/selectors';

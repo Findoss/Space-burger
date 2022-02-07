@@ -3,4 +3,5 @@ export type Props = {
   onClick?: () => void;
   textButton?: string;
   extraClass?: string;
+  disabled?: boolean;
 };

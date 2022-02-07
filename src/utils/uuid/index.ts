@@ -1,3 +1,7 @@
+/**
+ * функция генерации уникального ключа
+ * @returns string
+ */
 export const uuid = () =>
   Array(16)
     .fill(0)

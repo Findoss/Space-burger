@@ -1,4 +1,4 @@
-import type { IngredientId } from 'api/Ingredients/types';
+import type { IngredientId } from 'api/Ingredient/types';
 
 export type Props = {
   id: IngredientId;

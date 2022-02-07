@@ -1,4 +1,4 @@
-import type { IngredientsType } from 'enums/Ingredients';
+import type { IngredientsType } from 'enums/Ingredient';
 
 export type IngredientId = string;
 

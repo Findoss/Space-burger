@@ -2,14 +2,14 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import { IngredientsType } from 'enums/Ingredients';
+import { IngredientsType } from 'enums/Ingredient';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
 
 export const Tabs = ({
-  tabs,
+  tabs = [],
   currentTab,
   onClick,
   extraClass = undefined,
