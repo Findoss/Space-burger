@@ -4,7 +4,7 @@ import cn from 'classnames';
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
 import { IngredientsType } from 'enums/Ingredient';
 
-import styles from './styles.module.css';
+import styles from './tabs.module.css';
 
 import type { Props } from './types';
 

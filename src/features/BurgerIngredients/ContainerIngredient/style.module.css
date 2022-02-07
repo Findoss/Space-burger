@@ -1,7 +1,0 @@
-.drag {
-  border: 5px solid var(--colors-interface-accent);
-}
-
-.draggle:hover {
-  cursor: move;
-}

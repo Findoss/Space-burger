@@ -1,8 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Tabs } from './Tabs';
-import { mockTabs } from './__mocks__/Tabs';
+import { Tabs } from './tabs';
+import { mockTabs } from './__mocks__/tabs';
 
 export default {
   title: 'Components/Tabs',

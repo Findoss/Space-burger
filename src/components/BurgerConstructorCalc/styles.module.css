@@ -1,9 +1,0 @@
-.constructor_price {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-}
-
-.constructor_order_button::first-letter {
-  text-transform: uppercase;
-}

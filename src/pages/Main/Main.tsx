@@ -2,8 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 
 import { Main as MainLayout } from 'layouts/Main';
-import { BurgerIngredients } from 'features/BurgerIngredients';
-import { BurgerConstructor } from 'features/BurgerConstructor';
+import { BurgerIngredients } from 'features/burger-ingredients';
+import { BurgerConstructor } from 'features/burger-constructor';
 
 import styles from './styles.module.css';
 

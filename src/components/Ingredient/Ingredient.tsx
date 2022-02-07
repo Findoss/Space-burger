@@ -5,9 +5,9 @@ import {
   CurrencyIcon,
   Counter,
 } from '@ya.praktikum/react-developer-burger-ui-components';
-import { Image } from 'components/Image';
+import { Image } from 'components/image';
 
-import styles from './styles.module.css';
+import styles from './ingredient.module.css';
 
 import type { Props } from './types';
 

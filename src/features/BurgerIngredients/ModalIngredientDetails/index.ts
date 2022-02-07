@@ -1,1 +1,0 @@
-export { ModalIngredientDetails }from './ModalIngredientDetails';

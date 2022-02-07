@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { ReactComponent as LoaderIcon } from './assets/loader.svg';
-import styles from './styles.module.css';
+import styles from './loader.module.css';
 
 import type { Props } from './types';
 

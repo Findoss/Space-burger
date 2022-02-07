@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../../config/storybook/decoratorModals';
 
-import { Modal } from './Modal';
+import { Modal } from './modal';
 
 export default {
   title: 'Components/Modal',

@@ -1,8 +1,0 @@
-.burger_constructor {
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--offset-base-size) * 4);
-
-  max-height: 710px;
-  border-radius: var(--common-border-radius-s);
-}
