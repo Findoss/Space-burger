@@ -1,0 +1,21 @@
+.header {
+  background-color: var(--background);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: calc(var(--offset-base-size) * 2);
+}
+
+.block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
