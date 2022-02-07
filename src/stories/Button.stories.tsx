@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 
 export default {
-  title: 'Core/Button',
+  title: 'core/Button',
   component: Button,
   argTypes: {
     type: {

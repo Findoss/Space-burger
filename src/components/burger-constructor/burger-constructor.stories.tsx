@@ -8,7 +8,7 @@ import {
 } from './__mocks__/burger-constructor';
 
 export default {
-  title: 'Features/BurgerConstructor',
+  title: 'Components/BurgerConstructor',
   component: BurgerConstructor,
 } as ComponentMeta<typeof BurgerConstructor>;
 

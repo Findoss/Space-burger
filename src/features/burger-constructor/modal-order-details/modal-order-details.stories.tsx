@@ -6,7 +6,7 @@ import { Modal } from 'components/modal';
 import { OrderDetails } from 'components/order-details';
 
 export default {
-  title: 'Combo/ModalOrderExample',
+  title: 'features/ModalOrderDetails',
   component: Modal,
   parameters: {
     layout: 'fullscreen',

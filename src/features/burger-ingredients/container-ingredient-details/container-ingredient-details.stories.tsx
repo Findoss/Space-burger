@@ -9,7 +9,7 @@ import {
 } from 'components/ingredient-details/__mocks__/ingredient-details';
 
 export default {
-  title: 'Combo/ContainerIngredientDetails',
+  title: 'features/ContainerIngredientDetails',
   component: IngredientDetails,
 } as ComponentMeta<typeof IngredientDetails>;
 

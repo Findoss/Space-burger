@@ -1,10 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import { Ingredient } from './Ingredient';
+import { Ingredient } from './ingredient';
 
 export default {
-  title: 'Components/Ingredient',
+  title: 'components/Ingredient',
   component: Ingredient,
 } as ComponentMeta<typeof Ingredient>;
 

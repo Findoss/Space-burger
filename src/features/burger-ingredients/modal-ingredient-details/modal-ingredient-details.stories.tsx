@@ -12,7 +12,7 @@ import {
 } from 'components/ingredient-details/__mocks__/ingredient-details';
 
 export default {
-  title: 'Combo/ModalIngredientExample',
+  title: 'features/ModalIngredientDetails',
   component: Modal,
   parameters: {
     layout: 'fullscreen',
