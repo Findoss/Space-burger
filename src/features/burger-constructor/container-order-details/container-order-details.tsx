@@ -1,10 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { OrderDetails } from 'shared/components/order-details';
+import { OrderDetails } from 'shared/ui/order-details';
 
 import type { Props } from './types';
-import { useSelector } from 'shared/hooks/use-кedux';
+import { useSelector } from 'shared/hooks/use-redux';
 import { selectIdOrder } from 'app/store/order/selectors';
 
 export const ContainerOrderDetails = ({}: Props) => {

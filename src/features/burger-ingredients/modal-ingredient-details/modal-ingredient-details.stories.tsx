@@ -1,15 +1,15 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ModalsWrapper } from '../../../../config/storybook/decoratorModals';
+import { ModalsWrapper } from '../../../../config/storybook/decorator-modals';
 
-import { Modal } from 'shared/components/modal';
-import { IngredientDetails } from 'shared/components/ingredient-details';
-import { IngredientParam } from 'shared/components/ingredient-param';
+import { Modal } from 'shared/ui/modal';
+import { IngredientDetails } from 'shared/ui/ingredient-details';
+import { IngredientParam } from 'shared/ui/ingredient-param';
 
 import {
   mockIngredientDetails,
   mockIngredientParams,
-} from 'shared/components/ingredient-details/__mocks__/ingredient-details';
+} from 'shared/ui/ingredient-details/__mocks__/ingredient-details';
 
 export default {
   title: 'features/ModalIngredientDetails',

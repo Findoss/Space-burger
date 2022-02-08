@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 
-import { useSelector, useDispatch } from 'shared/hooks/use-кedux';
+import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 
-import { Error } from 'shared/components/error';
-import { Modal } from 'shared/components/modal';
+import { Error } from 'shared/ui/error';
+import { Modal } from 'shared/ui/modal';
 import { ContainerOrderDetails } from '../container-order-details';
 
 // import { usePostOrderQuery } from 'store/Order/hooks';
@@ -12,7 +12,7 @@ import { selectOrderStatus } from 'app/store/order/selectors';
 
 import { selectIsModalOpen, selectOrder } from '../service/selectors';
 import { toggleModalOrder } from '../service/slice';
-import { Loader } from 'shared/components/loader';
+import { Loader } from 'shared/ui/loader';
 
 export const ModalOrderDetails = () => {
   const dispatch = useDispatch();

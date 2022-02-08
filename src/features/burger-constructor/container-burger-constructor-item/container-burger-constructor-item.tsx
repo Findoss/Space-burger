@@ -1,11 +1,11 @@
 import React, { useRef } from 'react';
 import cn from 'classnames';
 import { useDrag, useDrop, DropTargetMonitor } from 'react-dnd';
-import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
+import { useDispatch, useSelector } from 'shared/hooks/use-redux';
 import { XYCoord } from 'dnd-core';
 
-import { DRAG } from 'enums/drag';
-import { BurgerConstructorItem } from 'shared/components/burger-constructor-item';
+import { DRAG } from 'shared/enums/drag';
+import { BurgerConstructorItem } from 'shared/ui/burger-constructor-item';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { removeIngredientOrder } from '../service/slice';

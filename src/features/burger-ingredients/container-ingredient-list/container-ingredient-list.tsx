@@ -1,13 +1,13 @@
 import React, { forwardRef } from 'react';
 import cn from 'classnames';
-import { useSelector } from 'shared/hooks/use-кedux';
+import { useSelector } from 'shared/hooks/use-redux';
 import { useTranslation } from 'react-i18next';
 import { useGetIngredientQuery } from 'app/store/ingredient/hooks';
 
 import { ContainerIngredient } from '../container-ingredient';
-import { IngredientList } from 'shared/components/ingredient-list';
-import { Loader } from 'shared/components/loader';
-import { Error } from 'shared/components/error';
+import { IngredientList } from 'shared/ui/ingredient-list';
+import { Loader } from 'shared/ui/loader';
+import { Error } from 'shared/ui/error';
 
 import { selectIngredientsByType } from 'app/store/ingredient/selectors';
 

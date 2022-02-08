@@ -1,11 +1,11 @@
 import React from 'react';
 import { t } from 'i18next';
-import { useSelector } from 'shared/hooks/use-кedux';
+import { useSelector } from 'shared/hooks/use-redux';
 
 import { IngredientParams } from 'shared/enums/ingredient';
 
-import { IngredientParam } from 'shared/components/ingredient-param';
-import { IngredientDetails } from 'shared/components/ingredient-details';
+import { IngredientParam } from 'shared/ui/ingredient-param';
+import { IngredientDetails } from 'shared/ui/ingredient-details';
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 
 import type { Props } from './types';

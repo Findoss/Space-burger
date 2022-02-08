@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useCallback } from 'react';
 import cn from 'classnames';
-import { useSelector, useDispatch } from 'shared/hooks/use-кedux';
+import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 
 import { TabsIngredients } from './tabs-ingredients';
 import { ContainerIngredientList } from './container-ingredient-list';

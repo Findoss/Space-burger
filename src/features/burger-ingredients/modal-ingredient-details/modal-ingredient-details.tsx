@@ -1,8 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector, useDispatch } from 'shared/hooks/use-кedux';
+import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 
-import { Modal } from 'shared/components/modal';
+import { Modal } from 'shared/ui/modal';
 import { ContainerIngredientDetails } from '../container-ingredient-details';
 
 import { selectActiveIngredient } from '../service/selectors';

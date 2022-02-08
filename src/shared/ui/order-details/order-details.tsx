@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { ReactComponent as DoneIcon } from 'assets/images/icons/done.svg';
+import { ReactComponent as DoneIcon } from 'shared/assets/images/icons/done.svg';
 import styles from './order-details.module.css';
 
 import type { Props } from './types';

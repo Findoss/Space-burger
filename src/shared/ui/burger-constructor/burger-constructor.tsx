@@ -1,12 +1,12 @@
 import React, { forwardRef } from 'react';
 import cn from 'classnames';
 
-import { BurgerConstructorItem } from 'shared/components/burger-constructor-item';
+import { BurgerConstructorItem } from 'shared/ui/burger-constructor-item';
 import {
   BurgerConstructorMainEmpty,
   BurgerConstructorBottomEmpty,
   BurgerConstructorTopEmpty,
-} from 'shared/components/burger-constructor-empty';
+} from 'shared/ui/burger-constructor-empty';
 
 import { BunTypePosition } from 'shared/enums/ingredient';
 

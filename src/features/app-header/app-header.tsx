@@ -2,9 +2,9 @@ import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { PREFIX } from 'constants/index';
+import { PREFIX } from 'shared/constants/index';
 
-import { NavButton } from 'shared/components/nav-button';
+import { NavButton } from 'shared/ui/nav-button';
 import {
   Logo,
   ProfileIcon,

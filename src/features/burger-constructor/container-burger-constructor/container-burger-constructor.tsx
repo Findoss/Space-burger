@@ -1,11 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
+import { useDispatch, useSelector } from 'shared/hooks/use-redux';
 import { useTranslation } from 'react-i18next';
 import { useDrop } from 'react-dnd';
 
-import { DRAG } from 'enums/drag';
-import { BurgerConstructor } from 'shared/components/burger-constructor';
+import { DRAG } from 'shared/enums/drag';
+import { BurgerConstructor } from 'shared/ui/burger-constructor';
 import { ContainerBurgerConstructorItem } from '../container-burger-constructor-item';
 
 import { selectOrderBun, selectOrderFilling } from '../service/selectors';

@@ -8,6 +8,8 @@ import { store } from 'app/store/store';
 import { Router } from 'app/router';
 import 'app/plugins/i18n/i18n';
 
+import './styles/index.css';
+
 export function App() {
   return (
     <StoreProvider store={store}>

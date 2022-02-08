@@ -1,11 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { Main as MainLayout } from 'layouts/Main';
+import { Main as MainLayout } from 'features/layout-main';
 import { BurgerIngredients } from 'features/burger-ingredients';
 import { BurgerConstructor } from 'features/burger-constructor';
 
-import styles from './styles.module.css';
+import styles from './main.module.css';
 
 import type { Props } from './types';
 

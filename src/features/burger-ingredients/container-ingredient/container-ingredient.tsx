@@ -1,10 +1,10 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
+import { useDispatch, useSelector } from 'shared/hooks/use-redux';
 import { useDrag, useDrop } from 'react-dnd';
 
-import { DRAG } from 'enums/drag';
-import { Ingredient } from 'shared/components/ingredient';
+import { DRAG } from 'shared/enums/drag';
+import { Ingredient } from 'shared/ui/ingredient';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { setActualIngredient } from '../service/slice';
