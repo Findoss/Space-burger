@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { Image } from 'components/image';
+import { Image } from 'shared/components/image';
 
 import styles from './ingredient-details.module.css';
 

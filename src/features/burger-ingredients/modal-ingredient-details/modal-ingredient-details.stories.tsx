@@ -2,14 +2,14 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../../../config/storybook/decoratorModals';
 
-import { Modal } from 'components/modal';
-import { IngredientDetails } from 'components/ingredient-details';
-import { IngredientParam } from 'components/ingredient-param';
+import { Modal } from 'shared/components/modal';
+import { IngredientDetails } from 'shared/components/ingredient-details';
+import { IngredientParam } from 'shared/components/ingredient-param';
 
 import {
   mockIngredientDetails,
   mockIngredientParams,
-} from 'components/ingredient-details/__mocks__/ingredient-details';
+} from 'shared/components/ingredient-details/__mocks__/ingredient-details';
 
 export default {
   title: 'features/ModalIngredientDetails',

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 import { initState } from './state';
 
-import type { IngredientsType } from 'enums/ingredient';
+import type { IngredientsType } from 'shared/enums/ingredient';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { IngredientId } from 'shared/api/ingredient/types';
 

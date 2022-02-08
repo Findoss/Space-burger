@@ -12,7 +12,7 @@ import { setActualType, resetActualType } from './service/slice';
 import styles from './burger-ingredients.module.css';
 
 import type { Props } from './types';
-import type { IngredientsType } from 'enums/ingredient';
+import type { IngredientsType } from 'shared/enums/ingredient';
 
 export const BurgerIngredients = ({ extraClass }: Props) => {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
 import { useDrag, useDrop } from 'react-dnd';
 
 import { DRAG } from 'enums/drag';
-import { Ingredient } from 'components/ingredient';
+import { Ingredient } from 'shared/components/ingredient';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { setActualIngredient } from '../service/slice';

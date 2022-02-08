@@ -1,4 +1,4 @@
-import type { Props as BurgerConstructorItemProps } from 'components/burger-constructor-item/types';
+import type { Props as BurgerConstructorItemProps } from 'shared/components/burger-constructor-item/types';
 import type { ReactNode } from 'react';
 
 export type IngredientLock = Omit<

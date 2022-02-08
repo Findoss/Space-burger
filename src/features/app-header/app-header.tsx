@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { PREFIX } from 'constants/index';
 
-import { NavButton } from 'components/nav-button';
+import { NavButton } from 'shared/components/nav-button';
 import {
   Logo,
   ProfileIcon,

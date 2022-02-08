@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
-import { ModalOverlay } from 'components/modal-overlay';
+import { ModalOverlay } from 'shared/components/modal-overlay';
 import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 import styles from './modal.module.css';

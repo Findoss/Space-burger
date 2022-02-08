@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { App } from 'components/app';
+import { App } from 'shared/components/app';
 // import reportWebVitals from './plugins/webVitals/reportWebVitals';
 
 import 'styles/index.css';

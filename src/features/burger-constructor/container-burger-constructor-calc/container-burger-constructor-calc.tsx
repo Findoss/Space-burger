@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useSelector, useDispatch } from 'shared/hooks/use-кedux';
 
-import { BurgerConstructorCalc } from 'components/burger-constructor-calc';
+import { BurgerConstructorCalc } from 'shared/components/burger-constructor-calc';
 
 import { selectOrderBun, selectSumOrder } from '../service/selectors';
 import { toggleModalOrder } from '../service/slice';

@@ -2,8 +2,8 @@ import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ModalsWrapper } from '../../../../config/storybook/decoratorModals';
 
-import { Modal } from 'components/modal';
-import { OrderDetails } from 'components/order-details';
+import { Modal } from 'shared/components/modal';
+import { OrderDetails } from 'shared/components/order-details';
 
 export default {
   title: 'features/ModalOrderDetails',

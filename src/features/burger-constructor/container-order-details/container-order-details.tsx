@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { OrderDetails } from 'components/order-details';
+import { OrderDetails } from 'shared/components/order-details';
 
 import type { Props } from './types';
 import { useSelector } from 'shared/hooks/use-кedux';

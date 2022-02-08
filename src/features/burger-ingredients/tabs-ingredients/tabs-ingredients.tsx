@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'shared/hooks/use-кedux';
 
-import { Tabs } from 'components/tabs';
+import { Tabs } from 'shared/components/tabs';
 import { selectActualType, selectTypesIngredient } from '../service/selectors';
 
 import styles from './styles.module.css';

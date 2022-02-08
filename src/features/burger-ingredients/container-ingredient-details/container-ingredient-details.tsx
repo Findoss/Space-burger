@@ -2,10 +2,10 @@ import React from 'react';
 import { t } from 'i18next';
 import { useSelector } from 'shared/hooks/use-кedux';
 
-import { IngredientParams } from 'enums/ingredient';
+import { IngredientParams } from 'shared/enums/ingredient';
 
-import { IngredientParam } from 'components/ingredient-param';
-import { IngredientDetails } from 'components/ingredient-details';
+import { IngredientParam } from 'shared/components/ingredient-param';
+import { IngredientDetails } from 'shared/components/ingredient-details';
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 
 import type { Props } from './types';

@@ -1,5 +1,5 @@
 import { RootState } from 'app/store/store';
-import type { IngredientsType } from 'enums/ingredient';
+import type { IngredientsType } from 'shared/enums/ingredient';
 import type { IngredientId } from 'shared/api/ingredient/types';
 
 export const getIngredientCollection = (state: RootState) =>

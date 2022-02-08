@@ -5,9 +5,9 @@ import { useTranslation } from 'react-i18next';
 import { useGetIngredientQuery } from 'app/store/ingredient/hooks';
 
 import { ContainerIngredient } from '../container-ingredient';
-import { IngredientList } from 'components/ingredient-list';
-import { Loader } from 'components/loader';
-import { Error } from 'components/error';
+import { IngredientList } from 'shared/components/ingredient-list';
+import { Loader } from 'shared/components/loader';
+import { Error } from 'shared/components/error';
 
 import { selectIngredientsByType } from 'app/store/ingredient/selectors';
 

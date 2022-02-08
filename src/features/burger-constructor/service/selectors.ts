@@ -1,7 +1,7 @@
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { RootState, WIDGETS } from 'app/store/store';
 import { WIDGET_BURGER_CONSTRUCTOR } from './slice';
-import { IngredientsType } from 'enums/ingredient';
+import { IngredientsType } from 'shared/enums/ingredient';
 
 import type { IngredientId } from 'shared/api/ingredient/types';
 

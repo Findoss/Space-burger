@@ -1,4 +1,4 @@
-import { Props as BurgerConstructorItemProps } from 'components/burger-constructor-item/types';
+import { Props as BurgerConstructorItemProps } from 'shared/components/burger-constructor-item/types';
 
 export const mockIngredients = [
   {

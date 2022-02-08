@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
 import { XYCoord } from 'dnd-core';
 
 import { DRAG } from 'enums/drag';
-import { BurgerConstructorItem } from 'components/burger-constructor-item';
+import { BurgerConstructorItem } from 'shared/components/burger-constructor-item';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { removeIngredientOrder } from '../service/slice';
