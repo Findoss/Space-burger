@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'hooks/useRedux';
+import { useSelector } from 'shared/hooks/use-кedux';
 
 import { Tabs } from 'components/tabs';
 import { selectActualType, selectTypesIngredient } from '../service/selectors';

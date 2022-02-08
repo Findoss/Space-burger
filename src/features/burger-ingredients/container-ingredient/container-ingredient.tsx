@@ -1,12 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDispatch, useSelector } from 'hooks/useRedux';
+import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
 import { useDrag, useDrop } from 'react-dnd';
 
 import { DRAG } from 'enums/drag';
 import { Ingredient } from 'components/ingredient';
 
-import { selectIngredientById } from 'store/Ingredient/selectors';
+import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { setActualIngredient } from '../service/slice';
 
 import { selectCountIngredientById } from 'features/burger-constructor/service/selectors';

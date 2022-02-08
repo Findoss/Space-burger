@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDispatch, useSelector } from 'hooks/useRedux';
+import { useDispatch, useSelector } from 'shared/hooks/use-кedux';
 import { useTranslation } from 'react-i18next';
 import { useDrop } from 'react-dnd';
 

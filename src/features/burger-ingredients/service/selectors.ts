@@ -1,4 +1,4 @@
-import { RootState, WIDGETS } from 'store/store';
+import { RootState, WIDGETS } from 'app/store/store';
 import { WIDGET_BURGER_INGREDIENTS } from './slice';
 
 export const getIngredientListWidget = (state: RootState) =>

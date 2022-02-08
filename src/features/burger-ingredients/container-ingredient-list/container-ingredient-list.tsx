@@ -1,15 +1,15 @@
 import React, { forwardRef } from 'react';
 import cn from 'classnames';
-import { useSelector } from 'hooks/useRedux';
+import { useSelector } from 'shared/hooks/use-кedux';
 import { useTranslation } from 'react-i18next';
-import { useGetIngredientQuery } from 'store/Ingredient/hooks';
+import { useGetIngredientQuery } from 'app/store/ingredient/hooks';
 
 import { ContainerIngredient } from '../container-ingredient';
 import { IngredientList } from 'components/ingredient-list';
 import { Loader } from 'components/loader';
 import { Error } from 'components/error';
 
-import { selectIngredientsByType } from 'store/Ingredient/selectors';
+import { selectIngredientsByType } from 'app/store/ingredient/selectors';
 
 import type { Props } from './types';
 

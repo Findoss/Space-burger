@@ -1,3 +1,3 @@
 export { PageMain } from './Main';
-export { PageTest } from './Test';
-export { PageNotFound } from './NotFound';
+export { PageTest } from './test';
+export { PageNotFound } from './not-found';

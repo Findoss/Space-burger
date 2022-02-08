@@ -1,4 +1,4 @@
-import type { IngredientId } from 'api/Ingredient/types';
+import type { IngredientId } from 'shared/api/ingredient/types';
 
 export type Props = {
   id: IngredientId;

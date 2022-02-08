@@ -1,4 +1,4 @@
-import { IngredientId } from 'api/Ingredient/types';
+import { IngredientId } from 'shared/api/ingredient/types';
 
 export type InitType = {
   modalIsOpen: boolean;

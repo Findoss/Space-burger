@@ -4,7 +4,7 @@ import { initState } from './state';
 
 import type { IngredientsType } from 'enums/ingredient';
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { IngredientId } from 'api/Ingredient/types';
+import type { IngredientId } from 'shared/api/ingredient/types';
 
 export const WIDGET_BURGER_INGREDIENTS = 'burgerIngredients';
 export const burgerIngredientsSlice = createSlice({

@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { useSelector, useDispatch } from 'hooks/useRedux';
+import { useSelector, useDispatch } from 'shared/hooks/use-кedux';
 
 import { BurgerConstructorCalc } from 'components/burger-constructor-calc';
 

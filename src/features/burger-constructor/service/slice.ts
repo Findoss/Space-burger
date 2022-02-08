@@ -1,13 +1,13 @@
-import { uuid } from 'utils/uuid';
-import { swap } from 'utils/swap';
+import { uuid } from 'shared/utils/uuid';
+import { swap } from 'shared/utils/swap';
 import { createSlice } from '@reduxjs/toolkit';
 
 import { IngredientsType } from 'enums/ingredient';
 import { initOrder, initState } from './state';
-import { fetchNewOrder } from 'store/Order/thunk';
+import { fetchNewOrder } from 'app/store/order/thunk';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
-import type { IngredientId } from 'api/Ingredient/types';
+import type { IngredientId } from 'shared/api/ingredient/types';
 
 export const WIDGET_BURGER_CONSTRUCTOR = 'burgerConstructor';
 export const burgerConstructorSlice = createSlice({
