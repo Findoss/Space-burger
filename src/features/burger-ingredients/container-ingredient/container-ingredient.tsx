@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { useDispatch, useSelector } from 'hooks/useRedux';
 import { useDrag, useDrop } from 'react-dnd';
 
-import { DRAG } from 'enums/Drag';
+import { DRAG } from 'enums/drag';
 import { Ingredient } from 'components/ingredient';
 
 import { selectIngredientById } from 'store/Ingredient/selectors';

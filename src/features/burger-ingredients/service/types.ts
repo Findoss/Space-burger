@@ -1,5 +1,5 @@
 import type { IngredientId } from 'api/Ingredient/types';
-import type { IngredientsType } from 'enums/Ingredient';
+import type { IngredientsType } from 'enums/ingredient';
 
 export type initType = {
   list: {

@@ -2,7 +2,7 @@ import React from 'react';
 import { t } from 'i18next';
 import { useSelector } from 'hooks/useRedux';
 
-import { IngredientParams } from 'enums/Ingredient';
+import { IngredientParams } from 'enums/ingredient';
 
 import { IngredientParam } from 'components/ingredient-param';
 import { IngredientDetails } from 'components/ingredient-details';

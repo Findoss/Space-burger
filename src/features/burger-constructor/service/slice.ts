@@ -2,7 +2,7 @@ import { uuid } from 'utils/uuid';
 import { swap } from 'utils/swap';
 import { createSlice } from '@reduxjs/toolkit';
 
-import { IngredientsType } from 'enums/Ingredient';
+import { IngredientsType } from 'enums/ingredient';
 import { initOrder, initState } from './state';
 import { fetchNewOrder } from 'store/Order/thunk';
 

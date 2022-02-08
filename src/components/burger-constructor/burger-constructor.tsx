@@ -8,7 +8,7 @@ import {
   BurgerConstructorTopEmpty,
 } from 'components/burger-constructor-empty';
 
-import { BunTypePosition } from 'enums/Ingredient';
+import { BunTypePosition } from 'enums/ingredient';
 
 import type { Props } from './types';
 

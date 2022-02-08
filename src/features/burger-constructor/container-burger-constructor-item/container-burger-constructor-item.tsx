@@ -4,7 +4,7 @@ import { useDrag, useDrop, DropTargetMonitor } from 'react-dnd';
 import { useDispatch, useSelector } from 'hooks/useRedux';
 import { XYCoord } from 'dnd-core';
 
-import { DRAG } from 'enums/Drag';
+import { DRAG } from 'enums/drag';
 import { BurgerConstructorItem } from 'components/burger-constructor-item';
 
 import { selectIngredientById } from 'store/Ingredient/selectors';

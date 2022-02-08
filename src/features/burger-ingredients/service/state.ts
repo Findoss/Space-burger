@@ -1,4 +1,4 @@
-import { IngredientsType } from 'enums/Ingredient';
+import { IngredientsType } from 'enums/ingredient';
 import type { initType } from './types';
 
 export const initState: initType = {

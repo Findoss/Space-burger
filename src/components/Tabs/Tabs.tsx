@@ -2,7 +2,7 @@ import React, { useCallback } from 'react';
 import cn from 'classnames';
 
 import { Tab } from '@ya.praktikum/react-developer-burger-ui-components';
-import { IngredientsType } from 'enums/Ingredient';
+import { IngredientsType } from 'enums/ingredient';
 
 import styles from './tabs.module.css';
 

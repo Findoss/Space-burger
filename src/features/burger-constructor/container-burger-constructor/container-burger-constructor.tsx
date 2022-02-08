@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'hooks/useRedux';
 import { useTranslation } from 'react-i18next';
 import { useDrop } from 'react-dnd';
 
-import { DRAG } from 'enums/Drag';
+import { DRAG } from 'enums/drag';
 import { BurgerConstructor } from 'components/burger-constructor';
 import { ContainerBurgerConstructorItem } from '../container-burger-constructor-item';
 
