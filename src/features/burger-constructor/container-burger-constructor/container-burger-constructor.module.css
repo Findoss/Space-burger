@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   gap: calc(var(--offset-base-size) * 4);
-
+  height: 500px;
   overflow: auto;
 }
 

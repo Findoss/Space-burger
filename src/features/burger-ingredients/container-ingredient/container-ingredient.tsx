@@ -1,16 +1,21 @@
 import React from 'react';
 import cn from 'classnames';
 import { useDispatch, useSelector } from 'shared/hooks/use-redux';
-import { useDrag, useDrop } from 'react-dnd';
+import { useDrag } from 'react-dnd';
 
 import { DRAG } from 'shared/enums/drag';
 import { Ingredient } from 'shared/ui/ingredient';
+import { IngredientsType } from 'shared/enums/ingredient';
 
-import { selectIngredientById } from 'app/store/ingredient/selectors';
 import { setActualIngredient } from '../service/slice';
 
 import { selectCountIngredientById } from 'features/burger-constructor/service/selectors';
-import { addIngredientOrder } from 'features/burger-constructor/service/slice';
+import {
+  addIngredientOrder,
+  addBunOrder,
+} from 'features/burger-constructor/service/slice';
+
+import { selectIngredientById } from 'app/store/ingredient/selectors';
 
 import styles from './style.module.css';
 
@@ -27,7 +32,11 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
     end: (item, monitor) => {
       const dropResult = monitor.getDropResult<any>();
       if (item && dropResult) {
-        dispatch(addIngredientOrder({ id: id, type: data.type }));
+        if (data.type === IngredientsType.bells) {
+          dispatch(addBunOrder({ id }));
+        } else {
+          dispatch(addIngredientOrder({ id }));
+        }
       }
     },
     collect: (monitor) => ({
