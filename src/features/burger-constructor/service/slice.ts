@@ -1,8 +1,6 @@
-import { uuid } from 'shared/utils/uuid';
 import { swap } from 'shared/utils/swap';
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
-import { IngredientsType } from 'shared/enums/ingredient';
 import { initOrder, initState } from './state';
 import { fetchNewOrder } from 'app/store/order/thunk';
 
@@ -17,15 +15,25 @@ export const burgerConstructorSlice = createSlice({
     toggleModalOrder: (state) => {
       state.modalIsOpen = !state.modalIsOpen;
     },
-    addIngredientOrder: (
-      state,
-      { payload }: PayloadAction<{ id: IngredientId; type: IngredientsType }>,
-    ) => {
-      if (payload.type === IngredientsType.bells) {
-        state.order.bun = payload.id;
-      } else {
-        state.order.ingredients.unshift({ id: payload.id, key: uuid() });
-      }
+    addBunOrder: (state, { payload }: PayloadAction<{ id: IngredientId }>) => {
+      state.order.bun = payload.id;
+    },
+    addIngredientOrder: {
+      reducer: (
+        state,
+        {
+          payload,
+        }: PayloadAction<{
+          id: IngredientId;
+          key: string;
+        }>,
+      ) => {
+        state.order.ingredients.unshift(payload);
+      },
+      prepare: (payload: { id: IngredientId }) => {
+        const key = nanoid();
+        return { payload: { key, id: payload.id } };
+      },
     },
     swapIngredientOrder: (
       state,
@@ -61,8 +69,9 @@ export const burgerConstructorSlice = createSlice({
 
 export const {
   resetOrder,
-  toggleModalOrder,
+  addBunOrder,
   addIngredientOrder,
   removeIngredientOrder,
   swapIngredientOrder,
+  toggleModalOrder,
 } = burgerConstructorSlice.actions;
