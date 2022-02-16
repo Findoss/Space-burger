@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Main as MainLayout } from 'features/layout-main';
+import { Main as MainLayout } from 'widgets/layout-main';
 
 export const NotFound = () => {
   return <>404</>;

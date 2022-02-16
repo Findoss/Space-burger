@@ -1,4 +1,4 @@
-import { selectIngredientById } from 'app/store/ingredient/selectors';
+import { selectIngredientById } from 'entities/ingredient/selectors';
 import { RootState, WIDGETS } from 'app/store/store';
 import { WIDGET_BURGER_CONSTRUCTOR } from './slice';
 import { IngredientsType } from 'shared/enums/ingredient';

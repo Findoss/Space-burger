@@ -7,8 +7,8 @@ import { Modal } from 'shared/ui/modal';
 import { ContainerOrderDetails } from '../container-order-details';
 
 // import { usePostOrderQuery } from 'store/Order/hooks';
-import { fetchNewOrder } from 'app/store/order/thunk';
-import { selectOrderStatus } from 'app/store/order/selectors';
+import { fetchNewOrder } from 'entities/order/thunk';
+import { selectOrderStatus } from 'entities/order/selectors';
 
 import { selectIsModalOpen, selectOrder } from '../../model/selectors';
 import { toggleModalOrder } from '../../model/slice';

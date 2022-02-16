@@ -2,7 +2,7 @@ import { swap } from 'shared/libs/array/swap';
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 import { initOrder, initState } from './state';
-import { fetchNewOrder } from 'app/store/order/thunk';
+import { fetchNewOrder } from 'entities/order/thunk';
 
 import type { PayloadAction } from '@reduxjs/toolkit';
 import type { IngredientId } from 'shared/api/ingredient/types';

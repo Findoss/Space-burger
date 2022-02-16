@@ -5,7 +5,7 @@ import { OrderDetails } from 'shared/ui/order-details';
 
 import type { Props } from './types';
 import { useSelector } from 'shared/hooks/use-redux';
-import { selectIdOrder } from 'app/store/order/selectors';
+import { selectIdOrder } from 'entities/order/selectors';
 
 export const ContainerOrderDetails = ({}: Props) => {
   const { t } = useTranslation();

@@ -9,8 +9,8 @@ import { combineReducers } from '@reduxjs/toolkit';
 import {
   ingredientsCollection,
   COLLECTION_INGREDIENT,
-} from './ingredient/slice';
-import { orderCollection, COLLECTION_ORDER } from './order/slice';
+} from 'entities/ingredient/slice';
+import { orderCollection, COLLECTION_ORDER } from 'entities/order/slice';
 
 import {
   burgerIngredientsSlice,

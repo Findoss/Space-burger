@@ -6,7 +6,7 @@ import { IngredientParams } from 'shared/enums/ingredient';
 
 import { IngredientParam } from 'shared/ui/ingredient-param';
 import { IngredientDetails } from 'shared/ui/ingredient-details';
-import { selectIngredientById } from 'app/store/ingredient/selectors';
+import { selectIngredientById } from 'entities/ingredient/selectors';
 
 import type { Props } from './types';
 import type { Ingredient } from 'shared/api/ingredient/types';

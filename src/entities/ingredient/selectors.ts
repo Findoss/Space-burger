@@ -1,9 +1,11 @@
-import { RootState } from 'app/store/store';
+import { COLLECTIONS } from 'app/store/store';
+import { COLLECTION_INGREDIENT } from './slice';
+import type { RootState } from 'app/store/store';
 import type { IngredientsType } from 'shared/enums/ingredient';
 import type { IngredientId } from 'shared/api/ingredient/types';
 
 export const getIngredientCollection = (state: RootState) =>
-  state.collections.ingredients;
+  state[COLLECTIONS][COLLECTION_INGREDIENT];
 
 export const getIdIngredients = (state: RootState) =>
   getIngredientCollection(state).result;

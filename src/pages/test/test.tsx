@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { Main } from 'features/layout-main';
+import { Main } from 'widgets/layout-main';
 import { BurgerIngredients } from 'features/burger-ingredients';
 import { BurgerConstructor } from 'features/burger-constructor';
 

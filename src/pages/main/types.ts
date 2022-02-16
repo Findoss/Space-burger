@@ -1,3 +1,1 @@
-export type Props = {
-  extraClass?: string;
-};
+export type Props = {};
