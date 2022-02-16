@@ -1,5 +1,5 @@
 import { normalize } from 'normalizr';
-import { API_URL } from 'shared/constants/index';
+import { API_URL } from 'shared/api/constants';
 
 import { instanceAxios } from 'shared/api/axios';
 

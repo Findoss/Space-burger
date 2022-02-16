@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { langDetector } from './lang-detector';
-import { PREFIX } from 'shared/constants/index';
+import { PREFIX } from 'shared/api/constants';
 
 i18n
   .use(Backend)

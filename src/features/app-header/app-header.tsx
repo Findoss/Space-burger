@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import { PREFIX } from 'shared/constants/index';
+import { PREFIX } from 'shared/api/constants';
 
 import { NavButton } from 'shared/ui/nav-button';
 import {

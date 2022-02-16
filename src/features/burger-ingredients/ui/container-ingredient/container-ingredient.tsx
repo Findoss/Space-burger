@@ -7,13 +7,13 @@ import { DRAG } from 'shared/enums/drag';
 import { Ingredient } from 'shared/ui/ingredient';
 import { IngredientsType } from 'shared/enums/ingredient';
 
-import { setActualIngredient } from '../service/slice';
+import { setActualIngredient } from '../../model/slice';
 
-import { selectCountIngredientById } from 'features/burger-constructor/service/selectors';
+import { selectCountIngredientById } from 'features/burger-constructor/model/selectors';
 import {
   addIngredientOrder,
   addBunOrder,
-} from 'features/burger-constructor/service/slice';
+} from 'features/burger-constructor/model/slice';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
 

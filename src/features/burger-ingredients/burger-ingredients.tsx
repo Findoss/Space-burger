@@ -2,12 +2,12 @@ import React, { useRef, useEffect, useCallback } from 'react';
 import cn from 'classnames';
 import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 
-import { TabsIngredients } from './tabs-ingredients';
-import { ContainerIngredientList } from './container-ingredient-list';
-import { ModalIngredientDetails } from './modal-ingredient-details';
+import { TabsIngredients } from './ui/tabs-ingredients';
+import { ContainerIngredientList } from './ui/container-ingredient-list';
+import { ModalIngredientDetails } from './ui/modal-ingredient-details';
 
-import { selectActualType, selectTypesIngredient } from './service/selectors';
-import { setActualType, resetActualType } from './service/slice';
+import { selectActualType, selectTypesIngredient } from './model/selectors';
+import { setActualType, resetActualType } from './model/slice';
 
 import styles from './burger-ingredients.module.css';
 

@@ -8,10 +8,10 @@ import { DRAG } from 'shared/enums/drag';
 import { BurgerConstructor } from 'shared/ui/burger-constructor';
 import { ContainerBurgerConstructorItem } from '../container-burger-constructor-item';
 
-import { selectOrderBun, selectOrderFilling } from '../service/selectors';
-import { swapIngredientOrder } from '../service/slice';
+import { selectOrderBun, selectOrderFilling } from '../../model/selectors';
+import { swapIngredientOrder } from '../../model/slice';
 
-import { mapParamDrop } from '../utils/map-param-drop';
+import { mapParamDrop } from '../../utils/map-param-drop';
 
 import styles from './container-burger-constructor.module.css';
 

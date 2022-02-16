@@ -1,9 +1,9 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { ModalOrderDetails } from './modal-order-details';
-import { ContainerBurgerConstructor } from './container-burger-constructor';
-import { ContainerBurgerConstructorCalc } from './container-burger-constructor-calc';
+import { ModalOrderDetails } from './ui/modal-order-details';
+import { ContainerBurgerConstructor } from './ui/container-burger-constructor';
+import { ContainerBurgerConstructorCalc } from './ui/container-burger-constructor-calc';
 
 import styles from './burger-constructor.module.css';
 

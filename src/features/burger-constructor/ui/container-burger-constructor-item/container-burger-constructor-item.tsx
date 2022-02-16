@@ -8,7 +8,7 @@ import { DRAG } from 'shared/enums/drag';
 import { BurgerConstructorItem } from 'shared/ui/burger-constructor-item';
 
 import { selectIngredientById } from 'app/store/ingredient/selectors';
-import { removeIngredientOrder } from '../service/slice';
+import { removeIngredientOrder } from '../../model/slice';
 
 import styles from './container-burger-constructor-item.module.css';
 

@@ -1,4 +1,4 @@
-import { API_URL } from 'shared/constants/index';
+import { API_URL } from 'shared/api/constants';
 
 import { instanceAxios } from 'shared/api/axios';
 import { formatOrder } from './format';

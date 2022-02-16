@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'shared/hooks/use-redux';
 
 import { Tabs } from 'shared/ui/tabs';
-import { selectActualType, selectTypesIngredient } from '../service/selectors';
+import { selectActualType, selectTypesIngredient } from '../../model/selectors';
 
 import styles from './styles.module.css';
 

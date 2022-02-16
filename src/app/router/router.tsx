@@ -1,6 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { PREFIX } from 'shared/constants/index';
+import { PREFIX } from 'shared/api/constants';
 
 import { routes } from './routes';
 

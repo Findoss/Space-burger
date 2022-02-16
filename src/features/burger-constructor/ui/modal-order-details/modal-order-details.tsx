@@ -10,8 +10,8 @@ import { ContainerOrderDetails } from '../container-order-details';
 import { fetchNewOrder } from 'app/store/order/thunk';
 import { selectOrderStatus } from 'app/store/order/selectors';
 
-import { selectIsModalOpen, selectOrder } from '../service/selectors';
-import { toggleModalOrder } from '../service/slice';
+import { selectIsModalOpen, selectOrder } from '../../model/selectors';
+import { toggleModalOrder } from '../../model/slice';
 import { Loader } from 'shared/ui/loader';
 
 export const ModalOrderDetails = () => {

@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 import { Modal } from 'shared/ui/modal';
 import { ContainerIngredientDetails } from '../container-ingredient-details';
 
-import { selectActiveIngredient } from '../service/selectors';
-import { setActualIngredient } from '../service/slice';
+import { selectActiveIngredient } from '../../model/selectors';
+import { setActualIngredient } from '../../model/slice';
 
 export const ModalIngredientDetails = () => {
   const { t } = useTranslation();

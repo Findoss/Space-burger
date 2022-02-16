@@ -1,4 +1,4 @@
-import { swap } from 'shared/utils/swap';
+import { swap } from 'shared/libs/array/swap';
 import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 import { initOrder, initState } from './state';

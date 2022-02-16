@@ -4,8 +4,8 @@ import { useSelector, useDispatch } from 'shared/hooks/use-redux';
 
 import { BurgerConstructorCalc } from 'shared/ui/burger-constructor-calc';
 
-import { selectOrderBun, selectSumOrder } from '../service/selectors';
-import { toggleModalOrder } from '../service/slice';
+import { selectOrderBun, selectSumOrder } from '../../model/selectors';
+import { toggleModalOrder } from '../../model/slice';
 
 import styles from './styles.module.css';
 

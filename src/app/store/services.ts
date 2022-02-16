@@ -15,12 +15,12 @@ import { orderCollection, COLLECTION_ORDER } from './order/slice';
 import {
   burgerIngredientsSlice,
   WIDGET_BURGER_INGREDIENTS,
-} from 'features/burger-ingredients/service/slice';
+} from 'features/burger-ingredients/model/slice';
 
 import {
   burgerConstructorSlice,
   WIDGET_BURGER_CONSTRUCTOR,
-} from 'features/burger-constructor/service/slice';
+} from 'features/burger-constructor/model/slice';
 
 export const collectionReducers = combineReducers({
   [COLLECTION_ORDER]: orderCollection.reducer,
