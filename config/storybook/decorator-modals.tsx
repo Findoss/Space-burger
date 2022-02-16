@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../src/styles/index.css';
+import '../../src/app/styles/index.css';
 
 export const ModalsWrapper = (Story: any, context: any) => {
   const $root = document.querySelector('#root');

@@ -1,6 +1,6 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-import { langDetector } from '../../src/plugins/i18n/langDetector';
+import { langDetector } from '../../src/app/plugins/i18n/lang-detector';
 
 import ru from '../../public/locales/ru/translation.json';
 import en from '../../public/locales/en/translation.json';
