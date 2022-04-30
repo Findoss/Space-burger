@@ -36,5 +36,23 @@
   },
   "ingredientDetails": {
     "title": "Детали ингредиента"
+  },
+  "formField": {
+    "email": "E-mail",
+    "password": "Пароль",
+    "userName": "Имя"
+  },
+  "register": {
+    "register": "Зарегистрироваться",
+    "registerTitle": "Регистрация",
+    "readyLogin": "Уже зарегистрированы?"
+  },
+  "login": {
+    "login": "Войти",
+    "loginTitle": "Вход",
+    "newUser": "Вы — новый пользователь?",
+    "goRegister": "Зарегистрироваться",
+    "forgotPassword": "Забыли пароль?",
+    "restorePassword": "Восстановить пароль"
   }
 }

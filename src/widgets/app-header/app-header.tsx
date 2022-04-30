@@ -24,12 +24,12 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
       <div className={cn(styles.block, 'pr-5 pl-5')}>
         <div className={styles.menu}>
           <NavButton
-            to="qwer"
+            to="/qwer"
             icon={<BurgerIcon type="secondary" />}
             title={t('menu.constructorBurgers')}
           />
           <NavButton
-            to="qwer2"
+            to="/qwer2"
             icon={<ListIcon type="secondary" />}
             title={t('menu.listOrders')}
           />
@@ -42,7 +42,7 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
       </div>
       <div className={styles.block}>
         <NavButton
-          to="qwer3"
+          to="/qwer3"
           icon={<ProfileIcon type="secondary" />}
           title={t('menu.account')}
         />
