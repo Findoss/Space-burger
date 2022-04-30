@@ -9,7 +9,7 @@ import type { Props } from './types';
 
 export const NavButton = ({
   to,
-  icon,
+  icon = null,
   title,
   onClick,
   extraClass = undefined,
