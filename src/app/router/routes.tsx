@@ -7,6 +7,8 @@ import {
   PageLogin,
   PageRegister,
   PageNotFound,
+  PageResetPassword,
+  PageForgotPassword
 } from 'pages';
 
 export const routes: Routes = [
@@ -40,14 +42,14 @@ export const routes: Routes = [
   },
   {
     path: '/forgot-password ',
-    component: <PageTest />,
+    component: <PageForgotPassword />,
     isPrivate: false,
     redirect: '',
     exact: false,
   },
   {
     path: '/reset-password',
-    component: <PageTest />,
+    component: <PageResetPassword />,
     isPrivate: false,
     redirect: '',
     exact: false,

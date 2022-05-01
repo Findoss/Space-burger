@@ -1,10 +1,9 @@
-.page_login {
+.page_forgot_password {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-
 
 .button_submit {
   width: 100%;

@@ -54,5 +54,11 @@
     "goRegister": "Зарегистрироваться",
     "forgotPassword": "Забыли пароль?",
     "restorePassword": "Восстановить пароль"
+  },
+  "resetPassword": {
+    "reset": "Восстановить",
+    "title": "Восстановление пароля",
+    "goLogin": "Войти",
+    "rememberPassword": "Вспомнили пароль?"
   }
 }
