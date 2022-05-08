@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
-import { schema } from './shema-from';
+import { schema } from './shema-form';
 
 import {
   Input,
@@ -15,7 +15,7 @@ import styles from './styles.module.css';
 import type { Props, Form } from './types';
 import type { SubmitHandler } from 'react-hook-form';
 
-export const LoginForm = ({ extraClass = undefined }: Props) => {
+export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
   const {
@@ -31,50 +31,39 @@ export const LoginForm = ({ extraClass = undefined }: Props) => {
     console.log(data);
   };
 
-  const [isShowText, setIsShowText] = React.useState(false);
-
-  const toggleTypeInput = () => {
-    setIsShowText((v) => !v);
-  };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="input mb-6">
         <Controller
-          name="email"
+          name="newPassword"
           control={control}
           defaultValue=""
           render={({ field }) => (
             <Input
               {...field}
-              placeholder={t('formField.email')}
-              error={Boolean(errors.email)}
-              errorText={errors.email?.message}
+              placeholder={t('resetPassword.newPassword')}
+              error={Boolean(errors.newPassword)}
+              errorText={errors.newPassword?.message}
             />
           )}
         />
-      </div>
-      <div className="input mb-6">
         <Controller
-          name="password"
+          name="code"
           control={control}
           defaultValue=""
           render={({ field }) => (
             <Input
               {...field}
-              type={isShowText ? 'text' : 'password'}
-              icon={isShowText ? 'ShowIcon' : 'HideIcon'}
-              placeholder={t('formField.password')}
-              onIconClick={toggleTypeInput}
-              error={Boolean(errors.password)}
-              errorText={errors.password?.message}
+              placeholder={t('resetPassword.code')}
+              error={Boolean(errors.code)}
+              errorText={errors.code?.message}
             />
           )}
         />
       </div>
       <div className={cn(styles.button_submit, 'mb-20')}>
         <Button type="primary" size="medium">
-          {t('login.login')}
+          {t('resetPassword.save')}
         </Button>
       </div>
     </form>

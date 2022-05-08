@@ -56,6 +56,14 @@
     "restorePassword": "Восстановить пароль"
   },
   "resetPassword": {
+    "save": "Сохранить",
+    "title": "Восстановление пароля",
+    "newPassword": "Введите новый ппароль",
+    "code": "Введите код из письма",
+    "goLogin": "Войти",
+    "rememberPassword": "Вспомнили пароль?"
+  },
+  "forgotPassword": {
     "reset": "Восстановить",
     "title": "Восстановление пароля",
     "goLogin": "Войти",

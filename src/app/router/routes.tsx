@@ -8,7 +8,7 @@ import {
   PageRegister,
   PageNotFound,
   PageResetPassword,
-  PageForgotPassword
+  PageForgotPassword,
 } from 'pages';
 
 export const routes: Routes = [
@@ -41,7 +41,7 @@ export const routes: Routes = [
     exact: false,
   },
   {
-    path: '/forgot-password ',
+    path: '/forgot-password',
     component: <PageForgotPassword />,
     isPrivate: false,
     redirect: '',
