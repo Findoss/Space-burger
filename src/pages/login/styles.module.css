@@ -4,12 +4,3 @@
   align-items: center;
   flex-direction: column;
 }
-
-
-.button_submit {
-  width: 100%;
-}
-
-.button_submit button {
-  width: 100%;
-}
