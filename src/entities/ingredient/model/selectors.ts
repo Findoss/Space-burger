@@ -1,6 +1,5 @@
-import { COLLECTIONS } from 'app/store/store';
+import { RootState, COLLECTIONS } from 'app/store/store';
 import { COLLECTION_INGREDIENT } from './slice';
-import type { RootState } from 'app/store/store';
 import type { IngredientsType } from 'shared/enums/ingredient';
 import type { IngredientId } from 'shared/api/ingredient/types';
 

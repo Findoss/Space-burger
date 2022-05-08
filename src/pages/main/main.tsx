@@ -8,7 +8,7 @@ import { Main as MainLayout } from 'widgets/layout-main';
 import { BurgerIngredients } from 'features/burger-ingredients';
 import { BurgerConstructor } from 'features/burger-constructor';
 
-import { useGetIngredientQuery } from 'entities/ingredient/hooks';
+import { useGetIngredientQuery } from 'entities/ingredient/model/hooks';
 
 import styles from './main.module.css';
 

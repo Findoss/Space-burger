@@ -1,5 +1,7 @@
 import { Reducer } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import { persistConfig } from './persist';
 
 import { RESET_STATE_ACTION_TYPE } from './global/actions/resetState';
 
@@ -19,10 +21,12 @@ export const combinedReducer = combineReducers({
   [WIDGETS]: widgetReducers,
 });
 
-export const rootReducer: Reducer<RootState> = (state, action) => {
+export const mainReducer: Reducer<RootState> = (state, action) => {
   if (action.type === RESET_STATE_ACTION_TYPE) {
     state = {} as RootState;
   }
 
   return combinedReducer(state, action);
 };
+
+export const rootReducer = persistReducer(persistConfig, mainReducer);

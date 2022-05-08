@@ -96,3 +96,5 @@ Linter and formatter
     prettier
     eslint
 ```
+
+типизовать ошибку у промиса

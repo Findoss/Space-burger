@@ -1,16 +1,10 @@
-// import {
-//   INGREDIENT_API_REDUCER_KEY,
-//   ingredientApi,
-// } from 'store/Ingredients/api';
-
-// import { ingredientsSlice } from 'features/BurgerIngredients/service/slice';
-
 import { combineReducers } from '@reduxjs/toolkit';
 import {
   ingredientsCollection,
   COLLECTION_INGREDIENT,
-} from 'entities/ingredient/slice';
-import { orderCollection, COLLECTION_ORDER } from 'entities/order/slice';
+} from 'entities/ingredient/model/slice';
+import { orderCollection, COLLECTION_ORDER } from 'entities/order/model/slice';
+import { userCollection, COLLECTION_USER } from 'entities/user/model/slice';
 
 import {
   burgerIngredientsSlice,
@@ -23,6 +17,7 @@ import {
 } from 'features/burger-constructor/model/slice';
 
 export const collectionReducers = combineReducers({
+  [COLLECTION_USER]: userCollection.reducer,
   [COLLECTION_ORDER]: orderCollection.reducer,
   [COLLECTION_INGREDIENT]: ingredientsCollection.reducer,
 });

@@ -1,9 +1,8 @@
-import { COLLECTIONS } from 'app/store/store';
-import { COLLECTION_ORDER } from './slice';
-import type { RootState } from 'app/store/store';
+import { RootState, COLLECTIONS } from 'app/store/store';
+import { COLLECTION_USER } from './slice';
 
 export const getUserCollection = (state: RootState) =>
-  state[COLLECTIONS][COLLECTION_ORDER];
+  state[COLLECTIONS][COLLECTION_USER];
 
 export const getEntityUser = (state: RootState) =>
   getUserCollection(state).entity;

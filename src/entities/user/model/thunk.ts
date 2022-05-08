@@ -5,5 +5,5 @@ import type { RegistrationForm } from 'shared/api/user/types';
 
 export const fetchRegistrationUser = createAsyncThunk(
   'user/fetchRegistrationUser',
-  async (payload: RegistrationForm) => resolveRegistrationUser(payload),
+  async (payload: RegistrationForm) => await resolveRegistrationUser(payload),
 );

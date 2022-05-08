@@ -10,5 +10,6 @@ export const initState: initType = {
     accessToken: '',
     refreshToken: '',
   },
+  errorMessage: '',
   status: 'pending',
 };

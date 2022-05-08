@@ -10,7 +10,7 @@ import { Error } from 'shared/ui/error';
 import {
   selectIngredientsByType,
   selectIngredientStatus,
-} from 'entities/ingredient/selectors';
+} from 'entities/ingredient/model/selectors';
 
 import type { Props } from './types';
 

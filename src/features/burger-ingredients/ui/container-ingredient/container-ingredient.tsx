@@ -15,7 +15,7 @@ import {
   addBunOrder,
 } from 'features/burger-constructor/model/slice';
 
-import { selectIngredientById } from 'entities/ingredient/selectors';
+import { selectIngredientById } from 'entities/ingredient/model/selectors';
 
 import styles from './style.module.css';
 

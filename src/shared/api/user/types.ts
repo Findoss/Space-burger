@@ -1,3 +1,7 @@
+export type RawUser = {
+  data: User;
+};
+
 export type User = {
   success: boolean;
   user: {
@@ -12,4 +16,11 @@ export type RegistrationForm = {
   email: string;
   password: string;
   name: string;
+};
+
+export type ErrorRegisterUser = {
+  payload: {
+    success: boolean;
+    message: string;
+  };
 };

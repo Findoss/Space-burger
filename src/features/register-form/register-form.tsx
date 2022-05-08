@@ -1,11 +1,12 @@
 import React from 'react';
 import cn from 'classnames';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
-import { fetchRegistrationUser } from 'entities/user/thunk';
+import { fetchRegistrationUser } from 'entities/user/model/thunk';
+import { selectUserStatus } from 'entities/user/model/selectors';
 
 import {
   Input,
@@ -20,8 +21,10 @@ import type { SubmitHandler } from 'react-hook-form';
 export const RegisterForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const status = useSelector(selectUserStatus);
 
   const [isShowText, setIsShowText] = React.useState(false);
+  const [errorForm, setErrorForm] = React.useState('');
 
   const {
     control,
@@ -43,6 +46,7 @@ export const RegisterForm = ({ extraClass = undefined }: Props) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.register_form}>
+      <div>{status === 'rejected' && errorForm}</div>
       <div className="input mt-6 mb-6">
         <Controller
           name="name"

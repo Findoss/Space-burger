@@ -1,6 +1,5 @@
-import { COLLECTIONS } from 'app/store/store';
+import { RootState, COLLECTIONS } from 'app/store/store';
 import { COLLECTION_ORDER } from './slice';
-import type { RootState } from 'app/store/store';
 
 export const getOrderCollection = (state: RootState) =>
   state[COLLECTIONS][COLLECTION_ORDER];
