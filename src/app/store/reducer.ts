@@ -2,6 +2,7 @@ import { Reducer } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
 import { persistReducer } from 'redux-persist';
 import { persistConfig } from './persist';
+import { COLLECTIONS, WIDGETS } from './constants';
 
 import { RESET_STATE_ACTION_TYPE } from './global/actions/resetState';
 
@@ -12,9 +13,6 @@ import {
 } from './services';
 
 import type { RootState } from './store';
-
-export const COLLECTIONS = 'collections';
-export const WIDGETS = 'widgets';
 
 export const combinedReducer = combineReducers({
   [COLLECTIONS]: collectionReducers,
