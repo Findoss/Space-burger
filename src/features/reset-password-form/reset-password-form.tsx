@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
+import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
+import { resolveNewPasswordUser } from 'shared/api/user/resolver';
 
 import {
   Input,
@@ -17,7 +19,9 @@ import type { SubmitHandler } from 'react-hook-form';
 
 export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
+  const [fromError, setFormError] = useState('');
   const {
     control,
     handleSubmit,
@@ -29,10 +33,23 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
 
   const onSubmit: SubmitHandler<Form> = (data) => {
     console.log(data);
+    resolveNewPasswordUser(data)
+      .then(() => {
+        navigate('/login');
+      })
+      .catch((data) => {
+        console.log(data);
+
+        setFormError(data.message);
+      });
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+      <div className="text text_type_main-medium text_color_error ">
+        {fromError && fromError}
+      </div>
+
       <div className="input mb-6">
         <Controller
           name="newPassword"
@@ -48,15 +65,15 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
           )}
         />
         <Controller
-          name="code"
+          name="token"
           control={control}
           defaultValue=""
           render={({ field }) => (
             <Input
               {...field}
-              placeholder={t('resetPassword.code')}
-              error={Boolean(errors.code)}
-              errorText={errors.code?.message}
+              placeholder={t('resetPassword.token')}
+              error={Boolean(errors.token)}
+              errorText={errors.token?.message}
             />
           )}
         />

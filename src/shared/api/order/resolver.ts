@@ -1,7 +1,6 @@
 import { API_URL } from 'shared/api/constants';
 
 import { httpClient } from 'shared/api/axios';
-import { formatOrder } from './format';
 
 import type { Resolver } from '../types';
 import type { Order, OrderRaw, NewOrderParam } from './types';
@@ -14,10 +13,9 @@ export const resolveNewOrder: Resolver<NewOrderParam, Order> = (payload) => {
       ingredients: payload,
     })
     .then((data) => {
-      if (data.data.success === false) {
+      if (data.success === false) {
         throw new Error('');
       }
       return data;
-    })
-    .then((data) => formatOrder(data));
+    });
 };

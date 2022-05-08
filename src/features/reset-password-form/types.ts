@@ -4,5 +4,5 @@ export type Props = {
 
 export type Form = {
   newPassword: string;
-  code: string;
+  token: string;
 };

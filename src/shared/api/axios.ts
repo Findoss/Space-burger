@@ -18,9 +18,11 @@ export const httpClient2 =
   async ({ url, method, data }) => {
     try {
       const result = await httpClient({ url: baseUrl + url, method, data });
-      return { data: result.data };
+      return result.data;
     } catch (axiosError) {
       let err = axiosError as AxiosError;
+      console.log(err);
+
       return {
         error: { status: err.response?.status, data: err.response?.data },
       };

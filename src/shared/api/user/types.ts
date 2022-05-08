@@ -18,8 +18,24 @@ export type RegistrationForm = {
   name: string;
 };
 
-export type ErrorRegisterUser = {
-  payload: {
+export type PasswordResetForm = {
+  email: string;
+};
+
+export type SuccessNewPassword = {
+  data: {
+    success: boolean;
+    message: string;
+  };
+};
+
+export type NewPasswordForm = {
+  newPassword: string;
+  token: string;
+};
+
+export type SuccessPasswordReset = {
+  data: {
     success: boolean;
     message: string;
   };

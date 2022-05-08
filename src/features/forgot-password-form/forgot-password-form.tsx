@@ -1,9 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
+import { resolvePasswordResetUser } from 'shared/api/user/resolver';
 
 import {
   Input,
@@ -17,6 +19,7 @@ import type { SubmitHandler } from 'react-hook-form';
 
 export const ForgotPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
 
   const {
     control,
@@ -29,6 +32,10 @@ export const ForgotPasswordForm = ({ extraClass = undefined }: Props) => {
 
   const onSubmit: SubmitHandler<Form> = (data) => {
     console.log(data);
+
+    resolvePasswordResetUser(data).then(() => {
+      navigate('/reset-password');
+    });
   };
 
   return (
