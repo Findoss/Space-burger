@@ -1,9 +1,11 @@
 import React from 'react';
 import cn from 'classnames';
+import { useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
+import { fetchRegistrationUser } from 'entities/user/thunk';
 
 import {
   Input,
@@ -17,6 +19,7 @@ import type { SubmitHandler } from 'react-hook-form';
 
 export const RegisterForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
+  const dispatch = useDispatch();
 
   const [isShowText, setIsShowText] = React.useState(false);
 
@@ -31,6 +34,7 @@ export const RegisterForm = ({ extraClass = undefined }: Props) => {
 
   const onSubmit: SubmitHandler<Form> = (data) => {
     console.log(data);
+    dispatch(fetchRegistrationUser(data));
   };
 
   const toggleTypeInput = () => {

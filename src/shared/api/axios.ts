@@ -1,9 +1,9 @@
 import axios, { AxiosRequestConfig, AxiosError } from 'axios';
 import { BaseQueryFn } from '@reduxjs/toolkit/query';
 
-export const instanceAxios = axios.create();
+export const httpClient = axios.create();
 
-export const httpClient =
+export const httpClient2 =
   (
     { baseUrl }: { baseUrl: string } = { baseUrl: '' },
   ): BaseQueryFn<
@@ -17,7 +17,7 @@ export const httpClient =
   > =>
   async ({ url, method, data }) => {
     try {
-      const result = await instanceAxios({ url: baseUrl + url, method, data });
+      const result = await httpClient({ url: baseUrl + url, method, data });
       return { data: result.data };
     } catch (axiosError) {
       let err = axiosError as AxiosError;

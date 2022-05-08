@@ -1,0 +1,1 @@
+export { resolveRegistrationUser } from './resolver';
