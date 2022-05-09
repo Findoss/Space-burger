@@ -51,3 +51,7 @@ export type SuccessTokenParam = {
   accessToken: string;
   refreshToken: string;
 };
+
+export type LogoutParams = {
+  token: string;
+};

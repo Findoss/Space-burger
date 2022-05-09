@@ -9,6 +9,7 @@ import {
   PageNotFound,
   PageResetPassword,
   PageForgotPassword,
+  PageProfile,
 } from 'pages';
 
 export const routes: Routes = [
@@ -56,7 +57,7 @@ export const routes: Routes = [
   },
   {
     path: '/profile',
-    component: <PageTest />,
+    component: <PageProfile />,
     isPrivate: false,
     redirect: '',
     exact: false,

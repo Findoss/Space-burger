@@ -13,6 +13,7 @@ import type {
   SuccessNewPassword,
   UpdateTokenParam,
   SuccessTokenParam,
+  LogoutParams,
 } from './types';
 
 export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
@@ -21,7 +22,7 @@ export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
   return httpClient
     .post<void, any>(`${API_URL}/auth/register`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);
@@ -35,7 +36,7 @@ export const resolvePasswordResetUser: Resolver<
   return httpClient
     .post<void, any>(`${API_URL}/password-reset`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);
@@ -49,7 +50,7 @@ export const resolveNewPasswordUser: Resolver<
   return httpClient
     .post<void, any>(`${API_URL}/password-reset/reset`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);
@@ -60,7 +61,7 @@ export const resolveLogin: Resolver<LoginForm, User> = async (payload) => {
   return httpClient
     .post<void, any>(`${API_URL}/auth/login`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);
@@ -74,18 +75,18 @@ export const resolveUpdateToken: Resolver<
   return httpClient
     .post<void, any>(`${API_URL}/auth/token`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);
     });
 };
 
-export const resolveLogout: Resolver<void, void> = async (payload) => {
+export const resolveLogout: Resolver<LogoutParams, void> = async (payload) => {
   return httpClient
     .post<void, any>(`${API_URL}/auth/logout`, payload)
     .then((data) => {
-      return data;
+      return data.data;
     })
     .catch((err) => {
       throw new Error(err.response.data.message);

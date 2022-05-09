@@ -1,1 +1,5 @@
-export { resolveRegistrationUser, resolveLogin } from './resolver';
+export {
+  resolveRegistrationUser,
+  resolveLogin,
+  resolveLogout,
+} from './resolver';

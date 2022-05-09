@@ -1,7 +1,15 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-import { resolveRegistrationUser, resolveLogin } from 'shared/api/user';
+import {
+  resolveRegistrationUser,
+  resolveLogin,
+  resolveLogout,
+} from 'shared/api/user';
 
-import type { RegistrationForm, LoginForm } from 'shared/api/user/types';
+import type {
+  RegistrationForm,
+  LoginForm,
+  LogoutParams,
+} from 'shared/api/user/types';
 
 export const fetchRegistrationUser = createAsyncThunk(
   'user/fetchRegistrationUser',
@@ -13,9 +21,7 @@ export const fetchLogin = createAsyncThunk(
   async (payload: LoginForm) => resolveLogin(payload),
 );
 
-// .then((data) => {
-//   return data;
-// })
-// .catch((err) => {
-//   throw new Error(err);
-// });
+export const fetchLogout = createAsyncThunk(
+  'user/fetchLogout',
+  async (payload: LogoutParams) => resolveLogout(payload),
+);

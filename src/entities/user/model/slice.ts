@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { initState } from './state';
-import { fetchRegistrationUser, fetchLogin } from './thunk';
-
-import type { ResolverError } from 'shared/api/types';
+import { fetchRegistrationUser, fetchLogin, fetchLogout } from './thunk';
 
 export const COLLECTION_USER = 'user';
 export const userCollection = createSlice({
@@ -40,6 +38,14 @@ export const userCollection = createSlice({
     builder.addCase(fetchLogin.rejected, (state, { error }) => {
       state.status = 'rejected';
       state.errorMessage = error.message;
+    });
+
+    builder.addCase(fetchLogout.fulfilled, (state) => {
+      state = initState;
+    });
+
+    builder.addCase(fetchLogout.rejected, (state) => {
+      state = initState;
     });
   },
 });
