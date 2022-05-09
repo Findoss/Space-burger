@@ -58,7 +58,7 @@
   "resetPassword": {
     "save": "Сохранить",
     "title": "Восстановление пароля",
-    "newPassword": "Введите новый ппароль",
+    "newPassword": "Введите новый пароль",
     "token": "Введите код из письма",
     "goLogin": "Войти",
     "rememberPassword": "Вспомнили пароль?"

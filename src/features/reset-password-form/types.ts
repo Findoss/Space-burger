@@ -3,6 +3,6 @@ export type Props = {
 };
 
 export type Form = {
-  newPassword: string;
+  password: string;
   token: string;
 };

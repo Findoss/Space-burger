@@ -26,7 +26,7 @@ export type SuccessNewPassword = {
 };
 
 export type NewPasswordForm = {
-  newPassword: string;
+  password: string;
   token: string;
 };
 

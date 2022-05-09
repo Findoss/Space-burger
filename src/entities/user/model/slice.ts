@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 import { initState } from './state';
-import { fetchRegistrationUser } from './thunk';
+import { fetchRegistrationUser, fetchLogin } from './thunk';
 
 import type { ResolverError } from 'shared/api/types';
 
@@ -20,10 +20,26 @@ export const userCollection = createSlice({
       state.entity = payload;
     });
 
-    builder.addCase(fetchRegistrationUser.rejected, (state, { payload }) => {
+    builder.addCase(fetchRegistrationUser.rejected, (state, { error }) => {
       state.status = 'rejected';
-      state = initState;
-      // state.errorMessage = payload?.message as ResolverError;
+      state.errorMessage = error.message;
+    });
+
+    builder.addCase(fetchLogin.pending, (state) => {
+      state.errorMessage = '';
+      state.status = 'pending';
+    });
+
+    builder.addCase(fetchLogin.fulfilled, (state, { payload }) => {
+      state.status = 'fulfilled';
+      state.errorMessage = '';
+      state.entity.accessToken = payload.accessToken;
+      state.entity.refreshToken = payload.refreshToken;
+    });
+
+    builder.addCase(fetchLogin.rejected, (state, { error }) => {
+      state.status = 'rejected';
+      state.errorMessage = error.message;
     });
   },
 });

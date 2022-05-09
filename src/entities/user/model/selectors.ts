@@ -9,3 +9,6 @@ export const getEntityUser = (state: RootState) =>
 
 export const selectUserStatus = (state: RootState) =>
   getUserCollection(state).status;
+
+export const selectUserError = (state: RootState) =>
+  getUserCollection(state).errorMessage;

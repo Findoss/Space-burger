@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
@@ -32,14 +32,11 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    console.log(data);
     resolveNewPasswordUser(data)
       .then(() => {
         navigate('/login');
       })
       .catch((data) => {
-        console.log(data);
-
         setFormError(data.message);
       });
   };
@@ -52,15 +49,15 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
 
       <div className="input mb-6">
         <Controller
-          name="newPassword"
+          name="password"
           control={control}
           defaultValue=""
           render={({ field }) => (
             <Input
               {...field}
-              placeholder={t('resetPassword.newPassword')}
-              error={Boolean(errors.newPassword)}
-              errorText={errors.newPassword?.message}
+              placeholder={t('resetPassword.password')}
+              error={Boolean(errors.password)}
+              errorText={errors.password?.message}
             />
           )}
         />
