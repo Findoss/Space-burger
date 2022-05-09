@@ -1,15 +1,11 @@
-export type RawUser = {
-  data: User;
-};
-
 export type User = {
   success: boolean;
+  accessToken: string;
+  refreshToken: string;
   user: {
     email: string;
     name: string;
   };
-  accessToken: string;
-  refreshToken: string;
 };
 
 export type RegistrationForm = {
@@ -39,4 +35,19 @@ export type SuccessPasswordReset = {
     success: boolean;
     message: string;
   };
+};
+
+export type LoginForm = {
+  email: string;
+  password: string;
+};
+
+export type UpdateTokenParam = {
+  token: string;
+};
+
+export type SuccessTokenParam = {
+  success: boolean;
+  accessToken: string;
+  refreshToken: string;
 };

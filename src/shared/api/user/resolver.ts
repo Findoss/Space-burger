@@ -4,18 +4,20 @@ import { httpClient } from 'shared/api/axios';
 
 import type { Resolver } from '../types';
 import type {
-  RawUser,
+  User,
   RegistrationForm,
   PasswordResetForm,
+  NewPasswordForm,
+  LoginForm,
   SuccessPasswordReset,
   SuccessNewPassword,
-  NewPasswordForm,
+  UpdateTokenParam,
+  SuccessTokenParam,
 } from './types';
 
-export const resolveRegistrationUser: Resolver<
-  RegistrationForm,
-  RawUser
-> = async (payload) => {
+export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
+  payload,
+) => {
   return httpClient
     .post<void, any>(`${API_URL}/auth/register`, payload)
     .then((data) => {
@@ -46,6 +48,42 @@ export const resolveNewPasswordUser: Resolver<
 > = async (payload) => {
   return httpClient
     .post<void, any>(`${API_URL}/password-reset/reset`, payload)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
+    });
+};
+
+export const resolveLogin: Resolver<LoginForm, User> = async (payload) => {
+  return httpClient
+    .post<void, any>(`${API_URL}/auth/login`, payload)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
+    });
+};
+
+export const resolveUpdateToken: Resolver<
+  UpdateTokenParam,
+  SuccessTokenParam
+> = async (payload) => {
+  return httpClient
+    .post<void, any>(`${API_URL}/auth/token`, payload)
+    .then((data) => {
+      return data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
+    });
+};
+
+export const resolveLogout: Resolver<void, void> = async (payload) => {
+  return httpClient
+    .post<void, any>(`${API_URL}/auth/logout`, payload)
     .then((data) => {
       return data;
     })

@@ -17,7 +17,7 @@ export const userCollection = createSlice({
 
     builder.addCase(fetchRegistrationUser.fulfilled, (state, { payload }) => {
       state.status = 'fulfilled';
-      state.entity = payload.data;
+      state.entity = payload;
     });
 
     builder.addCase(fetchRegistrationUser.rejected, (state, { payload }) => {
