@@ -21,11 +21,10 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const { user } = useSelector(getEntityUser);
 
-  console.log(user);
-
   const [isShowText, setIsShowText] = React.useState(false);
 
   const {
+    reset,
     control,
     handleSubmit,
     formState: { errors },
@@ -94,9 +93,18 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
           />
         </div>
         <div className={cn(styles.button_submit, 'mb-20')}>
-          <Button type="primary" size="medium">
-            {t('profile.save')}
-          </Button>
+          <div>
+            <Button type="primary" size="medium">
+              {t('profile.save')}
+            </Button>
+            <Button
+              type="secondary"
+              size="medium"
+              onClick={() => reset({ name: user.name, email: user.email })}
+            >
+              {t('profile.cancel')}
+            </Button>
+          </div>
         </div>
       </form>
     </>

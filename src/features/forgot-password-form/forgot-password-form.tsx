@@ -31,8 +31,6 @@ export const ForgotPasswordForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    console.log(data);
-
     resolvePasswordResetUser(data).then(() => {
       navigate('/reset-password');
     });

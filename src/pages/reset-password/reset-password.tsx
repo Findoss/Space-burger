@@ -20,10 +20,7 @@ export const ResetPassword = ({ extraClass = undefined }: Props) => {
 
   return (
     <WrapperCenterForm extraClass={cn(extraClass)}>
-      <span className={cn(styles.title, 'text text_type_main-medium')}>
-        {t('resetPassword.title')}
-      </span>
-      <FormTitle>{t('register.registerTitle')}</FormTitle>
+      <FormTitle>{t('resetPassword.title')}</FormTitle>
       <ResetPasswordForm />
       <div className="text text_type_main-default">
         <div>

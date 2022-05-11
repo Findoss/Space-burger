@@ -54,12 +54,14 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
             render={({ field }) => (
               <Input
                 {...field}
-                placeholder={t('resetPassword.password')}
+                placeholder={t('resetPassword.newPassword')}
                 error={Boolean(errors.password)}
                 errorText={errors.password?.message}
               />
             )}
           />
+        </div>
+        <div className="input mb-6">
           <Controller
             name="token"
             control={control}
@@ -74,6 +76,7 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
             )}
           />
         </div>
+
         <div className={cn(styles.button_submit, 'mb-20')}>
           <Button type="primary" size="medium">
             {t('resetPassword.save')}
