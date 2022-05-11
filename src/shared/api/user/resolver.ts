@@ -20,7 +20,7 @@ export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
   payload,
 ) => {
   return httpClient
-    .post<void, any>(`${API_URL}/auth/register`, payload)
+    .post<void, { data: User }>(`${API_URL}/auth/register`, payload)
     .then((data) => {
       return data.data;
     })
@@ -73,7 +73,7 @@ export const resolveUpdateToken: Resolver<
   SuccessTokenParam
 > = async (payload) => {
   return httpClient
-    .post<void, any>(`${API_URL}/auth/token`, payload)
+    .post<void, { data: SuccessTokenParam }>(`${API_URL}/auth/token`, payload)
     .then((data) => {
       return data.data;
     })

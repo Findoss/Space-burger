@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+import { setTokenAuth, removeTokenAuth } from 'shared/libs/cookie';
+
 import { initState } from './state';
 import { fetchRegistrationUser, fetchLogin, fetchLogout } from './thunk';
 
@@ -33,6 +35,7 @@ export const userCollection = createSlice({
       state.errorMessage = '';
       state.entity.accessToken = payload.accessToken;
       state.entity.refreshToken = payload.refreshToken;
+      setTokenAuth(payload.accessToken);
     });
 
     builder.addCase(fetchLogin.rejected, (state, { error }) => {
@@ -42,10 +45,12 @@ export const userCollection = createSlice({
 
     builder.addCase(fetchLogout.fulfilled, (state) => {
       state = initState;
+      removeTokenAuth();
     });
 
     builder.addCase(fetchLogout.rejected, (state) => {
       state = initState;
+      removeTokenAuth();
     });
   },
 });

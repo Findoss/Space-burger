@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
@@ -19,10 +19,6 @@ import type { Props } from './types';
 export const AppHeader = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const location = useLocation();
-
-  useEffect(() => {
-    console.log(location);
-  }, []);
 
   return (
     <div className={cn(styles.header, 'p-4', extraClass)}>

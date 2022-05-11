@@ -16,17 +16,14 @@ export const NavButton = ({
   active = false,
 }: Props) => {
   return (
-    <Link
-      to={to}
-      className={cn('pl-5 pr-5', styles.item, extraClass)}
-      onClick={onClick}
-    >
+    <Link to={to} className={cn('pl-5 pr-5', styles.item)} onClick={onClick}>
       {icon}
       <div
         className={cn(
           'text text_type_main-default  ml-2',
           active ? 'text_color_primary' : 'text_color_inactive',
           styles.title,
+          extraClass,
         )}
       >
         {title}
