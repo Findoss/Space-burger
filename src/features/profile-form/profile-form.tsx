@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
@@ -36,19 +36,15 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
 
   const onSubmit: SubmitHandler<Form> = (data) => {
     console.log(data);
-    // dispatch(fetchRegistrationUser(data));
   };
 
   const toggleTypeInput = () => {
     setIsShowText((v) => !v);
   };
 
-  // useEffect(()=>{
-  // },[])
-
   return (
     <>
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.register_form}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input mt-6 mb-6">
           <Controller
             name="name"

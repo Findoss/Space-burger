@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
 import { resolveNewPasswordUser } from 'shared/api/user/resolver';
 
+import { FormError } from 'shared/ui/form-error';
 import {
   Input,
   Button,
@@ -21,7 +22,7 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
-  const [fromError, setFormError] = useState('');
+  const [errorForm, setErrorForm] = useState('');
   const {
     control,
     handleSubmit,
@@ -37,49 +38,48 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
         navigate('/login');
       })
       .catch((data) => {
-        setFormError(data.message);
+        setErrorForm(data.message);
       });
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <div className="text text_type_main-medium text_color_error ">
-        {fromError && fromError}
-      </div>
-
-      <div className="input mb-6">
-        <Controller
-          name="password"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              {...field}
-              placeholder={t('resetPassword.password')}
-              error={Boolean(errors.password)}
-              errorText={errors.password?.message}
-            />
-          )}
-        />
-        <Controller
-          name="token"
-          control={control}
-          defaultValue=""
-          render={({ field }) => (
-            <Input
-              {...field}
-              placeholder={t('resetPassword.token')}
-              error={Boolean(errors.token)}
-              errorText={errors.token?.message}
-            />
-          )}
-        />
-      </div>
-      <div className={cn(styles.button_submit, 'mb-20')}>
-        <Button type="primary" size="medium">
-          {t('resetPassword.save')}
-        </Button>
-      </div>
-    </form>
+    <>
+      <FormError>{errorForm}</FormError>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <div className="input mb-6">
+          <Controller
+            name="password"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                {...field}
+                placeholder={t('resetPassword.password')}
+                error={Boolean(errors.password)}
+                errorText={errors.password?.message}
+              />
+            )}
+          />
+          <Controller
+            name="token"
+            control={control}
+            defaultValue=""
+            render={({ field }) => (
+              <Input
+                {...field}
+                placeholder={t('resetPassword.token')}
+                error={Boolean(errors.token)}
+                errorText={errors.token?.message}
+              />
+            )}
+          />
+        </div>
+        <div className={cn(styles.button_submit, 'mb-20')}>
+          <Button type="primary" size="medium">
+            {t('resetPassword.save')}
+          </Button>
+        </div>
+      </form>
+    </>
   );
 };

@@ -13,6 +13,7 @@ import {
 
 import { fetchLogin } from 'entities/user/model/thunk';
 
+import { FormError } from 'shared/ui/form-error';
 import {
   Input,
   Button,
@@ -20,8 +21,8 @@ import {
 
 import styles from './styles.module.css';
 
-import type { Props, Form } from './types';
 import type { SubmitHandler } from 'react-hook-form';
+import type { Props, Form } from './types';
 
 export const LoginForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
@@ -51,9 +52,7 @@ export const LoginForm = ({ extraClass = undefined }: Props) => {
 
   return (
     <>
-      <div className="text text_type_main-medium text_color_error">
-        {status === 'rejected' && errorForm}
-      </div>
+      <FormError>{status === 'rejected' && errorForm}</FormError>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input mb-6">
           <Controller

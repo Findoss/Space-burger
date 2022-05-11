@@ -11,6 +11,7 @@ import {
   selectUserError,
 } from 'entities/user/model/selectors';
 
+import { FormError } from 'shared/ui/form-error';
 import {
   Input,
   Button,
@@ -48,9 +49,7 @@ export const RegisterForm = ({ extraClass = undefined }: Props) => {
 
   return (
     <>
-      <div className="text text_type_main-medium text_color_error">
-        {status === 'rejected' && errorForm}
-      </div>
+      <FormError>{status === 'rejected' && errorForm}</FormError>
       <form onSubmit={handleSubmit(onSubmit)} className={styles.register_form}>
         <div className="input mt-6 mb-6">
           <Controller
