@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { PREFIX } from 'shared/api/constants';
 
 import { NavButton } from 'shared/ui/nav-button';
@@ -18,6 +18,11 @@ import type { Props } from './types';
 
 export const AppHeader = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
+  const location = useLocation();
+
+  useEffect(() => {
+    console.log(location);
+  }, []);
 
   return (
     <div className={cn(styles.header, 'p-4', extraClass)}>
@@ -27,11 +32,13 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
             to="/"
             icon={<BurgerIcon type="secondary" />}
             title={t('menu.constructorBurgers')}
+            active={location.pathname === '/'}
           />
           <NavButton
-            to="/todo1"
+            to="/profile/orders"
             icon={<ListIcon type="secondary" />}
             title={t('menu.listOrders')}
+            active={location.pathname === '/profile/orders'}
           />
         </div>
       </div>
@@ -42,9 +49,10 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
       </div>
       <div className={styles.block}>
         <NavButton
-          to="/login"
+          to="/profile"
           icon={<ProfileIcon type="secondary" />}
           title={t('menu.account')}
+          active={location.pathname === '/profile'}
         />
       </div>
     </div>

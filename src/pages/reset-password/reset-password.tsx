@@ -3,8 +3,12 @@ import cn from 'classnames';
 
 import { useTranslation } from 'react-i18next';
 
-import { ResetPasswordForm } from 'features/reset-password-form';
 import { Link } from 'shared/ui/link';
+import { FormTitle } from 'shared/ui/form-title';
+
+import { ResetPasswordForm } from 'features/reset-password-form';
+
+import { WrapperCenterForm } from 'widgets/wrapper-center-form';
 import { Main as MainLayout } from 'widgets/layout-main';
 
 import styles from './styles.module.css';
@@ -15,10 +19,11 @@ export const ResetPassword = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.page_reset_password, extraClass)}>
+    <WrapperCenterForm extraClass={cn(extraClass)}>
       <span className={cn(styles.title, 'text text_type_main-medium')}>
         {t('resetPassword.title')}
       </span>
+      <FormTitle>{t('register.registerTitle')}</FormTitle>
       <ResetPasswordForm />
       <div className="text text_type_main-default">
         <div>
@@ -30,7 +35,7 @@ export const ResetPassword = ({ extraClass = undefined }: Props) => {
           </Link>
         </div>
       </div>
-    </div>
+    </WrapperCenterForm>
   );
 };
 

@@ -6,11 +6,12 @@ import { getEntityUser } from 'entities/user/model/selectors';
 import { fetchLogout } from 'entities/user/model/thunk';
 
 import { Link } from 'shared/ui/link';
-import { ProfileForm } from 'features/profile-form';
-import { Main as MainLayout } from 'widgets/layout-main';
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 
-import styles from './styles.module.css';
+import { ProfileForm } from 'features/profile-form';
+
+import { Main as MainLayout } from 'widgets/layout-main';
+import { WrapperCenterForm } from 'widgets/wrapper-center-form';
 
 import type { Props } from './types';
 
@@ -24,7 +25,7 @@ export const Profile = ({ extraClass = undefined }: Props) => {
   };
 
   return (
-    <div className={cn(styles.page_profile, extraClass)}>
+    <div className={cn(extraClass)}>
       <Link>{t('profile.profile')}</Link>
       <Button onClick={onLogout}>{t('profile.logout')}</Button>
       <ProfileForm />
@@ -35,7 +36,9 @@ export const Profile = ({ extraClass = undefined }: Props) => {
 export const PageProfile = () => {
   return (
     <MainLayout>
-      <Profile></Profile>
+      <WrapperCenterForm>
+        <Profile />
+      </WrapperCenterForm>
     </MainLayout>
   );
 };

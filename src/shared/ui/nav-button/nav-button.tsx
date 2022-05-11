@@ -13,6 +13,7 @@ export const NavButton = ({
   title,
   onClick,
   extraClass = undefined,
+  active = false,
 }: Props) => {
   return (
     <Link
@@ -23,7 +24,8 @@ export const NavButton = ({
       {icon}
       <div
         className={cn(
-          'text text_type_main-default text_color_inactive ml-2',
+          'text text_type_main-default  ml-2',
+          active ? 'text_color_primary' : 'text_color_inactive',
           styles.title,
         )}
       >

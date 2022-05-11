@@ -3,10 +3,12 @@ import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 
 import { Link } from 'shared/ui/link';
-import { Main as MainLayout } from 'widgets/layout-main';
+import { FormTitle } from 'shared/ui/form-title';
+
 import { ForgotPasswordForm } from 'features/forgot-password-form';
 
-import styles from './styles.module.css';
+import { WrapperCenterForm } from 'widgets/wrapper-center-form';
+import { Main as MainLayout } from 'widgets/layout-main';
 
 import type { Props } from './types';
 
@@ -14,22 +16,18 @@ export const ForgotPassword = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
   return (
-    <div className={cn(styles.page_forgot_password, extraClass)}>
-      <span className={cn(styles.title, 'text text_type_main-medium')}>
-        {t('forgotPassword.title')}
-      </span>
+    <WrapperCenterForm extraClass={cn(extraClass)}>
+      <FormTitle>{t('forgotPassword.title')}</FormTitle>
       <ForgotPasswordForm />
       <div className="text text_type_main-default">
         <div>
           <span className="text_color_inactive">
             {t('forgotPassword.rememberPassword')}
           </span>{' '}
-          <Link to="/register" extraClass={cn(styles.link_login)}>
-            {t('forgotPassword.goLogin')}
-          </Link>
+          <Link to="/register">{t('forgotPassword.goLogin')}</Link>
         </div>
       </div>
-    </div>
+    </WrapperCenterForm>
   );
 };
 
