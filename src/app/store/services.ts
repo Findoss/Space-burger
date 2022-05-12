@@ -1,4 +1,7 @@
 import { combineReducers } from '@reduxjs/toolkit';
+import { persistReducer } from 'redux-persist';
+import { persist } from './persist';
+
 import {
   ingredientsCollection,
   COLLECTION_INGREDIENT,
@@ -17,7 +20,10 @@ import {
 } from 'features/burger-constructor/model/slice';
 
 export const collectionReducers = combineReducers({
-  [COLLECTION_USER]: userCollection.reducer,
+  [COLLECTION_USER]: persistReducer(
+    persist(`${COLLECTION_USER}`),
+    userCollection.reducer,
+  ),
   [COLLECTION_ORDER]: orderCollection.reducer,
   [COLLECTION_INGREDIENT]: ingredientsCollection.reducer,
 });

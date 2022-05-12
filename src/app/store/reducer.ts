@@ -1,9 +1,7 @@
 import { Reducer } from 'redux';
 import { combineReducers } from '@reduxjs/toolkit';
-import { persistReducer } from 'redux-persist';
-import { persistConfig } from './persist';
-import { COLLECTIONS, WIDGETS } from './constants';
 
+import { COLLECTIONS, WIDGETS } from './constants';
 import { RESET_STATE_ACTION_TYPE } from './global/actions/resetState';
 
 import {
@@ -27,4 +25,4 @@ export const mainReducer: Reducer<RootState> = (state, action) => {
   return combinedReducer(state, action);
 };
 
-export const rootReducer = persistReducer(persistConfig, mainReducer);
+export const rootReducer = mainReducer;
