@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
@@ -26,7 +26,6 @@ import type { Props, Form } from './types';
 
 export const LoginForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const status = useSelector(selectUserStatus);
   const errorForm = useSelector(selectUserError);

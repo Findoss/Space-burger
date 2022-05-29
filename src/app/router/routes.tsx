@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Routes } from './types';
 
 import {
@@ -16,57 +15,49 @@ export const routes: Routes = [
   {
     path: '/',
     component: <PageMain />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: '/',
   },
   {
     path: '/test',
     component: <PageTest />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: '/',
   },
   {
     path: '/login',
     component: <PageLogin />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: '/profile',
   },
   {
     path: '/register',
     component: <PageRegister />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: '/profile',
   },
   {
     path: '/forgot-password',
     component: <PageForgotPassword />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: 'profile',
   },
   {
     path: '/reset-password',
     component: <PageResetPassword />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external'],
+    redirect: '/profile',
   },
   {
     path: '/profile',
     component: <PageProfile />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['interior'],
+    redirect: '/login',
   },
   {
     path: '*',
     component: <PageNotFound />,
-    isPrivate: false,
-    redirect: '',
-    exact: false,
+    role: ['external', 'interior'],
+    redirect: '/',
   },
 ];
