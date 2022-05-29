@@ -43,13 +43,13 @@ export const userCollection = createSlice({
     });
 
     builder.addCase(fetchLogout.fulfilled, (state) => {
-      state = initState;
       removeTokenAuth();
+      return initState;
     });
 
     builder.addCase(fetchLogout.rejected, (state) => {
-      state = initState;
       removeTokenAuth();
+      return initState;
     });
   },
 });

@@ -1,3 +1,4 @@
+import { createSelector } from '@reduxjs/toolkit';
 import { RootState, COLLECTIONS } from 'app/store/store';
 import { COLLECTION_USER } from './slice';
 
@@ -15,6 +16,11 @@ export const selectUserStatus = (state: RootState) =>
 export const selectUserError = (state: RootState) =>
   getUserCollection(state).errorMessage;
 
-export const selectRoleUser = (state: RootState): Role => {
-  return getEntityUser(state).user.name !== '' ? 'interior' : 'external';
-};
+export const selectUserName = createSelector(
+  getEntityUser,
+  (entity) => entity.user.name,
+);
+
+export const selectRoleUser = createSelector(selectUserName, (name): Role => {
+  return name !== '' ? 'interior' : 'external';
+});
