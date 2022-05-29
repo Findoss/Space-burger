@@ -33,8 +33,7 @@ export const userCollection = createSlice({
     builder.addCase(fetchLogin.fulfilled, (state, { payload }) => {
       state.status = 'fulfilled';
       state.errorMessage = '';
-      state.entity.accessToken = payload.accessToken;
-      state.entity.refreshToken = payload.refreshToken;
+      state.entity = payload;
       setTokenAuth(payload.accessToken);
     });
 

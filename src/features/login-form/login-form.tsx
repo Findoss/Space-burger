@@ -27,6 +27,7 @@ import type { Props, Form } from './types';
 export const LoginForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const status = useSelector(selectUserStatus);
   const errorForm = useSelector(selectUserError);
 
@@ -40,7 +41,9 @@ export const LoginForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    dispatch(fetchLogin(data));
+    dispatch(fetchLogin(data)).then(() => {
+      navigate('/profile');
+    });
   };
 
   const [isShowText, setIsShowText] = React.useState(false);

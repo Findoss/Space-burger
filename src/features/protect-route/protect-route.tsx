@@ -10,7 +10,7 @@ export const ProtectRoute = ({ role, children, redirect, roleUser }: Props) => {
     if (!role.includes(roleUser)) {
       navigate(redirect, { replace: true });
     }
-  }, [roleUser]);
+  }, [roleUser, role]);
 
   return <>{children}</>;
 };

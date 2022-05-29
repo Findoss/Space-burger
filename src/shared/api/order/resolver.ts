@@ -12,10 +12,13 @@ export const resolveNewOrder: Resolver<NewOrderParam, Order> = (payload) => {
     .post<void, OrderRaw>(`${API_URL}/orders`, {
       ingredients: payload,
     })
-    .then((data) => {
+    .then(({ data }) => {
       if (data.success === false) {
         throw new Error('');
       }
       return data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
     });
 };

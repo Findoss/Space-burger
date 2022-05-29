@@ -16,5 +16,5 @@ export const selectUserError = (state: RootState) =>
   getUserCollection(state).errorMessage;
 
 export const selectRoleUser = (state: RootState): Role => {
-  return getEntityUser(state).user.name ? 'interior' : 'external';
+  return getEntityUser(state).user.name !== '' ? 'interior' : 'external';
 };

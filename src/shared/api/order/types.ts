@@ -3,11 +3,13 @@ import type { IngredientId } from 'shared/api/ingredient/types';
 export type OrderId = string;
 
 export type OrderRaw = {
-  name: string;
-  order: {
-    number: OrderId;
+  data: {
+    name: string;
+    order: {
+      number: OrderId;
+    };
+    success: boolean;
   };
-  success: boolean;
   message?: string;
 };
 

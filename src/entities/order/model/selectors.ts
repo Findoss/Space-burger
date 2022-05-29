@@ -5,7 +5,7 @@ export const getOrderCollection = (state: RootState) =>
   state[COLLECTIONS][COLLECTION_ORDER];
 
 export const selectIdOrder = (state: RootState) =>
-  getOrderCollection(state).entity.order.number;
+  getOrderCollection(state).entity.order.number || 0;
 
 export const selectOrderStatus = (state: RootState) =>
   getOrderCollection(state).status;
