@@ -14,6 +14,8 @@ import type {
   UpdateTokenParam,
   SuccessTokenParam,
   LogoutParams,
+  UpdateUserParams,
+  UserParams,
 } from './types';
 
 export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
@@ -85,6 +87,34 @@ export const resolveUpdateToken: Resolver<
 export const resolveLogout: Resolver<LogoutParams, void> = async (payload) => {
   return httpClient
     .post<void, any>(`${API_URL}/auth/logout`, payload)
+    .then((data) => {
+      return data.data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
+    });
+};
+
+export const resolveUpdateUser: Resolver<UpdateUserParams, void> = async (
+  payload,
+) => {
+  return httpClient
+    .patch<void, any>(`${API_URL}/auth/user`, payload)
+    .then((data) => {
+      return data.data;
+    })
+    .catch((err) => {
+      throw new Error(err.response.data.message);
+    });
+};
+
+export const resolveUser: Resolver<UserParams, void> = async (payload) => {
+  return httpClient
+    .get<void, any>(`${API_URL}/auth/user`, {
+      headers: {
+        authorization: payload.authorization,
+      },
+    })
     .then((data) => {
       return data.data;
     })

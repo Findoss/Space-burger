@@ -1,5 +1,1 @@
-export {
-  resolveRegistrationUser,
-  resolveLogin,
-  resolveLogout,
-} from './resolver';
+export * from './resolver';

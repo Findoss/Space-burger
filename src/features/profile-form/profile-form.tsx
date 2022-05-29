@@ -4,8 +4,9 @@ import { useForm, Controller } from 'react-hook-form';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
-import { useSelector } from 'shared/hooks/use-redux';
+import { useDispatch, useSelector } from 'shared/hooks/use-redux';
 import { getEntityUser } from 'entities/user/model/selectors';
+import { fetchUpdateUser } from 'entities/user/model/thunk';
 
 import {
   Input,
@@ -20,7 +21,7 @@ import type { SubmitHandler } from 'react-hook-form';
 export const ProfileForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const { user } = useSelector(getEntityUser);
-
+  const dispatch = useDispatch();
   const [isShowText, setIsShowText] = React.useState(false);
 
   const {
@@ -34,7 +35,7 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    console.log(data);
+    dispatch(fetchUpdateUser(data));
   };
 
   const toggleTypeInput = () => {

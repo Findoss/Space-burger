@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'shared/hooks/use-redux';
 import { PREFIX } from 'shared/api/constants';
+import { Auth } from '../auth';
 
 import { selectRoleUser } from 'entities/user/model/selectors';
 
@@ -26,5 +27,9 @@ const routeComponents = () => {
 };
 
 export const Router = () => {
-  return <Routes>{routeComponents()}</Routes>;
+  return (
+    <Auth>
+      <Routes>{routeComponents()}</Routes>
+    </Auth>
+  );
 };

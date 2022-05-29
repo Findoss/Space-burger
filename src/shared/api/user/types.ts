@@ -55,3 +55,13 @@ export type SuccessTokenParam = {
 export type LogoutParams = {
   token: string;
 };
+
+export type UpdateUserParams = {
+  name: string;
+  email: string;
+  password: string;
+};
+
+export type UserParams = {
+  authorization: string;
+};
