@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector, useDispatch } from 'shared/hooks/use-redux';
+import { useNavigate } from 'react-router-dom';
 
 import { BurgerConstructorCalc } from 'shared/ui/burger-constructor-calc';
 
@@ -13,16 +14,21 @@ import styles from './container-burger-constructor-calc.module.css';
 import type { Props } from './types';
 
 export const ContainerBurgerConstructorCalc = ({ extraClass }: Props) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const sumOrder = useSelector(selectSumOrder);
   const bumOrder = useSelector(selectOrderBun);
   const roleUser = useSelector(selectRoleUser);
   const { t } = useTranslation();
 
-  const disabled =
-    sumOrder === 0 || bumOrder === undefined || roleUser !== 'interior';
+  const disabled = sumOrder === 0 || bumOrder === undefined;
 
   const handlerClick = () => {
+    if (roleUser !== 'interior') {
+      navigate('/login');
+      return;
+    }
+
     dispatch(toggleModalOrder());
   };
 

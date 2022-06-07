@@ -55,6 +55,12 @@ export const routes: Routes = [
     redirect: '/login',
   },
   {
+    path: '/profile/orders',
+    component: <></>,
+    role: ['interior'],
+    redirect: '/login',
+  },
+  {
     path: '*',
     component: <PageNotFound />,
     role: ['external', 'interior'],
