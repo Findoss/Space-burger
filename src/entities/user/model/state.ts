@@ -11,5 +11,6 @@ export const initState: initType = {
     refreshToken: '',
   },
   errorMessage: '',
+  isForgot: false,
   status: 'pending',
 };

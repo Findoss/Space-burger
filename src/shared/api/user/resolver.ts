@@ -16,6 +16,7 @@ import type {
   LogoutParams,
   UpdateUserParams,
   UserParams,
+  SuccessUpdateUser,
 } from './types';
 
 export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
@@ -95,11 +96,20 @@ export const resolveLogout: Resolver<LogoutParams, void> = async (payload) => {
     });
 };
 
-export const resolveUpdateUser: Resolver<UpdateUserParams, void> = async (
-  payload,
-) => {
-  return httpClient
-    .patch<void, any>(`${API_URL}/auth/user`, payload)
+export const resolveUpdateUser: Resolver<
+  UpdateUserParams & { authorization: string },
+  SuccessUpdateUser
+> = async (payload) => {
+  const { authorization, email, name, password } = payload;
+
+  return httpClient({
+    method: 'PATCH',
+    url: `${API_URL}/auth/user`,
+    headers: {
+      authorization: authorization,
+    },
+    data: { email, name, password },
+  })
     .then((data) => {
       return data.data;
     })

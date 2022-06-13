@@ -27,6 +27,7 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
   const {
     reset,
     control,
+    resetField,
     handleSubmit,
     formState: { errors },
   } = useForm<Form>({
@@ -35,7 +36,9 @@ export const ProfileForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    dispatch(fetchUpdateUser(data));
+    dispatch(fetchUpdateUser(data)).then(() => {
+      resetField('password');
+    });
   };
 
   const toggleTypeInput = () => {

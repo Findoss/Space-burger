@@ -18,11 +18,13 @@ export const ModalIngredientDetails = () => {
     return null;
   }
 
+  const handlerClose = () => {
+    history.replaceState({}, '', `/`);
+    dispatch(setActualIngredient(null));
+  };
+
   return (
-    <Modal
-      title={t('ingredientDetails.title')}
-      onClose={() => dispatch(setActualIngredient(null))}
-    >
+    <Modal title={t('ingredientDetails.title')} onClose={handlerClose}>
       <ContainerIngredientDetails id={id} />
     </Modal>
   );

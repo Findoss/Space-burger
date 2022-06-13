@@ -24,3 +24,6 @@ export const selectUserName = createSelector(
 export const selectRoleUser = createSelector(selectUserName, (name): Role => {
   return name !== '' ? 'interior' : 'external';
 });
+
+export const selectIsForgot = (state: RootState) =>
+  getUserCollection(state).isForgot;

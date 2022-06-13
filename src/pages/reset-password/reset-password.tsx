@@ -27,7 +27,7 @@ export const ResetPassword = ({ extraClass = undefined }: Props) => {
           <span className="text_color_inactive">
             {t('resetPassword.rememberPassword')}
           </span>{' '}
-          <Link to="/register" extraClass={cn(styles.link_login)}>
+          <Link to="/login" extraClass={cn(styles.link_login)}>
             {t('resetPassword.goLogin')}
           </Link>
         </div>

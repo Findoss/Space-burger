@@ -5,5 +5,4 @@ export type Props = {
   children?: ReactNode;
   role: Role[];
   roleUser: Role;
-  redirect: string;
 };

@@ -45,6 +45,11 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
     }),
   }));
 
+  const handlerClick = () => {
+    history.pushState({}, '', `/ingredients/${id}`);
+    dispatch(setActualIngredient(id));
+  };
+
   return (
     <Ingredient
       ref={$elDrag}
@@ -54,7 +59,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
       price={data.price}
       count={count}
       extraClass={cn(styles.draggle, { [styles.drag]: isDragging })}
-      onClick={() => dispatch(setActualIngredient(id))}
+      onClick={handlerClick}
     />
   );
 };

@@ -62,6 +62,14 @@ export type UpdateUserParams = {
   password: string;
 };
 
+export type SuccessUpdateUser = {
+  success: boolean;
+  user: {
+    email: string;
+    name: string;
+  };
+};
+
 export type UserParams = {
   authorization: string;
 };

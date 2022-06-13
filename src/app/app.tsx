@@ -7,6 +7,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 
 import { store, persistor } from 'app/store/store';
 import { Router } from 'app/router';
+import { Auth } from 'app/auth';
 import 'app/plugins/i18n/i18n';
 
 import './styles/index.css';
@@ -16,9 +17,11 @@ export function App() {
     <StoreProvider store={store}>
       <PersistGate loading={null} persistor={persistor}>
         <DndProvider backend={HTML5Backend}>
-          <BrowserRouter>
-            <Router />
-          </BrowserRouter>
+          <Auth>
+            <BrowserRouter>
+              <Router />
+            </BrowserRouter>
+          </Auth>
         </DndProvider>
       </PersistGate>
     </StoreProvider>

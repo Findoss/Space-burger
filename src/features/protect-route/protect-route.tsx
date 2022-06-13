@@ -1,21 +1,33 @@
 import React, { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router';
+import { useLocation } from 'react-router-dom';
 
 import type { Props } from './types';
 
-export const ProtectRoute = memo(
-  ({ role, children, redirect, roleUser }: Props) => {
-    const navigate = useNavigate();
+const PROTECT_ROUTE_REDIRECT = '/login';
+const PROTECT_ROUTE_PROFILE = '/';
 
-    useEffect(() => {
-      console.log(roleUser, role);
+export const ProtectRoute = memo(({ role, children, roleUser }: Props) => {
+  const navigate = useNavigate();
+  const location = useLocation();
 
+  useEffect(() => {
+    if (role.length) {
       if (!role.includes(roleUser)) {
-        console.log('fetchLogin.rejected');
-        navigate(redirect, { replace: true });
-      }
-    }, [roleUser, role]);
+        if (roleUser === 'external') {
+          navigate(PROTECT_ROUTE_REDIRECT);
+        }
 
-    return <>{children}</>;
-  },
-);
+        if (roleUser === 'interior') {
+          if (location.pathname === '/login') {
+            navigate(-1);
+            return;
+          }
+          navigate(PROTECT_ROUTE_PROFILE);
+        }
+      }
+    }
+  }, [roleUser, role, location]);
+
+  return <>{children}</>;
+});

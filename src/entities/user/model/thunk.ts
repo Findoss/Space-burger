@@ -6,6 +6,7 @@ import {
   resolveLogout,
   resolveUpdateUser,
   resolveUser,
+  resolvePasswordResetUser,
 } from 'shared/api/user';
 
 import type {
@@ -13,6 +14,7 @@ import type {
   LoginForm,
   LogoutParams,
   UpdateUserParams,
+  PasswordResetForm,
 } from 'shared/api/user/types';
 
 import { getUserCollection } from './selectors';
@@ -27,6 +29,11 @@ export const fetchLogin = createAsyncThunk(
   async (payload: LoginForm) => resolveLogin(payload),
 );
 
+export const fetchResetPassword = createAsyncThunk(
+  'user/fetchResetPassword',
+  async (payload: PasswordResetForm) => resolvePasswordResetUser(payload),
+);
+
 export const fetchLogout = createAsyncThunk(
   'user/fetchLogout',
   async (payload: LogoutParams) => resolveLogout(payload),
@@ -34,13 +41,18 @@ export const fetchLogout = createAsyncThunk(
 
 export const fetchUpdateUser = createAsyncThunk(
   'user/fetchUpdateUser',
-  async (payload: UpdateUserParams) => resolveUpdateUser(payload),
+  async (payload: UpdateUserParams, { getState }) => {
+    const state = getState() as RootState;
+    const { accessToken } = getUserCollection(state).entity;
+    return await resolveUpdateUser({ authorization: accessToken, ...payload });
+  },
 );
 
 export const fetchUser = createAsyncThunk(
   'user/fetchUser',
   async (_: undefined, { getState }) => {
     const state = getState() as RootState;
-    resolveUser({ authorization: getUserCollection(state).entity.accessToken });
+    const { accessToken } = getUserCollection(state).entity;
+    return await resolveUser({ authorization: accessToken });
   },
 );

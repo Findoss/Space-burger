@@ -17,10 +17,14 @@ import styles from './styles.module.css';
 
 import type { Props, Form } from './types';
 import type { SubmitHandler } from 'react-hook-form';
+import { useEffect } from 'react';
+import { useSelector } from 'shared/hooks/use-redux';
+import { selectIsForgot } from 'entities/user/model/selectors';
 
 export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const isForgot = useSelector(selectIsForgot);
 
   const [errorForm, setErrorForm] = useState('');
   const {
@@ -41,6 +45,12 @@ export const ResetPasswordForm = ({ extraClass = undefined }: Props) => {
         setErrorForm(data.message);
       });
   };
+
+  useEffect(() => {
+    if (!isForgot) {
+      navigate('/login');
+    }
+  }, [isForgot]);
 
   return (
     <>

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { schema } from './shema-form';
-import { resolvePasswordResetUser } from 'shared/api/user/resolver';
 
 import {
   Input,
@@ -16,10 +15,13 @@ import styles from './styles.module.css';
 
 import type { Props, Form } from './types';
 import type { SubmitHandler } from 'react-hook-form';
+import { useDispatch } from 'shared/hooks/use-redux';
+import { fetchResetPassword } from 'entities/user/model/thunk';
 
 export const ForgotPasswordForm = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const {
     control,
@@ -31,7 +33,7 @@ export const ForgotPasswordForm = ({ extraClass = undefined }: Props) => {
   });
 
   const onSubmit: SubmitHandler<Form> = (data) => {
-    resolvePasswordResetUser(data).then(() => {
+    dispatch(fetchResetPassword(data)).then(() => {
       navigate('/reset-password');
     });
   };
