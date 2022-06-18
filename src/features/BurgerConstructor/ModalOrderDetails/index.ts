@@ -1,1 +1,0 @@
-export { ModalOrderDetails } from './ModalOrderDetails';

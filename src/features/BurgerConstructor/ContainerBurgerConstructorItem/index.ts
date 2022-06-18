@@ -1,1 +1,0 @@
-export { ContainerBurgerConstructorItem } from './ContainerBurgerConstructorItem';

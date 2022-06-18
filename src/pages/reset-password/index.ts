@@ -1,0 +1,1 @@
+export { ResetPassword, PageResetPassword }from './reset-password';
