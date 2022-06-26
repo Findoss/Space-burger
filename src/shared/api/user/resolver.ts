@@ -23,7 +23,7 @@ export const resolveRegistrationUser: Resolver<RegistrationForm, User> = async (
   payload,
 ) => {
   return httpClient
-    .post<void, { data: User }>(`${API_URL}/auth/register`, payload)
+    .post(`${API_URL}/auth/register`, payload)
     .then((data) => {
       return data.data;
     })
@@ -37,7 +37,7 @@ export const resolvePasswordResetUser: Resolver<
   SuccessPasswordReset
 > = async (payload) => {
   return httpClient
-    .post<void, any>(`${API_URL}/password-reset`, payload)
+    .post(`${API_URL}/password-reset`, payload)
     .then((data) => {
       return data.data;
     })
@@ -51,7 +51,7 @@ export const resolveNewPasswordUser: Resolver<
   SuccessNewPassword
 > = async (payload) => {
   return httpClient
-    .post<void, any>(`${API_URL}/password-reset/reset`, payload)
+    .post(`${API_URL}/password-reset/reset`, payload)
     .then((data) => {
       return data.data;
     })
@@ -62,7 +62,7 @@ export const resolveNewPasswordUser: Resolver<
 
 export const resolveLogin: Resolver<LoginForm, User> = async (payload) => {
   return httpClient
-    .post<void, any>(`${API_URL}/auth/login`, payload)
+    .post(`${API_URL}/auth/login`, payload)
     .then((data) => {
       return data.data;
     })
@@ -76,7 +76,7 @@ export const resolveUpdateToken: Resolver<
   SuccessTokenParam
 > = async (payload) => {
   return httpClient
-    .post<void, { data: SuccessTokenParam }>(`${API_URL}/auth/token`, payload)
+    .post(`${API_URL}/auth/token`, payload)
     .then((data) => {
       return data.data;
     })
@@ -87,7 +87,7 @@ export const resolveUpdateToken: Resolver<
 
 export const resolveLogout: Resolver<LogoutParams, void> = async (payload) => {
   return httpClient
-    .post<void, any>(`${API_URL}/auth/logout`, payload)
+    .post(`${API_URL}/auth/logout`, payload)
     .then((data) => {
       return data.data;
     })
@@ -120,7 +120,7 @@ export const resolveUpdateUser: Resolver<
 
 export const resolveUser: Resolver<UserParams, void> = async (payload) => {
   return httpClient
-    .get<void, any>(`${API_URL}/auth/user`, {
+    .get(`${API_URL}/auth/user`, {
       headers: {
         authorization: payload.authorization,
       },

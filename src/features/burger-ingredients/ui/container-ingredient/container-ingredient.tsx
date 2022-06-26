@@ -30,7 +30,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
     type: DRAG.ITEM_B,
     item: { id },
     end: (item, monitor) => {
-      const dropResult = monitor.getDropResult<any>();
+      const dropResult = monitor.getDropResult();
       if (item && dropResult) {
         if (data.type === IngredientsType.bells) {
           dispatch(addBunOrder({ id }));
