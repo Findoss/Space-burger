@@ -72,6 +72,10 @@
     "web-vitals": "^2.1.2",
     "webpack": "^5.65.0"
   },
+  "resolutions": {
+    "@types/react": "17.0.2",
+    "@types/react-dom": "17.0.2"
+  },
   "overrides": {
     "ip": "1.1.8"
   },
