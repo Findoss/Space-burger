@@ -36,5 +36,45 @@
   },
   "ingredientDetails": {
     "title": "Детали ингредиента"
+  },
+  "formField": {
+    "email": "E-mail",
+    "password": "Пароль",
+    "userName": "Имя"
+  },
+  "register": {
+    "register": "Зарегистрироваться",
+    "registerTitle": "Регистрация",
+    "readyLogin": "Уже зарегистрированы?"
+  },
+  "login": {
+    "login": "Войти",
+    "loginTitle": "Вход",
+    "newUser": "Вы — новый пользователь?",
+    "goRegister": "Зарегистрироваться",
+    "forgotPassword": "Забыли пароль?",
+    "restorePassword": "Восстановить пароль"
+  },
+  "resetPassword": {
+    "save": "Сохранить",
+    "title": "Восстановление пароля",
+    "newPassword": "Введите новый пароль",
+    "token": "Введите код из письма",
+    "goLogin": "Войти",
+    "rememberPassword": "Вспомнили пароль?"
+  },
+  "forgotPassword": {
+    "reset": "Восстановить",
+    "title": "Восстановление пароля",
+    "goLogin": "Войти",
+    "rememberPassword": "Вспомнили пароль?"
+  },
+  "profile": {
+    "profile": "Профиль",
+    "logout": "Выйти",
+    "history": "История заказов",
+    "save": "Сохранить",
+    "cancel": "Отменить",
+    "tolltipInfo": "В этом разделе вы можете изменить данные профиля"
   }
 }
