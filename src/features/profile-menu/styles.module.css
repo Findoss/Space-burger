@@ -1,0 +1,11 @@
+.profile_menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  width: 300px;
+  gap: calc(var(--offset-base-size) * 5);
+}
+
+.profile_menu a {
+  justify-content: left;
+}

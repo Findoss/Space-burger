@@ -1,0 +1,13 @@
+.link {
+  color: var(--colors-interface-accent);
+  text-decoration: none;
+}
+
+.title {
+  white-space: nowrap;
+}
+
+.title:hover {
+  color: var(--text-primary-color);
+  fill: var(--text-inactive-color);
+}

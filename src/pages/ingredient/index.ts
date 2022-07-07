@@ -1,0 +1,1 @@
+export { PageIngredient } from './ingredient';

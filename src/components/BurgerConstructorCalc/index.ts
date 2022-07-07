@@ -1,1 +1,0 @@
-export { BurgerConstructorCalc } from './BurgerConstructorCalc';

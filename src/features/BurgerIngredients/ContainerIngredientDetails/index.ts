@@ -1,1 +1,0 @@
-export { ContainerIngredientDetails } from './ContainerIngredientDetails';

@@ -1,1 +1,0 @@
-export { TabsIngredients } from './TabsIngredients';
