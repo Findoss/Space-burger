@@ -5,7 +5,7 @@ import { FeedInfo } from './feed-info';
 
 export default {
   title: 'Components/FeedInfo',
-  component:FeedInfo,
+  component: FeedInfo,
 } as ComponentMeta<typeof FeedInfo>;
 
 const Template: ComponentStory<typeof FeedInfo> = (args) => (

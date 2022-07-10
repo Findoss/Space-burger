@@ -1,4 +1,9 @@
 .feed_info {
-  background-color: darkslateblue;
+  /* background-color: darkslateblue; */
   width: 100%;
+}
+
+.statusSection {
+  display: flex;
+  gap: 36px;
 }

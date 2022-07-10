@@ -69,6 +69,12 @@
     "goLogin": "Войти",
     "rememberPassword": "Вспомнили пароль?"
   },
+  "feed": {
+    "done": "Готовы",
+    "process": "Готовятся",
+    "doneToday": "Приготовлено за сегодня",
+    "doneAllTime": "Приготовлено за все время"
+  },
   "profile": {
     "profile": "Профиль",
     "logout": "Выйти",

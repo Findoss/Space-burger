@@ -34,10 +34,10 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
             active={location.pathname === '/'}
           />
           <NavButton
-            to="/profile/orders"
+            to="/feed"
             icon={<ListIcon type="secondary" />}
             title={t('menu.listOrders')}
-            active={location.pathname === '/profile/orders'}
+            active={location.pathname === '/feed'}
           />
         </div>
       </div>
