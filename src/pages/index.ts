@@ -7,3 +7,4 @@ export { PageResetPassword } from './reset-password';
 export { PageForgotPassword } from './forgot-password';
 export { PageProfile } from './profile';
 export { PageIngredient } from './ingredient';
+export { PageFeed } from './feed';

@@ -10,6 +10,7 @@ import {
   PageForgotPassword,
   PageProfile,
   PageIngredient,
+  PageFeed,
 } from 'pages';
 
 export const routes: Routes = [
@@ -57,6 +58,11 @@ export const routes: Routes = [
     path: '/profile/orders',
     component: <></>,
     role: ['interior'],
+  },
+  {
+    path: '/feed',
+    component: <PageFeed />,
+    role: ['external'],
   },
   {
     path: '*',

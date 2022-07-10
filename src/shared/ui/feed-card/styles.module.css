@@ -1,0 +1,36 @@
+.card {
+  background-color: #1c1c21;
+  border-radius: 30px;
+  width: calc(100% - 70px);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  position: relative;
+  height: 65px;
+}
+
+.link {
+  text-decoration: none;
+  color: #f2f2f3;
+}
