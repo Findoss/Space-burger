@@ -14,14 +14,33 @@ import { useTranslation } from 'react-i18next';
 export const FeedInfo = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
 
-  const total = 0;
-  const totalToday = 0;
+  const total = 234234;
+  const totalToday = 5675675;
+
+  const arr1 = [
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+    { number: 12839 },
+  ];
 
   return (
     <div className={cn(styles.feed_info, extraClass)}>
       <div className={styles.statusSection}>
-        <OrderNumberList title={t('feed.done')} />
-        <OrderNumberList title={t('feed.process')} />
+        <OrderNumberList title={t('feed.done')} isDone={true} array={arr1} />
+        <OrderNumberList title={t('feed.process')} array={arr1} />
       </div>
       <OrderStats title={t('feed.doneAllTime')} stat={total} />
       <OrderStats title={t('feed.doneToday')} stat={totalToday} />

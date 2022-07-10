@@ -4,8 +4,8 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FeedList } from './feed-list';
 
 export default {
-  title: 'Components/FeedList',
-  component:FeedList,
+  title: 'Features/FeedList',
+  component: FeedList,
 } as ComponentMeta<typeof FeedList>;
 
 const Template: ComponentStory<typeof FeedList> = (args) => (

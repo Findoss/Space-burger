@@ -12,7 +12,7 @@ export const OrderStats = ({
 }: Props) => {
   return (
     <div className={cn(styles.order_stats, extraClass)}>
-      <p className="text text_type_main-medium">{title}</p>
+      <p className="text text_type_main-medium">{title}:</p>
       <p className="text text_type_digits-large">{stat}</p>
     </div>
   );

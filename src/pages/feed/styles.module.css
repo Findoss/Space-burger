@@ -1,6 +1,16 @@
 .feed {
   width: 960px;
   display: flex;
+  flex-direction: row;
   gap: 60px;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.list {
+  width: 500px;
+}
+
+.info {
+  width: 500px;
 }

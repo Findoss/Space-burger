@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { FeedInfo } from './feed-info';
 
 export default {
-  title: 'Components/FeedInfo',
+  title: 'Features/FeedInfo',
   component: FeedInfo,
 } as ComponentMeta<typeof FeedInfo>;
 

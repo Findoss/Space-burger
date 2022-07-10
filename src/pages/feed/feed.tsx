@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 
 import { Main as MainLayout } from 'widgets/layout-main';
 
@@ -10,11 +11,9 @@ import styles from './styles.module.css';
 
 export const Feed = () => {
   return (
-    <WrapperCenterForm>
-      <div className={styles.feed}>
-        <FeedList />
-        <FeedInfo />
-      </div>
+    <WrapperCenterForm extraClass={cn('mt-4', styles.feed)}>
+      <FeedList extraClass={styles.list} />
+      <FeedInfo extraClass={styles.info} />
     </WrapperCenterForm>
   );
 };

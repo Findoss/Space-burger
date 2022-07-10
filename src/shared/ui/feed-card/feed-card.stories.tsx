@@ -15,7 +15,7 @@ const Template: ComponentStory<typeof FeedCard> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  extraClass: 'class',
+  extraClass: 'mb-2',
   ingredients: [
     'https://code.s3.yandex.net/react/code/sauce-04.png',
     'https://code.s3.yandex.net/react/code/sauce-04.png',

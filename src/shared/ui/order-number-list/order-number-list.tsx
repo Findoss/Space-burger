@@ -20,7 +20,7 @@ export const OrderNumberList = ({
             return (
               <p
                 className={cn('text text_type_digits-default mb-6', {
-                  idDone: styles.order,
+                  [`${styles.order}`]: isDone,
                 })}
               >
                 {item?.number}
