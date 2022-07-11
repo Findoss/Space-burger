@@ -26,6 +26,7 @@ export const IngredientImageList = ({
           if (index === LIMIT_ING) {
             return (
               <div
+                key={index}
                 className={`${styles.icon} ${styles.icon_last}`}
                 style={{
                   backgroundImage: `url(${image})`,
@@ -47,6 +48,7 @@ export const IngredientImageList = ({
 
           return (
             <div
+              key={index}
               className={styles.icon}
               style={{
                 backgroundImage: `url(${image})`,

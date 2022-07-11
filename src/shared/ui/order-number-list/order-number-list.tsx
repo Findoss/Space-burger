@@ -16,9 +16,10 @@ export const OrderNumberList = ({
       <div className={styles.wrapper}>
         <p className={`text text_type_main-medium mb-6`}>{title}: </p>
         <div className={`custom-scroll ${styles.numbers}`}>
-          {array.map((item) => {
+          {array.map((item, i) => {
             return (
               <p
+                key={i}
                 className={cn('text text_type_digits-default mb-6', {
                   [`${styles.order}`]: isDone,
                 })}
