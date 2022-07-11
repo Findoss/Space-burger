@@ -7,54 +7,15 @@ import { FeedCard } from 'shared/ui/feed-card';
 import styles from './styles.module.css';
 
 import type { Props } from './types';
+import { getFeedOrders } from 'entities/ws/model/selectors';
 
 export const FeedList = ({ extraClass = undefined }: Props) => {
-  const arr = [
-    {
-      ingredients: [],
-      _id: '',
-      createdAt: '2022-07-07T20:21:15.442Z',
-      status: '',
-      isOrderPage: '',
-      name: '',
-      number: 0,
-      sum: 0,
-    },
-    {
-      ingredients: [],
-      _id: '',
-      createdAt: '2022-07-07T20:21:15.442Z',
-      status: '',
-      isOrderPage: '',
-      name: '',
-      number: 0,
-      sum: 0,
-    },
-    {
-      ingredients: [],
-      _id: '',
-      createdAt: '2022-07-07T20:21:15.442Z',
-      status: '',
-      isOrderPage: '',
-      name: '',
-      number: 0,
-      sum: 0,
-    },
-    {
-      ingredients: [],
-      _id: '',
-      createdAt: '2022-07-07T20:21:15.442Z',
-      status: '',
-      isOrderPage: '',
-      name: '',
-      number: 0,
-      sum: 0,
-    },
-  ];
+  const orders = useSelector(getFeedOrders);
+
   return (
     <div className={cn(styles.feed_list, extraClass)}>
-      {arr.map((item) => {
-        return <FeedCard extraClass="mb-4" {...item} />;
+      {orders.map((order) => {
+        return <FeedCard extraClass="mb-4" {...order} key={order._id} />;
       })}
     </div>
   );

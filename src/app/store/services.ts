@@ -19,7 +19,7 @@ import {
   WIDGET_BURGER_CONSTRUCTOR,
 } from 'features/burger-constructor/model/slice';
 
-import { wsSlice } from 'entities/ws/model';
+import { COLLECTION_WS, wsSlice } from 'entities/ws/model/slice';
 
 export const collectionReducers = combineReducers({
   [COLLECTION_USER]: persistReducer(
@@ -28,7 +28,7 @@ export const collectionReducers = combineReducers({
   ),
   [COLLECTION_ORDER]: orderCollection.reducer,
   [COLLECTION_INGREDIENT]: ingredientsCollection.reducer,
-  ['ws']: wsSlice.reducer,
+  [COLLECTION_WS]: wsSlice.reducer,
 });
 
 export const widgetReducers = combineReducers({

@@ -12,7 +12,7 @@ import { timeDistance } from 'shared/libs/date';
 
 export const FeedCard = ({
   extraClass = undefined,
-  ingredients = [],
+  images = [],
   _id = '',
   createdAt = '2022-07-07T20:21:15.442Z',
   status = '',
@@ -47,7 +47,7 @@ export const FeedCard = ({
         </div>
         <div className={styles.footer}>
           <div className={styles.imageContainer}>
-            <IngredientImageList images={ingredients} />
+            <IngredientImageList images={images} />
           </div>
           <div className={styles.price}>
             <p className="text text_type_digits-default mr-2">{sum}</p>
