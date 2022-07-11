@@ -62,7 +62,7 @@ export const routes: Routes = [
   {
     path: '/feed',
     component: <PageFeed />,
-    role: ['external'],
+    role: [],
   },
   {
     path: '*',
