@@ -1,5 +1,5 @@
 export type Props = {
   extraClass?: string;
   title?: string;
-  stat?: string | number;
+  stat?: string | number | null;
 };

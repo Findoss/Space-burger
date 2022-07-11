@@ -29,7 +29,7 @@ export const Feed = () => {
   return (
     <WrapperCenterForm extraClass={cn('mt-4', styles.feed)}>
       <FeedList extraClass={styles.list} />
-      {/* <FeedInfo extraClass={styles.info} /> */}
+      <FeedInfo extraClass={styles.info} />
     </WrapperCenterForm>
   );
 };

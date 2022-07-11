@@ -37,5 +37,12 @@ export const getFeedOrders = (state: RootState) => {
 export const getFeedOrderNumbers = (status: string) => (state: RootState) => {
   const orders: Orders = getWSCollection(state).orders;
 
-  return orders.filter((order) => order.status === status).length;
+  return orders
+    .filter((order) => order.status === status)
+    .map((order) => order.number);
 };
+
+export const getFeedTotal = (state: RootState) => getWSCollection(state).total;
+
+export const getFeedTotalToday = (state: RootState) =>
+  getWSCollection(state).totalToday;

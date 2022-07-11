@@ -1,6 +1,6 @@
 export type Props = {
   extraClass?: string;
-  array?: Record<string, string | number>[];
+  array?: string[] | number[];
   title?: string;
   isDone?: boolean;
 };

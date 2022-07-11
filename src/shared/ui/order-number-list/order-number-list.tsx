@@ -23,7 +23,7 @@ export const OrderNumberList = ({
                   [`${styles.order}`]: isDone,
                 })}
               >
-                {item?.number}
+                {item}
               </p>
             );
           })}
