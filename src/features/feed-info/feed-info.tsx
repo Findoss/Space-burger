@@ -33,8 +33,16 @@ export const FeedInfo = ({ extraClass = undefined }: Props) => {
         />
         <OrderNumberList title={t('feed.process')} array={pendingNumbers} />
       </div>
-      <OrderStats title={t('feed.doneAllTime')} stat={feedTotal} />
-      <OrderStats title={t('feed.doneToday')} stat={feedTotalToday} />
+      <OrderStats
+        extraClass="mt-8"
+        title={t('feed.doneAllTime')}
+        stat={feedTotal}
+      />
+      <OrderStats
+        extraClass="mt-8"
+        title={t('feed.doneToday')}
+        stat={feedTotalToday}
+      />
     </div>
   );
 };

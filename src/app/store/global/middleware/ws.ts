@@ -45,7 +45,7 @@ export const initSocketMiddleware = (wsUrl: string) => {
             dispatch(actions.onClose());
           };
 
-          if (type === 'socket/wsClose') {
+          if (type === `${COLLECTION_WS}/wsClose`) {
             socket.close();
           }
         }
