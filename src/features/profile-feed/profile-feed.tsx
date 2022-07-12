@@ -14,6 +14,7 @@ export const ProfileFeed = ({ extraClass = undefined }: Props) => {
 
   return (
     <div className={cn(styles.feed_list, extraClass)}>
+      {orders.length === 0 && 'Empty orders'}
       {orders.map((order) => {
         return <FeedCard extraClass="mb-4" {...order} key={order._id} />;
       })}
