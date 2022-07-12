@@ -32,7 +32,7 @@ export const ProfileOrders = ({ extraClass = undefined }: Props) => {
 
   return (
     <div className={cn(styles.page, extraClass)}>
-      <ProfileMenu />
+      <ProfileMenu tooltip={t('profileOrders. tolltipInfo')} />
       <ProfileFeed />
     </div>
   );

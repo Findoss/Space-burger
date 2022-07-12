@@ -3,6 +3,7 @@ import { RootState } from 'app/store/store';
 import { wsSlice } from 'entities/ws/model';
 
 import { getEntityUser } from 'entities/user/model/selectors';
+import { COLLECTION_WS } from 'entities/ws/model/slice';
 
 export const initSocketMiddleware = (wsUrl: string) => {
   const socketMiddleware: Middleware<RootState> = (store) => {
@@ -15,11 +16,11 @@ export const initSocketMiddleware = (wsUrl: string) => {
         const state = store.getState();
         const token = getEntityUser(state).accessToken.replace('Bearer ', '');
 
-        if (type === 'socket/connectionFeedList') {
+        if (type === `${COLLECTION_WS}/connectionFeedList`) {
           socket = new WebSocket(`${wsUrl}/all`);
         }
 
-        if (type === 'socket/connectionOrderList') {
+        if (type === `${COLLECTION_WS}/connectionOrderList`) {
           socket = new WebSocket(`${wsUrl}?token=${token}`);
         }
 
