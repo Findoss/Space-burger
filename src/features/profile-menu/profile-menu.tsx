@@ -14,7 +14,10 @@ import styles from './styles.module.css';
 import type { Props } from './types';
 import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 
-export const ProfileMenu = ({ extraClass = undefined }: Props) => {
+export const ProfileMenu = ({
+  extraClass = undefined,
+  tooltip = '',
+}: Props) => {
   const { t } = useTranslation();
   const location = useLocation();
   const dispatch = useDispatch();
@@ -45,7 +48,7 @@ export const ProfileMenu = ({ extraClass = undefined }: Props) => {
         onClick={onLogout}
       />
       <span className="text text_type_main-default mt-8 pl-7 text_color_inactive">
-        {t('profile.tolltipInfo')}
+        {tooltip}
       </span>
     </div>
   );

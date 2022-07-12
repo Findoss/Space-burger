@@ -17,7 +17,7 @@ export const Profile = ({ extraClass = undefined }: Props) => {
 
   return (
     <div className={cn(styles.page, extraClass)}>
-      <ProfileMenu />
+      <ProfileMenu tooltip={t('profile.tolltipInfo')} />
       <ProfileForm />
     </div>
   );

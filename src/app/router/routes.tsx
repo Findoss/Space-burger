@@ -11,6 +11,7 @@ import {
   PageProfile,
   PageIngredient,
   PageFeed,
+  PageProfileOrders,
 } from 'pages';
 
 export const routes: Routes = [
@@ -56,7 +57,7 @@ export const routes: Routes = [
   },
   {
     path: '/profile/orders',
-    component: <></>,
+    component: <PageProfileOrders />,
     role: ['interior'],
   },
   {

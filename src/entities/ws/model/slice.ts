@@ -13,21 +13,21 @@ export const wsSlice = createSlice({
       state.isLoadingWs = false;
     },
     onOpen(state) {
-      state.isConect = true;
+      state.isConnect = true;
     },
     getMessage(state, { payload }) {
       state.isLoadingWs = true;
       state.success = payload.success;
-      state.orders = payload.orders;
+      state.orders = payload.orders ?? [];
       state.total = payload.total;
       state.totalToday = payload.totalToday;
     },
     onError(state) {
-      state.isConect = false;
+      state.isConnect = false;
       state.isLoadingWs = true;
     },
     onClose(state) {
-      state.isConect = false;
+      state.isConnect = false;
       state.success = false;
       state.orders = [];
       state.total = null;

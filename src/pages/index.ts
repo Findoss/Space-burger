@@ -8,3 +8,4 @@ export { PageForgotPassword } from './forgot-password';
 export { PageProfile } from './profile';
 export { PageIngredient } from './ingredient';
 export { PageFeed } from './feed';
+export { PageProfileOrders } from './profile-orders';

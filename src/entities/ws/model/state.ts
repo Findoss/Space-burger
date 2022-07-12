@@ -1,5 +1,5 @@
 export const initialStateSocket = {
-  isConect: false,
+  isConnect: false,
   isLoadingWs: true,
   success: false,
   orders: [],

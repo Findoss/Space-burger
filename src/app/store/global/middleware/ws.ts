@@ -13,7 +13,7 @@ export const initSocketMiddleware = (wsUrl: string) => {
         const { dispatch } = store;
         const { type } = action;
         const state = store.getState();
-        const token = getEntityUser(state).accessToken;
+        const token = getEntityUser(state).accessToken.replace('Bearer ', '');
 
         if (type === 'socket/connectionFeedList') {
           socket = new WebSocket(`${wsUrl}/all`);
