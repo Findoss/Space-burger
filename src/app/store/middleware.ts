@@ -2,11 +2,12 @@ import { unauthenticatedMiddleware } from './global/middleware/unauthenticated';
 import { initSocketMiddleware } from './global/middleware/ws';
 
 import { serviceMiddleware } from './services';
+import { WsSlice } from 'entities/ws/model/slice';
 
-import { WS_URL } from 'shared/api/constants';
+// console.log(WsSlice.actions);
 
 export const rootMiddleware = [
   unauthenticatedMiddleware,
-  initSocketMiddleware(`${WS_URL}/orders`),
+  initSocketMiddleware(WsSlice.actions),
   ...serviceMiddleware,
 ];

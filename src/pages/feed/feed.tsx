@@ -7,9 +7,10 @@ import { FeedList } from 'features/feed-list';
 import { FeedInfo } from 'features/feed-info';
 import { WrapperCenterForm } from 'widgets/wrapper-center-form';
 
-import { wsSlice } from 'entities/ws/model';
+import { WsSlice } from 'entities/ws/model';
 import { useGetIngredientQuery } from 'entities/ingredient/model/hooks';
 import { useDispatch } from 'shared/hooks/use-redux';
+import { WS_URL } from 'shared/api/constants';
 
 import styles from './styles.module.css';
 
@@ -18,11 +19,11 @@ export const Feed = () => {
   const { isError } = useGetIngredientQuery();
 
   useEffect(() => {
-    const { actions } = wsSlice;
-    dispatch(actions.connectionFeedList());
+    const { actions } = WsSlice;
+    dispatch(actions.connection(`${WS_URL}/orders/all`));
 
     return () => {
-      dispatch(actions.wsClose());
+      dispatch(actions.close(null));
     };
   }, [dispatch]);
 

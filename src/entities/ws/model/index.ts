@@ -1,1 +1,1 @@
-export { wsSlice } from './slice';
+export { WsSlice, ACTIONS_WS, COLLECTION_WS } from './slice';

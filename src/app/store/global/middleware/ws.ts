@@ -1,58 +1,53 @@
-import { Middleware } from '@reduxjs/toolkit';
-import { RootState } from 'app/store/store';
-import { wsSlice } from 'entities/ws/model';
+import type { Middleware, MiddlewareAPI } from 'redux';
+import { ACTIONS_WS, COLLECTION_WS } from 'entities/ws/model/slice';
 
-import { getEntityUser } from 'entities/user/model/selectors';
-import { COLLECTION_WS } from 'entities/ws/model/slice';
+export const initSocketMiddleware =
+  (wsActions: any): Middleware =>
+  (store: MiddlewareAPI) => {
+    let socket: WebSocket | null = null;
 
-export const initSocketMiddleware = (wsUrl: string) => {
-  const socketMiddleware: Middleware<RootState> = (store) => {
-    let socket: null | WebSocket = null;
+    return (next) => (action) => {
+      const { dispatch } = store;
+      const { type, payload } = action;
 
-    return (next) => {
-      return (action): any => {
-        const { dispatch } = store;
-        const { type } = action;
-        const state = store.getState();
-        const token = getEntityUser(state).accessToken.replace('Bearer ', '');
+      if (type === `${COLLECTION_WS}/${ACTIONS_WS.WS_CONNECTION_START}`) {
+        socket = new WebSocket(payload);
+      }
 
-        if (type === `${COLLECTION_WS}/connectionFeedList`) {
-          socket = new WebSocket(`${wsUrl}/all`);
-        }
+      if (
+        type === `${COLLECTION_WS}/${ACTIONS_WS.WS_CONNECTION_STOP}` &&
+        socket !== null
+      ) {
+        socket.close();
+      }
 
-        if (type === `${COLLECTION_WS}/connectionOrderList`) {
-          socket = new WebSocket(`${wsUrl}?token=${token}`);
-        }
+      if (socket) {
+        socket.onopen = (event) => {
+          dispatch(wsActions.onOpen(event));
+        };
 
-        if (socket) {
-          const { actions } = wsSlice;
+        socket.onerror = (event) => {
+          dispatch(wsActions.onError(event));
+        };
 
-          socket.onopen = () => {
-            dispatch(actions.onOpen());
-          };
+        socket.onmessage = (event) => {
+          const { data } = event;
+          const { success, ...raw } = JSON.parse(data);
 
-          socket.onerror = () => {
-            dispatch(actions.onError());
-          };
-
-          socket.onmessage = (event) => {
-            const { data } = event;
-            const parseData = JSON.parse(data);
-            dispatch(actions.getMessage(parseData));
-          };
-
-          socket.onclose = () => {
-            dispatch(actions.onClose());
-          };
-
-          if (type === `${COLLECTION_WS}/wsClose`) {
-            socket.close();
+          if (success) {
+            dispatch(wsActions.getMessage(raw));
           }
-        }
+        };
 
-        next(action);
-      };
+        socket.onclose = (event) => {
+          dispatch(wsActions.close(event));
+        };
+
+        if (type === `${COLLECTION_WS}/${ACTIONS_WS.WS_SEND_MESSAGE}`) {
+          socket.send(JSON.stringify(payload));
+        }
+      }
+
+      next(action);
     };
   };
-  return socketMiddleware;
-};
