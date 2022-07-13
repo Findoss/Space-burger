@@ -1,15 +1,3 @@
-.icon {
-  width: 60px;
-  height: 60px;
-  display: inline-block;
-  box-sizing: border-box;
-  border: 2px solid #4c4cff;
-  border-radius: 100%;
-  background-position: center;
-  background-size: cover;
-  background-color: #1c1c21;
-}
-
 .icon_last {
   position: relative;
 }

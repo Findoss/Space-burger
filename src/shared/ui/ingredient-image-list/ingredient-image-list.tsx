@@ -1,7 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 
-import { Image } from 'shared/ui/image';
+import { IngredientImage } from 'shared/ui/ingredient-image/ingredient-image';
 
 import styles from './ingredient-image-list.module.css';
 
@@ -25,16 +25,17 @@ export const IngredientImageList = ({
 
           if (index === LIMIT_ING) {
             return (
-              <div
+              <IngredientImage
                 key={index}
-                className={`${styles.icon} ${styles.icon_last}`}
+                image={image}
+                extraClass={styles.icon_last}
                 style={{
-                  backgroundImage: `url(${image})`,
                   position: 'absolute',
                   left: `${shiftValue}px`,
                   zIndex: `${positionIndex}`,
                 }}
               >
+                {' '}
                 {images.length - LIMIT_ING + 1 !== 0 && (
                   <p
                     className={`text text_type_digits-default ${styles.number}`}
@@ -42,21 +43,20 @@ export const IngredientImageList = ({
                     +{images.length - LIMIT_ING + 1}
                   </p>
                 )}
-              </div>
+              </IngredientImage>
             );
           }
 
           return (
-            <div
+            <IngredientImage
               key={index}
-              className={styles.icon}
+              image={image}
               style={{
-                backgroundImage: `url(${image})`,
                 position: 'absolute',
                 left: `${shiftValue}px`,
                 zIndex: `${positionIndex}`,
               }}
-            ></div>
+            />
           );
         } else return null;
       })}
