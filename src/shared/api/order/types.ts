@@ -21,4 +21,7 @@ export type Order = {
   success: boolean;
 };
 
-export type NewOrderParam = IngredientId[];
+export type NewOrderParam = {
+  ingredients: IngredientId[];
+  authorization?: string;
+};
