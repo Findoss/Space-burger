@@ -9,3 +9,4 @@ export { PageProfile } from './profile';
 export { PageIngredient } from './ingredient';
 export { PageFeed } from './feed';
 export { PageProfileOrders } from './profile-orders';
+export { PageOrder } from './order';

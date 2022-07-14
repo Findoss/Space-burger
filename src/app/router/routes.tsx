@@ -11,6 +11,7 @@ import {
   PageProfile,
   PageIngredient,
   PageFeed,
+  PageOrder,
   PageProfileOrders,
 } from 'pages';
 
@@ -63,6 +64,11 @@ export const routes: Routes = [
   {
     path: '/feed',
     component: <PageFeed />,
+    role: [],
+  },
+  {
+    path: '/qqq/:id',
+    component: <PageOrder />,
     role: [],
   },
   {

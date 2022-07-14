@@ -1,3 +1,5 @@
+import { Ingredient } from 'shared/api/ingredient/types';
+
 export type wsActionsType = {
   WS_CONNECTION_SUCCESS: string;
   WS_CONNECTION_ERROR: string;
@@ -18,6 +20,7 @@ export type Order = {
   number: number;
   sum?: number;
   images?: string[];
+  ingredientsDetail?: Ingredient[];
 };
 
 export type Orders = Order[];

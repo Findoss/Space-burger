@@ -1,7 +1,6 @@
+import { Ingredient } from 'shared/api/ingredient/types';
+
 export type Props = {
   extraClass?: string;
-  name?: string;
-  price?: number;
-  image?: string;
   count?: number;
-};
+} & Ingredient;

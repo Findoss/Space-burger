@@ -6,7 +6,7 @@ import {
 } from 'entities/ingredient/model/selectors';
 import { COLLECTION_WS } from './slice';
 
-import { Orders } from './types';
+import { Order, Orders } from './types';
 
 export const getWSCollection = (state: RootState) =>
   state[COLLECTIONS][COLLECTION_WS];
@@ -46,3 +46,27 @@ export const getFeedTotal = (state: RootState) => getWSCollection(state).total;
 
 export const getFeedTotalToday = (state: RootState) =>
   getWSCollection(state).totalToday;
+
+export const getOrder =
+  (orderId: string) =>
+  (state: RootState): Order | null => {
+    const orders: Orders = getWSCollection(state).orders;
+    const order = orders.find((order) => order._id === orderId);
+
+    if (!order) {
+      return null;
+    }
+
+    const ingredientsDetail = order.ingredients.map((idIngredient) => {
+      return selectIngredientById(idIngredient)(state);
+    });
+
+    const sum = order.ingredients.reduce((acc, idIngredient) => {
+      return (acc += selectIngredientById(idIngredient)(state).price);
+    }, 0);
+
+    order.ingredientsDetail = ingredientsDetail;
+    order.sum = sum;
+
+    return order;
+  };
