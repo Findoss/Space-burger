@@ -10,6 +10,8 @@ export type wsActionsType = {
   WS_CONNECTION_STOP: string;
 };
 
+export type UniIngredient = { count: number } & Ingredient;
+
 export type Order = {
   ingredients: string[];
   _id: string;
@@ -20,7 +22,7 @@ export type Order = {
   number: number;
   sum?: number;
   images?: string[];
-  ingredientsDetail?: Ingredient[];
+  ingredientsDetail?: UniIngredient[];
 };
 
 export type Orders = Order[];
