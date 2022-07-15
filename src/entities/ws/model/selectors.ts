@@ -12,7 +12,7 @@ export const getWSCollection = (state: RootState) =>
   state[COLLECTIONS][COLLECTION_WS];
 
 export const getFeedOrders = (state: RootState) => {
-  const orders: Orders = getWSCollection(state).orders;
+  const { orders } = getWSCollection(state);
 
   const arr = orders.map((order) => {
     let data = { ...order };
@@ -50,12 +50,16 @@ export const getFeedTotalToday = (state: RootState) =>
 export const getOrder =
   (orderId: string) =>
   (state: RootState): Order | null => {
-    const orders: Orders = getWSCollection(state).orders;
-    const order = orders.find((order) => order._id === orderId);
+    const { orders } = getWSCollection(state);
+    console.log(orders);
 
-    if (!order) {
+    const rawOrder = orders.find((order) => order._id === orderId);
+
+    if (rawOrder === undefined) {
       return null;
     }
+
+    const order: Order = { ...rawOrder };
 
     const ingredientsDetail = order.ingredients.map((idIngredient) => {
       return selectIngredientById(idIngredient)(state);
@@ -67,6 +71,8 @@ export const getOrder =
 
     order.ingredientsDetail = ingredientsDetail;
     order.sum = sum;
+
+    console.log(order);
 
     return order;
   };

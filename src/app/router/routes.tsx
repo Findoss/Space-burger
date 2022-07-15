@@ -67,7 +67,7 @@ export const routes: Routes = [
     role: [],
   },
   {
-    path: '/qqq/:id',
+    path: '/feed/:id',
     component: <PageOrder />,
     role: [],
   },

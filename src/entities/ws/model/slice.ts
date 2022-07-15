@@ -18,6 +18,8 @@ export const WsSlice = createSlice({
   initialState: initialStateSocket,
   reducers: {
     [ACTIONS_WS.WS_CONNECTION_START](state) {
+      console.log(1211212121);
+
       state.isLoadingWs = false;
     },
     [ACTIONS_WS.WS_CONNECTION_SUCCESS](state) {

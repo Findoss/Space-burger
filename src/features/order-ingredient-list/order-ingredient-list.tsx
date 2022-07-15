@@ -15,13 +15,11 @@ export const OrderIngredientList = ({
 }: Props) => {
   const ingredients = useSelector(getOrder(orderId))?.ingredientsDetail;
 
-  console.log(ingredients);
-
   return (
     <div className={cn(styles.order_ingredient_list, extraClass)}>
       {ingredients &&
-        ingredients.map((ingredient) => {
-          <OrderIngredient {...ingredient} />;
+        ingredients.map((ingredient, i) => {
+          return <OrderIngredient extraClass="mb-4" {...ingredient} key={i} />;
         })}
     </div>
   );

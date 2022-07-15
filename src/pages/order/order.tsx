@@ -7,10 +7,12 @@ import { useDispatch } from 'shared/hooks/use-redux';
 import { useGetIngredientQuery } from 'entities/ingredient/model/hooks';
 import { WS_URL } from 'shared/api/constants';
 import { WsSlice } from 'entities/ws/model';
+import { useLocation } from 'react-router-dom';
 
 export const Order = () => {
   const dispatch = useDispatch();
   const { isError } = useGetIngredientQuery();
+  const location = useLocation();
 
   useEffect(() => {
     const { actions } = WsSlice;

@@ -1,3 +1,23 @@
 .order_card {
-  background-color: darkslateblue;
+  display: flex;
+  flex-direction: column;
+  max-width: 960px;
+}
+
+.number {
+  text-align: center;
+}
+
+.status {
+  color: aqua;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sum {
+  display: flex;
+  align-items: center;
 }

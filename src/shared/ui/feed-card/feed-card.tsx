@@ -11,6 +11,7 @@ import { IngredientImageList } from 'shared/ui/ingredient-image-list';
 import { timeDistance } from 'shared/libs/date';
 
 export const FeedCard = ({
+  link = '',
   extraClass = undefined,
   images = [],
   _id = '',
@@ -22,7 +23,7 @@ export const FeedCard = ({
   sum = 0,
 }: Props) => {
   return (
-    <Link to={'/'} className={styles.link}>
+    <Link to={`${link}/${_id}`} className={styles.link}>
       <div className={cn(extraClass, styles.card)}>
         <div className={styles.header}>
           <p className="text text_type_digits-default">{`#${number}`}</p>

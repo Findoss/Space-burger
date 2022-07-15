@@ -18,7 +18,9 @@ export const initSocketMiddleware =
         type === `${COLLECTION_WS}/${ACTIONS_WS.WS_CONNECTION_STOP}` &&
         socket !== null
       ) {
-        socket.close();
+        if (socket.OPEN) {
+          socket.close();
+        }
       }
 
       if (socket) {

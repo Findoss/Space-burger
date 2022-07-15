@@ -11,7 +11,7 @@ export const OrderIngredient = ({
   extraClass = undefined,
   name = 'name',
   price = 0,
-  count = 0,
+  count = 1,
   image = '',
 }: Props) => {
   return (

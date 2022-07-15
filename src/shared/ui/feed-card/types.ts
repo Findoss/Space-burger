@@ -9,4 +9,5 @@ export type Props = {
   name?: string;
   number?: number;
   sum?: number;
+  link?: string;
 };

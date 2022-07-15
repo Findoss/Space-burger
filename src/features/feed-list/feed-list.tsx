@@ -23,7 +23,14 @@ export const FeedList = ({ extraClass = undefined }: Props) => {
         </div>
         <div className={cn(styles.feed_list, 'custom-scroll pr-5')}>
           {orders.map((order) => {
-            return <FeedCard extraClass="mb-4" {...order} key={order._id} />;
+            return (
+              <FeedCard
+                extraClass="mb-4"
+                {...order}
+                key={order._id}
+                link="/feed"
+              />
+            );
           })}
         </div>
       </div>
