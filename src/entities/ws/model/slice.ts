@@ -18,8 +18,6 @@ export const WsSlice = createSlice({
   initialState: initialStateSocket,
   reducers: {
     [ACTIONS_WS.WS_CONNECTION_START](state) {
-      console.log(1211212121);
-
       state.isLoadingWs = false;
     },
     [ACTIONS_WS.WS_CONNECTION_SUCCESS](state) {
@@ -39,14 +37,14 @@ export const WsSlice = createSlice({
     [ACTIONS_WS.WS_CONNECTION_CLOSED](state) {
       state.isConnect = false;
       state.success = false;
-      state.orders = [];
+      // state.orders = [];
       state.total = null;
       state.totalToday = null;
     },
     [ACTIONS_WS.WS_CONNECTION_STOP](state) {
       state.isConnect = false;
       state.success = false;
-      state.orders = [];
+      // state.orders = [];
       state.total = null;
       state.totalToday = null;
     },

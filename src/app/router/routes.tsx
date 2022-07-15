@@ -62,6 +62,11 @@ export const routes: Routes = [
     role: ['interior'],
   },
   {
+    path: '/profile/orders/:id',
+    component: <PageOrder />,
+    role: [],
+  },
+  {
     path: '/feed',
     component: <PageFeed />,
     role: [],
