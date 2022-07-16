@@ -72,7 +72,7 @@ export const getOrder =
       });
 
       if (i > -1) {
-        uniIngredientsDetail[i].price = ingredient.price;
+        uniIngredientsDetail[i].price += ingredient.price;
         uniIngredientsDetail[i].count += 1;
       } else {
         uniIngredientsDetail.push({ ...ingredient, count: 1 });
