@@ -46,9 +46,11 @@ export const Modal = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className={cn(styles.modal, 'p-10', extraClass)}>
-          <div className={cn('text text_type_main-large', styles.title)}>
-            {title}
-          </div>
+          {title && (
+            <div className={cn('text text_type_main-large', styles.title)}>
+              {title}
+            </div>
+          )}
           <button
             className={cn(styles.close_button, 'mt-15 mr-10')}
             onClick={onClose}

@@ -7,15 +7,11 @@ import type { Props } from './types';
 import { OrderIngredientList } from 'features/order-ingredient-list';
 import { getOrder } from 'entities/ws/model/selectors';
 import { useSelector } from 'shared/hooks/use-redux';
-import { useParams } from 'react-router-dom';
 import { timeDistance } from 'shared/libs/date';
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
-export const OrderCard = ({ extraClass = undefined }: Props) => {
-  const { id } = useParams();
-  const data = useSelector(getOrder(id ?? ''));
-
-  console.log(data);
+export const OrderCard = ({ extraClass = undefined, id = '' }: Props) => {
+  const data = useSelector(getOrder(id));
 
   if (!data) {
     return null;

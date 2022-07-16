@@ -9,6 +9,7 @@ import { WS_URL } from 'shared/api/constants';
 import { WsSlice } from 'entities/ws/model';
 import { useLocation } from 'react-router-dom';
 import { getEntityUser } from 'entities/user/model/selectors';
+import { useParams } from 'react-router-dom';
 
 export const Order = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ export const Order = () => {
   const location = useLocation();
   const rawToken = useSelector(getEntityUser).accessToken;
   const token = rawToken.replace('Bearer ', '');
+  const { id } = useParams();
 
   useEffect(() => {
     const { actions } = WsSlice;
@@ -31,7 +33,7 @@ export const Order = () => {
     };
   }, [dispatch, location]);
 
-  return <OrderCard />;
+  return <OrderCard id={id} />;
 };
 
 export const PageOrder = () => {

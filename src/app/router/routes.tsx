@@ -29,7 +29,7 @@ export const routes: Routes = [
   {
     path: '/test',
     component: <PageTest />,
-    role: ['external'],
+    role: [],
   },
   {
     path: '/login',

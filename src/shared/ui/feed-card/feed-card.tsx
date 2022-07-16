@@ -4,11 +4,11 @@ import cn from 'classnames';
 import styles from './styles.module.css';
 
 import type { Props } from './types';
-import { Link } from 'react-router-dom';
 import { CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import { IngredientImageList } from 'shared/ui/ingredient-image-list';
 
 import { timeDistance } from 'shared/libs/date';
+import { ModalOrderCard } from 'features/order-card/order-card-modal';
 
 export const FeedCard = ({
   link = '',
@@ -22,8 +22,21 @@ export const FeedCard = ({
   number = 0,
   sum = 0,
 }: Props) => {
+  const [showModal, toggleModal] = React.useState(false);
+
+  const handlerClick = () => {
+    history.pushState({}, '', `${link}/${_id}`);
+    toggleModal(true);
+  };
+
+  const handlerClose = () => {
+    history.replaceState({}, '', `/`);
+    toggleModal(false);
+  };
+
   return (
-    <Link to={`${link}/${_id}`} className={styles.link}>
+    <div onClick={handlerClick}>
+      {showModal && <ModalOrderCard id={_id} handlerClose={handlerClose} />}
       <div className={cn(extraClass, styles.card)}>
         <div className={styles.header}>
           <p className="text text_type_digits-default">{`#${number}`}</p>
@@ -56,6 +69,6 @@ export const FeedCard = ({
           </div>
         </div>
       </div>
-    </Link>
+    </div>
   );
 };
