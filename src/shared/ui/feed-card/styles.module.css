@@ -5,6 +5,7 @@
   flex-direction: column;
   gap: 24px;
   padding: 24px;
+  cursor: pointer;
 }
 
 .header {

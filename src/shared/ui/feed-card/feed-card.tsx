@@ -22,21 +22,20 @@ export const FeedCard = ({
   number = 0,
   sum = 0,
 }: Props) => {
-  const [showModal, toggleModal] = React.useState(false);
+  const [isShowModal, setIsShowModal] = React.useState(false);
+  const handlerClose = () => {
+    history.replaceState({}, '', `${link}`);
+    setIsShowModal((state) => !state);
+  };
 
   const handlerClick = () => {
     history.pushState({}, '', `${link}/${_id}`);
-    toggleModal(true);
-  };
-
-  const handlerClose = () => {
-    history.replaceState({}, '', `/`);
-    toggleModal(false);
+    setIsShowModal((state) => !state);
   };
 
   return (
     <div onClick={handlerClick}>
-      {showModal && <ModalOrderCard id={_id} handlerClose={handlerClose} />}
+      {isShowModal && <ModalOrderCard id={_id} handlerClose={handlerClose} />}
       <div className={cn(extraClass, styles.card)}>
         <div className={styles.header}>
           <p className="text text_type_digits-default">{`#${number}`}</p>

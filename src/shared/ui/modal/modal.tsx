@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { SyntheticEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
@@ -19,8 +19,9 @@ export const Modal = ({
 }: Props) => {
   const modalRoot = document.querySelector('#modals');
 
-  const handlerCloseBackground = () => {
+  const handlerCloseBackground = (e: SyntheticEvent<HTMLDivElement>) => {
     if (closeBackground) {
+      e.stopPropagation();
       onClose();
     }
   };
@@ -38,6 +39,7 @@ export const Modal = ({
   }, [closeEscape, onClose]);
 
   if (!modalRoot) return null;
+
   return createPortal(
     <>
       <ModalOverlay onClick={handlerCloseBackground} />

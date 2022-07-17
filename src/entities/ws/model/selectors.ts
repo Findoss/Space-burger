@@ -51,7 +51,6 @@ export const getOrder =
   (orderId: string) =>
   (state: RootState): Order | null => {
     const { orders } = getWSCollection(state);
-    console.log(orders);
 
     const rawOrder = orders.find((order) => order._id === orderId);
 
@@ -87,8 +86,6 @@ export const getOrder =
 
     order.ingredientsDetail = uniIngredientsDetail;
     order.sum = sum;
-
-    console.log(order);
 
     return order;
   };
