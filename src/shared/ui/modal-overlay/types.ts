@@ -1,4 +1,6 @@
+import type { SyntheticEvent } from 'react';
+
 export type Props = {
-  onClick: () => void;
+  onClick: (e: SyntheticEvent<HTMLDivElement>) => void;
   extraClass?: string;
 };

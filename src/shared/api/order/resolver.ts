@@ -8,10 +8,16 @@ import type { Order, OrderRaw, NewOrderParam } from './types';
 import mockOrder from './__mocks__/Order.json';
 
 export const resolveNewOrder: Resolver<NewOrderParam, Order> = (payload) => {
-  return httpClient
-    .post<void, OrderRaw>(`${API_URL}/orders`, {
-      ingredients: payload,
-    })
+  return httpClient({
+    method: 'post',
+    url: `${API_URL}/orders`,
+    headers: {
+      authorization: payload.authorization || '',
+    },
+    data: {
+      ingredients: payload.ingredients,
+    },
+  })
     .then(({ data }) => {
       if (data.success === false) {
         throw new Error('');

@@ -10,6 +10,9 @@ import {
   PageForgotPassword,
   PageProfile,
   PageIngredient,
+  PageFeed,
+  PageOrder,
+  PageProfileOrders,
 } from 'pages';
 
 export const routes: Routes = [
@@ -26,7 +29,7 @@ export const routes: Routes = [
   {
     path: '/test',
     component: <PageTest />,
-    role: ['external'],
+    role: [],
   },
   {
     path: '/login',
@@ -55,8 +58,23 @@ export const routes: Routes = [
   },
   {
     path: '/profile/orders',
-    component: <></>,
+    component: <PageProfileOrders />,
     role: ['interior'],
+  },
+  {
+    path: '/profile/orders/:id',
+    component: <PageOrder />,
+    role: [],
+  },
+  {
+    path: '/feed',
+    component: <PageFeed />,
+    role: [],
+  },
+  {
+    path: '/feed/:id',
+    component: <PageOrder />,
+    role: [],
   },
   {
     path: '*',

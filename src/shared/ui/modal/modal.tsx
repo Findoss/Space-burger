@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { SyntheticEvent, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import cn from 'classnames';
 
@@ -19,8 +19,9 @@ export const Modal = ({
 }: Props) => {
   const modalRoot = document.querySelector('#modals');
 
-  const handlerCloseBackground = () => {
+  const handlerCloseBackground = (e: SyntheticEvent<HTMLDivElement>) => {
     if (closeBackground) {
+      e.stopPropagation();
       onClose();
     }
   };
@@ -38,6 +39,7 @@ export const Modal = ({
   }, [closeEscape, onClose]);
 
   if (!modalRoot) return null;
+
   return createPortal(
     <>
       <ModalOverlay onClick={handlerCloseBackground} />
@@ -46,9 +48,11 @@ export const Modal = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div className={cn(styles.modal, 'p-10', extraClass)}>
-          <div className={cn('text text_type_main-large', styles.title)}>
-            {title}
-          </div>
+          {title && (
+            <div className={cn('text text_type_main-large', styles.title)}>
+              {title}
+            </div>
+          )}
           <button
             className={cn(styles.close_button, 'mt-15 mr-10')}
             onClick={onClose}

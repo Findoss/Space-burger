@@ -1,4 +1,13 @@
-import { unauthenticatedMiddleware } from './global/middleware/unauthenticatedMiddleware';
-import { serviceMiddleware } from './services';
+import { unauthenticatedMiddleware } from './global/middleware/unauthenticated';
+import { initSocketMiddleware } from './global/middleware/ws';
 
-export const rootMiddleware = [unauthenticatedMiddleware, ...serviceMiddleware];
+import { serviceMiddleware } from './services';
+import { WsSlice } from 'entities/ws/model/slice';
+
+// console.log(WsSlice.actions);
+
+export const rootMiddleware = [
+  unauthenticatedMiddleware,
+  initSocketMiddleware(WsSlice.actions),
+  ...serviceMiddleware,
+];
