@@ -19,6 +19,8 @@ import {
   WIDGET_BURGER_CONSTRUCTOR,
 } from 'features/burger-constructor/model/slice';
 
+import { COLLECTION_WS, WsSlice } from 'entities/ws/model/slice';
+
 export const collectionReducers = combineReducers({
   [COLLECTION_USER]: persistReducer(
     persist(`${COLLECTION_USER}`),
@@ -26,6 +28,7 @@ export const collectionReducers = combineReducers({
   ),
   [COLLECTION_ORDER]: orderCollection.reducer,
   [COLLECTION_INGREDIENT]: ingredientsCollection.reducer,
+  [COLLECTION_WS]: WsSlice.reducer,
 });
 
 export const widgetReducers = combineReducers({

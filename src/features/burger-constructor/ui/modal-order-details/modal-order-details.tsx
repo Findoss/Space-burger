@@ -26,7 +26,7 @@ export const ModalOrderDetails = () => {
 
   useEffect(() => {
     if (isOpen) {
-      dispatch(fetchNewOrder(payload));
+      dispatch(fetchNewOrder({ ingredients: payload }));
     }
   }, [dispatch, isOpen]);
 

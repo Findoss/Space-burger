@@ -1,0 +1,16 @@
+.order_ingredient {
+  display: flex;
+  align-items: center;
+  float: left;
+  width: 100%;
+}
+
+.order_ingredient__cost {
+  padding-right: 10px;
+  gap: 10px;
+  display: flex;
+}
+
+.order_ingredient__name {
+  flex: 1;
+}

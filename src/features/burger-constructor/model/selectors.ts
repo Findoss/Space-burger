@@ -19,6 +19,7 @@ export const selectOrder = (state: RootState) => {
 
   if (bun !== null) {
     ingredients.push(bun);
+    ingredients.push(bun);
   }
 
   return ingredients;
