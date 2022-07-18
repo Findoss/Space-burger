@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'shared/hooks/use-redux';
-import { PREFIX } from 'shared/api/constants';
+import { PUBLIC_PREFIX } from 'shared/api/constants';
 
 import { selectRoleUser } from 'entities/user/model/selectors';
 
@@ -15,7 +15,7 @@ const routeComponents = () => {
   return routes.map(({ path, component, role }, key) => (
     <Route
       key={key}
-      path={`${PREFIX}${path}`}
+      path={`${PUBLIC_PREFIX}${path}`}
       element={
         <ProtectRoute role={role} roleUser={roleUser}>
           {component}

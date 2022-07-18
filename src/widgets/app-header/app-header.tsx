@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import { PREFIX } from 'shared/api/constants';
+import { url, hasUrl } from 'shared/api/constants';
 import { selectUserName } from 'entities/user/model/selectors';
 
 import { NavButton } from 'shared/ui/nav-button';
@@ -28,30 +28,30 @@ export const AppHeader = ({ extraClass = undefined }: Props) => {
       <div className={cn(styles.block, 'pr-5 pl-5')}>
         <div className={styles.menu}>
           <NavButton
-            to="/"
+            to={url('/')}
             icon={<BurgerIcon type="secondary" />}
             title={t('menu.constructorBurgers')}
-            active={location.pathname === '/'}
+            active={hasUrl(location.pathname, '/')}
           />
           <NavButton
-            to="/feed"
+            to={url('/feed')}
             icon={<ListIcon type="secondary" />}
             title={t('menu.listOrders')}
-            active={location.pathname === '/feed'}
+            active={hasUrl(location.pathname, '/feed')}
           />
         </div>
       </div>
       <div className={styles.block}>
-        <Link to={`${PREFIX}/`}>
+        <Link to={url('/')}>
           <Logo />
         </Link>
       </div>
       <div className={styles.block}>
         <NavButton
-          to="/profile"
+          to={url('/profile')}
           icon={<ProfileIcon type="secondary" />}
           title={userName ? userName : t('menu.account')}
-          active={location.pathname === '/profile'}
+          active={hasUrl(location.pathname, '/profile')}
         />
       </div>
     </div>
