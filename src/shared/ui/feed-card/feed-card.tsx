@@ -9,6 +9,7 @@ import { IngredientImageList } from 'shared/ui/ingredient-image-list';
 
 import { timeDistance } from 'shared/libs/date';
 import { ModalOrderCard } from 'features/order-card/order-card-modal';
+import { url } from 'shared/api/constants';
 
 export const FeedCard = ({
   link = '',
@@ -24,12 +25,12 @@ export const FeedCard = ({
 }: Props) => {
   const [isShowModal, setIsShowModal] = React.useState(false);
   const handlerClose = () => {
-    history.replaceState({}, '', `${link}`);
+    history.replaceState({}, '', url(`${link}`));
     setIsShowModal((state) => !state);
   };
 
   const handlerClick = () => {
-    history.pushState({}, '', `${link}/${_id}`);
+    history.pushState({}, '', url(`${link}/${_id}`));
     setIsShowModal((state) => !state);
   };
 

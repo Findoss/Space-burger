@@ -20,6 +20,7 @@ import { selectIngredientById } from 'entities/ingredient/model/selectors';
 import styles from './style.module.css';
 
 import type { Props } from './types';
+import { url } from 'shared/api/constants';
 
 export const ContainerIngredient = ({ id = '' }: Props) => {
   const data = useSelector(selectIngredientById(id));
@@ -46,7 +47,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
   }));
 
   const handlerClick = () => {
-    history.pushState({}, '', `/ingredients/${id}`);
+    history.pushState({}, '', url(`/ingredients/${id}`));
     dispatch(setActualIngredient(id));
   };
 
