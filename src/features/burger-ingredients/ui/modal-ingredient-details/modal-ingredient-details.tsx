@@ -7,6 +7,7 @@ import { ContainerIngredientDetails } from '../container-ingredient-details';
 
 import { selectActiveIngredient } from '../../model/selectors';
 import { setActualIngredient } from '../../model/slice';
+import { url } from 'shared/api/constants';
 
 export const ModalIngredientDetails = () => {
   const { t } = useTranslation();
@@ -19,7 +20,7 @@ export const ModalIngredientDetails = () => {
   }
 
   const handlerClose = () => {
-    history.replaceState({}, '', `/`);
+    history.replaceState({}, '', url(`/`));
     dispatch(setActualIngredient(null));
   };
 
