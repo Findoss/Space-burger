@@ -44,6 +44,7 @@ export const Modal = ({
     <>
       <ModalOverlay onClick={handlerCloseBackground} />
       <div
+        test-id="modal"
         className={styles.modal_wrapper}
         onClick={(e) => e.stopPropagation()}
       >

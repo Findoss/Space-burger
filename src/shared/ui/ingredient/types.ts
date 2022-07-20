@@ -1,6 +1,7 @@
 import type { SyntheticEvent } from 'react';
 
 export type Props = {
+  testId?: string;
   id: string;
   price: number;
   name: string;

@@ -53,6 +53,7 @@ export const ContainerIngredient = ({ id = '' }: Props) => {
 
   return (
     <Ingredient
+      testId="ingredient-card"
       ref={$elDrag}
       id={id}
       name={data.name}
