@@ -6,20 +6,19 @@ import { useDispatch, useSelector } from 'shared/hooks/use-redux';
 
 import { getEntityUser } from 'entities/user/model/selectors';
 import { fetchLogout } from 'entities/user/model/thunk';
-
+import { hasUrl, url } from 'shared/api/constants';
 import { NavButton } from 'shared/ui/nav-button';
 
 import styles from './styles.module.css';
 
 import type { Props } from './types';
-import { Button } from '@ya.praktikum/react-developer-burger-ui-components';
 
 export const ProfileMenu = ({
   extraClass = undefined,
   tooltip = '',
 }: Props) => {
   const { t } = useTranslation();
-  const location = useLocation();
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const { refreshToken } = useSelector(getEntityUser);
 
@@ -30,19 +29,19 @@ export const ProfileMenu = ({
   return (
     <div className={cn(styles.profile_menu)}>
       <NavButton
-        to="/profile"
+        to={url('/profile')}
         title={t('profile.profile')}
         extraClass="text_type_main-medium"
-        active={location.pathname === '/profile'}
+        active={hasUrl(pathname, '/profile')}
       />
       <NavButton
-        to="/profile/orders"
+        to={url('/profile/orders')}
         title={t('profile.history')}
         extraClass="text_type_main-medium"
-        active={location.pathname === '/profile/orders'}
+        active={hasUrl(pathname, '/profile/orders')}
       />
       <NavButton
-        to={location.pathname}
+        to={url(pathname)}
         title={t('profile.logout')}
         extraClass="text_type_main-medium"
         onClick={onLogout}

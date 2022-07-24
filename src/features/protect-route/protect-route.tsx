@@ -1,15 +1,16 @@
 import React, { memo, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useLocation } from 'react-router-dom';
+import { hasUrl, url } from 'shared/api/constants';
 
 import type { Props } from './types';
 
-const PROTECT_ROUTE_REDIRECT = '/login';
-const PROTECT_ROUTE_PROFILE = '/';
+const PROTECT_ROUTE_REDIRECT = url('/login');
+const PROTECT_ROUTE_PROFILE = url('/');
 
 export const ProtectRoute = memo(({ role, children, roleUser }: Props) => {
   const navigate = useNavigate();
-  const location = useLocation();
+  const { pathname } = useLocation();
 
   useEffect(() => {
     if (role.length) {
@@ -19,7 +20,7 @@ export const ProtectRoute = memo(({ role, children, roleUser }: Props) => {
         }
 
         if (roleUser === 'interior') {
-          if (location.pathname === '/login') {
+          if (hasUrl(pathname, '/login')) {
             navigate(-1);
             return;
           }
@@ -27,7 +28,7 @@ export const ProtectRoute = memo(({ role, children, roleUser }: Props) => {
         }
       }
     }
-  }, [roleUser, role, location]);
+  }, [roleUser, role, pathname]);
 
   return <>{children}</>;
 });

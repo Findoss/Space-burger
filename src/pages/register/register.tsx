@@ -3,6 +3,7 @@ import cn from 'classnames';
 
 import { useTranslation } from 'react-i18next';
 
+import { url } from 'shared/api/constants';
 import { Link } from 'shared/ui/link';
 import { FormTitle } from 'shared/ui/form-title';
 
@@ -22,7 +23,7 @@ export const Register = ({ extraClass = undefined }: Props) => {
       <RegisterForm />
       <div className="text text_type_main-default">
         <span className="text_color_inactive">{t('register.readyLogin')}</span>{' '}
-        <Link to="/login">{t('login.login')}</Link>
+        <Link to={url('/login')}>{t('login.login')}</Link>
       </div>
     </WrapperCenterForm>
   );

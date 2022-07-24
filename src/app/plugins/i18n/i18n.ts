@@ -2,7 +2,7 @@ import i18n from 'i18next';
 import Backend from 'i18next-http-backend';
 import { initReactI18next } from 'react-i18next';
 import { langDetector } from './lang-detector';
-import { PREFIX } from 'shared/api/constants';
+import { PUBLIC_PREFIX } from 'shared/api/constants';
 
 i18n
   .use(Backend)
@@ -21,7 +21,7 @@ i18n
       useSuspense: false,
     },
     backend: {
-      loadPath: `${PREFIX}/locales/{{lng}}/translation.json`,
+      loadPath: `${PUBLIC_PREFIX}/locales/{{lng}}/translation.json`,
     },
   });
 

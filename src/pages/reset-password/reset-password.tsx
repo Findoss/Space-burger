@@ -14,6 +14,7 @@ import { Main as MainLayout } from 'widgets/layout-main';
 import styles from './styles.module.css';
 
 import type { Props } from './types';
+import { url } from 'shared/api/constants';
 
 export const ResetPassword = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
@@ -27,7 +28,7 @@ export const ResetPassword = ({ extraClass = undefined }: Props) => {
           <span className="text_color_inactive">
             {t('resetPassword.rememberPassword')}
           </span>{' '}
-          <Link to="/login" extraClass={cn(styles.link_login)}>
+          <Link to={url('/login')} extraClass={cn(styles.link_login)}>
             {t('resetPassword.goLogin')}
           </Link>
         </div>
