@@ -21,11 +21,13 @@ export const Ingredient = forwardRef<HTMLDivElement, Props>(
       role = undefined,
       extraClass = undefined,
       onClick = () => {},
+      testId = '',
     },
     ref,
   ) => {
     return (
       <div
+        test-id={testId}
         role={role}
         ref={ref}
         className={cn(styles.ingredient, extraClass)}

@@ -11,6 +11,7 @@ import { WrapperCenterForm } from 'widgets/wrapper-center-form';
 import { Main as MainLayout } from 'widgets/layout-main';
 
 import type { Props } from './types';
+import { url } from 'shared/api/constants';
 
 export const ForgotPassword = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
@@ -24,7 +25,7 @@ export const ForgotPassword = ({ extraClass = undefined }: Props) => {
           <span className="text_color_inactive">
             {t('forgotPassword.rememberPassword')}
           </span>{' '}
-          <Link to="/register">{t('forgotPassword.goLogin')}</Link>
+          <Link to={url('/register')}>{t('forgotPassword.goLogin')}</Link>
         </div>
       </div>
     </WrapperCenterForm>

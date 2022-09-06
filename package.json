@@ -1,6 +1,6 @@
 {
   "name": "space-burger",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "author": "Nikita Stroganov",
   "scripts": {
@@ -44,6 +44,7 @@
     "yup": "^0.32.11"
   },
   "devDependencies": {
+    "@4tw/cypress-drag-drop": "^2.2.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
@@ -66,6 +67,7 @@
     "@types/react-i18next": "^8.1.0",
     "@types/react-router-dom": "^5.3.3",
     "cypress": "^10.3.0",
+    "eslint-plugin-cypress": "^2.12.1",
     "lint-staged": "^12.1.4",
     "plop": "^3.0.5",
     "storybook-addon-i18n": "^5.1.13",

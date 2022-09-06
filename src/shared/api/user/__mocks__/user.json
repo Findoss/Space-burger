@@ -1,0 +1,6 @@
+{
+  "success": true,
+  "accessToken": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYyZDg1YWRhNDJkMzRhMDAxYzI3YWY0OSIsImlhdCI6MTY1ODY4NTkzNSwiZXhwIjoxNjU4Njg3MTM1fQ.bZiDdvvGYp4XFx6ies2MOJLzmw5k7YfrD1yGJb8nLnA",
+  "refreshToken": "6a314e4c6f5cf6f354bf4d98dbddfb041444c9929903b09306b518ff0d81630e34b2ea4c65486c0c",
+  "user": { "email": "zxcv@zxcv.zxcv", "name": "zxcv" }
+}

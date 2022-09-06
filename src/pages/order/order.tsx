@@ -22,7 +22,7 @@ export const Order = () => {
   useEffect(() => {
     const { actions } = WsSlice;
 
-    if (location.pathname.startsWith('/profile')) {
+    if (location.pathname.search('/profile')) {
       dispatch(actions.connection(`${WS_URL}/orders?token=${token}`));
     } else {
       dispatch(actions.connection(`${WS_URL}/orders/all`));

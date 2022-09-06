@@ -5,7 +5,7 @@ import { httpClient } from 'shared/api/axios';
 import type { Resolver } from '../types';
 import type { Order, OrderRaw, NewOrderParam } from './types';
 
-import mockOrder from './__mocks__/Order.json';
+import mockOrder from './__mocks__/order.json';
 
 export const resolveNewOrder: Resolver<NewOrderParam, Order> = (payload) => {
   return httpClient({

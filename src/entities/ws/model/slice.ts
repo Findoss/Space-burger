@@ -37,14 +37,12 @@ export const WsSlice = createSlice({
     [ACTIONS_WS.WS_CONNECTION_CLOSED](state) {
       state.isConnect = false;
       state.success = false;
-      // state.orders = [];
       state.total = null;
       state.totalToday = null;
     },
     [ACTIONS_WS.WS_CONNECTION_STOP](state) {
       state.isConnect = false;
       state.success = false;
-      // state.orders = [];
       state.total = null;
       state.totalToday = null;
     },

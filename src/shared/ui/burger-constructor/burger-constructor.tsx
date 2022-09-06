@@ -33,6 +33,7 @@ export const BurgerConstructor = forwardRef<HTMLDivElement, Props>(
   ) => {
     return (
       <div
+        test-id="burger-constructor"
         ref={ref}
         className={cn(
           'mt-15 pt-10 pb-10 pr-8',

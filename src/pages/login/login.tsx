@@ -11,6 +11,7 @@ import { Main as MainLayout } from 'widgets/layout-main';
 import { WrapperCenterForm } from 'widgets/wrapper-center-form';
 
 import type { Props } from './types';
+import { url } from 'shared/api/constants';
 
 export const Login = ({ extraClass = undefined }: Props) => {
   const { t } = useTranslation();
@@ -22,13 +23,13 @@ export const Login = ({ extraClass = undefined }: Props) => {
       <div className="text text_type_main-default">
         <div>
           <span className="text_color_inactive">{t('login.newUser')}</span>{' '}
-          <Link to="/register">{t('login.goRegister')}</Link>
+          <Link to={url('/register')}>{t('login.goRegister')}</Link>
         </div>
         <div>
           <span className="text_color_inactive">
             {t('login.forgotPassword')}
           </span>{' '}
-          <Link to="/forgot-password">{t('login.restorePassword')}</Link>
+          <Link to={url('/forgot-password')}>{t('login.restorePassword')}</Link>
         </div>
       </div>
     </WrapperCenterForm>
